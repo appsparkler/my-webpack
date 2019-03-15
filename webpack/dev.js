@@ -17,16 +17,25 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/index.html')
+            template: path.join(__dirname, '../src/index.pug')
         })
     ],
 
 
     module: {
-        rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
-        }]
+        rules: [
+            // CSS
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+
+            // PUG
+            {
+                test: /\.pug$/,
+                loader: 'pug-loader'
+            }
+        ]
     },
 
 
