@@ -18,7 +18,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/pages/a.pug')
+            template: path.join(__dirname, '../src/pages/index.pug')
         }),
         new VueLoaderPlugin()
     ],
