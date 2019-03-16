@@ -38,25 +38,46 @@ module.exports = {
             //   use:['pug-plain-loader']
             // },
 
-
-            //
-
+            // {
+            //     test: /\.pug$/,
+            //     exclude: /index\.pug$/,
+            //     loader: 'pug-plain-loader'
+            // },
 
             {
                 test: /\.pug$/,
-                oneOf: [
-                    // this applies to pug imports inside JavaScript
-                    {
-                        exclude: /\.vue$/,
-                        use: ['raw-loader', 'pug-plain-loader']
-                        // use: ['pug-loader']
-                    },
-                    // this applies to <template lang="pug"> in Vue components
-                    {
-                        use: ['pug-plain-loader']
-                    }
-                ]
+                exclude: /index\.pug$/,
+                loader: 'pug-plain-loader'
             },
+
+            // {
+            //     test: /index\.pug$/,
+            //     // exclude: /index\.pug$/,
+            //     loader: 'pug-loader'
+            // },
+
+            {
+                test: /pages.index\.pug$/,
+                exclude: /\.vue$/,
+                loader: 'pug-loader'
+            },
+
+
+            // {
+            //     test: /\.pug$/,
+            //     oneOf: [
+            //         // this applies to pug imports inside JavaScript
+            //         {
+            //             exclude: /\.vue$/,
+            //             use: ['raw-loader', 'pug-plain-loader']
+            //             // use: ['pug-loader']
+            //         },
+            //         // this applies to <template lang="pug"> in Vue components
+            //         {
+            //             use: ['pug-plain-loader']
+            //         }
+            //     ]
+            // },
 
             // VUE
             {

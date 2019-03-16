@@ -1,5 +1,5 @@
-<template>
-<h1>Hey.  Wassup?</h1>
+<template lang="pug">
+h1 Hello...
 </template>
 
 <script>
