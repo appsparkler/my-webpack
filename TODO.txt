@@ -1,1 +1,1 @@
-TODO SETUP-webpack-to-compile-pug-template-instead-of-html
+TODO SETUP-vue

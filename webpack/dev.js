@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -17,8 +18,9 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/index.pug')
-        })
+            template: path.join(__dirname, '../src/pages/a.pug')
+        }),
+        new VueLoaderPlugin()
     ],
 
 
@@ -31,9 +33,35 @@ module.exports = {
             },
 
             // PUG
+            // {//   // test: /\.pug$/,
+            //   test: /\.pug$/,
+            //   use:['pug-plain-loader']
+            // },
+
+
+            //
+
+
             {
                 test: /\.pug$/,
-                loader: 'pug-loader'
+                oneOf: [
+                    // this applies to pug imports inside JavaScript
+                    {
+                        exclude: /\.vue$/,
+                        use: ['raw-loader', 'pug-plain-loader']
+                        // use: ['pug-loader']
+                    },
+                    // this applies to <template lang="pug"> in Vue components
+                    {
+                        use: ['pug-plain-loader']
+                    }
+                ]
+            },
+
+            // VUE
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
             }
         ]
     },
@@ -46,7 +74,7 @@ module.exports = {
         watchOptions: {
             ignored: /.*\/node_modules\/.*/
         },
-        writeToDisk: true, // (maybe) this option can be removed for performance
+        //writeToDisk: true, // (maybe) this option can be removed for performance
         stats: {
             assets: false,
             cached: false,
