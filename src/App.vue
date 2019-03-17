@@ -1,11 +1,15 @@
 <template lang="pug">
-h1 Hello...
+include app-template.pug
 </template>
 
 <script>
 
 export default {
-  // template: ``
+  data(){
+    return {
+      message: 'Hello There.'
+    }
+  }
 }
 </script>
 

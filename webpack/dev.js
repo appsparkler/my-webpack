@@ -46,20 +46,21 @@ module.exports = {
 
             {
                 test: /\.pug$/,
-                exclude: /index\.pug$/,
+                exclude: /pages.*\.pug$/,
                 loader: 'pug-plain-loader'
             },
 
             // {
             //     test: /index\.pug$/,
-            //     // exclude: /index\.pug$/,
+            //     exclude: /index\.pug$/,
             //     loader: 'pug-loader'
             // },
 
             {
-                test: /pages.index\.pug$/,
+                test: /pages.*\.pug$/,
                 exclude: /\.vue$/,
-                loader: 'pug-loader'
+                // loader: 'pug-loader'
+                use: ['raw-loader', 'pug-plain-loader']
             },
 
 
