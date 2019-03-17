@@ -1,5 +1,5 @@
 <template>
-<h1>message : {{ message }}</h1>
+<h1>Hello World</h1>
 </template>
 
 <script>
