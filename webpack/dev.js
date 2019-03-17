@@ -9,17 +9,17 @@ module.exports = {
     mode: 'production',
     entry: './src/index.js',
 
-
     output: {
         path: path.join(__dirname, '../dist'),
         filename: 'index_bundle.js',
     },
 
-
     plugins: [
+
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/pages/home.html')
+            template: path.join(__dirname, '../src/pages/index.pug')
         }),
+
         new VueLoaderPlugin(),
 
         new webpack.HotModuleReplacementPlugin()
@@ -35,56 +35,21 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
 
-            // PUG
-            // {//   // test: /\.pug$/,
-            //   test: /\.pug$/,
-            //   use:['pug-plain-loader']
-            // },
-
-            // {
-            //     test: /\.pug$/,
-            //     exclude: /index\.pug$/,
-            //     loader: 'pug-plain-loader'
-            // },
-
+            // PUG (PLAIN LOADER FOR VUE TEMPLATES WITH PUG)
             {
                 test: /\.pug$/,
                 exclude: /pages.*\.pug$/,
-                loader: 'pug-plain-loader'
+                use: ['cache-loader', 'pug-plain-loader']
             },
 
+
+            // PUG LOADER FOR PURE PUG TEMPLATES
             {
                 test: /pages.*\.pug$/,
                 exclude: /\.vue$/,
-                use: ['raw-loader', 'pug-plain-loader']
+                use: ['cache-loader', 'raw-loader', 'pug-plain-loader']
             },
 
-
-            // VUE
-            // {
-            //     test: /\.vue$/,
-            //     use: [
-            //         /* config.module.rule('vue').use('cache-loader') */
-            //         {
-            //             loader: 'cache-loader',
-            //             options: {
-            //                 cacheDirectory: 'D:\\Projects\\archive\\aem-web-app\\node_modules\\.cache\\vue-loader',
-            //                 cacheIdentifier: '57e662db'
-            //             }
-            //         },
-            //         /* config.module.rule('vue').use('vue-loader') */
-            //         {
-            //             loader: 'vue-loader',
-            //             options: {
-            //                 compilerOptions: {
-            //                     preserveWhitespace: false
-            //                 },
-            //                 cacheDirectory: 'D:\\Projects\\archive\\aem-wep-app\\node_modules\\.cache\\vue-loader',
-            //                 cacheIdentifier: '57e662db'
-            //             }
-            //         }
-            //     ]
-            // },
 
             {
                 test: /\.vue$/,
