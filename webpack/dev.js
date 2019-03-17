@@ -56,10 +56,16 @@ module.exports = {
             //     loader: 'pug-loader'
             // },
 
+            // {
+            //     test: /pages.*\.pug$/,
+            //     exclude: /\.vue$/,
+            //     // loader: 'pug-loader'
+            //     use: ['raw-loader', 'pug-plain-loader']
+            // },
+
             {
                 test: /pages.*\.pug$/,
                 exclude: /\.vue$/,
-                // loader: 'pug-loader'
                 use: ['raw-loader', 'pug-plain-loader']
             },
 
@@ -84,6 +90,12 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+
+            // JS
+            {
+                test: /\.js$/,
+                loader: 'babel-loader'
             }
         ]
     },

@@ -1,5 +1,5 @@
-<template lang="pug">
-include app-template.pug
+<template>
+<h1>message : {{ message }}</h1>
 </template>
 
 <script>
