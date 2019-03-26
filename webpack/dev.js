@@ -1,8 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-
-console.log(path.join(__dirname, '../'))
 
 module.exports = {
     mode: 'production',
@@ -15,7 +14,7 @@ module.exports = {
     },
 
     resolve: {
-        root: path.join(__dirname, '/..')
+        root: path.join(__dirname, '/..'),
         modules: [
             'node_modules',
             path.resolve(__dirname, '../src')
@@ -25,7 +24,14 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../src/index.pug')
-        })
+        }),
+        new CopyPlugin([
+          // etc
+          {
+              from: 'clientlibs',
+              to: 'clientlibs'
+          }
+        ])
     ],
 
     module: {

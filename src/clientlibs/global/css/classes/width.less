@@ -1,0 +1,18 @@
+@import "../_variables";
+
+.w-100 {
+    width:100%;
+}
+
+.w-100pc--25px {
+    width: ~"calc(100% - 25px)" !important;
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .w-desktop-100 {
+        width:100%;
+    }
+    .w-desktop-100pc--25px {
+        width: ~"calc(100% - 25px)" !important;
+    }
+}

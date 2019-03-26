@@ -1,0 +1,49 @@
+@import "../mixins/display";
+@import "../_variables";
+
+.d-block {
+    .display(block);
+}
+.d-inline-block {
+    .display(inline-block);
+}
+.d-table {
+    .display(table);
+}
+.d-table-cell {
+    .display(table-cell);
+}
+.d-inline {
+    .display(inline);
+}
+.d-none-before:before {
+    .display(none)
+}
+.d-none {
+    .display(none);
+}
+
+@media (min-width:@desktop-min-fixed) {
+    .d-desktop-block {
+        .display(block);
+    }
+    .d-desktop-inline-block {
+        .display(inline-block);
+    }
+    .d-desktop-table {
+        .display(table);
+    }
+    .d-desktop-table-cell {
+        .display(table-cell);
+    }
+    .d-desktop-inline {
+        .display(inline);
+    }
+    .d-desktop-none-before:before {
+        .display(none)
+    }
+    .d-desktop-none {
+        .display(none);
+    }
+}
+
