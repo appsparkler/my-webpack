@@ -1,0 +1,179 @@
+// Begin Component: Formbuilder
+#formbuilder-id-xx-en-1532996139.module-formbuilder.component.bs4
+  // EXISTING USER LOGIN FORM
+  .existing-user-login-form.animated
+    // CANCEL BUTTON
+    .cancelButton
+      button
+        span.icon-close
+    // INTRO TEXT
+    .introduction-text
+      p
+        | The email address you&apos;ve entered is already tied to an exi
+        | sting account. Please login to access your requested content.
+      p KPMG thought leadership is always available to our registered users.
+    // LOGIN FORM
+    .login-form
+      form(action='?', method='POST')
+        .form-field
+          .validation-message
+            | Email is incorrect...
+          input(type='email', name='email', placeholder='Email...', disabled='', value='example@gmail.com')
+        .form-field
+          .validation-message
+            | Password is incorrect....
+          input(type='password', name='password', placeholder='password', value='password')
+        .login-button(data-provider='site')
+          button(type='button') Login
+    // HORIZONTAL SEPERATOR
+    .form-separator.position-relative.d-flex.justify-content-around
+      .or-label.position-absolute.d-flex.justify-content-center.flex-column.text-center
+        span.d-block OR
+    // SOCIAL LOGIN INTRO
+    .social-login-intro
+      p.social-login-intro
+        | Log in with your social media account
+    // SOCIAL LOGIN BUTTONS
+    .social-login-buttons
+      .linked-in.login-button.position-relative(data-provider='linkedin')
+        img.position-absolute.ml-3(src='/etc/designs/kpmgpublic/images/linkedin.png')
+        button(type='button') Linked In
+      .google.login-button.position-relative(data-provider='google')
+        img.position-absolute.ml-3(src='/etc/designs/kpmgpublic/images/google.png')
+        button(type='button') Google
+      .twitter.login-button.position-relative(data-provider='twitter')
+        img.position-absolute.ml-3(src='/etc/designs/kpmgpublic/images/twitter.png')
+        button(type='button') Twitter
+  .default-form.animated
+    // TITLE AND CANCEL BUTTON for mobile-only
+    .title-and-cancel-button.mobile-only
+      .cancelButton.chrome
+        button.chrome
+          span.icon-close.chrome
+      .title
+        h1
+          | Event Title
+    // CANCEL BUTTON
+    .cancelButton.desktop-only
+      button
+        span.icon-close
+    // INSTRUCTIONS
+    .instructions
+      p
+        | Please provide the following information to access your content.
+    // FORM
+    .formDiv
+      form
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | The email format is incorrect.
+          // SELECT FIELD
+          // TEXTAREA
+          // EMAIL
+          input(type='email', name='email', placeholder='email...  ', required='')
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          // TEXTAREA
+          // EMAIL
+          // TEXTFIELD
+          input(type='text', name='firstname', placeholder='Your First Name...  ', required='')
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          // TEXTAREA
+          // EMAIL
+          // TEXTFIELD
+          input(type='text', name='lastname', placeholder='Your Last Name...  ', required='')
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          .custom-select-with-styled-dropdown
+            .custom-chevron
+              span.icon-chevron-down
+            select.dynamic-select-country(name='country', required='')
+              option(value='country') country
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          // TEXTAREA
+          // EMAIL
+          // TEXTFIELD
+          input(type='text', name='state', placeholder='state  (optional)')
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          // TEXTAREA
+          // EMAIL
+          // TEXTFIELD
+          input(type='text', name='company', placeholder='KPMG  ', required='')
+        .formfield-wrapper
+          // ERROR MESSAGE CONTAINER
+          .error-message.hide-errormsg
+            | This field is required
+          // SELECT FIELD
+          // TEXTAREA
+          textarea(name='customone', placeholder='personal site (optional)')
+        // TERMS AND CONDITIONS
+        .terms-and-conditions
+          // TC 1
+          .custom-tc
+            .checkbox-cell
+              button.custom-checkbox(type='button')
+                span.icon-checkmark
+            input(type='checkbox', hidden='', name='termsAndConditions2', value='<p>Please tick the box if you would like to enable the functionality to receive insights, event invitations and other benefits from KPMG.com by email. (Optional)</p>\
+            ')
+            .tc-cell
+              p
+                | Please tick the box if you would like to enable the functionality to receive insights, event invitations and other benefits from KPMG.com by email. (Optional)
+          // TC 2
+          .custom-tc
+            .checkbox-cell
+              button.custom-checkbox(type='button')
+                span.icon-checkmark
+            input(type='checkbox', hidden='', name='termsAndConditions1', value='<p>I acknowledge that I have read and understood the terms stated in the <a href="/content/kpmgpublic/xx/en/home/misc/privacy.html" target="_blank">KPMG Online Privacy Statement</a>.</p>\
+            <p> </p>\
+            <p><i>Note</i>: You will receive an email after registration to verify and activate your account. Also you will have options to self-serve to set your preferences for content personalization, subscription to newsletter, opt-in and opt-out from email communication and delete your account any time after registration.</p>\
+            ', checked='')
+            .tc-cell
+              p
+                | I acknowledge that I&nbsp;have read and understood the terms stated in the&nbsp;
+                a(href='/xx/en/home/misc/privacy.html', target='_blank') KPMG Online Privacy Statement
+                |                                                             .
+              p
+              p
+                i Note
+                |                                                             : You will receive an email after registration to verify and activate your account. Also you will have options to self-serve to set your preferences for content personalization, subscription to newsletter, opt-in and opt-out from email communication and delete your account any time after registration.
+          // TC 3
+        .optional-statement
+        // FORM CTA
+        .form-cta-button-wrapper
+          button.submit-form(type='button')
+            | Subscribe here
+// End Component: Formbuilder
+// New optional component begins
+.parsys-row.clearfix
+  // Begin Component: Formbuilder
+  section.module-fge-cta.component.hide-cta-component.clearfix
+    a#cta_form_xx-en-933139887.component-link(href='javascript:void(0);', target='_blank', title='', data-unique-id='xx-en-933139887', data-attr-isgatedcontent='false', data-attr-isfastsubscription='true', data-attr-iseventregistration='false')
+      .contentContainer
+        .row.download-text
+          .col-md-1.col-xs-2.icon-holder.title-icon-size
+            span.icon-subscription
+          .col-md-10.col-xs-10.componentContents
+            .componentTitle.line-clamp.line-clamp-1
+            .reportTitle.line-clamp.line-clamp-1
+            .reportDesc.line-clamp.line-clamp-1.spacer
+          .col-md-1.hidden-xs.downloadIcon
+  // End Component: Formbuilder

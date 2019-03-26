@@ -23,7 +23,6 @@ define([
         $clamp
     ) {
         'use strict';
-
 		checkAndInitializaeNavigationV2();
 		//
 		function checkAndInitializaeNavigationV2(){
@@ -168,7 +167,7 @@ define([
                     });
                 }
 
-            });            
+            });
 
 
             $('#language-locale .collapse-cancel-trigger-component').on('click', function(){
@@ -179,9 +178,9 @@ define([
                     mainNav.find('li.mobile-primary-nav-list-component').slideUp();
                     mainNav.find('li.siteSelectorli').slideUp();
                 }else{
-                    mainNav.find('li.mobile-primary-nav-list-component').slideDown(); 
+                    mainNav.find('li.mobile-primary-nav-list-component').slideDown();
                     mainNav.find('li.siteSelectorli').slideDown();
-                }	
+                }
 
             });
             $('a[href*="#"]:not([href="#"])').on('click', function() {

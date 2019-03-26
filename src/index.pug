@@ -4,11 +4,17 @@ html
     title Hello World
   body
     include body.pug
+    include kpmg-script-1
     script(data-main="/etc/clientlibs/kpmgpublic/global/js/main" src="/etc/clientlibs/kpmgpublic/global/js/vendor/require.js")
     //- scrtip(src="/etc/clientlibs/kpmgpublic/tmpl-home/js/tmpl-home.js")
     script(type="text/javascript").
-      require(['/etc/clientlibs/kpmgpublic/global/js/global.js'], function(){
-        require(['/etc/clientlibs/kpmgpublic/tmpl-home/js/tmpl-home.js'], function(homePage) {
-            console.log(homePage);
-        });
-      });
+      var url = "https://cdns.gigya.com/js/gigya.js?apiKey=3_I2UFL-mbajQNuwmtmwify1VSDlTIS5SgAt_odsx6wbBsDI0nTyUga03gVSNlsSD1";
+      var globalTemplate = '/etc/clientlibs/kpmgpublic/global/js/global.js';
+      var flexTemplate = '/etc/clientlibs/kpmgpublic/tmpl-flex/js/tmpl-flex.js';
+      require([url, globalTemplate, flexTemplate, 'personalization'], function(){});
+      
+      
+      /* require(['/etc/clientlibs/kpmgpublic/global/js/global.js', '/etc/clientlibs/kpmgpublic/tmpl-flex/js/tmpl-flex.js', 'personalization'], function(globalTemplate, flexTemplate, personalizaton){
+        debugger;
+          console.log(flexTemplate);
+      }); */

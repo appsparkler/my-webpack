@@ -3,12 +3,12 @@ function(CommonUtils, $, Navigation, NavFlyoutA, NavFlyoutB, NavFlyoutC, Footer,
     'use strict';
 
     var TmplInsightsFlex = function(elem) {
-        var nav             = new Navigation(),
-            footer          = new Footer(),
-            navflyouta       = new NavFlyoutA(),
-            navflyoutb       = new NavFlyoutB(),
-            navflyoutc       = new NavFlyoutC(),
-            $components     = $('.component');
+        // var nav             = new Navigation(),
+        //     footer          = new Footer(),
+        //     navflyouta       = new NavFlyoutA(),
+        //     navflyoutb       = new NavFlyoutB(),
+        //     navflyoutc       = new NavFlyoutC(),
+            var $components     = $('.component');
         //
         CommonUtils.initializeAllComponents($components, initializeTemplate);
         //
@@ -28,7 +28,7 @@ function(CommonUtils, $, Navigation, NavFlyoutA, NavFlyoutB, NavFlyoutC, Footer,
             });
             //
             if(!window.kpmgPersonalize.misc.isAuthor){
-                
+
                 if (!personalizationUtils.commonUtils.isMobile()) {
                     $('.cell5 .parsys-row').each( function() {
                         if ($(this).has('.module-bodytext').length || $(this).has('.module-image').length || $(this).has('.module-quote').length || $(this).has('.module-htmlcontainer').length || $(this).has('.module-inlinelist').length || $(this).has('.module-enhanceddownload').length || $(this).has('.module-promotionalb').length || $(this).has('.module-promotionalc').length || $(this).has('.module-promotionald').length || $(this).has('.module-promotionale').length || $(this).has('.module-audiovideo').length) {
@@ -39,7 +39,7 @@ function(CommonUtils, $, Navigation, NavFlyoutA, NavFlyoutB, NavFlyoutC, Footer,
                     });
                     $('.module-audiovideo .video-js').addClass("responsive");
                 }
-                
+
             }
             // Remove tabindex attribute from child div in registration component -- not needed on this page
             $(".module-registration-promo .promo-wrapper").removeAttr("tabindex");
