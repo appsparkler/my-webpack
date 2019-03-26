@@ -6,21 +6,27 @@ console.log(path.join(__dirname, '../'))
 
 module.exports = {
     mode: 'production',
-    entry: './src/index.js',
 
+    entry: './src/index.js',
 
     output: {
         path: path.join(__dirname, '../dist'),
         filename: 'index_bundle.js',
     },
 
+    resolve: {
+        root: path.join(__dirname, '/..')
+        modules: [
+            'node_modules',
+            path.resolve(__dirname, '../src')
+        ]
+    },
 
     plugins: [
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../src/index.pug')
         })
     ],
-
 
     module: {
         rules: [
@@ -37,7 +43,6 @@ module.exports = {
             }
         ]
     },
-
 
     devServer: {
         contentBase: path.join(__dirname, '../dist'),
