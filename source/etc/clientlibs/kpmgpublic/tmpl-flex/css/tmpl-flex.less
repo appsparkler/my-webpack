@@ -157,9 +157,13 @@
     }
 
     .flex-informative-image{
+        padding-left:20px;
         display: none;
         &.show-informative-image{
             display: block;
+        }
+        img{
+            width:800px;
         }
     }
 
@@ -188,6 +192,11 @@
         }
         .cta-hide {
             display: none;
+        }
+        .flex-informative-image{
+            &.show-informative-image{
+                display: none;
+            }
         }
     }
 }

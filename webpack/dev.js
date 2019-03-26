@@ -35,7 +35,15 @@ module.exports = {
                 from: 'src/xx',
                 to: 'xx'
             },
-
+            // other files
+            {
+                from: 'src/content',
+                to: 'content'
+            },
+            {
+                from: 'src/designs',
+                to: 'etc/designs'
+            }
         ])
     ],
 

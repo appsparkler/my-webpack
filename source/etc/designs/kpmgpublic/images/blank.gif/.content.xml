@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        dam:lastInvalidateCache="{Date}2014-12-29T12:58:21.259+05:30"
+        dam:s7damAnchorX="{Long}16"
+        dam:s7damAnchorY="{Long}16"
+        dam:s7damHeight="{Long}32"
+        dam:s7damImageCopyPath="C:\\Users\\sku204\\AppData\\Local\\Temp\\scene73349104592777082132.tmp"
+        dam:s7damType="Image"
+        dam:s7damWidth="{Long}32"
+        jcr:lastModified="{Date}2014-12-29T12:58:23.284+05:30"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dam:Bitsperpixel="{Long}1"
+            dam:extracted="{Date}2014-12-29T12:58:20.672+05:30"
+            dam:Fileformat="GIF"
+            dam:MIMEtype="image/gif"
+            dam:Numberofimages="{Long}1"
+            dam:Numberoftextualcomments="{Long}0"
+            dam:Physicalheightindpi="{Long}72"
+            dam:Physicalheightininches="{Decimal}0.4444444477558136"
+            dam:Physicalwidthindpi="{Long}72"
+            dam:Physicalwidthininches="{Decimal}0.4444444477558136"
+            dam:Progressive="no"
+            dam:sha1="98524b133419e40054913792f03d161b5aa07ee8"
+            dam:size="{Long}1125"
+            dam:writebackEnable="False"
+            dc:format="image/gif"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}32"
+            tiff:ImageWidth="{Long}32"
+            xmp:CreatorTool="Adobe Photoshop CS6 (Macintosh)"
+            xmpMM:DocumentID="xmp.did:87576B7A668E11E48757E6E9AF555027"
+            xmpMM:InstanceID="xmp.iid:87576B79668E11E48757E6E9AF555027"
+            writebackEnable="{Boolean}true">
+            <xmpMM:DerivedFrom
+                jcr:primaryType="nt:unstructured"
+                stRef:documentID="xmp.did:87576B78668E11E48757E6E9AF555027"
+                stRef:instanceID="xmp.iid:87576B77668E11E48757E6E9AF555027"
+                xmpNodeType="xmpStruct"/>
+        </metadata>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>

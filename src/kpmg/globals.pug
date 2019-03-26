@@ -1,0 +1,47 @@
+script(type='text/javascript').
+  var kpmgAssetDomain = 'https://pdev.assets.kpmg',
+      calanderProperties = {
+          "longMonths": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "shortMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "timeMeridiems": ["AM", "PM"]
+      },
+      dateFormatProperties = {
+          "showMeridiem": true,
+          "transformations": {
+              "dayType": "d",
+              "monthType": "mmmm",
+              "hourType": "hh",
+              "monthCase": "cc",
+              "yearType": "y"
+          },
+          "timeSeparator": ":",
+          "fields": [{
+              "item1": "day"
+          }, {
+              "item2": "month"
+          }, {
+              "item3": "year"
+          }],
+          "separators": [{
+              "item1": " "
+          }, {
+              "item2": " "
+          }, {
+              "item3": ""
+          }]
+      };
+  var kpmgDateFormat = 'd [full month] yyyy:Day Month Year'
+  var kpmgDateSeperator1 = ' '
+  var kpmgDateSeperator2 = ' '
+  var kpmgDateSeperator3 = ''
+  var KPMG = KPMG || {};
+  KPMG.isAuthor = false;
+  var searchFacetsFlag = true;
+  if(navigator.userAgent.match(/iPad/i) === null) {
+      var meta;
+      meta = document.createElement('meta');
+      meta.name = "viewport";
+      meta.id = 'kpmgViewport';
+      meta.content = "width=device-width, initial-scale=1.0, user-scalable=1.0";
+      document.getElementsByTagName("head")[0].appendChild(meta);
+  }

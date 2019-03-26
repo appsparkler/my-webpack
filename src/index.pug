@@ -1,13 +1,31 @@
 doctype html
-html
+html(lang="en-US")
   head
     title Hello World
-  body
-    //- NOTES
-      Ensure that 
-    include body.pug
-    include kpmg/typekit
+    include kpmg/meta-tags
+    include kpmg/globals
     include kpmg/window-hydration
+    include kpmg/i18n-labels-and-cleanup
+    //- include kpmg/meta-tags-2
+    //- include kpmg/privacy-fix-css
+    //- include kpmg/partial-header-preloader
+  body
+    include templates/tmpl-flex
+    //- NOTES
+      - ENSURE that home.mykpmgnav.json is set correctly
+      - MATCH the HTML structure of a published-page
+    //- include body.pug
+    //- KPMG add-ons
+    //- BEFORE FOOTER
+    include kpmg/digitalData
+    //- FOOTER SCRIPTS
+    include kpmg/privacyJSON
+    include kpmg/footer-subscription-callout-val
+    //- BETWEEN FOOTER AND </BODY>
+    include kpmg/recaptcha
+    include kpmg/userAgentInfo
+    include kpmg/share-properties-and-demandbase
+    include kpmg/typekit
     include kpmg/scripts
     script(data-main="/etc/clientlibs/kpmgpublic/global/js/main" src="/etc/clientlibs/kpmgpublic/global/js/vendor/require.js")
     //- scrtip(src="/etc/clientlibs/kpmgpublic/tmpl-home/js/tmpl-home.js")
@@ -16,5 +34,7 @@ html
       var globalTemplate = '/etc/clientlibs/kpmgpublic/global/js/global.js';
       var flexTemplate = '/etc/clientlibs/kpmgpublic/tmpl-flex/js/tmpl-flex.js';
       
-      require([url, globalTemplate, flexTemplate, 'personalization'], function(){});
-      
+      require([url, globalTemplate, flexTemplate, 'personalization'], function(){
+        alert('gigya loaded....')
+        /*  require(["https://cdn.gigya-ext.com/screenset-validation.min.js"], function() {}); */
+      });

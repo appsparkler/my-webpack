@@ -93,6 +93,7 @@ define(['jquery', 'tracking', 'personalizationUtils'],
             this.existingUserLoginForm = $(elem)
                 .find('.existing-user-login-form')
                 .get(0);
+            this.init()
         };
 
         FormBuilder.isAvailableLoginID = function(loginID) {
@@ -609,6 +610,6 @@ define(['jquery', 'tracking', 'personalizationUtils'],
             formbuilder.init(elem);
         }
 
-        return init;
+        return FormBuilder;
     }
 );

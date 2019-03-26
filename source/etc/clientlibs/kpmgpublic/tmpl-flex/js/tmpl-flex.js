@@ -8,7 +8,7 @@ function(CommonUtils, $, Navigation, NavFlyoutA, NavFlyoutB, NavFlyoutC, Footer,
         //     navflyouta       = new NavFlyoutA(),
         //     navflyoutb       = new NavFlyoutB(),
         //     navflyoutc       = new NavFlyoutC(),
-            var $components     = $('.component');
+        var $components     = $('.component');
         //
         CommonUtils.initializeAllComponents($components, initializeTemplate);
         //
@@ -16,8 +16,28 @@ function(CommonUtils, $, Navigation, NavFlyoutA, NavFlyoutB, NavFlyoutC, Footer,
             CommonUtils.fixChromeIssueForAuthor('.module-tmpl-flex');
             addToLastReadFlexTemplates();
 
+            var localeDetails = personalizationUtils.accountUtils.getLocale();
+
             // check for informative image
             var informativeImageObj = $('.module-tmpl-flex .flex-informative-image');
+
+            if (localeDetails.languageCode !== 'en'){
+                var imgSrc = $(informativeImageObj).attr('src');
+                var imgPathArr = imgSrc.split('.png');
+                var newImgSrc = imgPathArr[0]+'_'+localeDetails.languageCode+'.png';
+                checkImage(newImgSrc , imgSrc , informativeImageObj );
+            }
+
+            function checkImage(newImageSrc, actualImgSrc, imgObj ){
+                var oImg = new Image();
+                oImg.src = newImageSrc;
+                oImg.onload=function(){
+                    $(imgObj).attr('src' , newImageSrc );
+                };
+                oImg.onerror=function(){
+                    $(imgObj).attr('src' , actualImgSrc );
+                };
+            }
 
 
             // Menthod after all component for the template have been loaded

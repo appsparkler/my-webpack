@@ -1,0 +1,129 @@
+script(type="text/javascript").
+  try {
+      var digitalData = (function() {
+          function formatDate(d) {
+              date = new Date(d)
+              var dd = date.getDate();
+              var mm = date.getMonth() + 1;
+              var yyyy = date.getFullYear();
+              if (dd < 10) {
+                  dd = '0' + dd
+              }
+              if (mm < 10) {
+                  mm = '0' + mm
+              }
+              ;return d = mm + '/' + dd + '/' + yyyy;
+          }
+          function getMetaContent(query) {
+              var ele = document.querySelector(query)
+                , c = "";
+              if (ele !== null && ele.getAttribute("content") !== null) {
+                  c = ele.getAttribute("content");
+              }
+              return c;
+          }
+          var author1 = getMetaContent('meta[name=KPMG_Business_Owner]')
+            , publisher = getMetaContent('meta[name=KPMG_Business_Owner_Group]')
+            , docType = getMetaContent('meta[http-equiv=content-type]')
+            , topic = getMetaContent('meta[name=KPMG_Topic_Path]')
+            , cType = getMetaContent('meta[name=KPMG_Cont_Type_Path]')
+            , mfType = getMetaContent('meta[name=KPMG_Media_Typ_Path]')
+            , persona = getMetaContent('meta[name=KPMG_Persona_Path]')
+            , gOrigin = getMetaContent('meta[name=KPMG_Geographic_Origin_ID]')
+            , service = getMetaContent('meta[name=KPMG_Service_Path]')
+            , industry = getMetaContent('meta[name=KPMG_Ind_Path]')
+            , market = getMetaContent('meta[name=KPMG_Market_Path]')
+            , modifiedDate = formatDate(getMetaContent('meta[http-equiv=last-modified]'))
+            , robot = getMetaContent('meta[name=KPMG_Robots]')
+            , artDetails = getMetaContent('meta[name=KPMG_Template_Type]')
+            , articleDetails = ""
+            , url = getMetaContent('meta[name=KPMG_URL]')
+            , pageType = ""
+            , errCode = "";
+          var visitorID = "";
+          if (document.cookie) {
+              try {
+                  visitorID = document.cookie.match(new RegExp('s_fid' + '=([^;]+)'))[1] || document.cookie.match(new RegExp('s_fid' + '%3D([^;]+)'))[1] || "";
+              } catch (e) {
+                  visitorID = "";
+              }
+          }
+          if ((robot.indexOf("noindex") >= 0) && (robot.indexOf("nofollow") >= 0)) {
+              robot = "hidden";
+          } else {
+              robot = "public"
+          }
+          if (artDetails.indexOf("article-details-template") >= 0) {
+              articleDetails = document.title;
+          }
+          if (url.indexOf('404') >= 0) {
+              pageType = "errorPage";
+              errCode = "404";
+          } else if (url.indexOf('403') >= 0) {
+              pageType = "errorPage";
+              errCode = "403";
+          } else if (url.indexOf('500') >= 0) {
+              pageType = "errorPage";
+              errCode = "500";
+          }
+          var pageName = "xx:en:home:insights:2019:03:fastsubtest";
+          if (pageName.indexOf('404') >= 0 || pageName.indexOf('403') >= 0 || pageName.indexOf('500') >= 0) {
+              pageName = "";
+          }
+          var digitalData = {
+              page: {
+                  pageInfo: {
+                      pageName: pageName,
+                      destinationURL: document.location.href,
+                      author: author1,
+                      publisher: publisher,
+                      issueDate: "",
+                      expiryDate: "03/04/2021",
+                      effectiveDate: "03/04/2019",
+                      lastModifiedDate: modifiedDate,
+                      documentType: docType,
+                      topicPath: topic,
+                      cTypePath: cType,
+                      mfTypePath: mfType,
+                      personaPath: persona,
+                      gOriginPath: gOrigin,
+                      servicePath: service,
+                      industryPath: industry,
+                      marketPath: market,
+                      templateName: artDetails
+                  },
+                  article: {
+                      articleDetails: articleDetails
+                  },
+                  attributes: {
+                      language: "en",
+                      country: "xx",
+                      pageTitle: document.title,
+                      server: "pdev.home.kpmg",
+                      pageType: robot
+                  },
+                  category: {
+                      primaryCategory: "home",
+                      subCategory1: "insights",
+                      subCategory2: "2019",
+                      subCategory3: "03"
+                  },
+                  error: {
+                      pageType: pageType,
+                      code: errCode
+                  }
+              },
+              user: {
+                  attributes: {
+                      userAgent: navigator.userAgent,
+                      visitorID: visitorID
+                  }
+              },
+              TemplateType: artDetails
+          };
+          return digitalData;
+      }
+      )();
+  } catch (e) {
+      console.log('Failed to initialize digital data', e);
+  }
