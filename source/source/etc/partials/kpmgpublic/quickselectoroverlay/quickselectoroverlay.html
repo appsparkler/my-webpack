@@ -1,0 +1,118 @@
+<li class="desktop-only utility-lang"><a href="javascript:void(0);" title="{{i18n hbs.quickselectoroverlay.selectMessageCountryLang}}">{{hbs.quickselectoroverlay.currentCountryLocale}}</a><span><a href="javascript:void(0);" class="icon-chevron-down" tabindex="-1"> </a></span></li>
+<a class="mobile-only mobile-utility-toggle icon-location hidden-sm hidden-xs" href="javascript:void(0);"></a>
+
+<section class="module-quickselectoroverlay component">
+	<div class="quickselectoroverlay-content">
+		<p class="quickselectoroverlay-primary-head">
+			{{i18n hbs.quickselectoroverlay.selectMessageCountryLang}}
+		</p>
+		{{#if hbs.quickselectoroverlay.countryLangList}}
+			<ul class="quickselectoroverlay-list first-list">
+			{{#each hbs.quickselectoroverlay.countryLangList}}
+				<li class="quickselectoroverlay-list-item quickselectoroverlay-bottom-padding">
+					<span class="{{#if this.selected}}icon-checkmark{{else}}
+							 icon-chevron-right quickselectoroverlay-hidden
+						{{/if}} "></span><a
+						{{#if this.selected}}
+							class="quickselectoroverlay-list-item-link-disabled"
+						{{else}}
+							class="quickselectoroverlay-list-item-link-normal" href="{{this.link}}"
+						{{/if}}
+						title="{{this.countryLocale}}">{{this.countryLocale}}
+					</a>
+				</li>
+			{{/each}}
+			</ul>
+		{{/if}}
+		<ul class="quickselectoroverlay-list global-language">
+		<li>
+				<span
+					{{#if hbs.quickselectoroverlay.global.selected}}
+						class="icon-checkmark"
+					{{else}}
+						class="icon-chevron-right"
+					{{/if}}></span><a
+					{{#if hbs.quickselectoroverlay.global.selected}}
+						class="quickselectoroverlay-list-item-link-disabled"
+					{{else}}
+						class="component-link" href="{{hbs.quickselectoroverlay.global.link}}"
+					{{/if}}
+					title="{{hbs.quickselectoroverlay.global.countryLocale}}">{{hbs.quickselectoroverlay.global.countryLocale}}
+				</a>
+            </li>
+        </ul>
+		<ul class="quickselectoroverlay-list">
+            <li>
+				<span class="icon-chevron-right"></span><a href="{{hbs.quickselectoroverlay.allCountryLangLink}}" title="{{i18n hbs.quickselectoroverlay.allCountryLangLabel}}"
+					class= "quickselectoroverlay-component-link">{{i18n hbs.quickselectoroverlay.allCountryLangLabel}}</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="module-quickselectoroverlay component visible-xs " >
+    <div class="quickselectoroverlay-container">
+        <div class="quickselector-mob-heading">
+            <p class="quickselectoroverlay-primary-head">
+                {{i18n hbs.quickselectoroverlay.selectMessageCountryLang}}
+            </p>
+            <!-- All 3 items for language -->
+        <div class="quickselector-list">
+            {{#if hbs.quickselectoroverlay.countryLangList}}
+                <ul class="quickselectoroverlay-list first-list">
+                {{#each hbs.quickselectoroverlay.countryLangList}}
+                    <li class="quickselectoroverlay-list-item quickselectoroverlay-bottom-padding">
+                        <span class="{{#if this.selected}}icon-checkmark icon-mob{{else}}
+                                 icon-chevron-right quickselectoroverlay-hidden icon-mob
+                            {{/if}} "></span><a
+                            {{#if this.selected}}
+                                class="quickselectoroverlay-list-item-link-disabled"
+                            {{else}}
+                                class="quickselectoroverlay-list-item-link-normal" href="{{this.link}}"
+                            {{/if}}
+                            title="{{this.countryLocale}}">{{this.countryLocale}}
+                        </a>
+                    </li>
+                {{/each}}
+                </ul>
+            {{/if}}
+            <ul class="quickselectoroverlay-list global-language">
+            <li>
+                    <span
+                        {{#if hbs.quickselectoroverlay.global.selected}}
+                            class="icon-checkmark icon-mob"
+                        {{else}}
+                            class="icon-chevron-right icon-mob"
+                        {{/if}}></span><a
+                        {{#if hbs.quickselectoroverlay.global.selected}}
+                            class="quickselectoroverlay-list-item-link-disabled"
+                        {{else}}
+                            class="component-link" href="{{hbs.quickselectoroverlay.global.link}}"
+                        {{/if}}
+                        title="{{hbs.quickselectoroverlay.global.countryLocale}}">{{hbs.quickselectoroverlay.global.countryLocale}}
+                    </a>
+                </li>
+            </ul>
+            <ul class="quickselectoroverlay-list">
+                <li>
+                    <span class="icon-chevron-right icon-mob"></span><a href="{{hbs.quickselectoroverlay.allCountryLangLink}}" title="{{i18n hbs.quickselectoroverlay.allCountryLangLabel}}"
+                        class= "quickselectoroverlay-component-link">{{i18n hbs.quickselectoroverlay.allCountryLangLabel}}</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+            <!-- End : all 3 items -->
+	</div>
+	<div class="close-quickselectoroverlay visible-xs">
+         <div class="quickselectoroverlay-mob-close">
+            <p class="text-close">
+            <em  id="close-quickselector-btn">
+							<em>
+                {{i18n hbs.quickselectoroverlay.closeSiteSelectorLabel}}</em>
+                <span class="quickselectoroverlay-close-icon icon-close"></span>
+			</em>
+			</p>
+		</div>
+	</div>
+</section> 

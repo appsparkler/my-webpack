@@ -1,0 +1,71 @@
+<a href="#" class="btn-close" data-dismiss="modal"><span class="icon-close"><span class="sr-only">close</span></span></a>
+<div class="modal-content-panel">
+    <div class="module-imageoverlay component">
+      <div class="row">
+          <div class="col-md-12 low-pad">
+            <h3 class="gallery-header"></h3>
+          </div>
+          <div class="col-md-7 left-pad">
+              <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 424 424'%2F%3E" alt="" class="item-image" />
+          </div>
+          <div class="col-md-5 low-pad">
+              <div class="shown-data">
+                  <h3 class="item-header"></h3>
+                  <p class="item-description"></p> 
+                  <a href="" target="_blank" class="item-download"><span class="icon-download"></span></a>
+                  <div class="share-container module-share" >
+                      <a id="image-sharetooltip" class="share-component share-image-in-gallery" href="javascript:void(0);">          
+                      <span class="icon-share"></span>
+                      <span class="component-link share-label"></span>
+                  </a> 
+                  </div>
+                 
+              </div>
+              <div class="carousel-copy-text"></div>
+              <div class="carousel-container">
+                  <div style="overflow: hidden;" class="frame" id="overlay-gallery">
+                      <ul>
+                          {{#each allRecords}}
+                          <li>
+                              <a href="javascript:void(0);">
+                                <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 237'%2F%3E" alt="{{this.imageTitle}}" data-image="{{../assetDomainName}}{{this.thumbnail}}" data-original-path="/jcr:content/renditions/original"  data-overlay-img="{{../assetDomainName}}{{this.thumbnail}}/jcr:content/renditions/cq5dam.web.424.424.{{this.fileType}}"  data-thumbnail="{{../assetDomainName}}{{this.thumbnail}}/jcr:content/renditions/cq5dam.web.237.237.{{this.fileType}}" class="lazy" />                         
+                              </a>
+                              <div class="hidden-data">
+                                  {{#if this.copyright}}
+                                  <p class="copyright-new">&copy;{{this.copyright}}</p>
+                                  {{/if}}
+                                  <h3 class="item-header">{{this.title}}</h3>
+                                  <p class="item-description">{{this.description}}</p>
+                                  <p class="item-download-copy"><span class="icon-download"></span>
+                                      <span class="download-label">{{this.downloadLabel}}</span>
+                                      <span class="file-type">{{this.fileType}}</span>  
+                                      <span class="download-size">({{this.fileSize}})</span>
+                                  </p>
+                              </div>	
+                          </li>
+                          {{/each}}
+
+                      </ul>
+                  </div>
+
+                  <div class="controls">
+                      <a href="javascript:void(0);" class="prevPage"><span class="icon-carousel-left"></span></a>
+                      <a href="javascript:void(0);" class="nextPage"><span class="icon-carousel-right"></span></a>
+                  </div>
+                  <div class="scrollbar">
+                      <div class="handle">
+                          <div class="mousearea"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="shown-data-mobile">
+                  <h3 class="item-header"></h3>
+                  <p class="item-description"></p>
+                  <a href="" target="_blank" class="item-download"><span class="icon-download"></span></a>
+                  <div class="share-container module-share"></div>
+              </div>                        
+             
+          </div>
+      </div>
+       <p class="copyright"></p>
+  </div>

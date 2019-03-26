@@ -1,0 +1,127 @@
+@import "../../global/css/_variables.less";
+@import "../../global/css/vendor/_owl.carousel.less";
+
+div.carousel-wrapper, div.preinitialize-slide-wrapper {
+  background-color: @white;
+  margin-top: 10px !important;
+
+  div.owl-stage-outer {
+    border: 1px @white solid !important;
+
+    &:active,
+    &:focus,
+    &:hover {
+      cursor: pointer;
+      border: 1px @gray-80 solid !important;
+    }
+  }
+
+  div.loop-center-carousel, div.preinitialize-carousel {
+    position: relative;
+    overflow: visible;
+    background-color: @white;
+    div.slide {
+      padding: 17px;
+      max-height: 416px;
+
+      a.nested-element-tracking {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 50; //changing to 50 because global nav is 100
+        //border: 1px @white solid !important;
+      }
+
+      div.row {
+        > div {
+          position: static;
+          max-height: 416px;
+
+          h1 {
+            margin-top: 20px;
+            font-size: 18px;
+            color: @kpmg-blue;
+            font-weight: bold;
+            .add-line-clamp(3, 18px, 1.2, 18px, 1.2);
+            &::after{
+              content: none;
+            }
+          }
+
+          p {
+            font-size: 16px;
+            .add-line-clamp(7, 16px, 1.2, 16px, 1.2);
+            &::after{
+              content: none;
+            }
+          }
+
+          div.module-addtolibrary {
+            position: absolute !important;
+            bottom: 0;
+            a.addtolibrary-cta {
+              z-index: 51; //changing to 51 because global nav is 100
+
+              &:focus {
+                cursor: pointer;
+                outline: 1px @gray-80 solid !important;
+              }
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+  // OWL OVERRIDES
+  div.owl-item {
+    position: static !important;
+  }
+
+  div.owl-controls {
+    div.owl-nav {
+      @media only screen and (max-width: @mobile-max-fixed) {
+        display: none;
+      }
+    }
+
+    div.owl-dots {
+      height: 56px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: @gray-94;
+      margin: 20px auto 0;
+
+      @media only screen and (max-width: @mobile-max-fixed) {
+        background: @white;
+      }
+
+      div.owl-dot {
+        background-color: @gray-80 !important;
+        height: 10px;
+        width: 10px;
+        margin: 0 10px;
+        border-radius: 5px;
+        display: inline-block;
+        border: none;
+
+        &.active {
+          background-color: @kpmg-blue !important;
+          height: 15px;
+          width: 15px;
+          border-radius: 8px;
+          margin-bottom: -2px;
+        }
+      }
+    }
+  }
+
+
+  div.owl-stage{
+        display:flex;
+  }
+}

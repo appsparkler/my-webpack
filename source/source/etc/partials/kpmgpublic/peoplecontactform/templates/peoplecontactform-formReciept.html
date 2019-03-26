@@ -1,0 +1,67 @@
+ <div class="row"> 
+    <div class="row receiptWrapper" >
+        <div class="col-md-12 print-no-left-right-padding">
+            <h1 class="primary-head">{{ shortTitle }}</h1>
+            <p class="imargin">{{shortDescription}}</p>    
+            <p class="dotted-border-top"></p>                       
+        </div>
+        <div class="col-md-12 receipient">
+            <p class="mBottom">
+                <label>{{receipentLabel}}:</label>
+                <span>{{receipent}}</span>
+            </p>
+            <p>
+                <label>{{ nameLabel }}:</label>
+                <span>{{userName}}</span>
+            </p>
+            <p>
+                <label>{{emailLabel}}:</label>
+                <span>{{email}}</span>
+            </p>                        
+           {{#if phone}}
+            <p>
+                <label>{{ phoneLabel }}:</label>
+                <span>{{phone}}</span>
+            </p>
+            {{/if}}
+            
+            {{#if organization}}
+            <p>
+                <label>{{companyLabel}}:</label>
+                <span>{{organization}}</span>
+            </p>
+            {{/if}}
+
+            {{#if role}}
+            <p>
+                <label>{{roleLabel}}:</label>
+                <span>{{role}}</span>
+            </p>
+            {{/if}}
+            <p class="msgtop">
+                <label>{{messageLabel}}:</label>
+                <div class="clearfix"><p class="mwidth"><em>{{message}}</em></p></div>
+            </p>
+            <p class="dotted-border-top"></p>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12 print-no-left-right-padding">
+                <p class="rec_print">                  
+                    <a class="btn-cta pcf-print-link pull-right" title="{{printLabel}}" href="#" >
+                        <span class="icon-print"></span>
+                        <span class="print-text">{{printLabel}} </span>
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-12">
+             <p class="closebottom">                
+            <a href="javascript:void(0);" class="component-link pull-right" data-dismiss="modal">
+                        <span class="icon-chevron-right"></span>
+                        <span class="close-text"> {{closeLabel}}
+            </a>
+            </p>
+            </div>
+        </div>            
+    </div>
+</div>

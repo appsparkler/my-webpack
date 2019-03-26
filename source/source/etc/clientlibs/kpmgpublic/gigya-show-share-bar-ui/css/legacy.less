@@ -1,0 +1,80 @@
+@import "../../global/css/_variables.less"; // Share component global styles- Aparna 19/10/2015
+
+div#gig_showSimpleShareUI.gig-simpleShareUI {
+  border-width: 0 1px 5px !important;
+  border-style: solid !important;
+  border-color: @gray-60 !important;
+  border-radius: 0 !important;
+
+  div.gig-simpleShareUI-inner {
+    border: none !important;
+    background-color: @gray-96 !important;
+    padding: 10px;
+
+    div.gig-simpleShareUI-caption,
+    div.gig-simpleShareUI-caption-text {
+      height: auto !important;
+      border-bottom: none !important;
+      background-color: transparent;
+    }
+
+    div.gig-simpleShareUI-content {
+      padding: 7px 0 0;
+    }
+
+    div.gig-simpleShareUI-caption {
+      // padding: 0px 10px;
+      padding-left: 0;
+    }
+
+    .gig-simpleShareUI-caption-text {
+      .promo-details(@kpmg-blue);
+      margin: 7px 0;
+      background: transparent !important;
+      font-weight: normal !important;
+    }
+
+    div.gig-simpleShareUI-button {
+      width: 100px;
+      margin: 0 5px 7px 0;
+      height: 16px;
+      cursor: pointer;
+      display: inline-block;
+      zoom: 1;
+
+      div.gig-simpleShareUI-button-inner {
+        margin: 0 5px 0 0;
+
+        span.gig-simpleShareUI-buttonText {
+          font-weight: normal !important;
+          font-size: 11px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    div.gig-simpleShareUI-button[provider="urlshare"] {
+      [class^="icon-"],
+      [class*=" icon-"] {
+        font-family: 'icomoon';
+        padding: 3px;
+        font-size: 11px;
+      }
+
+      div.gig-simpleShareUI-button-inner {
+        padding-left: 0;
+      }
+
+      .gig-simpleShareUI-buttonText {
+        margin-left: 3px;
+      }
+    }
+  }
+}

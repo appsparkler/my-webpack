@@ -1,0 +1,364 @@
+@import "../../global/css/_variables.less";
+@import "../../global/css/_helpers.less";
+
+.module-partnerlocator {
+    overflow: hidden;
+    padding: 0;    
+   .title {
+        margin: 0 0 0 10px;
+        .promo-title(@kpmg-blue);
+        padding: 14px 0 14px 0;
+    }
+    .compDescription{
+        margin: 0px 0 30px 10px;
+        .promo-details(@gray-20);
+        .hyphen;
+        word-break: break-word!important;
+        hyphens:auto;
+        min-height: 97px;        
+    }
+    a.btn-cta:focus {
+        outline:none;
+    }
+    /*dropdown section*/
+    select::-ms-expand {
+        display: none;
+    }
+    .findPartnerContainer{
+    	padding:0;        
+    }
+    .no-padding{
+        padding:0;
+    }
+    .dropdownContainer{
+        overflow: hidden;
+        padding:0 10px 3px 10px;
+        .partnerLocatordefaultDescription{
+            color: @kpmg-blue;
+            float: left;
+            padding: 10px 0 10px 0;
+            min-height: 54px;
+            .setall-non-latin-property-value(min-height,'55px');
+        }
+        label{
+            position: absolute;
+            z-index: 0;
+            opacity: 0;
+        }
+    }
+
+    .searchBtnContainer {
+        padding:1px 10px 0;
+        &.searchallcontact{
+            width:48.5%;
+            display: none;
+            float: right;
+            padding-left: 3px;
+            .allcontactlist {
+                padding-left:0;
+            }
+        }        
+        overflow: hidden;
+        .searchBtn{
+            position: static;
+            float: right;
+            width:100%;
+            margin-bottom: 10px;
+            &:hover{
+                text-decoration: none !important;
+                .searchLabel{
+                    text-decoration: none !important;
+                }
+            }        
+        }            
+        .searchLabel{
+            width: 100%;
+            text-align: center;
+            float: left;
+            padding: 4px 0;
+            border-radius: 5px;
+        }
+        .ctaDisabled{
+            cursor: default;
+            .searchLabel{
+                color:@gray-60;
+                text-decoration: none;
+                background: @gray-94;
+            }
+        }
+        .ctaEnabled{
+            cursor: pointer;
+            .searchLabel{
+                color: @white;
+                background: @medium-blue;
+                &.allcontact{
+                    background: @persian-green;
+                }
+            }
+        }
+    }
+
+    .queryContainer{
+        border-right: 1px solid @gray-94; 
+        padding:0;
+    	.custom-select {
+	        border: none;
+	        padding-left: 0px !important;
+	        width: 100%;
+	        border-radius: 0;
+	        margin-bottom: 10px;
+	        color: #333;
+	        font-family: Arial,Helvetica,sans-serif;
+            .set-font-size(1.6);
+	        line-height: 120%;        
+	        padding-right: 0px !important;
+            background: none;
+            .select-ikon{
+                border-radius: 0 5px 5px 0px;
+                background: @medium-blue;
+                color: @white;
+                height: 26px;
+                width: 26px;
+                padding: 4px 0 0 6px;
+                top: 1px;
+                right: 1px;
+                z-index: 0;
+                position: absolute;
+                font-size: 14px;
+                font-weight: 100;
+            }        
+	    }
+    	select {
+	        width: 100% !important;
+	        border: 1px solid @gray-87;
+	        padding-left: 9px;
+	        padding-top: 0;
+	        padding-bottom: 0;
+	        padding-right: 0;
+	        white-space: nowrap;
+	        overflow: hidden;
+	        padding-right: 45px !important;
+	        height: 28px;
+            -moz-appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            position: relative;
+            z-index: 1;
+            background: none;
+            border-radius: 5px;            
+	    }
+	    
+    	
+    	.pull-right-align {
+	      position:absolute;
+	      bottom: 0;
+	      right: 10px;
+	      .cta-right(@gray-40);
+    	}
+    }
+    .partnerResultContainer{
+        padding:0;
+        overflow-y: auto;
+        height:325px;
+        width: 48.5%;
+        position: relative;
+        margin-top:14px;
+        margin-bottom: 14px;
+        .resultsContainer{
+            width:97%;
+            overflow: hidden;
+        }
+        .contact-name{
+            .promo-title(@kpmg-blue);
+            .hyphen;
+            word-break: break-word!important;
+            hyphens:auto;
+            cursor: pointer;
+            line-height: 1.3;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .jobtitle{
+            .promo-details(@gray-20);
+            .hyphen;
+            word-break: break-word!important;
+            hyphens:auto;
+            float:left;
+            padding-right: 10px;
+        }
+        .icon-email{
+            color: @medium-blue;
+            margin: 0;
+            .font-size(1.6);
+        }
+        .contactNameContainer{
+            padding:0; 
+        }
+        .partner-item {
+            margin-left:10px;
+            padding: 26px 0 20px 0;
+            border-bottom: 1px solid @gray-94;
+            width: 97%;
+            box-sizing: border-box;
+            &:focus{
+                box-shadow: 0 0 3px @gray-40;
+                outline: 1px solid @grey-text-transparent;
+            }
+        }
+        .defaultDescription,.defaultImageContainer{
+            padding-left:10px;
+            overflow: hidden;
+        }
+        .no-results{
+            display: none;
+            padding: 0 0 0 10px;
+            background: #fff;
+        }
+        .defaultResultContainer{
+            background: @white;
+        }
+        .partner-item:first-child{
+            padding-top: 0;
+        }        
+        .partner-item:last-child{
+            border:none;
+            padding-bottom: 0;
+        }
+        .load-more{
+            display: none;
+        }
+        .defaultImageContainer {
+            img {
+                margin-left: 50%;
+                transform: translateX(-50%);
+                margin-top: 20%;
+            }
+        }
+        .imageContainer{
+            position: absolute;
+            left: 50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+        .messageIcon{
+            text-align: right;
+            padding-right: 3px;
+        }
+    }
+    @media only screen and (max-width: 640px) {
+        .searchBtnContainer{
+            &.searchallcontact{
+                width:100%;
+                background: @alice-blue;
+                padding-top:10px;
+                padding-bottom: 7px;
+                padding-left: 10px;
+            }
+        }
+        .searchBtn{
+            margin-bottom: 3px;
+            .searchLabel{
+                width: 100%;
+            }
+        }        
+        .titleContainer{
+            border-bottom: 0;
+            .title{
+                padding-top: 10px !important;
+            }
+        }
+        .compDescription, .partnerLocatordefaultDescription{
+            display: none;
+        }
+        .partnerResultContainer{
+            border:none;
+            width:100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            margin-top:0;
+            margin-bottom: 0;
+            .resultsContainer{
+                height:auto;
+                overflow: hidden;
+                background: @alice-blue;
+                margin-top: 4px;
+                width: 100%
+            }
+            .partner-item:nth-child(-n+5) {
+                display: block !important;
+            }
+            .partner-item{
+                display: none;
+                margin:0;
+                padding:10px;
+                border-bottom: none;
+                width:100%;
+            }
+            .partner-item:last-child{
+                border:none;
+                padding-bottom: 7px;
+            }
+            .partner-item:first-child{
+                border-top:5px solid #f0f0f0;
+            }
+            .load-more{ 
+                text-align: center;
+                background:@gray-94;
+                padding: 5px 0;
+                display: none;
+            }
+            .load-more-link {
+                position: relative;
+                width: 100%;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .icon-add{
+                margin-right:20px;
+            }
+            .messageIcon {
+                text-align: right;
+                padding-right: 0;
+            }
+            .component-link.btn-more {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .defaultResultContainer{
+                background: @white;
+                display: none;
+            }
+            .btn-primary-blue {
+                .promo-title(@white);
+                background-color: @persian-green;
+                border: none;
+                width: 75%;
+                height:32px;
+                border-radius: 5px;
+            }
+            .defaultImageContainer {
+                position: static;
+                img {
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+            .imageContainer{
+                position: static;
+                transform: none;
+            }
+        }
+        .findPartnerContainer {
+            display: block;
+            padding-bottom: 0;
+        }
+
+	}
+}
+
+
+

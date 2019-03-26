@@ -1,0 +1,23 @@
+{
+    "hbs": {
+        "promotionalE": {
+            "title": "GLOBAL MINING",          
+            "shortTitle" : "GLOBAL MINING",
+            "sortDescription": "Mining organizations need to adapt across the mining asset lifecycle",
+            "longDescription": "As retail banks struggle to terms with an increasingly complex operating environment, many are estarting to find that social media  could help solve some... As retail banks struggle to terms with an increasingly complex operating environment, many are estarting to find that social media  could help solve some... As retail banks struggle to terms with an increasingly complex operating environment, many are estarting to find that social media  could help solve some...",
+            "imageFileReference": "/assets/fpo-images/C003E.jpg",
+            "loadingImage": "/assets/fpo-images/blank.gif",
+            "altText":"Global Mining",
+            "firstName" :"Daniel",
+            "lastName" : "Forrest",
+            "country" : "Toronto",
+            "readMore":"readMore",
+            "primaryUrl":"/readmore.html",
+            "secondaryLabel":"read more",
+            "secondaryUrl":"/readmore.html",
+            "overlay": true,
+            "personalized": true,
+            "numberOfContents": 1
+        } 	
+    }
+}

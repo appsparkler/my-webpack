@@ -1,0 +1,56 @@
+<!-- Begin Component: Formbuilder -->
+<section class="module-fge-cta component hide-cta-component clearfix">
+        <a class="component-link" href="javascript:void(0);" target="_blank" title="{{ hbs.formBuilder.ctaTitle }}" 
+            id="cta_form_{{hbs.formBuilder.uniqueId}}" 
+            data-unique-id="{{hbs.formBuilder.uniqueId}}" 
+            data-attr-isGatedContent="{{hbs.formBuilder.isGatedContent}}"
+            data-attr-isFastSubscription="{{hbs.formBuilder.isFastSubscription}}"
+            data-attr-isEventRegistration="{{hbs.formBuilder.isEventRegistration}}"
+            >
+            <div class="contentContainer">
+                <div class="row download-text">
+
+                    {{#if hbs.formBuilder.isGatedContent }}
+                        <div class="col-md-1 col-xs-2 icon-holder pdfIcon"><img src="/etc/designs/kpmgpublic/images/pdf-icon-lg.png" alt="test"/></div>
+                    {{/if}}
+
+                    {{#if hbs.formBuilder.isFastSubscription }}
+                        <div class="col-md-1 col-xs-2 icon-holder title-icon-size"><span class="icon-subscription"></span></div>
+                    {{/if}}
+
+                    {{#if hbs.formBuilder.isEventRegistration }}
+                        <div class="col-md-1 col-xs-2 icon-holder title-icon-size"><span class="icon-fge-events"></span></div>
+                    {{/if}}
+
+                    <div class="col-md-10 col-xs-10 componentContents">
+                        <div class="componentTitle line-clamp line-clamp-1">
+                            {{ hbs.formBuilder.ctaTitle }}
+                        </div>
+                        
+                        <div class="reportTitle line-clamp line-clamp-1">
+                            {{ hbs.formBuilder.ctaShortTitle }}
+                        </div>
+                        
+                        <div class="reportDesc line-clamp line-clamp-1 spacer">
+                            {{ hbs.formBuilder.ctaDescription }}
+                        </div>
+
+                        {{#if hbs.formBuilder.isGatedContent }}
+                            <span class="visually-hidden"></span>
+                            <span class="downloadLabel">  <span class="downloadLblExtn"></span> </span>
+                            <span class="downloadSize">  </span>
+                        {{/if}}
+                    </div>
+
+                    <div class="col-md-1 hidden-xs downloadIcon">
+                        {{#if hbs.formBuilder.isGatedContent }}
+                            <img src="/etc/designs/kpmgpublic/images/pdf-component-download-icon-lg.png" alt="download data" />
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </a>
+        
+</section>
+<!-- End Component: Formbuilder -->
+        

@@ -1,0 +1,41 @@
+<section class="module-event component clearfix">
+    <div class="event-container">
+         <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title"><span>{{i18n hbs.event.eventLabel}}</span></h3>
+        <h3 class="alt-tertiary-head">{{hbs.event.shortTitle}}</h3>
+        <div class="event-event-date">
+            <div class="event-event-calendar">
+                
+                <div class="event-event-icon">
+                  <div class="event-event-month">{{hbs.event.liveTextMonth}}</div>
+                    <span class="icon-date"></span>
+                    <div class="event-event-day">{{hbs.event.liveTextDay}}</div>
+                </div>
+            </div>
+            <ul class="event-event-address">
+                <li>{{hbs.event.eventDuration}}</li>
+                <li>{{hbs.event.eventLocation}}</li>
+                <li>{{hbs.event.city}} , {{hbs.event.state}}</li>
+                <li>{{hbs.event.country}}</li>
+            </ul>
+        </div>
+        <p class="short-desc">{{hbs.event.shortDescription}}</p>
+        <div class="event-custom-margin">
+        	{{#if hbs.event.registrationUrl}}
+        	  	{{#if hbs.event.eventUrl}}
+              		<p class="pull-left">
+              		{{else}}
+              		<p class="pull-right">
+              	{{/if}}	
+            <span class="icon-chevron-right"></span>
+            <a href="{{hbs.event.registrationUrl}}" title="{{i18n hbs.event.registrationLabel}}" class="component-link">{{i18n hbs.event.registrationLabel}}</a>
+            </p>
+            {{/if}}
+             {{#if hbs.event.eventUrl}}
+            <p class="pull-right">
+            <span class="icon-chevron-right"></span>
+            <a href="{{hbs.event.eventUrl}}" title="{{i18n hbs.event.readMoreLabel}}" class="component-link">{{i18n hbs.event.readMoreLabel}}</a>
+            </p>
+            {{/if}}
+        </div>
+    </div>
+</section>

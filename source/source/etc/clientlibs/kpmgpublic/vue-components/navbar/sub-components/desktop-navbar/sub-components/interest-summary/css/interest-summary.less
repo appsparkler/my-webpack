@@ -1,0 +1,31 @@
+@import "../../../../../../../global/css/_variables";
+//
+.interest-summary-component {
+	cursor: pointer;
+    &:hover {
+        outline: 1px darken(@gray-96, 20%) solid;
+        text-decoration: none !important;
+    }
+	h1, div.summary p {
+		font-size:32px;
+	}
+	div.summary p {
+		line-height: 0.9;
+	}
+    .font-kpmg {
+        font-family: @kpmgLight
+    }
+	.font-2-rem {
+		font-size: 2rem !important;
+		font-size: 18px !important;
+	}
+	div.d-flex.explorer {
+		flex: 1;
+		img {
+			align-self: flex-start;
+		}
+	}
+	.threshold-value{
+		display: none;
+	}
+}

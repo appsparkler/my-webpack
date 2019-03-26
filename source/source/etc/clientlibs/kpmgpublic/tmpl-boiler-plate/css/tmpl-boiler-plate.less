@@ -1,0 +1,24 @@
+@import "../../global/css/_variables.less";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../connectandrfp/css/connectandrfp";
+@import "../../bodytext/css/bodytext";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../emptyplaceholder/css/emptyplaceholder";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+
+.module-tmpl-boiler-plate {
+
+	.module-bodytext {
+		margin-bottom: 18px;
+	}
+
+	@media (min-width:@desktop-min-fixed) {
+		.module-bodytext {
+			margin-bottom: 0;
+		}
+
+		.module-connectandrfp {
+			position: relative;
+		}
+	}
+}

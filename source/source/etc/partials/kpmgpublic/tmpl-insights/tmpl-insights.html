@@ -1,0 +1,48 @@
+<section class="module-tmpl-insights">
+    <div class="row tmpl-row">
+        <div class="col-md-12 fullbleed-banner" data-desktop-cell="1" data-mobile-cell="1">
+            {{ include "fullbleedbanner" resourceType="/apps/kpmgpublic/components/global/fullbleedbanner"}}
+        </div>
+    </div>
+
+<div class="inner-container">
+    <div class="row">
+        <div class="row-same-height row-full-height">
+            <div class="col-md-6 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="2" data-mobile-cell="2">
+                 {{include "featuredtopics" resourceType="/apps/kpmgpublic/components/content/featuredtopics"}}
+            </div>
+            <div class="col-md-3 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="3" data-mobile-cell="4">
+                {{include "trendinglist" resourceType="/apps/kpmgpublic/components/listing/trendingList" path="cell4"}}
+            </div>
+            <div class="col-md-3 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="4" data-mobile-cell="5">
+                {{include "listing" resourceType="/apps/kpmgpublic/components/listing/listing"}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row-same-height row-full-height">
+            <div class="col-md-6 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="5" data-mobile-cell="3">
+                {{include "featuredarticles" resourceType="/apps/kpmgpublic/components/content/featuredarticles"}}
+            </div>
+            <div class="col-md-3 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="6" data-mobile-cell="6">
+				{{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell6" }}
+			</div>
+            <div class="col-md-3 col-md-height col-sm-height col-full-height col-top" data-desktop-cell="7" data-mobile-cell="7">
+                {{include "trendinglist" resourceType="/apps/kpmgpublic/components/listing/trendingList" path="cell7"}}
+            </div>
+        </div>
+    </div>
+	<div class="row tmpl-row">
+         <div class="col-md-12" data-desktop-cell="8" data-mobile-cell="8">
+            {{ include "subheading" resourceType="/apps/kpmgpublic/components/content/subheading"}}
+    	</div>
+    </div>
+    <div class="row">
+         <div class="row-same-height row-full-height" data-desktop-cell="9" data-mobile-cell="9">
+            {{ include "resultlisting" resourceType="/apps/kpmgpublic/components/content/resultlistingnotabs"}}
+        </div>
+    </div>
+    <div class="row">
+    </div>
+</div>
+</section>

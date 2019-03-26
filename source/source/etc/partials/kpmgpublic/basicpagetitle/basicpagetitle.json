@@ -1,0 +1,12 @@
+{
+    "hbs": {
+        "basicPageTitle": {
+        	"shareButton":"true",
+        	"title":"Page Title",
+        	"shortTitle":"Title",
+			"description":"Ludus forensibus intellegebat id vis, et ubique fierent voluptatibus pri. Vim ei bonorum evertitur. At idque alterum constituto nam, no his zril saepe.",
+			"shortDescription":"Ludus forensibus intellegebat id vis.",
+			"addToLibButton": true
+        }
+    }
+}

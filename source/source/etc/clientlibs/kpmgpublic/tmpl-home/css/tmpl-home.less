@@ -1,0 +1,54 @@
+@import "../../herocarousel/css/herocarousel";
+@import "../../filmstripcarousel/css/filmstripcarousel";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../newstool/css/newstool";
+@import "../../socialwidget/css/socialwidget";
+@import "../../event/css/event";
+@import "../../bodytext/css/bodytext";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../mykpmgpromob/css/mykpmgpromob";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+@import "../../addtolibrary/css/addtolibrary";
+@import "../../toppicks/css/toppicks";
+
+.module-tmpl-home {
+
+    .filmstrip-carousel {
+        background-color: @gray-94;
+        padding: 10px 2.4%;
+    }
+
+    .parsys-row {
+        border-bottom: 0 none;
+    }
+
+    .module-herocarousel.component.self-contained {
+      padding-bottom: 0;
+    }
+}
+
+.template .page-home .container {
+    margin-top: 0;
+}
+.module-audiovideo .audiovideo-video .video-js{
+    width: 100%;
+    height: 273px;
+}
+
+@media (min-width:320px) and (max-width:640px) {
+    .page-home .module-herocarousel{
+        margin-top : 67px;
+    }
+    .template .container {
+        padding-top: 0px;
+    }
+}
+@media (min-width:640px) {
+    .template .container {
+        padding-top: 0px;
+    }
+}

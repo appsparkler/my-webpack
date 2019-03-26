@@ -1,0 +1,193 @@
+@import "../../global/css/_variables.less";
+.module-blogs-comment {
+    padding: 0;
+    margin: 10px;
+
+    .user-comment-section{
+        font-weight: bold;
+        font-size: 28px;
+        font-family: @arial;
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+    #userComments{
+        width: 100% !important;
+
+        .gig-comments-composebox{
+            .gig-composebox-photo,.gig-composebox-site-login,.gig-composebox-title,.gig-composebox-logout,.gig-composebox-follow{
+                display: none;
+            }
+
+// TODO Update gigya to add this class
+            .gig-composebox-data{
+                padding-left: 0px;
+                .gig-composebox-footer {
+                    margin-top: 23px;
+                }
+
+            }
+            .gig-composebox-post{
+                padding: 17px;
+                width: 219px;
+                font-size: 24px;
+                background: @light-blue;
+                border: none;
+                text-align: center;
+            }
+
+    }
+        .gig-comments-comments {
+            .gig-comment-vote-pos{
+                display: none;
+            }
+            .gig-comment-data {
+                .gig-comment-self-data {
+                    .gig-comment-body {
+                        font-size: 16px;
+                        div {
+                            font-size: 16px;
+                        }
+                    }
+                    .gig-comment-header-left {
+                        .gig-comment-username {
+                            font-size: 16px;
+                        }
+                    }
+                    .gig-comment-footer {
+                        .gig-comment-footer-left {
+                            .gig-comment-replyLink {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+            .gig-comment-replybox {
+                .gig-composebox-footer {
+                    margin-top:23px;
+                }
+            }
+        }
+
+        .gig-comment-flag{
+            display: none;
+        }
+        .gig-comment-repliesArrow-text{
+            display: none;
+        }
+        .gig-comment-replies {
+
+            .gig-comment-replyLink {
+                float: left;
+                color: @medium-blue;
+                padding-right: 30px;
+            }
+
+            // TODO Update gigya to add this class
+            .gig-comment-likeLink {
+                color: @medium-blue;
+                display: none;
+            }
+            .gig-comment-username {
+                color: @medium-blue;
+                font-weight: bold;
+            }
+    }
+
+            .gig-comment-replyLink {
+                float: left;
+                color: @medium-blue;
+                padding-right: 30px;
+
+            }
+
+            // TODO Update gigya to add this class
+            .gig-comment-likeLink {
+                color: @medium-blue;
+                display: none;
+            }
+            .gig-comment-username {
+                color: @medium-blue;
+                font-weight: bold;
+            }
+
+
+            .gig-comment-replybox{
+                .gig-composebox-post{
+                    padding: 17px;
+                    width: 219px;
+                    font-size: 24px;
+                    background: @light-blue;
+                    border: none;
+                    text-align: center;
+                }
+                background-color: @white;
+            }
+
+        .gig-comment-data{
+            .gig-comment-replybox{
+                .gig-composebox-title{
+                    display:none;
+                }
+                .gig-composebox-header {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+
+}
+
+.user-login {
+    .modal-content{
+    padding: 0;
+    .modal-header{
+        .login-title{
+            color: @kpmg-blue;
+            font-size: 38px;
+            font-family: @kpmgLight;
+            font-weight: normal;
+        }
+    }
+    .modal-footer {
+        background: @gray-94;
+        .icon-close{
+            color: @light-purple;
+            margin-right: 5px;
+        }
+        #continueButton {
+            padding: 16px;
+            font-size: 18px;
+            background: @white;
+            color: @gray-40;
+            border: none;
+            line-height: 1;
+            width: 100%;
+        }
+        #cancelButton {
+            font-size: 1.8rem;
+            line-height: 1;
+            color: @gray-40;
+            padding: 16px;
+            border: none;
+            text-align: center;
+            margin: 0;
+            width: 100%;
+            background: transparent;
+        }
+    }
+}
+}
+
+@media (max-width: 640px) {
+    .module-blogs-comment{
+        padding: 0;
+        margin: 0;
+        .user-comment-section{
+            padding: 10px 0 10px 10px;
+        }
+    }
+
+}

@@ -1,0 +1,12 @@
+{
+    "hbs": {
+        "registrationPageTitle": {
+        	"imageFileReference":"https://image.freepik.com/free-vector/photography-studio-background_23-2147522839.jpg",
+        	"pretitle":"Step 1 of 2",
+        	"title":"Page Title",
+        	"shortTitle":"Title",        	
+			"description":"Please provide some personal information to set up your account. You can use a social media account, or you can manually enter your information.",
+			"shortDescription":"Ludus forensibus intellegebat id vis." 	
+        }
+    }
+}

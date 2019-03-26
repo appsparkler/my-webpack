@@ -1,0 +1,32 @@
+@import "../../global/css/_variables.less";
+
+.module-sticky-bar {
+    display: none;
+    padding: 0;
+
+    .sticky-bar-button {
+        background: @green2;
+        color: @white;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+        height: 0;
+        width: 100%;
+        border: 0;
+        display: block;
+        font-size: 14px;
+    }
+
+    @media only screen and (min-width: 1100px) {
+        &.showStickyBar {
+            display: block;
+        }
+        .sticky-bar-button.show {
+            height: auto;
+            padding: 12px 5px;
+        }
+    }
+}

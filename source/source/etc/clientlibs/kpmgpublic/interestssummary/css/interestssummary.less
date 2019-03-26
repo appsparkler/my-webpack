@@ -1,0 +1,176 @@
+@import "../../global/css/_variables.less";
+
+.module-interestssummary {
+    background-color: #00a3a1;
+    color: @white;
+    top: 0px;
+    bottom: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+    p {
+        color: @white;
+    }
+    .threshold-value {
+        display: none;
+    }
+    .icon-chevron-right {
+        color: @white !important;
+        margin: 0 5px 0 0;
+    }
+    .image-title {
+        font-family: @kpmgLight;
+        .set-font-size(3.8);
+        padding: 0 0 10px;
+        border-bottom: 1px solid #ffffff;
+        font-weight: normal;
+    }
+    .interestssummary-desc{
+        /*.add-line-clamp(5,1.4rem,1.3,1.4rem,1.5);*/
+        .add-line-clamp(5,1.6rem,1.3,1.6rem,1.5);
+    }
+    .interestssummary-custom-margin {
+        border-top: 1px solid white;
+        margin-top: 20px;
+    }
+    .alt-secondary-head{
+        /*.add-line-clamp(3,1.6rem,1.2,1.6rem,1.3);*/
+        .add-line-clamp(3,1.8rem,1.2,1.8rem,1.3);
+    }
+
+    .interestssummary-container {
+        color: @white;
+        h3 {
+            font-family: @kpmgLight;
+            color: @white;
+            .set-font-size(3.8);
+            padding: 0 0 7px;
+            border-bottom: 1px solid @white;
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                .font-size(2.6);
+                line-height: 1.3;
+            }
+        }
+    }
+
+    .alt-secondary-head {
+        .promo-title(@kpmg-blue);
+        margin:8px 0px;
+        font-weight: normal;
+        &:hover {
+            text-decoration: underline;
+        }
+        display: block;
+    }
+
+    .mykpmgpromo-custom-margin {
+        .hyphen;
+        display: inline-block;
+        a {
+            .cta-right(@gray-40);
+            text-decoration: none;
+            &:hover .btn-copy {
+                text-decoration: underline;
+            }
+        }
+    }
+    .industries,.services,.topics,.countries {
+        line-height: 1;
+    }
+    .interestssummary-desc{
+        .promo-description(@gray-20);
+        color: @white;
+        .set-font-size(1.6);
+        padding: 12px 0 0;
+        margin: 16px 0 18px;
+
+    }
+    .new-user {
+         .interestssummary-desc span {
+             font-family: @kpmgLight;
+            .set-font-size(3.8);
+            &:first-child {
+                font-family: Arial, Helvetica, sans-serif;
+                .set-font-size(1.6);
+            }
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                .font-size(2.6);
+                line-height: 1.3;
+            }
+            display: block;
+        }
+
+
+    }
+    .pull-right {
+        float: none !important;
+        .last-updated {
+            font-style: italic;
+            position: absolute;
+            bottom: 80px;
+        }
+    }
+    .primary-cta-space {
+        .cta-right(@gray-40);
+    }
+    span.btn-cta.quickview-btn {
+        position: absolute !important;
+    }
+    .btn-cta {
+        position: absolute !important;
+        bottom: 10px;
+        color: white;
+        padding-top: 18px;
+        left: 20px;
+        right: 20px;
+        text-align: right;
+        border-top: 1px solid @white;
+        line-height: 1.2;
+        &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+            line-height: 1.3;
+        }
+        .component-link {
+            color: @white;
+            font-weight: normal;
+        }
+    }
+    .primary-cta-space {
+        visibility: hidden;
+    }
+    .line-clamp::after {
+        background: linear-gradient(to left, #00a3a1, rgba(0, 163, 161, 0) 30%);
+    }
+}
+.interestssummary-design {
+    background : #00a3a1;
+    height : 100%;
+    overflow : auto;
+    cursor: pointer;
+    position: relative !important;
+}
+
+@media (max-width: 640px) {
+
+    .module-interestssummary {
+        min-height: auto;
+        .interestssummary-desc {
+            display: none !important;
+        }
+        .last-updated {
+            display: none;
+        }
+        .primary-cta-space {
+            visibility: hidden;
+            padding: 22px 0;
+        }
+        .btn-cta {
+            position: absolute;
+            color: white;
+            border-top: none;
+            padding-top: 20px;
+            left: 20px;
+            text-align: right;
+        }
+    }
+
+
+}

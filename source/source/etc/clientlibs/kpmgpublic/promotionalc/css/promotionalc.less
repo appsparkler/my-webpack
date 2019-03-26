@@ -1,0 +1,129 @@
+@import "../../global/css/_variables.less";
+
+.module-promotionalc {
+    
+    .alt-tertiary-head {
+        .add-line-clamp(3,1.6rem,1.2,1.6rem,1.3);
+    }
+
+    .desciption {
+        .add-line-clamp(5,1.4rem,1.3,1.4rem,1.5);
+    }
+
+    .promotionalc-container {
+        background-color: @white;
+        position: relative;
+    }
+
+    .alt-secondary-head {
+        .component-title(@light-purple);
+        font-weight: normal;
+    }
+
+    .alt-tertiary-head {
+        .promo-title(@light-purple);
+        margin: 8px 0;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .promotionalc-event-date {
+    }
+
+    .promotionalc-custom-margin {
+        bottom: 10px;
+        position: absolute;
+        right: 17px;
+    }
+
+    .promotionalc-event-address {
+        .promo-details(@light-purple);
+        list-style-type: none;
+        padding: 0;
+        margin: 7px 0px;
+        display: inline-block;
+        width: 70%;
+        vertical-align: middle;
+        min-height: 50px;
+        //height: 80px;
+
+        span {
+            white-space: nowrap;
+            .hyphen;
+            display: block;
+        }
+    }
+
+    .promotionalc-event-calendar {
+        display: inline-block;
+        width: 50px;
+        float: left;
+        height: 50px;
+        margin: 0 10px 10px 0;
+
+        .promotionalc-event-icon {
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+
+        .promotionalc-event-month {
+            .fine-print(@light-purple);
+            font-weight: bold;
+            position: relative;
+            text-align: center;
+            top: 22px;
+            width: 50px;
+            text-transform: uppercase;
+        }
+
+        .promotionalc-event-day {
+            .fine-print(@light-purple);
+            font-weight:bold;
+            position: absolute;
+            text-align: center;
+            top: 35px;
+            width: 50px;
+        }
+
+        .icon-date {
+            position: absolute;
+            .font-size(5.0);
+            color: @light-purple;
+            top: 5px;
+        }
+    }
+
+    .promotionalc-custom-margin > p {
+        padding-top: 15px;
+    }
+
+    .promotionalc-custom-margin {
+        bottom: 10px;
+    }
+
+    .desciption {
+        .promo-description(@gray-20);
+        margin: 7px 0px;
+    }
+
+    .add20paddingbottom {
+        padding-bottom: 0;
+
+        .btn-cta.promotionalc-btn-cta-primary {
+            bottom: 40px;
+        }
+    }
+    .btn-cta {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+.module-promotionalc.hide-secondary-cta {
+    .btn-cta.cta-secondary {
+        display: none;
+    }
+}

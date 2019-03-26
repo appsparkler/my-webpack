@@ -1,0 +1,51 @@
+<section class="module-tmpl-myinterests">
+    <div class="row visible-sm-block visible-md-block visible-lg-block">
+        <div class="col-md-12 bread-crumb-full" data-desktop-cell="1" data-mobile-cell="1">
+            <div class="inner-container">
+                {{ include "breadcrumb" resourceType = "/apps/kpmgpublic/components/hidden/breadcrumb" }}
+            </div>
+        </div>
+    </div>
+    <div class="row tmpl-row">
+        <div class="col-md-12 full-page-title" data-desktop-cell="2" data-mobile-cell="2">
+            <div class="inner-container">
+                {{ include "basicpagetitle" resourceType = "/apps/kpmgpublic/components/global/basicpagetitle"}}
+            </div>
+        </div>
+    </div>
+    {{#if hbs.isAuthor}}
+    <style>
+        div.mykpmgpromo-design, .module-mykpmgpromob {
+            height: auto !important;
+        }
+      div.mykpmgpromo-design {
+          margin-left: 9px;
+      }
+      div.librarysummary-design {
+        margin-right:9px;
+      }
+      div.library-summary {
+          overflow:hidden !important;
+      }
+    </style>
+    {{/if}}
+    <div class="inner-container">
+        <div class="row">
+            <div class="col-md-9 col-full-height col-top">
+                {{ include "interests" resourceType="/apps/kpmgpublic/components/personalization/interests" path="cell4"}}
+            </div>
+            <div class="col-md-3 col-full-height col-top col-nested desktop-only">
+                <div class="row mykpmg-promo" style="margin-top: 9px;">
+                    <div class="{{#unless hbs.isAuthor}}col-md-12{{/unless}} col-top" style="border: 0px solid black;">
+                        {{ include "promo" resourceType="/apps/kpmgpublic/components/global/mykpmgpromocomponent"}}
+                    </div>
+                </div>
+                <div class="row library-summary" style="margin-top: 18px;">
+                    <div class="col-md-12 col-top">
+                        {{ include "librarysummary" resourceType="/apps/kpmgpublic/components/personalization/librarysummary"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

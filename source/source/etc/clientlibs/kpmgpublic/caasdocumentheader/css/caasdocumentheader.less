@@ -1,0 +1,134 @@
+@import "../../global/css/_variables.less";
+
+
+// mobile specific css styles
+@media only screen and (max-width: 667px) {
+
+    .module-caasdocumentheader {
+        .wrapper {
+            padding-bottom: 28px;
+        }
+        .global-nav {
+            background: none;
+
+            .header-logo {
+                width: 100%;
+                padding-bottom: 20px;
+            }
+            .main-header {
+                padding: 14px 0px 0px 10px !important;
+                a {
+                    width: 115px;
+                    height: 47px;
+                    background-size: 70px 27px;
+                    padding: 0;
+                }
+            }
+            .mobile-nav-toggle {
+                top: 22px;
+                color: @white;
+                right: 6px;
+                font-size: 1.8rem;
+                display: block;
+                position: absolute;
+                margin-right: 5px;
+                z-index: 10;
+                cursor: pointer;
+                margin: 8px 5px;
+            }
+            .caas-document-title {
+                padding-left: 10px;
+                padding-bottom: 20px;
+                font-size: 8.5vw;
+                width: 100%;
+            }
+            .module-caasdocumentsearchresults {
+                top: 0px;
+                right:0px;
+                padding-left: 10px;
+                float: none;
+
+                .search-title {
+                    display: none;
+                }
+
+                .search-container {
+                    width: 100%;
+                }
+                .search-input {
+                    input {
+                        width: 92vw;
+                        max-width: 100vw;
+                        height: 39px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// handling specific case of iphone 6 landscpe view
+@media only screen and (min-width: 642px) and (max-width:667px) {
+    .global-nav {
+        .search-input {
+            input {
+                width: 138vw !important;
+                max-width: 138vw !important;
+                font-size: 16px !important;
+            }
+        }
+    }
+     .caas-breadcrumb-row {
+         display: none !important;
+     }
+
+     .caas-body-text {
+         width: 100 !important%;
+         margin-top: 50px !important;
+     }
+}
+
+.module-caasdocumentheader {
+    // need to change based on PSD input
+    background-color: @kpmg-blue;
+
+    .wrapper {
+        position: static;
+        padding: 0px 0px 10px 0px;
+    }
+
+    .header-logo {
+        background: none;
+    }
+
+    .global-nav .main-header {
+        padding-left: 20px;
+        position: static;
+    }
+
+    // title specific styles
+    .caas-document-title {
+        padding: 0px 20px;
+        line-height: .45;
+        font-size: 60px;
+        width: 64%;
+        float: left;
+        font-family: @kpmgLightEL;
+        color: @white;
+        h1 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            line-height: 1;
+        }
+    }
+
+    .module-caasdocumentsearchresults {
+        float: right;
+        position: static;
+        padding-right: 10px !important;
+    }
+
+}

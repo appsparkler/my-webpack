@@ -1,0 +1,45 @@
+@import "../../global/css/_variables.less";
+
+.module-contactdetail {
+    // everything in here is for the mobile break point (currently up to 640px)
+/*  Unwanted styles removed - Aparna 15/10/2015
+    padding-bottom:16px;
+    margin-left:5px;
+*/    
+    .secondary-head {       
+        .component-title(@medium-blue);
+        margin: 0px;
+    }
+
+    p {
+       .promo-description(@gray-20);
+       margin: 7px 0;
+    }
+    
+    .tertiary-head {
+        .promo-details(@gray-20);        
+        margin: 7px 0px;
+        p {
+            .promo-details(@gray-20);        
+            margin: 7px 0px;
+        }
+        span {
+                display:block;
+        }
+    }   
+    
+   @media (min-width: @desktop-min-fixed) {        
+        // everything in here will be for breakpoint at 641px and up (until the next breakpoint)
+/*  Unwanted styles removed - Aparna 15/10/2015
+       .primary-head {
+            margin-top: 0;
+            .font-size(2.6);
+            .line-height(4.8);
+        }
+        .tertiary-head{
+            .font-size(1.6);
+            margin-bottom: 0;
+        }           
+*/        
+    }
+}

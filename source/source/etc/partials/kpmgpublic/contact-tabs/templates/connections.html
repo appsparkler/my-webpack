@@ -1,0 +1,47 @@
+<div class="contact-tabs-item col-md-12 promotional-cell-hover">
+    <a class="contact-cta-wrapper" href="{{this.pagePath}}" title="{{this.jobTitle}}">
+        <div class="col-md-4">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E"
+            data-mobile="{{this.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.512.341.jpg"
+            data-desktop="{{this.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.158.jpg"
+            class="img-responsive lazy" alt="connections item image"/>
+        </div>
+        <div class="col-md-8 {{#if this.peopleContactFormLink}}add20paddingbottom{{/if}}">
+            <h3 class="secondary-head">
+                {{this.salutation}} {{this.firstName}} {{this.middleInitial}} {{this.lastName}} {{this.suffix}}
+            </h3>
+            <p>{{this.jobTitle}}</p>
+            <p>{{this.description}}</p>
+            <div class="row desktop-only access-container">
+                <div class="contactFmLink ">
+                    {{#if this.peopleContactFormLink}}
+                    <div class="cta-space">&nbsp;</div>
+                    <div class="pull-right">
+                        <span class="btn-cta contact-btn" tabindex="0">
+                            <span class="icon-chevron-right"></span>
+                            <span class="contact btn-modal pcfLink modal-open" title="">{{this.contactFormLinkCopy}}</span>
+                        </span>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="contactFmLink ">
+                    {{#if this.peopleContactFormLink}}
+                    <div class="cta-space">&nbsp;</div>
+                    <div class="pull-right">
+                        <span tabindex="0" class="btn-cta contact-btn">
+                            <span class="icon-email "></span>
+                            <span id="{{this.contactPageName}}" data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html"
+                            data-remote="{{this.peopleContactFormLink}}{{this.pagePath}}" data-backdrop="static" data-keyboard="false"
+                            class="contact people-connect btn-modal pcfLink modal-open" title="">
+                            {{this.contactFormLinkCopy}}
+                            </span>
+                        </span>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

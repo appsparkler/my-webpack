@@ -1,0 +1,24 @@
+
+@import "../../../../../../../global/css/_variables.less";
+//
+.card-link-component.card {
+    border: none;
+    &:hover {
+        outline: 1px darken(@gray-96, 20%) solid;
+        text-decoration: none;
+    }
+    .card-title:hover{
+        text-decoration: underline;
+    }
+    .card-body{
+        .line-clamp.line-clamp-5{
+            -webkit-line-clamp: 5;
+            max-height: 7.9rem;
+            font-size: 1.4rem;
+        }
+        .line-clamp.line-clamp-2{
+            -webkit-line-clamp: 2;
+            max-height: 3.9rem;
+        }
+    }
+}

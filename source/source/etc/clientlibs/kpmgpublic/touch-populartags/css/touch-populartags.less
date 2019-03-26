@@ -1,0 +1,42 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-populartags {
+   background: @gray-94;
+
+   .popular-tags-heading {
+      padding: 13px 15px 20px 0;
+      margin: 0;
+      .font-size(2.4);
+      color: @black;
+      font-weight: bold
+   }
+
+   .popular-tags-list {
+       .list-item {
+          .font-size(2.4);
+          padding: 20px 10px 12px 0;
+          border-bottom: 1px dashed @gray-75;
+          &:last-child {
+            border-bottom: 0;
+          }
+          a {
+            color: @gray-20;
+            cursor: pointer;
+          }
+       }
+   }
+}
+
+@media only screen and (max-width: 640px) {
+  .module-touch-populartags {
+    .popular-tags-heading {
+      padding: 33px 0 8px;
+    }
+    .popular-tags-list {
+      .list-item {
+        margin: 0;
+        padding: 18px 0 19px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-post-highlight {
+    padding-left: 18px;
+    background-color: @violet;
+    margin: 10px;
+
+    .highlight-title {
+        font-size: 56px;
+        line-height: .946;
+        color: @white;
+        z-index: 150;
+        font-family: @kpmgLight;
+        margin: 0px;
+        &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+            font-size: 38px;
+        }
+    }
+
+    .highlight-list {
+        list-style: none;
+        font-size: 26px;
+        color: @white;
+        // removing default margin and padding
+        padding: 0px;
+        margin: 0px;
+        line-height: 1.272;
+        z-index: 151;
+        font-family: @arial;
+        display: table;
+
+        & > .list-item:before {
+            content: '-';
+            display: table-cell;
+        }
+
+        & > .list-item {
+            .list-item-text {
+                padding-top: 20px;
+                color: @white;
+                padding-left: 10px;
+                padding-right: 5px;
+                margin: 0px;
+            }
+            display: table-row;
+        }
+    }
+}
+
+
+// mobile related styles
+@media only screen and (max-width:640px) {
+    .module-touch-post-highlight {
+
+        .highlight-title {
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                font-size: 28px;
+            }
+        }
+    }
+}

@@ -1,0 +1,418 @@
+        @import url('../../global/css/_variables.less');
+@import url('../../global/css/vendor/_responsiveTabs.less');
+
+.module-manualcountrylanguagedesignationselection {
+    background-color: transparent !important;
+    width: 100%;
+    float: left;
+    padding: 0 !important;
+    margin-bottom: 10px !important;
+
+    .no-highlight {
+        display: table !important;
+        width: 100%;
+    }
+
+    .backgroundWhite{
+        background: @white;
+        padding: 10px;
+        margin-bottom: 18px;
+        width: 100%;
+    }
+
+    .icon-chevron-right {
+        color: @light-blue;
+        .font-size(1.6);
+        display: none;
+    }
+
+    .left-container {
+        display: table-cell;
+    }
+
+    .right-container {
+        display: table-cell;
+        vertical-align: middle;
+        width: 16px;
+    }
+
+    .globalSiteLanguage {
+        width: 100%;
+    }
+
+    .manualcountrylanguagedesignationselection-tabs {
+        .tabsList {
+              border-left-width: 0px !important;
+              border-right-width: 18px !important;
+              border-top-width: 0px !important;
+              border-bottom-width: 0px !important;
+              float: none;
+              background: @gray-94;
+
+            .globalSiteLanguage {
+                display: none;
+            }
+
+            .resp-tabs-list {
+                width: 100% !important;
+                background: @white;
+                li.tabbedComponentTab {
+                    border-bottom: 1px solid @gray-60 !important;
+                    border-left: none;
+                    border-bottom: none;
+                    border-top: none;
+                    float: left;
+                    width: 100%;
+                    background: @gray-87;
+                    padding: 1px !important;
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
+
+                    .regionName {
+                        width: 100%;
+                        float: left;
+                        .promo-title(@gray-20);
+                        margin: 8px 0;
+                        span {
+                            float: right;
+                            .font-size(1.4);
+                        }
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    .regionImage {
+                        float: left;
+                    }
+                    a {
+                        padding: 10px !important;
+                    }
+                    a:hover {
+                        .regionName {
+                            text-decoration: underline;
+                        }
+
+                    }
+                }
+                li.resp-tab-active {
+                    margin-right: 0 !important;
+                    margin-bottom: 0 !important;
+                    background: @white;
+                    .regionName {
+                        width: 100%;
+                        float: left;
+                        .promo-title(@kpmg-blue);
+                        .hyphen;
+                    }
+
+                    .icon-chevron-right {
+                        display: block;
+                        margin: 0 0 0 5px;
+                    }
+
+                    a:hover {
+                        .regionName {
+                            text-decoration: none;
+                        }
+
+                    }
+                }
+            }
+        }
+        .resp-tabs-container {
+            border: none;
+            background: none;
+            border-radius: 0;
+            float: none;
+            h2.resp-accordion {
+                width: 100%;
+                border: none;
+                float: left;
+                background: @gray-87;
+                border-bottom: 1px solid @gray-60;
+                padding: 0;
+
+                a {
+                    padding: 10px;
+                }
+
+                .regionName {
+                    .promo-title(@gray-20);
+                    .hyphen;
+                    margin: 8px 0;
+                }
+                .regionImage {
+                    float: left;
+                }
+
+                .right-container {
+                    .resp-arrow {
+                        display: block;
+                        border: none;
+                        float: none;
+                        margin: 0 0 0 5px;
+                        color: @kpmg-blue;
+                        border-left: 0;
+                        border-right: 0;
+                        border-top: 0;
+                        width: auto;
+                        height: auto;
+                        .font-size(1.6);
+                    }
+
+                    .icon-chevron-up {
+                        color: @light-blue;
+                    }
+                }
+
+                &:first-child {
+                    border-top: none !important;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .resp-arrow {
+                    display: none;
+                }
+
+                &.resp-tab-active {
+                    border-bottom: 1px solid @gray-60 !important;
+                    padding: 0 !important;
+                    background: @white !important;
+
+                    .regionName {
+                        .promo-title(@kpmg-blue);
+                        .hyphen;
+                    }
+
+                }
+            }
+
+            .subRegions {
+                .globalSiteLanguage {
+                    .promo-details(@medium-blue);
+                    .hyphen;
+                    margin: 7px 0;
+                    display: block;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .subRegion-list {
+                float: left;
+                width: 100%;
+
+                .subRegionname {
+                    .promo-title(@kpmg-blue);
+                    margin: 8px 0;
+                    width: 100%;
+                    float: left;
+                }
+
+                ul li {
+                    margin: 0;
+                    a {
+                        .promo-details(@medium-blue);
+                        display: block;
+                        padding: 5px 0;
+                        margin: 5px 0;
+                    }
+                }
+
+                .countryName{
+                    width:100%;
+                    float:left;
+                }
+
+                &:before {
+                    .dotted-lightblue;
+                    margin: 20px 0 10px;
+                }
+            }
+
+            .resp-tab-content {
+                border: none;
+                background: @white;
+                width: 100%;
+                float: left;
+                padding: 10px !important;
+            }
+
+        }
+        .regionImage {
+            background-image: url(/etc/designs/kpmgpublic/images/manualcountrylanguagedesignationselection.png);
+            background-repeat: no-repeat;
+            width: 120px;
+            height: 60px;
+            float: left;
+        }
+        .regionImage0 {
+            background-position: 0px 0px;
+        }
+        .regionImage1 {
+            background-position: -113px 0px;
+        }
+        .regionImage2 {
+            background-position: -228px 0px;
+        }
+        .regionImage3 {
+            background-position: -341px 0px;
+        }
+        .regionImage4 {
+            background-position: -455px 0px;
+        }
+    }
+
+    @media (min-width: @desktop-min-fixed){
+
+        padding: 0 !important;
+
+        .right-container {
+            width: 21px;
+        }
+
+        .manualcountrylanguagedesignationselection-tabs {
+            .globalSiteLanguage {
+                width: 30%;
+            }
+            .resp-tabs-container {
+                background: @white;
+                min-height: 242px ! important;
+
+                .resp-tab-content {
+                    border: none;
+                    background: @white;
+                    width: 100%;
+                    float: left;
+                    padding: 10px 20px !important;
+                }
+                .regionName:hover {
+                            text-decoration: underline;
+                        }
+
+                .subRegion-list {
+                    ul li {
+                        a {
+                            .promo-details(@medium-blue);
+                            display: block;
+                            padding: 0;
+                            margin: 5px 20px 5px 0;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                        a.countryListHide {
+                          text-decoration: none;
+                          cursor: default;
+                        }
+                        a.countryListHide:hover {
+                          text-decoration: none;
+                          cursor: default;
+                        }
+                    }
+
+                    .countryName {
+                        width:33%;
+
+                    }
+                }
+            }
+
+            .resp-tabs-list{
+                display: block;
+            }
+
+            h2.resp-accordion{
+                display: none;
+            }
+        }
+
+        .resp-arrow {
+            display: none;
+        }
+    }
+    .manualcountrylanguagedesignationselection-mob {
+      margin-top: 15px;
+      background-color: @white;
+      .selectRegion {
+        border: 1px @gray-40;
+        // overflow: hidden;
+        margin-left: 1%;
+        margin-right: 1%;
+        width: 98%;
+        position: relative;
+        margin-bottom: 15px;
+        &:after {
+            content:"\e90c";
+            font-family: 'icomoon';
+            color: @white;
+            padding: 6px 0px;
+            position: absolute; right: 0; top: 0;
+            background: @dark-green;
+            text-align: center;
+            width: 23px;
+            height: 23px;
+            font-size: 10px;
+            pointer-events: none;
+            box-sizing: border-box;
+        }
+        select.regionListMob {
+            color: @kpmg-blue;
+            border-radius: 0;
+            .font-size(1.6);
+            height: 23px;
+            padding: 2px 0px 2px 5px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+        }
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+      .globalSiteLanguage-Mobile {
+        color: @medium-blue;
+        .font-size(1.6);
+        display: block; 
+        margin-bottom: 15px;
+        margin-left: 10px;
+      }
+    }
+}
+@media (max-width: @desktop-min-fluid) {
+  .module-manualcountrylanguagedesignationselection {
+    background-color:@white !important;
+  }
+}
+@media (max-width: 640px){
+    .module-manualcountrylanguagedesignationselection .manualcountrylanguagedesignationselection-tabs {
+        .regionImage {
+            width: 60px;
+            height: 30px;
+            background-size: cover;
+        }
+
+        .regionImage0 {
+            background-position: 0px 0px;
+        }
+        .regionImage1 {
+            background-position: -61px 0px;
+        }
+        .regionImage2 {
+            background-position: -122px 0px;
+        }
+        .regionImage3 {
+            background-position: -183px 0px;
+        }
+        .regionImage4 {
+            background-position: -245px 0px;
+        }
+    }
+}

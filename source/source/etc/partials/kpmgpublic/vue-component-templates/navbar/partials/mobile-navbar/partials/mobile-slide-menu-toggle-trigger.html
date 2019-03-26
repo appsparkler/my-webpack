@@ -1,0 +1,23 @@
+<template id="mobile-slide-menu-toggle-trigger-component-template">
+	 <span 
+		class="mobile-slide-menu-toggle-trigger-component vue-component
+			
+		"
+		:class="{'ml-4 mt-1 icon-list-view text-kpmg-blue': !$parent.isMenuVisible, 'ml-4 mt-1 icon-close text-kpmg-light-purple': $parent.isMenuVisible }"
+		@click="toggleMenu();"
+		v-dev="{isDev: $root.isDev, variant: 'danger'}"
+	>
+	<span class='mobile_menu_icon'>
+			<svg class="hamburger js-navicon" version="1.1" id="Layer_1" 
+			:class="{'closed': !$parent.isMenuVisible, 'open': $parent.isMenuVisible, 'animation' : !$parent.isFirstTime }"
+			xmlns="http://www.w3.org/2000/svg" 
+			xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" 
+			style="enable-background:new 0 0 40 40;" xml:space="preserve">
+			  <line x1="3" y1="0" x2="37" y2="0" class="hamburger__line animation__top"></line>
+			  <line x1="3" y1="15" x2="37" y2="15" class="hamburger__line animation__middle"></line>
+			  <line x1="3" y1="30" x2="37" y2="30" class="hamburger__line animation__bottom"></line>
+			</svg>
+	</span>
+
+</span>
+</template>

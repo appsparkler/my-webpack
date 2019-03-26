@@ -1,0 +1,77 @@
+@import "../../global/css/_variables.less";
+.module-socialwidget {
+    background: @white;
+    padding: 10px;
+    .component-head {
+        .component-title(@kpmg-blue);
+        margin: 0px 0px 10px 0px;
+        background: transparent;
+    }
+    div.socialwidget-link-container {
+        display: inline-block;
+        width: 100%;
+    }
+    .module-socialchannels {
+        padding: 0px;
+        &:after {
+            .dotted-lightblue;
+            margin: 20px 0 10px;
+        }
+        ul.socialchannel-links {
+            display: table;
+            li {
+                display: inline-block;
+                float: none;
+                &:first-child{
+                    padding-left: 0px;
+                }
+            }
+        }
+    }
+    #socialiframe {
+        display: block;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 0 !important;
+        border: 0;
+        background: none;
+    }
+    div.socialwidget-feeds-container {
+        overflow: hidden;
+        height: 525px;
+        #header {
+            background: none repeat scroll 0 0 #179be7 !important;
+            .widget-title {
+                color: @white !important;
+                font-weight: 700 !important;
+                height: 20px !important;
+                line-height: 20px !important;
+            }
+        }
+    }
+    @media (min-width: @desktop-min-fluid) {
+        div.socialwidget-feeds-container {
+            height: auto;
+        }
+    }
+}
+/*
+@media (min-width: @desktop-min-fixed) {
+    .module-socialwidget { 
+        .component-head {
+            .font-size(4.5);
+        }
+    }
+}
+*/
+
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+    .module-tmpl-socialenabled.module-socialwidget .component div.socialwidget-feeds-container iframe {
+        height: 341px !important;
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+    .module-tmpl-socialenabled.module-socialwidget .component div.socialwidget-feeds-container iframe {
+        height: 341px !important;
+    }
+}

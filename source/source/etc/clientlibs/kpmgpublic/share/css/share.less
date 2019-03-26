@@ -1,0 +1,47 @@
+@import url('../../global/css/_variables.less');
+.module-share {
+
+    .share-component {
+        display: inline-block;
+        span.component-link {
+            .promo-title(@gray-40);
+            .hyphen;
+            float: left;
+            margin: 0px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        span.icon-share {            
+            position: relative;            
+            color: @light-green;
+            float: left;
+            margin: 0 5px 0 0;
+            .font-size(1.6);
+            .font-size(1.6);
+
+        }
+    }
+    
+    .share-mobile {
+        position:absolute;
+        top: 29px;
+        right: 55px;
+        .font-size(2.7);
+        .share-component {
+           .icon-share {
+                margin-top: -41px;
+                color: @light-green;  
+                left: 82px;
+            }
+            .component-link {
+                display: block !important;
+                margin-top: -37px !important;
+                margin-left: 84px !important;
+                visibility: hidden;
+            }
+        }            
+    }
+}
+
+

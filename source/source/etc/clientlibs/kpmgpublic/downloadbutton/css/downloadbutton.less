@@ -1,0 +1,44 @@
+@import "../../global/css/_variables.less";
+.module-downloadbutton {
+    min-width: 200px;
+    min-height: 40px;
+    //margin-right: 55px;
+    background: none;
+    margin-top: 10px;
+    .icon-pdf {
+        .font-size(1.6);
+    	color: @light-green;
+    	margin: 0px 5px 0px 0px;
+    }
+    .download-pdf-icon {
+    height: 24px;
+    width: 26px;
+    float: left;
+    background: url(/etc/designs/kpmgpublic/images/pdf-icon-sm.png) no-repeat;
+    }
+    .downloadLabel {
+        .page-description(@gray-40);
+        display:inline-block;
+        margin-top: 4px;
+        .sentence-case();
+        .downloadLblExtn{
+        text-transform: uppercase;
+        }
+    }
+    .downloadSize {
+        .file-size(@gray-40);
+    }
+
+    .download-text {
+		.component-link {
+            .page-description(@gray-40);
+            &:hover {
+              text-decoration:none;
+                .downloadLabel,
+                .downloadSize {
+                    text-decoration: underline;
+                }
+            }
+		}
+    }
+}

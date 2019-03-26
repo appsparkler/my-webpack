@@ -1,0 +1,83 @@
+<div class="defaultoverlay clearfix">
+    <div class="overlay-header hidden-xs " role="header">
+        <h4 class="heading" id="myModalLabel">
+            {{#if hbs.articlesRemoved}}
+                {{hbs.articlesRemoved.notlongeravailable}}
+            {{else}}
+                {{i18n "kpmg.personalization.library.listmanagement.notlongeravailable"}}
+            {{/if}}
+        </h4>
+        <hr class="divider"/>
+    </div>
+    <div class="overlay-content" role="main">
+        <div class="overlay-content-inner">
+            <div class="description" id="description">
+                <div class="singlearticle description-item">
+                <div class="desktop-only">
+                    <div>
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.articlenolongeravailabledescription}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.articlenolongeravailabledescription"}}
+                        {{/if}}
+                    </div>
+                    <ul class="list"></ul>
+                    <div>
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.articlewasremovedfromlabel}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.articlewasremovedfromlabel"}}
+                        {{/if}}
+                    </div>
+                    <div class="listname"></div>
+                </div>
+                 <div class="mobile-only">
+                    <ul class="list" style="display:inline"></ul>
+                    <div>
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.mobilenolongeravlbl}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.mobilenolongeravlbl"}}
+                        {{/if}}
+                        .
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.artitwasremovedfrom}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.artitwasremovedfrom"}}
+                        {{/if}}
+                    </div>
+                    <div class="listname" style="display:inline"></div>
+                </div>
+
+                </div>
+                <div class="multiplearticles description-item">
+                    <div>
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.articlesnolongeravailabledescription}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.articlesnolongeravailabledescription"}}
+                        {{/if}}
+                    <span class="listname"></span>:</div>
+                    <ul class="list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-footer  hidden-xs" role="footer">
+        <div class="row ">
+            <div class="col-md-6 last-column pull-right">
+                <div class="savearticle-controls">
+                    <button class="btn btn-cta btn-default"  data-dismiss="modal" type="button">
+                        <span class="icon-chevron-right">
+                        </span>
+                        {{#if hbs.articlesRemoved}}
+                            {{hbs.articlesRemoved.close}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.close"}}
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

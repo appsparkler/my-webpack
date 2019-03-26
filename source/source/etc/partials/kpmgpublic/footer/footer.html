@@ -1,0 +1,154 @@
+<footer class="module-footer bg-white">
+  <div class="row footer-and-social-links">
+    <div class="col-md-8 col-xs-12 footer-Links">
+      <ul class="links">
+        <span class="desktop-only">
+          {{#if hbs.footer.legalLink}}
+              <li>
+                <a href="{{hbs.footer.legalLink}}" title="{{i18n hbs.footer.legalLabel}}">
+                  {{i18n hbs.footer.legalLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.privacyLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.privacyLink}}" title="{{i18n hbs.footer.privacyLabel}}">
+                  {{i18n hbs.footer.privacyLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.accessibilityLink}}
+              <li>
+                <a href="{{hbs.footer.accessibilityLink}}" title="{{i18n hbs.footer.accessibilityLabel}}">
+                  {{i18n hbs.footer.accessibilityLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.sitemapLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.sitemapLink}}" title="{{i18n hbs.footer.sitemapLabel}}">
+                  {{i18n hbs.footer.sitemapLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.helpLink}}
+              <li>
+                <a href="{{hbs.footer.helpLink}}" title="{{i18n hbs.footer.helpLabel}}">
+                  {{i18n hbs.footer.helpLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.contactLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.contactLink}}" title="{{i18n hbs.footer.contactLabel}}">
+                  {{i18n hbs.footer.contactLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.glossaryLink}}
+              <li>
+                <a href="{{hbs.footer.glossaryLink}}" title="{{i18n hbs.footer.glossaryLabel}}">
+                  {{i18n hbs.footer.glossaryLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.optionalLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.optionalLink}}" title="{{hbs.footer.optionalLabel}}">
+                  {{hbs.footer.optionalLabel}}
+                </a>
+              </li>
+          {{/if}}
+        </span>
+
+        <span class="mobile-only">
+          {{#if hbs.footer.legalLink}}
+              <li>
+                <a href="{{hbs.footer.legalLink}}" title="{{i18n hbs.footer.legalLabel}}">
+                  {{i18n hbs.footer.legalLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+           {{#if hbs.footer.helpLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.helpLink}}" title="{{i18n hbs.footer.helpLabel}}">
+                  {{i18n hbs.footer.helpLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.privacyLink}}
+              <li>
+                <a href="{{hbs.footer.privacyLink}}" title="{{i18n hbs.footer.privacyLabel}}">
+                  {{i18n hbs.footer.privacyLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.contactLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.contactLink}}" title="{{i18n hbs.footer.contactLabel}}">
+                  {{i18n hbs.footer.contactLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.accessibilityLink}}
+              <li>
+                <a href="{{hbs.footer.accessibilityLink}}" title="{{i18n hbs.footer.accessibilityLabel}}">
+                  {{i18n hbs.footer.accessibilityLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.glossaryLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.glossaryLink}}" title="{{i18n hbs.footer.glossaryLabel}}">
+                  {{i18n hbs.footer.glossaryLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.sitemapLink}}
+              <li>
+                <a href="{{hbs.footer.sitemapLink}}" title="{{i18n hbs.footer.sitemapLabel}}">
+                  {{i18n hbs.footer.sitemapLabel}}
+                </a>
+              </li>
+          {{/if}}
+
+          {{#if hbs.footer.optionalLink}}
+              <li class="footer-padding">
+                <a href="{{hbs.footer.optionalLink}}" title="{{hbs.footer.optionalLabel}}">
+                  {{hbs.footer.optionalLabel}}
+                </a>
+              </li>
+          {{/if}}
+        </span>
+
+      </ul>
+    </div>
+    <div class="col-md-4 col-xs-12 footer-socialchannelLinks">
+      {{include "socialchannels" resourceType="/apps/kpmgpublic/components/social/footersocialchannels" path="SocialChannels"}}
+    </div>
+  </div>
+  <div class="footer-footerText">
+    <div class="footer-footerText-content">
+      {{#if hbs.footer.pTagCheck}}
+        {{{hbs.footer.copyrightList}}}
+      {{else}}
+        <p>{{hbs.footer.copyrightList}}</p>
+      {{/if}}
+    </div>
+  </div>
+  
+</footer>
+{{{hbs.footer.footerScript}}}

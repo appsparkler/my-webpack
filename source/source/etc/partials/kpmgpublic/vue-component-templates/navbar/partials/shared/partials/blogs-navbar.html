@@ -1,0 +1,17 @@
+<template id="blogs-navbar-component-template">
+    <div class="blogs-navbar-component vue-component">
+        <ul class="blog-header-list">
+            <li>
+                <a :href="vm.home.linkURL" class="list-item"> \{{ vm.home.label }} </a>
+                <span class="separator">|</span>
+            </li>
+            <li>
+                <a :href="vm.topics.linkURL" class="list-item"> \{{ vm.topics.label }} </a>
+                <span class="separator">|</span>
+            </li>
+            <li>
+                <a :href="vm.authors.linkURL" class="list-item"> \{{ vm.authors.label }} </a>
+            </li>
+        </ul>
+    </div>
+</template>

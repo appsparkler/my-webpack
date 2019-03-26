@@ -1,0 +1,88 @@
+<section class="module-dashboardarticle component component-trackable" hidden personalize="true" no-of-results-required="1" article="true">
+    <a class="image-holder" href="{{hbs.dashboardarticle.primaryUrl}}" tabindex="-1">
+        <img class="img-responsive lazy" alt="{{hbs.dashboardarticle.title}}" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E"
+            data-desktop="{{hbs.globalValues.assetDomainName}}{{hbs.dashboardarticle.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.158.jpg"
+            data-mobile="{{hbs.globalValues.assetDomainName}}{{hbs.dashboardarticle.imageFileReference}}/jcr:content/renditions/cq5dam.web.512.341.jpg">
+    </a>
+    <a href="{{hbs.dashboardarticle.primaryUrl}}" class="title-link" title="{{hbs.dashboardarticle.title}}" tabindex="-1">
+        <h3 class="tertiary-head line-clamp line-clamp-3" tabindex="0">{{hbs.dashboardarticle.title}}</h3>
+    </a>
+    <a href="{{hbs.dashboardarticle.primaryUrl}}" class="desc-link" tabindex="-1">
+        <p class="tertiary-desc line-clamp line-clamp-5">{{hbs.dashboardarticle.longDescription}}</p>
+    </a>
+    <div class="library-desktop {{#if hbs.dashboardarticle.isBlog}} hidden{{/if}}"
+        {{#if hbs.dashboardarticle.personalized}}
+            title="{{hbs.dashboardarticle.addtolibrary}}"
+        {{else}}
+            title="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}"
+        {{/if}}
+        role="button" tabindex="0">
+        <div class="module-addtolibrary component self-contained clearfix"
+            {{#if hbs.dashboardarticle.personalized}}
+                aria-label="{{hbs.dashboardarticle.addtolibrary}}"
+            {{else}}
+                aria-label="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}"
+            {{/if}}
+            data-description="{{{hbs.dashboardarticle.longDescription}}}" data-shortDescription="{{{hbs.dashboardarticle.shortDescription}}}" data-href="{{hbs.dashboardarticle.primaryUrl}}" data-image="{{hbs.globalValues.assetDomainName}}{{hbs.dashboardarticle.imageFileReference}}" data-title="{{{hbs.dashboardarticle.title}}}" data-shortTitle="{{hbs.dashboardarticle.shortTitle}}"  data-article-type="{{hbs.dashboardarticle.articleType}}">
+                <a href="#" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0"
+                {{#if hbs.dashboardarticle.personalized}}
+                    title="{{hbs.dashboardarticle.addtolibrary}}"
+                {{else}}
+                    title="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}"
+                {{/if}}
+                aria-haspopup="true">
+                    <span class="icon-star"></span>
+                </a>
+        </div>
+    </div>
+    <div class="content-refresh-cta"
+        {{#if hbs.dashboardarticle.personalized}}
+            title="{{hbs.dashboardarticle.refreshcontent}}"
+        {{else}}
+            title="{{i18n 'kpmg.personalization.dashboard.dashboardarticle.refreshcontent'}}"
+        {{/if}}
+        data-url="{{hbs.dashboardarticle.primaryUrl}}" role="button" tabindex="0">
+        <span class="icon-dots"></span>
+    </div>
+    <div class="module-contentrefreshctas content-refresh-slider slide-down">
+        <button class="refresh-article active cta-row">
+            <span class="icon-refresh"></span>
+            {{#if hbs.dashboardarticle.personalized}}
+                {{hbs.dashboardarticle.showanotherarticle}}
+            {{else}}
+                {{i18n 'kpmg.personalization.dashboard.dashboardarticle.showanotherarticle'}}
+            {{/if}}
+        </button>
+        <button class="hide-article active cta-row">
+            <span class="icon-views"></span>
+            {{#if hbs.dashboardarticle.personalized}}
+                {{hbs.dashboardarticle.dontshowarticleagain}}
+            {{else}}
+                {{i18n 'kpmg.personalization.dashboard.dashboardarticle.dontshowarticleagain'}}
+            {{/if}}
+        </button>
+        <a href="{{hbs.dashboardarticle.myinterests}}" class="interests-link active cta-row">
+            <span class="icon-sliders"></span>
+            {{#if hbs.dashboardarticle.personalized}}
+                {{hbs.dashboardarticle.updatemypreferences}}
+            {{else}}
+                {{i18n 'kpmg.personalization.dashboard.dashboardarticle.updatemypreferences'}}
+            {{/if}}
+        </a>
+        <div class="ellipsis-cta" tabindex="0">
+            <span class="icon-dots"></span>
+        </div>
+    </div>
+    <div class="indicator-share"
+        {{#if hbs.dashboardarticle.personalized}}
+            title="{{hbs.dashboardarticle.share}}"
+        {{else}}
+            title="{{i18n 'kpmg.personalization.library.librarylist.share'}}"
+        {{/if}}
+        data-title="{{hbs.dashboardarticle.title}}"
+        data-url="{{hbs.dashboardarticle.primaryUrl}}" data-desc="{{hbs.dashboardarticle.longDescription}}"
+        data-image="{{hbs.globalValues.assetDomainName}}{{hbs.dashboardarticle.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.158.jpg" role="button" tabindex="0">
+        <span class="icon-share"></span>
+    </div>
+
+</section>

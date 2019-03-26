@@ -1,0 +1,33 @@
+@import "../../global/css/_variables.less";
+
+div.article-filters {
+  padding-top: 10px !important;
+
+  &.noCarousel {
+    padding-top: 40px !important;
+  }
+
+  select, input[type=button] {
+    display: inline-block;
+    background-color: @medium-blue;
+    color: @white;
+    padding: 8px 20px 8px;
+    border-radius: 16px;
+    font-weight: bold;
+    margin: 0 20px !important;
+    border: 0;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+
+
+    @media only screen and (max-width: @mobile-max-fixed) {
+      margin: 25px 20px !important;
+    }
+
+  }
+  select {
+    width: 218px;
+    cursor: pointer;
+  }
+}

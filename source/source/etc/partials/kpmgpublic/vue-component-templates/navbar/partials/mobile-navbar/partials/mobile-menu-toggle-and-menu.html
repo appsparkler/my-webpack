@@ -1,0 +1,18 @@
+<template id="mobile-menu-toggle-and-menu-component-template">
+    <div 
+        class="mobile-menu-toggle-and-menu-component vue-component mt-3"
+        v-dev="{ isDev: $root.isDev, variant:'success' }"
+        v-if="vm"
+    >
+        <!-- SIDE MENU TOGGLER BUTTON -->
+        <mobile-slide-menu-toggle-trigger></mobile-slide-menu-toggle-trigger>
+
+        <!-- SIDE MENU --> 
+        <!-- isMobile -->
+        <mobile-nav-slide-menu v-if="isMobile" :vm="vm"></mobile-nav-slide-menu>
+
+        <!--static Backdrop-->
+        <div class="mobile-menu-backdrop collapse"></div>
+
+    </div>
+</template>

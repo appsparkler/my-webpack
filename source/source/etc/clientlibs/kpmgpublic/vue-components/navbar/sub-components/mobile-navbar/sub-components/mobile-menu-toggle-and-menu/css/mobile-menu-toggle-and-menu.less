@@ -1,0 +1,32 @@
+@import "../../../../../../../global/css/_variables";
+
+
+.mobile-menu-toggle-and-menu-component {
+    float:left;
+    .all-sides-0 {
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }
+    .mobile-menu-backdrop {        
+        background: @gray-94;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        max-height: calc(100vh ~"-" 58px);
+        min-height: calc(100vh ~"-" 58px);
+        top: 58px;
+        left: 0;
+        right: 0;
+        z-index: -2;        
+    }
+    .mobile-nav-slide-menu-component {
+        background: @gray-94;
+        z-index: -1;
+        &::-webkit-scrollbar{
+            width:0px;
+        }
+    }
+}

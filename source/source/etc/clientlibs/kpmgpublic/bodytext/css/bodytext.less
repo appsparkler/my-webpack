@@ -1,0 +1,246 @@
+@import "../../global/css/_variables.less";
+
+.module-bodytext {
+    padding: 10px 10px;
+    .bodytext-data{
+        .promo-description(@gray-20);
+        margin: 7px 0px;
+        a {
+            .promo-description(@medium-blue);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        p , table tr td{
+            .promo-description(@gray-20);
+            margin: 7px 0px;
+        }
+
+        table tr th{
+            .promo-description(@kpmg-blue);
+            margin: 7px 0px;
+        }
+    }
+    .bodytext-footnote p{
+        .fine-print(@gray-20) ;
+    }
+
+    .bodytext-data.bodytext-footnote {
+      ol , li, div, span, p, a, del, em, small, strike, strong, sub, sup, tt, u, i, dd, ol, ul, li, label, tr, th, td, section {
+        .set-font-size(1.4);
+      }
+    }
+
+    .primary-head {
+        .body-title(@kpmg-blue);
+        margin: 10px 0px;
+        text-transform: none;
+        &.kpmg_light {
+            .set-font-size(3.8);
+            font-family: @kpmgLight !important;
+        }
+    }
+
+    .bg-white {
+        padding-bottom: 0
+    }
+
+    .tertiary-head {
+        .promo-title(@kpmg-blue);
+        margin: 8px 0px;
+        &.kpmg_light {
+            .set-font-size(3.0);
+            font-family: @kpmgLight !important;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+
+    ol, ul {
+        list-style-position: outside;
+        margin: 0 0 10px 18px;
+        padding: 0;
+        .promo-description(@gray-20);
+    }
+
+    ul {
+        li {
+            list-style-type: disc;
+            margin: 7px 0px;
+        }
+
+        li li {
+            list-style: circle;
+        }
+
+        li li li,
+        li li li li,
+        li li li li li {
+            list-style: square;
+        }
+    }
+
+    ol {
+        li,
+        li li,
+        li li li,
+        li li li li,
+        li li li li li {
+            list-style-type: decimal;
+        }
+        li {
+            margin: 7px 0px;
+        }
+    }
+
+    i {
+        font-style: italic !important;
+    }
+
+    b {
+        font-weight:bold !important;
+    }
+
+    table {
+        height: auto;
+        border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 100%;
+        /*margin-bottom: 20px;*/
+        border: 1px solid @gray-20;
+        background-color: transparent;
+        table-layout: fixed;
+        margin: 10px 0 0 0;
+    }
+
+    thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    table>caption+thead>tr:first-child>th,
+    table>colgroup+thead>tr:first-child>th,
+    table>thead:first-child>tr:first-child>th,
+    table>caption+thead>tr:first-child>td,
+    table>colgroup+thead>tr:first-child>td,
+    table>thead:first-child>tr:first-child>td {
+        border-top: 0;
+    }
+
+    table>thead>tr>th,
+    table>thead>tr>td {
+        border-bottom-width: 2px;
+    }
+
+    table>thead>tr>th,
+    table>tbody>tr>th,
+    table>tfoot>tr>th,
+    table>thead>tr>td,
+    table>tbody>tr>td,
+    table>tfoot>tr>td {
+        border: 1px solid @gray-80;
+    }
+
+    table>tbody>tr>th {
+     /* font-weight: bold;
+        border-bottom: 2px solid @gray-80; */
+        .promo-details(@kpmg-blue);
+        line-height: 130%;
+        margin: 7px 0px;
+        a {
+            .promo-details(@medium-blue);
+            line-height: 130%;
+            margin: 7px 0px;
+        }
+    }
+
+    table>thead>tr>th::before,
+    table>tbody>tr>th::before,
+    table>tfoot>tr>th::before,
+    table>thead>tr>td::before,
+    table>tbody>tr>td::before,
+    table>tfoot>tr>td::before { content: ''; display: block; }
+
+    table>thead>tr>th::after,
+    table>tbody>tr>th::after,
+    table>tfoot>tr>th::after,
+    table>thead>tr>td::after,
+    table>tbody>tr>td::after,
+    table>tfoot>tr>td::after { content: ''; display: block; }
+
+    table>thead>tr>th,
+    table>tbody>tr>th,
+    table>tfoot>tr>th,
+    table>thead>tr>td,
+    table>tbody>tr>td,
+    table>tfoot>tr>td {
+        padding: 8px;
+        line-height: 130%;
+        .set-font-size(1.6);
+        vertical-align: top;
+        border-top: 1px solid @gray-80;
+    }
+
+    .bodytext-footnote table>thead>tr>th,
+    table>tbody>tr>th,
+    table>tfoot>tr>th,
+    table>thead>tr>td,
+    table>tbody>tr>td,
+    table>tfoot>tr>td {
+        .set-font-size(1.4);
+    }
+
+    th {
+        text-align: left;
+    }
+
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+
+    a, a:link, a:hover, a:visited {
+        color: @medium-blue;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    a:visited {
+        color: @medium-blue;
+    }
+
+    /*include for RTE related css fixes*/
+    @import "../../global/css/rtecss.less";
+}

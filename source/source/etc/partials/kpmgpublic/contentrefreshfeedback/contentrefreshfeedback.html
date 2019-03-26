@@ -1,0 +1,62 @@
+<!-- Begin Component: Contentrefreshfeedback -->
+<div class="module-contentrefreshfeedback component modal-box-container {{#if hbs.feedback.refreshFeedback}} refresh-feedback {{else}} hide-feedback {{/if}}" tabindex="0">
+    <section class="contentrefresh-feedback">
+        <div class="feedback-header">
+            <h1 class="heading" id="feedbackHeading" data-hey="{{i18n 'kpmg.personalization.dashboard.feedback.hey'}}">
+                {{i18n 'kpmg.personalization.dashboard.feedback.hey'}}<!--Hey John!-->
+            </h1>
+            <hr class="divider"/>
+            <p class="feedback-description" id="feedbackDescription">
+                {{hbs.feedback.introductoryText}}<!--description-->
+            </p>
+        </div>
+
+        <div class="feedback-content">
+            {{#each hbs.feedback.loop}}<!--questionnaire-->
+                <div class="row-same-height row-full-height question-wrapper" tabindex="0">
+                    <div id={{this.label}} class="question-heading {{#unless @index}}open{{/unless}}">
+                        {{this.label}}<!--question label-->
+                        <span class="{{#if @index}}icon-chevron-down{{else}}icon-chevron-up{{/if}}"></span>
+                    </div>
+                    <div class="answer-wrapper">
+                        <div class="question">{{this.question}}<!--question--></div>
+                        {{#each answerList}}<!--options for question-->
+                            <div class="answer">
+                                <input type="radio" id="question{{../@index}}{{@index}}" name="question{{../@index}}"/>
+                                <div class="check"></div>
+                                <label class="feedback-answer-entry" for="question{{../@index}}{{@index}}" tabindex="0">{{this}}<!--answer description--></label>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/each}}
+            <div class="opt-out-description">{{i18n "kpmg.personalization.dashboard.feedback.optoutd"}}</div>
+            <div class="opt-out-content">
+                <input type="checkbox" id="optOut" name="optout"/>
+                <label for="optOut" class="content-feedback-tab-entry" tabindex="0">{{i18n "kpmg.personalization.dashboard.feedback.optoutoffeedback"}}</label>
+            </div>
+        </div>
+
+        <div class="feedback-footer" role="footer">
+            <div class="row-same-height row-full-height">
+                <div class="col-md-6 last-column col-md-push-6">
+                    <div class="feedback-controls">
+                        <button class="btn btn-cta btn-default" id="feedbackSubmit" type="button">
+                            <span class="icon-chevron-right"></span>
+                            <span class="btn-copy">{{i18n "kpmg.personalization.dashboard.feedback.done"}}</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-pull-6">
+                    <div class="feedback-controls">
+                        <button class="btn-cta btn-cancel" id="feedbackClose" data-dismiss="modal">
+                            <span class="icon-close"></span>
+                            <span class="btn-copy">{{i18n "kpmg.personalization.myaccount.profile.close"}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- End Component: Contentrefreshfeedback -->

@@ -1,0 +1,25 @@
+<section class="module-tmpl-publiclist">
+   <div class="row visible-sm-block visible-md-block visible-lg-block">
+       <div class="col-md-12 bread-crumb-full">
+           <div class="inner-container">
+               {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb"  id="1"}}
+           </div>
+       </div>     
+   </div>
+    <div class="container-fluid full-page-title">
+        <div class="inner-container">
+            <div class="row">
+                <div class="row-same-height row-full-height">
+                    {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner-container">
+        <div class="row">
+            <div class="row-same-height row-full-height">
+                {{ include "sharedlist" resourceType="/apps/kpmgpublic/components/personalization/sharedlist" path="sharedlist" }}
+            </div>
+        </div>
+    </div>
+</section>

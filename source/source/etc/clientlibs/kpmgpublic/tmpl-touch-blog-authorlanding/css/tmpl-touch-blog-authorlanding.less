@@ -1,0 +1,22 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-fullbleed/css/touch-fullbleed.less";
+@import "../../touch-details/css/touch-details.less";
+@import "../../touch-blog-author-list/css/touch-blog-author-list.less";
+
+.module-touch-blog-authorlanding {
+    background: @white;
+}
+
+@media (max-width: 640px) {
+    .module-touch-blog-authorlanding {
+        .module-touch-blog-author-list{
+            margin-top: 22px;
+        }
+    }
+    .fullbleedrow{
+        width: 100%;
+        .module-touch-fullbleed {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<!-- Begin Component: Contactbutton -->
+<section class="module-contactbutton component">
+    <div class="col-md-12 col-xs-12 contactButtonInnerContainer" role="button">
+        <a title="{{hbs.contactbutton.title}}" id="contact-form-modal" {{#if hbs.contactbutton.overlay}} data-remote="{{hbs.contactbutton.primaryUrl}}" data-modal-url="/etc/partials/kpmgpublic/contact-form/contact-form.html" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#kpmgModal" href="javascript:void(0)" {{else}} href="{{hbs.contactbutton.primaryUrl}}" {{/if}}>
+        <div class="col-md-6 col-xs-12">
+                <h3 class="tertiary-head">{{hbs.contactbutton.title}}</h3>
+
+                <p class="mobileDescription line-clamp line-clamp-3">
+                    {{hbs.contactbutton.shortDescription}}
+                </p>
+                <p class="desktopDescription line-clamp line-clamp-3">
+                    {{hbs.contactbutton.longDescription}}
+                </p>            
+        </div>
+        <div class="col-md-6 promoImage">            
+                {{#if hbs.contactbutton.imageFileReference}}
+                <img src="{{hbs.globalValues.assetDomainName}}{{hbs.contactbutton.imageFileReference}}/jcr:content/renditions/cq5dam.web.424.424.jpg" alt="{{hbs.contactbutton.altText}}" title="{{hbs.contactbutton.altText}}" class="lazy img-responsive" data-desktop="{{hbs.globalValues.assetDomainName}}{{hbs.contactbutton.imageFileReference}}/jcr:content/renditions/cq5dam.web.424.424.jpg" alt="{{hbs.contactbutton.altText}}" title="{{hbs.contactbutton.altText}}" class="lazy img-responsive" /> 
+                {{/if}}
+        </div>
+        </a>
+    </div>
+    <div class="modal fade" id="kpmgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog container modal-contactdialog">
+            <a href="#" class="btn-close hide" data-dismiss="modal"><span class="icon-close">
+            <span class="sr-only">close</span></span></a>
+            <div class="modal-content"></div>
+        </div>
+    </div>
+
+</section>
+
+<!-- End Component: Contactbutton -->

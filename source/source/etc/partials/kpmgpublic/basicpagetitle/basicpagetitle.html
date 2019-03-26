@@ -1,0 +1,16 @@
+
+<div class="col-md-12">
+    <section class="module-basicpagetitle component">
+        <div class="pagetitle-wrapper">
+            <h1 class="basic-title desktop-only">{{hbs.basicPageTitle.title}}</h1>
+            <h1 class="basic-title mobile-only">{{hbs.basicPageTitle.shortTitle}}</h1>
+            {{#if hbs.basicPageTitle.shareButton}}
+            <div class="share-desktop">
+                {{include "share" resourceType="/apps/kpmgpublic/components/social/share"}}
+            </div>
+            {{/if}}
+            <p class="basic-desc desktop-only">{{hbs.basicPageTitle.description}}</p>
+            <p class="basic-desc mobile-only">{{hbs.basicPageTitle.shortDescription}}</p>
+        </div>
+    </section>
+</div>

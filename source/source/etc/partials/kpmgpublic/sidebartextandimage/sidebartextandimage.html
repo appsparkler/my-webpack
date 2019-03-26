@@ -1,0 +1,13 @@
+<section class="module-sidebartextandimage component">
+	<h1 class="tertiary-head">{{ hbs.sidebartextimage.title }}</h1>
+	{{#if hbs.sidebartextimage.imageSrc}}
+		<picture>
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="{{hbs.sidebartextimage.imageSrc}}/jcr:content/renditions/cq5dam.web.512.341.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+			<source srcset="{{hbs.sidebartextimage.imageSrc}}/jcr:content/renditions/cq5dam.web.237.158.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+			<!--[if IE 9]></video><![endif]-->
+			<img class="img-responsive" src="{{hbs.sidebartextimage.imageSrc}}/jcr:content/renditions/cq5dam.web.237.158.jpg" title="{{hbs.sidebartextimage.alt}}" alt="{{hbs.sidebartextimage.alt}}">
+	 </picture>
+	{{/if}}
+    <p>{{ hbs.sidebartextimage.desciption }}</p>
+</section>

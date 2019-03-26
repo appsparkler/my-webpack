@@ -1,0 +1,138 @@
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../share/css/share";
+@import "../../articleintroduction/css/articleintroduction";
+@import "../../anchorlinks/css/anchorlinks";
+@import "../../downloadbutton/css/downloadbutton";
+@import "../../connectandrfp/css/connectandrfp";
+@import "../../emptyplaceholder/css/emptyplaceholder";
+@import "../../bodytext/css/bodytext";
+@import "../../image/css/image";
+@import "../../audiovideo/css/audiovideo";
+@import "../../authors/css/authors";
+@import "../../relatedcontent/css/relatedcontent";
+@import "../../publicationserieslist/css/publicationserieslist";
+@import "../../inlinelist/css/inlinelist";
+@import "../../copyrightlist/css/copyrightlist";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../disclaimer/css/disclaimer";
+@import "../../mykpmgpromob/css/mykpmgpromob";
+@import "../../addtolibrary/css/addtolibrary";
+@import "../../enhanceddownload/css/enhanceddownload";
+body {
+    background-color: @white; // this is the only page with a white background
+}
+
+.module-tmpl-newsletter {
+
+    .newsletter-breadcrumb {
+         margin-top: -9px;
+    }
+
+    .module-downloadbutton {
+        background: #fff;
+        margin-top: 0 !important;
+    }
+
+    .module-relatedcontent.vertical {
+        .related-bg(@gray-94);
+        border-top: 9px solid #f0f0f0;
+        .relatedcomponent-image {
+            width: 100%;
+        }
+    }
+
+    .module-relatedcontent.vertical {
+        .relatedcomponent-innerContainer {
+            padding-top: 0;
+
+            .relatedcomponent-innerContainer {
+                margin-bottom: 0;
+                padding-top: 10px;
+                padding-right: 10px !important;
+                padding-left: 10px !important;
+            }
+        }
+    }
+
+    .tmpl-row {
+        border-top: 9px solid #fff;
+        border-bottom: 9px solid #fff;
+    }
+
+    .parsys-row {
+        border-bottom: 0 none;
+    }
+
+    .module-mykpmgpromo {
+        .mykpmgpromo-custom-margin {
+            display: block;
+            a {
+                position: static;
+            }
+        }
+    }
+
+    @media (min-width:@desktop-min-fixed) {
+
+        .module-connectandrfp {
+            position: relative !important;
+        }
+
+        .module-downloadbutton {
+            background: #fff;
+            margin-top: 0 !important;
+            float: left;
+            padding-bottom: 10px !important;
+            width: 100%;
+
+            .pull-left + .pull-left {
+                width: 89%;
+            }
+        }
+
+        .module-articleintroduction {
+            padding: 0;
+
+            .col-md-9 {
+                border-right: 9px solid #fff;
+            }
+
+            .col-md-3 {
+                border-left: 9px solid #fff;
+            }
+        }
+
+        .module-anchorlinks {
+            border-right: 10px solid #f0f0f0;
+            border-left: 10px solid #f0f0f0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .module-inlinelist {
+            padding: 10px;
+        }
+
+        .parsys-row {
+            padding-bottom: 18px;
+        }
+
+        .parsys-row:last-child {
+            padding-bottom: 0;
+        }
+
+        .module-relatedcontent.vertical {
+            .relatedcomponent-innerContainer {
+                padding-top: 0;
+
+                .relatedcomponent-innerContainer {
+                    margin-bottom: 0;
+                    padding-top: 10px;
+                    padding-right: 10px !important;
+                    padding-left: 10px !important;
+                }
+            }
+        }
+    }
+}

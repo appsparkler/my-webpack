@@ -1,0 +1,67 @@
+<section class="module-address component">
+    <h3 class="component-head line-clamp line-clamp-3">{{#if hbs.address.locationWebsite}}<a href="{{hbs.address.locationWebsite}}">{{/if}}{{ hbs.address.locationName}}{{#if hbs.address.locationWebsite}}</a>{{/if}}</h3>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <ul class="adress-physical">
+                <h2 class="tertiary-head line-clamp line-clamp-3">{{i18n hbs.address.officeLocationLabel}}</h2>
+                {{#if hbs.address.subTitle}}
+                    <li>{{hbs.address.subTitle}}</li>
+                {{/if}}
+                {{#if hbs.address.address1}}
+                    <li>{{hbs.address.address1}}</li>
+                {{/if}}
+                {{#if hbs.address.address2}}
+                    <li>{{hbs.address.address2}}</li>
+                {{/if}}
+                {{#if hbs.address.city}}
+                    <li>{{hbs.address.city}}</li>
+                {{/if}}
+                {{#if hbs.address.state}}
+                    <li>{{hbs.address.state}}</li>
+                {{/if}}
+                {{#if hbs.address.postalCode}}
+                    <li>{{hbs.address.postalCode}}</li>
+                {{/if}}
+                {{#if hbs.address.country}}
+                    <li>{{hbs.address.country}}</li>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <ul class="address-mailing">
+                <h2 class="tertiary-head line-clamp line-clamp-3">{{i18n hbs.address.mailingAddressLabel}}</h2>
+                {{#if hbs.address.mailingAddress1}}
+                    <li>{{hbs.address.mailingAddress1}}</li>
+                {{/if}}
+                {{#if hbs.address.mailingAddress2}}
+                    <li>{{hbs.address.mailingAddress2}}</li>
+                {{/if}}
+                {{#if hbs.address.mailingCity}}
+                    <li>{{hbs.address.mailingCity}}</li>
+                {{/if}}
+                {{#if hbs.address.mailingState}}
+                    <li>{{hbs.address.mailingState}}</li>
+                {{/if}}
+                {{#if hbs.address.mailingPostalCode}}
+                    <li>{{hbs.address.mailingPostalCode}}</li>
+                {{/if}}
+                {{#if hbs.address.mailingCountry}}
+                    <li class="address-mailingCountry">{{hbs.address.mailingCountry}}</li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <ul class="col-md-12 col-sm-12"> 
+            {{#if hbs.address.email}}
+                <li class="address-email"><a href="mailto:{{hbs.address.email}}" title="{{hbs.address.email}}" >{{hbs.address.email}}</a></li>
+            {{/if}}
+            {{#if hbs.address.telephone}}
+                <li class="phone-number">{{i18n hbs.address.phoneNumberLabel}}&#58;&nbsp;<a href="tel:{{hbs.address.telephone}}" title="{{hbs.address.telephone}}">{{hbs.address.telephone}}</a></li>
+            {{/if}}
+            {{#if hbs.address.fax}}
+                <li class="fax-number">{{i18n hbs.address.faxNumberLabel}}&#58;&nbsp;{{hbs.address.fax}}</li>
+            {{/if}}
+        </ul>
+    </div> 
+</section>

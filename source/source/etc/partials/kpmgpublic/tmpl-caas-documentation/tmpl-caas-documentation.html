@@ -1,0 +1,48 @@
+<!-- Begin Component: TmplCaasDocumentation -->
+<section class="module-tmpl-caas-documentation">
+    <!-- CaaS Documentation Header component - RHP -->
+    <div class="row" data-desktop-cell="1" data-mobile-cell="1">
+        <div class="col-md-12 no-padding caas-nav">
+            {{ include "caasdocumentheader" resourceType="/apps/kpmgpublic/components/caas/caasdocumentheader" path="cell1"}}
+        </div>
+    </div>
+
+    <!-- Breadcomb default component -->
+    <div class="row caas-breadcrumb-row hidden-xs" data-desktop-cell="2">
+        <div class="col-md-12 bread-crumb-full">
+            <div class="inner-container">
+                {{ include "caasdocumentbreadcrumb" resourceType="/apps/kpmgpublic/components/caas/caasdocumentbreadcrumb"  id="1"}}
+            </div>
+        </div>
+    </div>
+
+    <!-- container having Documentation Nav, Documentation Body Text, and Documentation Footer components -->
+    <div class="inner-container">
+        <div class="row row-same-height row-full-height">
+            <!-- Documentation Nav component - RHP -->
+            <div class="col-md-3 col-md-height col-full-height caas-sub-nav">
+                <div  class="row" data-desktop-cell="3" data-mobile-cell="2">
+                    {{ include "caasdocumentnav" resourceType="/apps/kpmgpublic/components/caas/caasdocumentnav"  path="cell3"}}
+                </div>
+            </div>
+
+            <!-- Documentation body text component - OHP -->
+            <div class="col-md-9 col-md-height col-full-height caas-body-text">
+                <div class="row" data-desktop-cell="4" data-mobile-cell="3">
+                    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell4"}}
+                    {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder"  path="cell4"}}
+                    {{/render}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CaaS Documentation footer component -->
+    <div class="row" data-desktop-cell="5" data-mobile-cell="4">
+        <div class="col-md-12 no-padding">
+            {{ include "caasdocumentfooter" resourceType="/apps/kpmgpublic/components/caas/caasdocumentfooter" path="cell5"}}
+        </div>
+    </div>
+
+</section>
+<!-- End Component: TmplCaasDocumentation -->

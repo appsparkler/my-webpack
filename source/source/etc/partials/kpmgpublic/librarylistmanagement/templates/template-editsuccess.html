@@ -1,0 +1,38 @@
+<div class="modal-content editsuccessmodal">
+    <div class="overlay-header" role="header">
+        <h4 class="heading" id="myModalLabel">
+            {{#if hbs.editlist}}
+                {{hbs.editlist.namechanges}}
+            {{else}}
+                {{i18n "kpmg.personalization.library.librarylist.namechanges"}}
+            {{/if}} 
+        </h4>
+        <hr class="divider">
+    </div>
+    <div class="overlay-content" role="main">
+        <div class="alert alert-success editsuccesssingle" role="alert">
+            <span class="icon-checkmark"></span>
+            {{#if hbs.editlist}}
+                {{hbs.editlist.listnamechanged}}
+            {{else}}
+                {{i18n "kpmg.personalization.library.librarylist.listnamechanged"}}
+            {{/if}}            
+        </div>
+    </div>
+    <div class="overlay-footer" role="footer">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="savearticle-controls">
+                    <button class="btn-cta btn-default close editsucessdismis" href="#" data-dismiss="modal">
+                        <span class="icon-close"></span>
+                        {{#if hbs.createlistoverlay}}
+                            {{hbs.createlistoverlay.close}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.close"}}
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

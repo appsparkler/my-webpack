@@ -1,0 +1,74 @@
+    <div id='articlecarouselconfig' articlecarouselrendition='{"imageGalleryConfig":[
+    {{#hbs.articleCarousel.imageConfig}}
+    {
+        "width":{{this.imagewidth}},
+        "height":{{this.imageheight}},
+        "dwidth":{{this.devicewidth}}
+    },
+    {{/hbs.articleCarousel.imageConfig}}
+    {}
+    ],
+    "imageGalleryConfigExists":{{#if hbs.articleCarousel.imageConfigExists}}true{{else}}false{{/if}}
+}'
+>
+</div>
+
+<section class="module-articlecarousel component" data-items="{{hbs.articleCarousel.noOfItems}}" data-locale="{{hbs.articleCarousel.locale}}" data-is-manual="{{hbs.articleCarousel.contentPopulation}}" data-title="{{hbs.articleCarousel.carouselTitle}}" data-asset-domain="{{hbs.globalValues.assetDomainName}}" data-showTime="{{hbs.articleCarousel.showTime}}" data-readmorelabel="{{i18n hbs.articleCarousel.ctaLabel}}" tabindex="0">
+
+<a href="javascript:void(0);" class="articlecarousel-tab-entry no-highlight"></a>
+{{#if hbs.articleCarousel.contentPopulation}}
+<h3 class="secondary-head articlecarousel-item-title">{{hbs.articleCarousel.carouselTitle}}</h3>
+<div class="articlecarousel-owl-carousel manual-carousel carousel slide {{#if hbs.articleCarousel.articleData}}has-slides{{/if}}">
+    {{#each hbs.articleCarousel.articleData}}
+<a href="{{this.pagePath}}" title="{{this.imageAltText}}">
+    <div class="articlecarousel-item" data-slideno="{{@index}}">
+        <div class="articlecarousel-item-row">
+            
+                <div class="col-md-6 col-xs-6">
+                    {{#if hbs.articleCarousel.imageConfigExists}}
+
+                    <div data-picture data-alt='{{this.imageAltText}}'>
+                        {{#hbs.articleCarousel.imageConfig}}
+                        <div data-src="{{hbs.globalValues.assetDomainName}}{{../this.articleImage}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+                        {{#if @last}}
+                        <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+                        {{/if}}
+                        {{/hbs.articleCarousel.imageConfig}}
+
+                    </div>
+                    {{else}}
+                    <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 237'%2F%3E"  data-desktop="{{hbs.globalValues.assetDomainName}}{{this.articleImage}}/jcr:content/renditions/cq5dam.web.237.237.jpg" data-mobile="{{hbs.globalValues.assetDomainName}}{{this.articleImage}}/jcr:content/renditions/cq5dam.web.237.237.jpg" alt="{{this.imageAltText}}" title="{{this.imageAltText}}" />
+                    {{/if}}
+                </div>
+
+                <div class  ="articlecarousel-item-description">
+                    
+                    {{#if shortTitle}}
+                    <p class="articlecarousel-title">
+                        <span class="articlecarousel-item-description-title line-clamp line-clamp-2"> {{this.shortTitle}}</span>
+                    </p>
+                    {{/if}}
+                    <p class="articlecarousel-desc">
+                        <span class="articlecarousel-item-partnerDescription articlecarousel-details line-clamp line-clamp-4"> {{this.firstName}} {{this.lastName}} {{this.country}} </span>
+                    </p>
+                    {{#if this.publishedDate}}
+                    <p class="articlecarousel-desc-date">
+                        <span class="dateformat" data-publishedDate="{{this.publishedDate}}"></span>
+                    </p>
+                    {{/if}}
+                 
+                    <div class="articlecarousel-item-partnerDescription articlecarousel-desc line-clamp line-clamp-7">{{this.shortDescription}}</div>
+
+                </div>
+            </div>
+      
+    </div>
+  </a>
+    {{/each}}
+</div>
+{{else}}
+<h3 class="secondary-head articlecarousel-item-title auto-title">{{hbs.articleCarousel.carouselTitle}}</h3>
+<div class="articlecarousel-owl-carousel auto-carousel carousel slide" data-path="{{hbs.articleCarousel.articleCarouselSolrUrl}}"> </div>
+{{/if}}
+<a href="javascript:void(0);" class="articlecarousel-tab-exit no-highlight"></a>
+</section>

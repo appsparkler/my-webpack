@@ -1,0 +1,11 @@
+{
+    "hbs": {
+        "myKpmgPromo": {
+            "title":"mykpmgtitle",
+            "description": "mykpmgdescription",
+            "cta": "mykpmgreadmore",
+            "ctaUrl": "#"
+        	
+        }
+    }
+}

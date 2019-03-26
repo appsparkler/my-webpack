@@ -1,0 +1,162 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-promotional/css/touch-promotional";
+
+.module-touch-topic-list-header {
+    margin: 30px 20px 0px 20px;
+    padding: 0px;
+
+    div.inline-list-elements {
+        display: flex;
+        align-items: center;
+        background: @gray-94;
+    }
+    div.img-wrapper {
+        position: relative;
+        min-height: 190px; // to maintain same height when images do not load
+    }
+    span.blue-strip {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        background: @light-blue;
+    }
+
+    div.list-header-info {
+        padding-left: 10px;
+        padding-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 190px;
+        width: 100%;
+
+        h2.list-item-title {
+            font-size: 42px;
+            color: @kpmg-blue;
+            line-height: 0.714;
+            padding-bottom: 10px;
+            font-family: @kpmgLight;
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+              font-size: 30px;
+            }
+        }
+
+        div.topic-description {
+            width: 98%;
+            p.text {
+                font-size: 18px;
+                font-style: italic;
+                color: @gray-20;
+                font-family: @arial;
+                line-height: 1.389;
+            }
+            p.list-header-line-clamp {
+                -webkit-line-clamp: 3;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                position: relative;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 8rem;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    div.details-container {
+        background: @white;
+        padding-top: 20px;
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col-md-height {
+                border: none;
+                float: left;
+            }
+        }
+
+        .no-results {
+            text-align: center;
+           .no-results-wrapper{
+            display: inline-block;
+            padding: 30px 100px 35px 100px;
+            margin: 108px auto 148px;
+            border: 1px solid @gray-20;
+            color: @gray-101;
+
+            .nocontent-header {
+                font-size: 42px;
+                color: @kpmg-blue;
+                font-family: @kpmgLight;
+            }
+            .nocontent-description {
+                font-size: 18px;
+                color: @gray-40;
+            }
+        
+        }
+    }
+    }
+
+    .view-topics-spotlight {
+        background: @light-blue;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        padding: 20px 0px;
+        color: @white;
+        font-size: 24px;
+
+        &:hover {
+            color: @white;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .module-touch-topic-list-header {
+        margin: 0px;
+        div.details-container {
+            .no-results {
+                .no-results-wrapper{
+                    margin: 50px auto 66px;
+                    padding: 22px 67px 34px 67px;
+                    width: 96%;
+
+                    .nocontent-header {
+                        font-size: 42px;
+                        margin-bottom: 25px;
+                        line-height: 1;
+                    }
+                    .nocontent-description {
+                        font-size: 22px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        div.inline-list-elements {
+            display: block;
+
+            div.img-wrapper {
+                min-height: 114px; // to maintain same height when images do not load
+            }
+        }
+
+        div.list-header-info {
+            background: @white;
+            width: 100%;
+            h2.list-item-title {
+                padding-top: 20px;
+                &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                  font-size: 25px;
+                }
+            }
+            div.topic-description {
+                display: none;
+            }
+        }
+    }
+}

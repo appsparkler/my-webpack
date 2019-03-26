@@ -1,0 +1,89 @@
+<!-- Begin Component: Librarylistmanagement -->
+<div class="module-librarylistmanagement component clearfix" tabindex="0">
+    <aside aria-describedBy="heading" class="Librarylistmanagement">
+    	<div class="librarylist-header">
+    		<h2 class="heading" id="heading">{{i18n "kpmg.personalization.library.listmanagement.lists"}}
+    		<a class="btn-cta btn-newlist mobile-only" href="javascript:" id="createnewlistbtnmobile">
+                <span class="icon-add"></span>
+                {{i18n "kpmg.personalization.library.listmanagement.createAList"}}
+            </a>
+            </h2>
+    	</div>
+    	<div class="librarylist-content">
+    		<div class="librarylist-group">
+    			<input type="hidden" id="listManagementDefaultlisttitle" value="{{i18n 'kpmg.personalization.library.listmanagement.allSavedItems'}}">
+                <input type="hidden" id="itemsLabel" value ="{{i18n 'kpmg.personalization.library.listmanagement.items'}}">
+    			<div class="search-list">
+                    <div class="form-group custom-select">
+                        <label class="sr-only" for="listManagementLibrarylistdropdown"></label>
+                        <select class="form-control full-width" id="listManagementLibrarylistdropdown" name="listManagementLibrarylistdropdown"></select>
+                        <style>
+                            select#listManagementLibrarylistdropdown::-ms-expand {
+                                display:none;
+                            }
+                        </style>
+                    </div>
+                </div>
+                <ul class="librarylist" role="list">
+    				<li class="librarylistitem defaultlist" role="listitem" id="defaultlist">
+    					<div class="list-inner">
+                             <a href="#" class="librarylistname">
+                                <span class="badge">0</span>{{i18n "kpmg.personalization.library.listmanagement.allSavedItems"}}
+                            </a>
+                            <div class="librarylistitem-actions" aria-hidden="true">
+                                <div class="actionitem"><a href="#"><span class="icon-close delete" data-action="delete"></span></a></div>
+                                <div class="actionitem"><a href="#"><span class="icon-share edit" data-action="edit"></span></a></div>
+                                <div class="actionitem last-child">
+                                    <a href="#" title="{{i18n 'kpmg.personalization.library.librarylist.share'}}" data-title="" data-url="" data-desc="" data-image="/jcr:content/renditions/cq5dam.web.237.158.jpg">
+                                        <span class="icon-share share" data-action="share"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+		<div class="new-list-controls">
+            <a class="btn-cta btn-newlist desktop-only" href="" id="createnewlistbtn">
+                <span class="icon-add"></span>
+                {{i18n "kpmg.personalization.library.listmanagement.createAList"}}
+            </a>
+            <form action="" aria-hidden="true" class="form-createlist" role="form">
+                <div class="form-group">
+                    <span class="error mobile-only" id="inputerror" aria-hidden="true">
+                        <span class="listnameexists">
+                            {{i18n "kpmg.personalization.library.listmanagement.thatNameIsTaken"}}
+                        </span>
+                        <span class="empty">
+                            {{i18n "kpmg.personalization.library.addtolibraryoverlay.empty"}}
+                        </span>
+                    </span>
+                    <label class="sr-only" for="newlistinput">
+                        {{i18n "kpmg.personalization.library.listmanagement.createAList"}}
+                    </label>
+                    <input class="" id="newlistinput" placeholder="{{i18n 'kpmg.personalization.library.movetolibraryoverlay.enternewlist'}}" type="text" aria-labelledby="" maxlength="35">
+                </div>
+                <div class="row librarylist-controls">
+                    <div class="col-xs-6 full-bleed">
+                        <a class="btn-cta btn-cancel" href="#" id="cancelcreatebtn" tabindex="0" type="cancel"><span class="icon-close"></span>{{i18n "kpmg.personalization.library.listmanagement.cancel"}}</a>
+                    </div>
+                    <div class="col-xs-6 full-bleed">
+                        <a class="btn-cta createListBtn trackable" href="" id="createlistbtn" tabindex="0" type="submit"><span class="icon-chevron-right"></span>{{i18n "kpmg.personalization.library.listmanagement.save"}}</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </aside>
+	<div class="modal inner-container fade" id="librarylistmanagementmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog container">
+	        <div class="modal-header">
+	            <a href="#" class="btn-close" data-dismiss="modal"><span class="icon-close"><span class="sr-only">{{i18n "kpmg.personalization.library.listmanagement.close"}}</span></span></a>
+	        </div>
+	        <div class="modal-content"></div>
+	    </div>
+	</div>
+</div>
+
+
+<!-- End Component: Librarylistmanagement -->

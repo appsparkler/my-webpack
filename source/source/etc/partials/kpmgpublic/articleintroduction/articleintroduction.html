@@ -1,0 +1,26 @@
+<section class="module-articleintroduction component bg-white">
+   <div class="col-md-9">
+      <h1 class="primary-head visible-lg visible-md visible-md-block">
+         {{hbs.articleIntroduction.title}}
+      </h1>
+      <h1 class="primary-head visible-xs">
+         {{hbs.articleIntroduction.shortTitle}}
+      </h1>
+      {{#if hbs.articleIntroduction.publishedDate}}
+      <p class="publish-date" data-showTime="{{hbs.articleIntroduction.showTime}}" data-publishedDate="{{hbs.articleIntroduction.publishedDate}}"></p>
+      {{/if}}
+      <p class="article-desc">
+         {{hbs.articleIntroduction.abstract}}
+      </p>
+   </div>
+   <div class="col-md-3 hide-from-print">
+      <div class="share-desktop">
+         {{include "share" resourceType="/apps/kpmgpublic/components/social/share"}}
+      </div>
+      {{#if hbs.articleIntroduction.addToLibButton}}
+      <div class="library-desktop">
+         {{include "addtolibrary" resourceType="/apps/kpmgpublic/components/personalization/addtolibrary"}}
+      </div>
+      {{/if}}
+   </div>
+</section>

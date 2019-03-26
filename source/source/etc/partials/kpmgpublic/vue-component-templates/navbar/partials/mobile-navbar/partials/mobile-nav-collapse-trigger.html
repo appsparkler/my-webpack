@@ -1,0 +1,59 @@
+<template id="mobile-nav-collapse-trigger-component-template">
+    <!-- PRIMARY-MENU-LIST-ITEM + COLLAPSE TRIGGER -->
+    <div 
+        class="
+            mobile-nav-collapse-trigger-component vue-component 
+            bg-white 
+            w-100 
+            d-table
+       " 
+       v-if="vm && vm.id"
+     >
+        <!-- MENU-LIST-ITEM -->
+        <div 
+             class="d-table-cell"
+        >
+            <a class="
+                    h6 
+                    p-4 m-0 
+                    text-gray20 
+                    d-block py-4-1
+                "
+                target="_blank"
+                x-cq-linkchecker="skip"
+               v-if="vm.linkURL && vm.internalLinkFlag == 'false'"
+               v-process-url="vm.linkURL"
+           >
+                \{{ vm.i18nLabel }} <span class="sr-only"> \{{ vm.newTabAllow }} </span>
+            </a>
+            <a class="
+                    h6 
+                    p-4 m-0 
+                    text-gray20 
+                    d-block py-4-1
+                "
+               v-else-if="vm.linkURL"
+               v-process-url="vm.linkURL"
+           >
+                \{{ vm.i18nLabel }}
+            </a>
+        </div>
+        <!-- COLLAPSE-TRIGGER FOR SUB-LIST -->
+        <div 
+            class="
+               collapsed
+               d-table-cell 
+               text-center 
+               px-3
+               collapse-trigger-area
+            " 
+            data-toggle="collapse" 
+            tabindex="0" 
+            role="tab"
+            v-if="vm.flyout && vm.flyout.cell1 && vm.flyout.cell1.links && vm.flyout.cell1.links.length"
+            :data-target="'#' + vm.id"
+         >
+            <span class="icon"></span>
+        </div>
+    </div>
+</template>

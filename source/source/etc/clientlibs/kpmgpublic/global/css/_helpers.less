@@ -1,0 +1,901 @@
+.skew(@deg) {
+    -webkit-transform: skew(@deg, 0deg);
+    -moz-transform: skew(@deg, 0deg);
+    -ms-transform: skew(@deg, 0deg);
+    -o-transform: skew(@deg, 0deg);
+    transform: skew(@deg, 0deg);
+}
+
+.font-size(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px";
+	font-size: ~"@{remValue}rem";
+}
+
+.line-height(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	line-height: ~"@{pxValue}px";
+	line-height: ~"@{remValue}rem";
+}
+
+.lang(@lang; @content;) {
+	&:lang(@{lang}){
+		@content();
+	};
+}
+
+.lang-wf(@lang; @content;) {
+	.wf-active &:lang(@{lang}){
+		@content();
+	};
+}
+
+/*New line clamp generator which generates line clamping for each font style and each language*/
+/* @fz:1.4rem, increasing font-size as per 14156 */
+.generate-line-clamp(@n, @fz:1.6rem, @lh:1.5,@i: 1) when (@i =< @n) {
+
+	/* Note:- this mixing donot update font size, but based on font size simply calculate the max-height*/
+    &.line-clamp.line-clamp-@{i} {
+    -webkit-line-clamp: @i;
+		max-height: @fz * @lh * @i;
+  }
+  .generate-line-clamp(@n, @fz, @lh,(@i + 1));
+}
+
+
+/* create line clamping styles for all language*/
+.add-line-clamp(@n,@fz,@lh,@nl-fz,@nl-lh){
+  /* latin size */
+  .generate-line-clamp(@n,@fz,@lh);
+
+  .nl-clamping(){
+    .generate-line-clamp(@n,@nl-fz,@nl-lh);
+  }
+
+  .lang(vi,{
+    .nl-clamping();
+  });
+
+  .lang(zh-CN,{
+    .nl-clamping();
+  });
+
+  .lang(zh-TW,{
+    .nl-clamping();
+  });
+
+  .lang(ko,{
+    .nl-clamping();
+  });
+
+  .lang(ja,{
+    .nl-clamping();
+  });
+}
+
+.add-line-clamp-v2(@n, @fz, @lh, @nl-fz, @nl-lh, @bg-color) {
+  /* latin size */
+  .generate-line-clamp-v2(@n,@fz,@lh, @bg-color);
+
+  .nl-clamping() {
+    .generate-line-clamp(@n,@nl-fz,@nl-lh);
+  }
+  .lang(vi,{ .nl-clamping(); });
+  .lang(zh-CN,{ .nl-clamping(); });
+  .lang(zh-TW,{ .nl-clamping(); });
+  .lang(ko,{ .nl-clamping(); });
+  .lang(ja,{ .nl-clamping(); });
+}
+
+.generate-line-clamp-v2(@n, @fz:1.6rem, @lh:1.5, @color, @i: 1) when (@i =< @n) {
+  /* Note:- this mixing donot update font size, but based on font size simply calculate the max-height*/
+  &.line-clamp.line-clamp-@{i} {
+    -webkit-line-clamp: @i;
+    max-height: @fz * @lh * @i;
+  }
+
+  &.line-clamp:after {
+    background: -webkit-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+    /* Standard syntax*/
+  }
+  .generate-line-clamp(@n, @fz, @lh,(@i + 1));
+}
+
+
+/*New simplified line clamp generator which to add clamping, fade, and variant to allow for differences in desktop and mobile version*/
+/* @fz:1.4rem, increasing font-size as per 14156 */
+.add-line-clamp-v3(@n, @fz, @lh, @bg-color){
+	.generate-line-clamp-v3(@n, @fz, @lh);  
+	.generate-clamp-fade(@bg-color);
+}
+
+/**
+* Mobile Line Clamping
+* usage
+	@n: maximum number of lines
+	@fz: font-size of element
+	@ln: line-height to elemen
+	@bg-color: colour for clamping fade-out cutoff
+*/
+.add-line-clamp-mobile(@n, @fz, @lh, @n-m, @fz-m, @lh-m, @bg-color){  
+	.generate-line-clamp-v3(@n, @fz, @lh);  
+	.generate-clamp-fade(@bg-color);
+
+	@media only screen and (max-width: @mobile-max-fixed) {
+		.generate-line-clamp-v3(@n-m, @fz-m, @lh-m);  
+	}
+}
+  
+  
+.generate-line-clamp-v3(@n, @fz:1.6, @lh:1.5) {
+	/* Note:- this mixing donot update font size, but based on font size simply calculate the max-height*/
+	.font-size(@fz);
+	.line-height(@lh); 
+	-webkit-line-clamp : @n;
+	max-height  : calc( (@lh*10px) * @n);
+	display: -webkit-box;
+	-webkit-box-orient: vertical;  
+	overflow: hidden;
+	text-overflow : ellipsis;
+}
+
+.generate-clamp-fade(@color) {
+	&:after {
+		background: -webkit-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+		/* For Safari 5.1 to 6.0 */
+		background: -o-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+		/* For Opera 11.1 to 12.0 */
+		background: -moz-linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+		/* For Firefox 3.6 to 15 */
+		background: linear-gradient(to left, @color, fadeOut(@color, 100%) 30%);
+		/* Standard syntax*/
+	}
+}
+
+
+//Title Mixins - [Ayan - 06.10.25]
+
+.page-title(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(3.6);
+		line-height: 1.3;
+		font-weight: 300;
+	}
+
+	color: @color;
+	font-family: @kpmgLight;
+	.font-size(5.6);
+	line-height: 1;
+
+	/*Web fonts*/
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(el,{
+		font-family: @kpmgLightEL;
+	});
+
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(3.6);
+		line-height: 1.3;
+		font-weight: 300;
+    .cjk-font-size();
+	});
+}
+.component-title(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(2.4);
+		line-height: 1.3;
+		font-weight: 300;
+	}
+
+	color: @color;
+	font-family: @kpmgLight;
+	.font-size(3.8);
+	line-height: 1;
+	font-weight: normal;
+
+	/*Web fonts*/
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(el,{
+		font-family: @kpmgLightEL;
+	});
+
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(2.4);
+		line-height: 1.3;
+		font-weight: 300;
+	});
+}
+.promo-title(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(1.8);
+	line-height: 1.2;
+	font-weight: normal;
+
+	/*Web fonts*/
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	});
+
+}
+.page-description(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(1.8);
+	line-height: 1.2;
+
+	/*Web fonts*/
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	});
+}
+
+//Metadata style
+.promo-details(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(1.4);
+		line-height: 1.3;
+		font-weight: 400;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(1.6);
+	line-height: 1.2;
+
+	/*Web fonts*/
+
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(1.4);
+		line-height: 1.3;
+		font-weight: 400;
+	});
+}
+
+//bodyText
+.promo-description(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(1.4);
+		line-height: 1.5;
+		font-weight: 400;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(1.6);
+	line-height: 1.3;
+	.hyphen;
+
+	/*Web fonts*/
+
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(1.4);
+		line-height: 1.5;
+		font-weight: 400;
+	});
+}
+
+//CTA Mixins - [Ayan - 06.10.25]
+.cta-base() {
+	.cjk-font-size() {
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(1.8);
+	line-height: 1.2;
+
+	/*Web fonts*/
+
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @NotoSansVI;
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	});
+}
+
+.cta-right(@color) {
+	.cta-base();
+	right: 10px;
+    text-align: right;
+    .hyphen;
+}
+.cta-left(@color) {
+	.cta-base();
+	left: 10px;
+}
+
+.fine-print(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(1.2);
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	font-family: @arial;
+	.font-size(1.4);
+	line-height: 1.2;
+	color: @color;
+
+	/*Web fonts*/
+
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @arial;
+		.cjk-font-size();
+	});
+}
+
+//Copyright and disclaimer Mixins
+.disclaimer-copyright {
+	margin: 10px 0;
+	.fine-print(@gray-20);
+	text-align: left;
+}
+
+.file-size(@color) {
+	.fine-print(@color);
+}
+
+//Promo Component Rectangle mixins - Aparna 07/10/2015
+.title-box(@color) {
+	background-color: @color;
+	top:0;
+    position:absolute;
+    width: 54%;
+    height: 100%;
+}
+
+//Related content mixins - Aparna 07/10/2015
+.related-bg(@color) {
+	background: @color;
+	border-bottom: 9px solid @gray-94;
+}
+
+.related-cta(@color) {
+    .cjk-font-size() {
+		.font-size(1.6);
+		line-height: 1.3;
+		font-weight: 400;
+	}
+
+	color: @color;
+	.cta-base();
+	position: relative;
+	right: 0px;
+	bottom: 0px;
+	display: block;
+    text-align: right;
+    .hyphen;
+}
+
+//Dotted border 3x3 Light Blue - Mahesh 13/10/2015
+.dotted-lightblue {
+	content: "";
+    display: block;
+    z-index: 1;
+    height: 3px;
+    background: url(/etc/designs/kpmgpublic/images/dots.png) repeat-x 100% 0;
+}
+
+//Mixin for hyphen and word-wrap - Aparna 15/10/2015
+.hyphen {
+	word-wrap: break-word !important;
+    word-break: normal !important;
+}
+
+.body-title(@color,@clamp:false) {
+	.cjk-font-size() {
+		.font-size(2.0);
+		font-weight: 400;
+		line-height: 1.3;
+	}
+
+	color: @color;
+	font-family: @arial;
+	.font-size(2.2);
+	line-height: 1.2;
+	font-weight: normal;
+
+	/*Web fonts*/
+
+	.lang-wf(zh-TW,{
+		font-family: @NotoSansTC;
+	});
+
+	.lang-wf(ko,{
+		font-family: @NotoSansKR;
+	});
+
+	.lang-wf(ja,{
+		font-family: @NotoSansJP;
+	});
+
+	/*System fonts*/
+	.lang(zh-CN,{
+		.cjk-font-size();
+	});
+
+	.lang(zh-TW,{
+		font-family: @NotoSansTC_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ko,{
+		font-family: @NotoSansKR_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(ja,{
+		font-family: @NotoSansJP_systemOnly;
+		.cjk-font-size();
+	});
+
+	.lang(vi,{
+		font-family: @arial;
+		.cjk-font-size();
+	});
+}
+//CTA focus styles
+.cta-focus(@color) {
+    box-shadow:0 0 3px @color;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: fade(@color, 50%);
+    text-decoration: none;
+}
+
+//sentence case - Muthu 28/11/2016
+.sentence-case () {
+  text-transform: lowercase;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+/* line clamping
+.page-title(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,5.4rem,1,3.6rem,1.3);
+}
+
+.component-title(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,3.6rem,1,2.4rem,1.3);
+}
+
+.promo-title(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,1.6rem,1.2,1.6rem,1.3);
+}
+
+.page-description(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,1.6rem,1.2,1.6rem,1.3);
+}
+
+.promo-details(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,1.4rem,1.2,1.4rem,1.3);
+}
+
+.promo-description(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,1.4rem,1.3,1.4rem,1.5);
+}
+
+.fine-print(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,1.2rem,1.2,1.2rem,1.3);
+}
+
+.body-title(@color, @clamp:false) when (@clamp = true) {
+  .add-line-clamp(6,2.0rem,1.2,2.0rem,1.3);
+} */
+.input-placeholder(@color){
+   &::-webkit-input-placeholder{
+      color:@color;
+   }
+
+   &:-moz-placeholder{
+      color:@color;
+   }
+
+   &::-moz-placeholder{
+      color:@color;
+   }
+
+   &:-ms-input-placeholder{
+      color:@color;
+   }
+}
+
+/* Setting font size to provide check for Non Latin Languages. */
+.set-font-size(@sizeValue) {
+	/* default xx font size */
+	.font-size(@sizeValue);
+
+	/*decrease font size by .2rem to keep as default for Non Latin languages - KPMGS-14156*/
+	@remVal: round( (@sizeValue - 0.2),1);
+
+	.lang(zh-CN,{
+		.font-size(@remVal);
+	});
+
+	.lang(zh-TW,{
+		.font-size(@remVal);
+	});
+
+	.lang(ko,{
+		.font-size(@remVal);
+	});
+
+	.lang(ja,{
+		.font-size(@remVal);
+	});
+
+	.lang(vi,{
+		.font-size(@remVal);
+	});
+}
+
+.set-font-size-priority(@sizeValue) {
+	@remValue: @sizeValue;
+	@pxValue: (@sizeValue * 10);
+	font-size: ~"@{pxValue}px !important";
+	font-size: ~"@{remValue}rem !important";
+}
+
+/* Setting font size for Non Latin Languages. */
+.setall-non-latin-font-size(@sizeValue) {
+
+	.lang(zh-CN,{
+		.set-font-size-priority(@sizeValue);
+	});
+
+	.lang(zh-TW,{
+		.set-font-size-priority(@sizeValue);
+	});
+
+	.lang(ko,{
+		.set-font-size-priority(@sizeValue);
+	});
+
+	.lang(ja,{
+		.set-font-size-priority(@sizeValue);
+	});
+
+	.lang(vi,{
+		.set-font-size-priority(@sizeValue);
+	});
+}
+
+/* Setting style property and corresponding value for Non Latin Languages. */
+.setall-non-latin-property-value(@propertyName, @value) {
+	
+	.lang(zh-CN,{
+		@{propertyName} : ~"@{value}";
+	});
+
+	.lang(zh-TW,{
+		@{propertyName} : ~"@{value}";
+	});
+
+	.lang(ko,{
+		@{propertyName} : ~"@{value}";
+	});
+
+	.lang(ja,{
+		@{propertyName} : ~"@{value}";
+	});
+
+	.lang(vi,{
+		@{propertyName} : ~"@{value}";
+	});
+}
+
+// OVERRIDING ALL ELEMENTS on JP-JA site to have @NotoSansJP font execpet the icomoon and fontAwesome icons
+* {
+	.lang(ja, {
+		&:not([class*=icon]):not([class*=fa-]):not(.percentage-text):not([class*=vjs-]) {
+			font-family: @NotoSansJP !important;
+		}
+	})
+}
+
+
+// OVERRIDING ALL ELEMENTS on ZH-CN site to have @NotoSansTC font execpet the icomoon and fontAwesome icons
+* {
+	.lang(zh-CN, {
+		&:not([class*=icon]):not([class*=fa-]):not(.percentage-text):not([class*=vjs-])  {
+			font-family: @NotoSansTC !important;
+		}
+	})
+}

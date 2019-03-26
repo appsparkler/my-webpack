@@ -1,0 +1,59 @@
+
+<section class="module-contentslider component no-padding">
+	<a href="javascript:void(0);" class="contentslider-tab-entry no-highlight"></a>
+    <div class="carousel-container {{#if hbs.contentSlider.items}}has-slides{{/if}}">
+    	<div class="controls hidden-xs">
+			<a href="javascript:void(0);" class="prevPage"><span class="icon-carousel-left"></span></a>
+			<a href="javascript:void(0);" class="nextPage"><span class="icon-carousel-right"></span></a>
+		</div>
+		<div style="overflow: hidden;" class="frame">
+			<ul>
+				{{#each hbs.contentSlider.items}}
+					<li class="each-slide">
+						<a href="{{this.link}}" class="item" title="{{this.altText}}">
+							{{#if hbs.contentSlider.imageConfigExists}}
+								<picture>
+		                            {{#hbs.contentSlider.imageConfig}}
+										{{#if this.isDesktop}}
+											<source srcset="{{hbs.globalValues.assetDomainName}}{{../this.image}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+			                                    media="screen  and (min-width: 641px) and (max-width: 9440px)" >
+										{{else}}
+											<source srcset="{{hbs.globalValues.assetDomainName}}{{../this.image}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+			                                    media="screen  and (min-width: 0px) and (max-width: 640px)" >
+										{{/if}}
+
+		                                {{#if @last}}
+		                                    <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{../this.image}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" alt="{{this.altText}}" title="{{this.altText}}"/>
+		                                {{/if}}
+		                            {{/hbs.contentSlider.imageConfig}}
+		                        </picture>
+	                      	{{else}}
+								<picture>
+	                                   <!--[if IE 9]><video style="display: none;"><![endif]-->
+	                                   <source srcset="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.237.237.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+	                                   <source srcset="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.237.237.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+	                                   <!--[if IE 9]></video><![endif]-->
+	                                   <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.237.237.jpg" title="{{this.altText}}" alt="{{this.altText}}">
+	                            </picture>
+	                    	{{/if}}
+
+						</a>
+						<h4 class="item-title">
+							<a class="btn-copy item-title" href="{{this.link}}" title="{{this.altText}}">
+								{{this.title}}
+							</a>
+						</h4>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+
+
+        <div class="scrollbar">
+			<div class="handle">
+				<div class="mousearea"></div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:void(0);" class="contentslider-tab-exit no-highlight"></a>
+</section>

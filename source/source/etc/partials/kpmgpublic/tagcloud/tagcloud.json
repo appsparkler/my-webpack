@@ -1,0 +1,19 @@
+{
+    "hbs": {
+       "tagcloud": {
+          "subHeader":"tagCloud",
+              "tags": [
+              	"Biotechnology&Pharmaceuticals",
+        		"Chemicals",
+        		"ConsumerProducts",
+        		"Cosumer Markets",
+        		"Food & Beverages",
+        		"Industrial Markets",
+        		"Public Sectors",
+        		"Retail",
+        		"Venture Capital"
+        			]
+				 }
+           }
+}
+

@@ -1,0 +1,183 @@
+{
+    "hbs": {
+        "rfpProcess": {
+            "close" : "close",
+            "continue" : "forms.rfp.continue",
+            "required" : "forms.required",
+            "firstName" : "forms.name.firstName",
+            "firstNameError" : "forms.name.firstNameError",
+            "lastName" : "forms.name.lastName",
+            "lastNameError" : "forms.name.lastNameError",
+            "email" : "forms.email",
+            "emailError" : "forms.emailError",
+            "phone" : "forms.phone.long",
+            "phoneError" : "forms.phone.phoneError",
+            "jobTitle" : "forms.company.jobTitle",
+            "jobTitleError" : "forms.company.jobTitleError",
+            "company" : "forms.company.long", 
+            "companyError" : "forms.company.companyError",
+            "industry" : "forms.company.industry",
+            "industryError" : "forms.company.industryError",
+            "sector" : "forms.company.sector",
+            "sectorError" : "forms.company.sectorError",
+            "country" : "forms.country",
+            "countryError" : "forms.countryError",
+            "client" : "forms.messages.client",
+            "clientError" : "forms.messages.clientError",
+            "location" : "forms.location",
+            "locationError" : "forms.locationError",
+			"territory": "forms.territory",
+			"territoryError": "forms.territoryError",
+            "select" : "forms.select",
+            "terms" : "forms.messages.terms",
+            "cancel" : "forms.cancel",
+            "cancelFileUpload":"forms.cancelFileUpload",
+            "remove" : "forms.remove",
+            "next" : "next",
+            "browse" : "forms.browse",
+            "message" : "forms.message",
+            "attachedDocument" : "forms.attachedDocument",
+            "remainingChars" : "remainingChars",
+            "errorUploading" : "errorMessages.forms.uploading",
+            "back":"forms.back",
+            "captchaRefresh":"forms.captchaRefresh",
+            "captchaError":"forms.captchaError",
+            "closeRfp":"forms.closeRfp",
+            "submitRFP":"forms.submitRFP",
+            "start" : {
+                "stepName" : "forms.rfp.steps.start",
+                "title" : "forms.rfp.startTitle",
+                "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla nisi, convallis ac nisi vitae, feugiat hendrerit odio. Cras mattis eros sed dui malesuada pretium."
+            },
+        	"step1" : {
+                "stepName" : "forms.rfp.steps.step1"
+            },
+            "step2" : {
+                "title":"Step2 Title",
+                "stepName" : "forms.rfp.steps.step2",
+                "title":"Request Details",
+                "description" : "Please upload file attachments that contain details of your requests, and/or provide a brief message with comments or additional instructions.</p><p>You may attach a maximum of five files up to 15 MB total. Accepted formats are: Microsoft<sup>&reg;</sup> documents, PDF files, ZIP archives."
+            },
+            "step3" : {
+                "title":"Step3 Title",
+                "stepName" : "forms.rfp.steps.step3",
+                "description" : "Review",
+                "contactInfo" : "forms.contactInfo",
+                "requestDetails" : "forms.requestDetails"
+            },
+            "step4" : {
+                "title" : "Step4 Title",
+                "shortTitle" : "Step4 ShortTitle",
+                "description" : "Please review your contact information and request details. If you notice an error, use the back button below to go to a previous page and correct your input.",
+                "shortDescription" : "Please review your contact info"
+            },
+            "locations":[ 
+               
+                
+                    {   "locationName": "Andorra Loc",
+                        "locationCode": "AD",
+                        "territory":[
+                            "Augsburg",
+                            "Berlin",
+                            "Bielefele"
+                         ],
+                        "locationEnglishName": "Andorra"
+                    },
+                    {   "locationName": "United Arab Emirates Loc",
+                        "locationCode": "AE",
+                        "locationEnglishName": "United Arab Emirates"
+                    },
+                    {   "locationName": "Afghanistan Loc",
+                        "locationCode": "AF",
+                        "locationEnglishName": "Afghanistan"
+                    }
+                ]
+            ,
+            
+            "errorMessages": {
+                "firstName": "errorMessages.forms.nameRequired",
+                "lastName": "errorMessages.forms.lastNameRequired",
+                "email": "errorMessages.forms.emailRequired",
+                "phoneNumber": "errorMessages.forms.phoneRequired",
+                "jobTitle": "errorMessages.forms.jobRequired",
+                "company": "errorMessages.forms.companyRequired",
+                "industry": "errorMessages.forms.industryRequired",
+                "location": "errorMessages.forms.locationRequired",
+                "captcha": "errorMessages.forms.captchaRequired",
+                "confirm": "errorMessages.forms.confirmBox"
+            },
+            "privacyPolicy": {
+                "errorMsg": "forms.rfp.privacyPolicy.errorMessage",
+                "label": "forms.rfp.privacyPolicy.label",
+                "url": "#",
+                "privacyText":"forms.rfp.privacyPolicy.privacyText"
+            },
+            "ageAgreement": {
+                "errorMsg": "I confirm that I am 18 year Old",
+                "label": "forms.rfp.ageAgreement"
+            },
+            "rfpServiceURL":"http://kpmg.local/rfpservice_qa/RFPReconnectService.svc/CreateNewRFP",
+            "rfpFileUploadURL":"http://kpmg.local/rfpservice_qa/rfpupload.axd",
+            "rfpModifyURL":"http://kpmg.local/rfpservice_qa/RFPReconnectService.svc/ModifyRFP",
+            "rfpGetURL":"http://kpmg.local/rfpservice_qa/RFPReconnectService.svc/GetRFPDetail",
+            "rfpSubmitURL":"http://kpmg.local/rfpservice_qa/RFPReconnectService.svc/SubmitRFP",
+            "rfpCaptchaURL":"http://kpmg.local/bin/captchavalidate.php",
+            "rfpDeleteURL":"http://kpmg.local/rfpservice_qa/deleteupload.axd",
+            "rfpCancelURL":"http://kpmg.local/rfpservice_qa/cancelupload.axd",
+            "rfpMacGenURL":"http://kpmg.local/bin/gethmactokengenereator",
+            "captcha": {
+                "url" : "/etc/partials/kpmgpublic/rfpprocess/captcha.captcha.png",
+                "label":"forms.captcha"
+             },
+            "printInfoSubmitted":"forms.rfp.printInfoSubmitted",
+            "receiptReferenceText":"forms.rfp.receiptReferenceText",
+            "isEditMode":false,
+            "ie9FileUploadMessage":"forms.rfp.ie9FileUploadMessage",
+            "ie9FileUploadTitle":"forms.rfp.ie9FileUploadTitle",
+            "noFileSelected":"forms.rfp.noFileSelected",
+            "checkboxes": [
+                {
+                                "label": "Label",
+                                "errorMsg": "error message"
+                },
+                {
+                                "label": "Label 2",
+                                "errorMsg": "error message 123"
+                }
+            ],
+            "cancelDialog": {
+                "cancelDialogDesc1": "forms.rfp.cancelDialog.cancelDialogDesc1",
+                "cancelDialogDesc2": "forms.rfp.cancelDialog.cancelDialogDesc2",
+                "cancelDialogTitle": "forms.rfp.cancelDialog.cancelDialogTitle",
+                "cancelDialogBack": "forms.rfp.cancelDialog.cancelDialogBack",
+                "cancelDialogContinue": "forms.rfp.cancelDialog.cancelDialogContinue"
+            },
+            "countryId":"ABC-DEF-GHI-JKL-MNO-PQR-STU-VWX-YZ",
+            "analyticId":"d17c918f-359c-406c-8c13-03efd4b4d68d",
+            "industryList": 
+            {
+                "industryZthesId": "135320640047454042275950",
+                "sesLanguage": "en_us"
+            },
+            "alreadyClient": 
+            {
+                "alreadyClientYes": "forms.rfp.alreadyClient.alreadyClientYes",
+                "alreadyClientNo": "forms.rfp.alreadyClient.alreadyClientNo"
+            },
+            "errors": {
+                "errorFileCorrupt": "forms.rfp.errors.errorFileCorrupt",
+                "errorInvalidToken": "forms.rfp.errors.errorInvalidToken",
+                "errorUploadLimit": "forms.rfp.errors.errorUploadLimit",
+                "errorGeneral": "forms.rfp.errors.errorGeneral",
+                "errorDuplicateFile": "forms.rfp.errors.errorDuplicateFile",
+                "errorInvalidRfp": "forms.rfp.errors.errorInvalidRfp",
+                "errorConnectionError": "forms.rfp.errors.errorConnectionError"
+			}
+
+
+
+
+        }
+        
+    }
+}

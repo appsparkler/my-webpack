@@ -1,0 +1,25 @@
+<!-- Begin Component: Touchdownload -->
+{{#if hbs.downloadButton.downloadButtonLink}}
+<div class="module-touch-download component">
+    <a class="component-link download-anchor" href="{{hbs.globalValues.assetDomainName}}{{hbs.downloadButton.downloadButtonLink}}" target="_blank" title="{{i18n hbs.downloadButton.downloadButtonLabel}} {{hbs.downloadButton.fileType}}" 
+    {{#if hbs.downloadButton.anchorId}}
+    id="{{hbs.downloadButton.anchorId}}"
+    {{/if}}>
+        <div class="content-container">
+            <div class="row download-text">
+            <span class="icon-download pull-left"></span>
+                <div class="col-md-10 col-xs-10 document-details">
+                    <span class="download-pdf-icon"></span>
+                    <span class="visually-hidden">{{hbs.downloadButton.fileType}}</span>
+                    <span class="download-label"> {{hbs.downloadButton.downloadButtonLabel}}</span>
+                    <span class="download-size"> ({{hbs.downloadButton.fileSize}}) </span>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="col-md-12 col-xs-12 document-description">
+        <div class="short-description">{{hbs.downloadButton.shortDescription}}</div>
+    </div>
+</div>
+{{/if}}
+<!-- End Component: Touchdownload -->

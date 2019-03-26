@@ -1,0 +1,63 @@
+@import "../../global/css/_variables.less";
+
+.kpmg-input{ 
+    input, select {
+        width: 100% !important;
+    }
+    span.icon-dropdown-chevron{
+        right: -4px;
+    }    
+}
+div.kpmg-tc1, div.kpmg-tc2, div.kpmg-tc3 {
+    width:100% !important;
+    padding:1px;
+}
+div.social-reg-container {
+    background-color: @gray-94 !important;
+}
+div.user-info-confirm-container {
+    border: 9px @white solid !important;
+}
+.kpmg-button {
+    margin-top:10px;
+    span {
+        left:0px;
+        border:none;
+        background-color: @green1 !important;
+        color:@white;
+        padding-top:18px
+    }
+    span:before {
+        color: @white;
+    }
+    input { 
+        opacity: 0;
+        z-index:-1;
+        height: 36px;
+    }
+    &:hover span:before {
+        color:@white;
+        position:relative;
+        top:0px;
+        left:0px;
+        z-index:100;
+    }
+    // DESKTOP STYLES
+    @media (min-width: @desktop-min-fixed) {
+        span {
+            left:10px;
+        }
+    }
+}
+
+// DESKTOP STYLES
+@media (min-width: @desktop-min-fixed) {
+    .col-md-12 {
+        border: 9px @white solid;
+        padding: 0px !important;
+    }
+    div.social-reg-container {
+        background-color: @white !important;
+    }
+}
+

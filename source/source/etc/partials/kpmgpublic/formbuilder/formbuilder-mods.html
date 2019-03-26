@@ -1,0 +1,24 @@
+<!--JSP code  -->
+<!-- /etc/partials/kpmgpublic/tmpl-home/tmpl-home.hbss -->
+{{ include "theformbuilder" resourceType="/apps/kpmgpublic/components/personalization/formbuilder" }}
+
+<!--  http://localhost:4502/bin/kpmg/listAllCountries.en.json -->
+
+<!-- BUTTON for triggerring formbuilder from CTA  -->
+<div class="bs4 temporary">
+  <button type="button"
+          class="btn btn-primary"
+          onclick="$('#formbuilder-id-{{hbs.formBuilder.uniqueId}}').trigger('kpmg-formbuilder:display-form')">Display Form</button>
+</div>
+
+<!-- /apps/kpmgpublic/components/personalization/formbuilder/formbuilder.jsp -->
+<div class="row">
+  <div class="row-same-height row-full-height">
+    <div class="col-md-8 col-full-height col-top col-nested">
+      <cq:include script="/etc/partials/kpmgpublic/fge-cta/fge-cta.hbss" />
+    </div>
+    <div class="col-md-4 col-full-height col-top col-nested">
+      <cq:include script="/etc/partials/kpmgpublic/formbuilder/formbuilder.hbss" />
+    </div>
+  </div>
+</div>

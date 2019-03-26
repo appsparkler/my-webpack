@@ -1,0 +1,119 @@
+@import url('../../global/css/_variables.less');
+.module-contactlist {
+    .primary-head {
+        .component-title(@light-purple);
+        .hyphen;
+        text-transform: none;
+        margin: 0 0 8px 0;
+    }
+
+    .list-group {
+        float: left;
+        width: 100%;
+        height: 278px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .list-group-item {
+            float: left;
+            width: 100%;
+            position: relative;
+
+            .contactList-contactName {
+                margin:10px 0 5px;
+            }
+
+            .contactList-items {
+
+                float: left;
+                width: 100%;
+                .icon-email{
+                    color: @light-green;
+                    margin: 0 5px 0 0;
+                    .font-size(1.6);
+                }
+                .icon-users {
+                    color: @light-purple;
+                    .font-size(1.6);
+                    margin: 0 5px 0 0;
+                    width: 21px;
+                    display: table-cell;
+                }
+
+                .contactList-fullName {
+                    display:table;
+
+                    .text-link {
+                        .promo-title(@kpmg-blue);
+                        .hyphen;
+                        word-break: break-word!important;
+                        hyphens:auto;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .contactList-jobTitle, .contactList-pnoneNumber {
+                .promo-details(@gray-20);
+                .hyphen;
+                padding-left: 21px;
+                margin: 5px 0;
+
+            }
+            .contactList-pnoneNumber{
+                a{
+                    color:inherit;
+                    text-decoration: none;
+                    pointer-events:none;
+                }
+            }
+
+
+            .contactList-contactLink {
+                float: right;
+                width: auto;
+                margin-top: 5px;
+                margin-right: 2px;
+                .related-cta(@gray-40);
+
+                .component-data-link {
+                    .hyphen;
+                    text-transform: none;
+                    font-size: inherit;
+                }
+            }
+
+            &:first-child {
+                border-top: none;
+            }
+        }
+
+        .list-group-item:before {
+            .dotted-lightblue;
+            margin: 10px 0 0;
+        }
+
+        .list-group-item:first-child:before {
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 640px) {
+    .module-contactlist{
+        .list-group {
+            height: auto;
+        }
+        .contactList-pnoneNumber {
+            a {
+                text-decoration:none !important;
+                color: @medium-blue !important;
+                pointer-events:auto !important;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

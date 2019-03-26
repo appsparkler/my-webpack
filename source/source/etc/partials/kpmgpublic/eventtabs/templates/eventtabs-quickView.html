@@ -1,0 +1,26 @@
+<div class="modalBodyLeft">
+   <div class="imgContainer">
+      <a href="{{this.pagePath}}" title="{{this.alt}}" tabindex="-1"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-src="" data-desktop="{{../assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{../assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{this.alt}}" class="img-responsive lazy"/></a>
+   </div>
+</div>
+<div class="modalBodyRight">
+   <div class="peopleContactDetails">
+      <p class="peopleDetails"><a href="{{this.pagePath}}" title="{{this.alt}}">{{this.salutation}} {{this.firstName}} {{this.middleInitial}} {{this.lastName}} {{this.suffix}}</a></p>
+      {{#if this.jobTitle}}
+         <p class="peopleDetails">{{this.jobTitle}}</p>
+      {{/if}}
+      {{#if this.memberFirm}}
+         <p class="peopleDetails">{{this.memberFirm}}</p>
+      {{/if}}
+      {{#if this.description}}
+         <p class="description">{{this.description}}</p>
+      {{/if}}
+      {{#if this.peopleContactFormLink}}
+         <div class="pull-right">
+            <span class="icon-chevron-right "></span>
+            <span data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html" data-backdrop="static" data-keyboard="false" data-remote="{{this.peopleContactFormLink}}{{this.pagePath}}"  class="contact people-connect btn-modal component-data-link modal-inside-modal" id="peoplecontactlink" tabindex="0">{{this.contactFormLinkCopy}}</span>
+         </div>
+      {{/if}}
+   </div>
+
+</div>

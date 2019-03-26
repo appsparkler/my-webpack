@@ -1,0 +1,13 @@
+<!-- Begin Component: TouchPopularposts -->
+<section class="module-touch-popularposts component">
+    <h3 class="tertiary-head popular-posts-heading">{{hbs.popularPosts.popularPostLabel}}</h3>
+
+    <ul class="popular-posts-list hidden" data-type="{{hbs.popularPosts.popularPostType}}">
+        {{#each hbs.popularPosts.list}}
+            <li class="list-item">
+                <a href="{{url}}" x-cq-linkchecker="skip">{{title}}</a>
+            </li>
+        {{/each}}
+    </ul>
+</section>
+<!-- End Component: TouchPopularposts -->

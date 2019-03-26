@@ -1,0 +1,60 @@
+
+{{#if  hbs.peopleFilmStrip.peopleData}}
+<section class="module-peoplefilmstripa component">
+	<h1 class="secondary-head">{{hbs.peopleFilmStrip.header}}</h1>
+	<a href="javascript:void(0);" class="peoplefilmstripa-tab-entry no-highlight"></a>
+	<div class="carousel-container {{#if hbs.peopleFilmStrip.peopleData}}has-slides{{/if}}">
+		<div style="overflow: hidden;" class="frame">
+			<ul>
+				{{#each hbs.peopleFilmStrip.peopleData}}
+					<li class="each-slide">
+						<a href="{{this.pagePath}}" class="item" title="{{this.alt}}">
+							<span class="pull-left">
+							 {{#if hbs.peopleFilmStrip.imageConfigExists}}
+                    <div data-picture data-alt='{{this.altText}}'>
+
+                        {{#hbs.peopleFilmStrip.imageConfig}}
+                        <div data-src="{{hbs.globalValues.assetDomainName}}{{../this.contactProfile}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+                        {{#if @last}}
+                                <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+                        {{/if}}
+                        {{/hbs.peopleFilmStrip.imageConfig}}
+                     
+
+                     </div>
+                      {{else}}
+                   <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 237'%2F%3E" data-mobile="{{hbs.globalValues.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.237.jpg" data-desktop="{{hbs.globalValues.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.237.jpg" alt="{{this.alt}}" class="portrait lazy" />
+
+                    {{/if}}
+							
+							</span>
+							<div class="pull-left">
+								<h4 class="item-header line-clamp line-clamp-2">
+									{{this.salutation}} {{this.firstName}} {{this.middleInitial}} {{this.lastName}} {{this.suffix}}
+								</h4>
+								<div class="pull-left">
+									<span class="title line-clamp line-clamp-2">{{this.jobTitle}}</span>
+									<span class="location line-clamp line-clamp-1">{{this.location}}</span>
+								</div>
+							</div>
+						</a>						
+					</li>
+				{{/each}}                    
+			</ul>
+		</div>
+
+		<div class="controls hidden-xs">
+			<a href="javascript:void(0);" class="prevPage"><span class="icon-carousel-left"></span></a>
+			<a href="javascript:void(0);" class="nextPage"><span class="icon-carousel-right"></span></a>
+		</div>
+
+        <div class="scrollbar">
+			<div class="handle">
+				<div class="mousearea"></div>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:void(0);" class="peoplefilmstripa-tab-exit no-highlight"></a>
+</section>
+{{/if}}
+

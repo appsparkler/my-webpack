@@ -1,0 +1,21 @@
+<div class="facetsContainer">
+      <ul class="facetsOptions">
+            {{#each this.SelectBoxOptions}}
+            {{#compare this.display-name "neq" "Most Relevant"}}
+            <li class="LT5Facets custom-list {{#if this.selected}}selected{{/if}} {{#unless @index}}no-top-border{{/unless}}" value="{{this.display-name}}"  title="{{this.display-name}}" data-link="{{this.link}}" tabindex="0">
+                  <span class="facetName">
+                        {{#compare this.display-name "eqi" "Most Viewed"}}
+                              {{../../../this.CQModel.i18nModel.sortingViewed}}
+                        {{/compare}}
+                        {{#compare this.display-name "eqi" "Most Popular"}}
+                              {{../../../this.CQModel.i18nModel.sortingPopular}}
+                        {{/compare}}
+                        {{#compare this.display-name "eqi" "By Date"}}
+                              {{../../../this.CQModel.i18nModel.sortingDate}}
+                        {{/compare}}
+                  </span>
+            </li>
+            {{/compare}}
+            {{/each}}
+      </ul>
+</div>

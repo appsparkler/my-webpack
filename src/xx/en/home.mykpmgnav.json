@@ -1,0 +1,74 @@
+{
+  "myNavigationPromo": {
+    "image": "/content/dam/kpmg/images/2015/01/kpmg-enterance.jpg",
+    "altText": "KPMG Entrance",
+    "description": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services.",
+    "readMOreLabel": "Read more",
+    "title": "Home  ",
+    "url": "/xx/en/home.html"
+  },
+  "anonymousSiteSettingURL": "/content/kpmgpublic/xx/en/home/user/registration",
+  "links": {
+    "contactUsLink": {
+      "label": "Contact Us Link",
+      "url": "/xx/en/home/misc/contact-kpmg.html"
+    },
+    "learnmore": {
+      "label": "Learn more",
+      "url": "/xx/en/home/user/overlays/kpmglearnmore.html"
+    },
+    "registrationInterestsLink": {
+      "label": "Registration Interests Link",
+      "url": "/xx/en/home/user/registration-interests.html"
+    },
+    "blogs": {
+      "label": "Blog Link",
+      "url": ""
+    },
+    "profile": {
+      "label": "Profile",
+      "url": "/xx/en/home/dashboard/myaccount.html"
+    },
+    "login": {
+      "label": "Login",
+      "url": "/xx/en/home/user/login.html"
+    },
+    "unsubscribeLink": {
+      "label": "Unsubscribe Link",
+      "url": "/xx/en/home/user/unsubscribe.html"
+    },
+    "aboutmykpmg": {
+      "label": "Learn more",
+      "url": "/xx/en/home/user/overlays/kpmglearnmore.html"
+    },
+    "logout": {
+      "label": "Logout",
+      "url": "/xx/en/home/user/logout.html"
+    },
+    "library": {
+      "label": "Library",
+      "url": "/xx/en/home/dashboard/library.html"
+    },
+    "interests": {
+      "label": "Interests",
+      "url": "/xx/en/home/dashboard/myinterests.html"
+    },
+    "addtolibrary": {
+      "label": "Add to Library",
+      "url": "/xx/en/home/user/overlays/addtolibraryoverlay.html"
+    },
+    "dashboard": {
+      "label": "Dashboard",
+      "url": "/xx/en/home/dashboard.html"
+    },
+    "subscriptionsLink": {
+      "label": "Subscriptions",
+      "url": "/xx/en/home/user/registration-subscriptions.html"
+    },
+    "register": {
+      "label": "Register",
+      "url": "/xx/en/home/user/registration.html"
+    }
+  },
+  "myKPMGLabel": "My account"
+}

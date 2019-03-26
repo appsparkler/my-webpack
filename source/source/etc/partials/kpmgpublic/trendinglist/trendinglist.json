@@ -1,0 +1,8 @@
+{
+    "hbs": {
+        "trendinglist": {
+            "title" : "Trending List",
+            "query" : "http://stage.sp10050ce2.guided.ss-omtrdc.net/?x1=KPMG_Ind_Path_Loc_pa&q1=Movies&x2=KPMG_Template_Type&q2=contactpage-template&trending=true"
+        }
+    }
+}

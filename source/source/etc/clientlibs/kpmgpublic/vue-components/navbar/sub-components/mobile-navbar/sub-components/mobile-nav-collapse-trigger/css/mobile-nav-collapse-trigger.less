@@ -1,0 +1,42 @@
+@import "../../../../../../../global/css/_variables";
+
+.mobile-nav-collapse-trigger-component {
+    a.text-gray20{
+        color: @gray-20 !important;
+    }
+    a.highlight {
+        background: @kpmg-blue;
+        color: #fff !important;
+    }
+    [data-toggle=collapse] {
+        width: 15%;
+        cursor: pointer;
+        // SHOWN STATE
+        span.icon{
+            font-size: 1.5em;
+            vertical-align: middle;
+            &:before {
+                content: "\e98e";
+                color: @gray-60;
+            }
+        }        
+        // COLLAPSED STATE
+        &.collapsed {
+            span.icon {
+                &:before {
+                    content: "\e98d";
+                    color: @kpmg-blue;
+                }
+            }
+        }
+        // HIGHLIGHT STATE
+        &.highlight{
+            background-color: @kpmg-blue;
+            span.icon {
+                &:before {
+                    color: @white;
+                }
+            }                
+        }
+    }
+}

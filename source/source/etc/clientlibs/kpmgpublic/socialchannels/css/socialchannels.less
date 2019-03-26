@@ -1,0 +1,107 @@
+@import url('../../global/css/_variables.less');
+.module-socialchannels {
+    float: left;
+    width: 100%;
+    padding-bottom: 52px;
+    padding-left: 30px;
+    padding-top: 10px;
+    .icon-twitter:before {
+        color: #55ACEE;
+    }
+    .icon-linkedin:before {
+        color: #0077B5;
+    }
+    .icon-facebook:before {
+        color: #3B5998;
+    }
+    .icon-youtube:before {
+        color: #CD201F;
+    }
+    .icon-google-plus:before {
+        color: #DC4E41;
+    }
+    .icon-instagram:before {
+        color: #676767;
+    }
+    .icon-slideshare:before {
+        color: #0077B5;
+    }
+    .icon-xing:before {
+        color: #026466;
+    }
+    .icon-pinterest:before {
+        color: #BD081C;
+    }
+    .icon-vk:before {
+        color: #45668E;
+    }
+    .icon-weibo:before {
+        color: #E92224;
+    }
+    .icon-wechat:before {
+        color: #7BB32E;
+    }
+    .icon-mixi:before {
+        color: #E0C074;
+    }
+    .icon-viadeo:before {
+        color: #F07355;
+    }
+    .icon-youku:before {
+        color: #EE4022;
+    }
+    .icon-tudou:before {
+        color: #FF6600;
+    }
+    .icon-line:before {
+        color: #00C300;
+    }
+    ul.socialchannel-links {
+        width: auto;
+        li {
+            float: left;
+            margin-right: 25px;
+            padding: 0;
+            a {
+                display: inline-block;
+                span {
+                    .font-size(4.0);
+                }
+            }
+            a:hover {
+                text-decoration: none;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+@media (min-width: @desktop-min-fixed) {
+    .module-socialchannels {
+        padding: 0;
+        ul.socialchannel-links {
+            li {
+                margin-right: 0px;
+                float: right;
+                margin-left: 10px;
+                a span {
+                    .font-size(3.2);
+                }
+            }
+        }
+    }
+}
+@media (min-width: @desktop-min-fluid) {
+    .module-socialchannels {
+        padding: 0;
+        ul.socialchannel-links {
+            li {
+                float: right;
+                a span {
+                    .font-size(3.2);
+                }
+            }
+        }
+    }
+}

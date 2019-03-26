@@ -1,0 +1,89 @@
+<!-- Begin Component: FootersubscriptionRFP -->
+<section class="module-footersubscriptionrfp component">
+    <div class="col-md-12 col-xs-12 footersubscriptionrfpInnerContainer">
+
+        <div class="col-md-12 col-xs-12 rfpCompoent" role="button">
+            <button class="submitRfp" tabindex="0" data-remote="{{hbs.footersubscriptionrfp.rfpLink}}" title="{{i18n hbs.footersubscriptionrfp.footerRFPTitle}}" data-backdrop="static" id="rfp-process-modal">
+                <h3 class="tertiary-head desktop">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerRFPTitleValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerRFPTitle}}
+                    {{/if}}
+
+                </h3>
+                <h3 class="tertiary-head mobile">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerRFPTitleMobileValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerRFPTitleMobile}}
+                    {{/if}}
+                </h3>
+                <p class="rfpDescription">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerRFPDescriptionValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerRFPDescription}}
+                    {{/if}}
+                </p>
+            </button>
+        </div>
+
+        <div class="col-md-12 authenticatedState" role="button">
+            <button class="loggedIn" tabindex="0" data-remote="{{hbs.footersubscriptionrfp.preferenceTab}}" title="{{i18n hbs.footersubscriptionrfp.footerSubscriptionTitle}}">
+                <h3 class="tertiary-head desktop">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerSubscriptionTitleValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerSubscriptionTitle}}
+                    {{/if}}
+                </h3>
+                <h3 class="tertiary-head mobile">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerSubscriptionTitleMobileValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerSubscriptionTitleMobile}}
+                    {{/if}}
+                </h3>
+
+                <p class="loggedInDescription">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerSubscriptionDescriptionValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerSubscriptionDescription}}
+                    {{/if}}
+                </p>
+            </button>
+        </div>
+
+        <div class="col-md-12 annonymousState" role="button" tabindex="0" title="{{i18n hbs.footersubscriptionrfp.footerSubscriptionTitle}}">
+                <h3 class="tertiary-head">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerSubscriptionTitleValue}}
+                    {{else}}
+                        {{i18n hbs.footersubscriptionrfp.footerSubscriptionTitle}}
+                    {{/if}}
+                </h3>
+                <div class="emailErrorMsg">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.emailAddressIsInvalid}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.registration.gigya.email_address_is_invalid"}}
+                    {{/if}}
+                </div>
+                <input required type="email"  name="email" id="email" placeholder="{{#if hbs.personalizationValues.blog}} {{hbs.footersubscriptionrfp.footerSubscriptionEmailToolTipValue}} {{else}} {{ i18n hbs.footersubscriptionrfp.footerSubscriptionEmailToolTip}} {{/if}}" autocomplete="off" maxlength="100" aria-describedby="emailHelpBlock" pattern="[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+"  />
+                <button type="submit" class="btn-cta nextButton"  id="submit">
+                <span class="btn-copy">
+                    {{#if hbs.personalizationValues.blog}}
+                        {{hbs.footersubscriptionrfp.footerSubscriptionCTALabelValue}}
+                    {{else}}
+                        {{ i18n hbs.footersubscriptionrfp.footerSubscriptionCTALabel}}
+                    {{/if}}
+                </span>
+                </button>
+
+        </div>
+
+    </div>
+</section>
+<!-- End Component: FootersubscriptionRFP -->

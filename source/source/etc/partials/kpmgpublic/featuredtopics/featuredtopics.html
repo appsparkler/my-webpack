@@ -1,0 +1,44 @@
+<section class="module-featuredtopics component" tabindex="0">
+    <a href="{{hbs.featuredTopics.ftRfpButtonLink}}" title="{{hbs.featuredTopics.alt}}">
+        <h4 class="visible-xs visible-sm alt-secondary-head">{{i18n hbs.featuredTopics.label}}</h4>
+        <div class="featuredtopics-data">
+            <div class="featuredtopics-imgcont">
+                {{#if hbs.featuredTopics.imageUrl}}
+                {{#if hbs.featuredTopics.imageConfigExists}}
+                <picture>
+                        {{#hbs.featuredTopics.imageConfig}}
+                        {{#if this.isDesktop}}
+                        <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                        media="screen  and (min-width: 641px) and (max-width: 9440px)" >
+                        {{else}}
+                        <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                        media="screen  and (min-width: 0px) and (max-width: 640px)" >
+                        {{/if}}
+
+                        {{#if @last}}
+                        <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" alt="{{hbs.featuredTopics.alt}}" title="{{hbs.featuredTopics.alt}}"/>
+                        {{/if}}
+                        {{/hbs.featuredTopics.imageConfig}}
+                </picture>
+                {{else}}
+                <picture>
+                        <!--[if IE 9]><video style="display: none;"><![endif]-->
+                        <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.512.341.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+                            <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.237.158.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                                <!--[if IE 9]></video><![endif]-->
+                                <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{hbs.featuredTopics.imageUrl}}/jcr:content/renditions/cq5dam.web.237.158.jpg" title="{{hbs.featuredTopics.alt}}" alt="{{hbs.featuredTopics.alt}}">
+                </picture>
+                {{/if}}
+                {{/if}}
+                <div class="featuredtopics-rectangle visible-lg"></div>
+            </div>
+            <h4 class="visible-lg-FeatTopicHead alt-secondary-head">{{i18n hbs.featuredTopics.label}}</h4>
+            <p class="title visible-lg-FeatTopic">{{hbs.featuredTopics.title}}</p>
+            <p class="title visible-xs-FeatTopic">{{hbs.featuredTopics.shortTitle}}</p>
+        </div>
+        <div class="featuredtopics-rfp">
+            <p class="visible-lg visible-sm visible-md-block featuredtopics-desc-desktop">{{hbs.featuredTopics.description}}</p>
+            <p class="visible-xs featuredtopics-desc-mobile">{{hbs.featuredTopics.shortDescription}}</p>
+        </div>
+    </a>
+</section>

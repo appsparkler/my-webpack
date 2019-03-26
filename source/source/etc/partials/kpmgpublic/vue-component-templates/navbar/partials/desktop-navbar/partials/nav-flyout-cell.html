@@ -1,0 +1,45 @@
+<template id="nav-flyout-cell-component-template">
+    <div
+        class="nav-flyout-cell-component vue-component col col-lg-4 col-xl-3 p-1 psd-padding"
+        v-if="vm && vm.type"
+        :class="{'static-position':vm.type === 'nav-list'}"
+        v-dev="{isDev: $root.isDev, show: true, color: 'firebrick' }"
+    >
+        <!-- CARD LINK -->
+        <card-link
+            v-if="vm.type && vm.type === 'card-link'"
+            :vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'Chartreuse', show: true }"
+        ></card-link>
+        <!-- PROMOTIONAL -->
+        <promotional
+            v-else-if="vm.type && vm.type === 'promotional' "
+            :vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'darkviolet', show: true }"
+        ></promotional>
+		<!-- INTEREST SUMMARY -->
+        <interest-summary
+            v-else-if="vm.type && vm.type === 'interest-summary' "
+            :vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'darkviolet', show: true }"
+        ></interest-summary>
+        <!-- SITE-SELECTOR-LIST -->
+        <site-selector-list
+            v-else-if="vm.type && vm.type === 'site-selector-menu' "
+			:vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'mediumblue', show: true }"
+        ></site-selector-list>
+        <!-- SITE-SELECTOR-CARD -->
+        <site-selector-card
+            v-else-if="vm.type && vm.type === 'site-selector-card' "
+			:vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'navy', show: true }"
+        ></site-selector-card>
+        <!-- NAV-LIST -->
+        <nav-list
+            v-else-if="vm.type && vm.type === 'nav-list' "
+            :vm="vm"
+            v-dev="{isDev: $root.isDev, color: 'orangered', show: true }"    
+        ></nav-list>
+    </div>
+</template>

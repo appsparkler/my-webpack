@@ -1,0 +1,58 @@
+<section class="module-featuredarticles component" personalize="{{hbs.featuredArticles.personalized}}" {{#if hbs.featuredArticles.personalized}}hidden{{/if}} no-of-results-required="{{hbs.featuredArticles.numberOfContents}}" tabindex="0">
+<a class="cell-wraper" href="{{hbs.featuredArticles.fpRfpButtonLink}}" title="{{hbs.featuredArticles.alt}}">
+	<h4 class="visible-xs visible-sm alt-secondary-head">
+		{{#if hbs.featuredArticles.personalized}}
+		{{#if hbs.featuredArticles.numberOfContents}}
+		{{i18n hbs.featuredArticles.label}}
+		{{else}}
+		{{hbs.featuredArticles.label}}
+		{{/if}}
+		{{else}}
+		{{i18n hbs.featuredArticles.label}}
+		{{/if}}
+	</h4>
+	<div class="featuredarticles-data">
+		<div class="featuredarticles-imgcont">
+			{{#if hbs.featuredArticles.imageUrl}}
+			{{#if hbs.featuredArticles.imageConfigExists}}
+			<div data-picture data-alt='{{hbs.featuredArticles.alt}}'>
+					{{#hbs.featuredArticles.imageConfig}}
+					<div data-src="{{hbs.globalValues.assetDomainName}}{{hbs.featuredArticles.imageUrl}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+					{{#if @last}}
+					<img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+					{{/if}}
+					{{/hbs.featuredArticles.imageConfig}}
+				</div>
+			{{else}}
+			<img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-mobile="{{hbs.globalValues.assetDomainName}}{{hbs.featuredArticles.imageUrl}}/jcr:content/renditions/cq5dam.web.512.341.jpg" data-desktop="{{hbs.globalValues.assetDomainName}}{{hbs.featuredArticles.imageUrl}}/jcr:content/renditions/cq5dam.web.237.158.jpg" alt="{{hbs.featuredArticles.alt}}" class="img-responsive lazy"/>
+			{{/if}}
+			{{/if}}
+			<div class="featuredarticles-rectangle visible-lg"></div>
+		</div>
+		<h4 class="visible-lg-FeatArticleHead alt-secondary-head">
+			{{#if hbs.featuredArticles.personalized}}
+			{{#if hbs.featuredArticles.numberOfContents}}
+			{{i18n hbs.featuredArticles.label}}
+			{{else}}
+			{{hbs.featuredArticles.label}}
+			{{/if}}
+			{{else}}
+			{{i18n hbs.featuredArticles.label}}
+			{{/if}}
+		</h4>
+		<p class="title visible-lg-FeatArticle ">{{hbs.featuredArticles.title}}</p>
+		<p class="title visible-xs-FeatArticle">{{hbs.featuredArticles.shortTitle}}</p>
+	</div>
+	<div class="featuredarticles-rfp">
+		<p class="visible-lg visible-sm visible-md-block featuredarticles-desc-desktop">{{hbs.featuredArticles.description}}</p>
+		<p class="visible-xs featuredarticles-desc-mobile">{{hbs.featuredArticles.shortDescription}}</p>
+	</div>
+</a>
+	<div class="library-desktop {{#if hbs.featuredArticles.isBlog}} hidden{{/if}}">
+      <div class="module-addtolibrary component self-contained clearfix" aria-label="add to Library" data-description="{{{hbs.featuredArticles.description}}}" data-href="{{hbs.featuredArticles.fpRfpButtonLink}}" data-image="{{hbs.featuredArticles.imageUrl}}" data-title="{{{hbs.featuredArticles.title}}}" data-shortTitle="{{hbs.featuredArticles.shortTitle}}" style="display:none;" data-article-type="{{ hbs.featuredArticles.articleType }}">
+			<a href="#" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0" aria-haspopup="true" aria-label="add to Library">
+				<span class="icon-star trackable"></span>
+			</a>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,79 @@
+<template id="interest-summary-component-template">
+    <!-- OUTER WRAPPER -->
+    <a 
+        class="
+			interest-summary-component vue-component
+			d-flex
+			h-100
+		"
+		:href="vm.linkUrl"
+        v-dev="{isDev: $root.isDev, variant: 'danger' }"
+		v-if="vm"
+    >
+        <!-- INNER WRAPPER -->
+        <div class="
+			d-flex flex-column
+			text-white bg-kpmg-green
+			p-4
+			h-100
+		">
+            <!-- TITLE -->
+            <h1
+                class="mb-0 font-kpmg border border-bottom-white border-left-0 border-right-0 border-top-0 pb-2"
+            >
+                \{{vm.title}}
+			</h1>
+			<span class="threshold-value">{{hbs.interestssummary.thresholdValue}}</span>
+            <!-- TEXT -->
+            <p 
+				class="
+					text-white interest-exists
+					my-3
+				"
+			>
+                \{{vm.includesText}}
+            </p>
+			<div class="summary interest-exists">
+				
+				<p
+					class="
+						font-kpmg text-white
+						my-0 py-0
+					"
+					v-for="(item, idx) in vm.summaryList"
+					:key=" idx + '-summary-list'"
+				>
+					\{{item}}
+					
+				</p>
+			</div>
+			
+			<p 
+				class="
+					text-white 
+					my-3
+					pb-3
+				"
+			>
+				\{{vm.selectText}}
+			</p>
+			
+			
+            <!-- INTEREST SUMMARY IMAGE -->
+            <p class="text-right mt-auto border border-bottom-0 border-right-0 border-left-0 pt-3">
+				<link-label-with-chevron
+				:vm='{
+					"label": vm.label,
+					"linkUrl": "vm.linkUrl"
+				}'
+				:classes='{
+					"label": ["text-white  text-center"],
+					"chevron": ["text-white font-2-rem"]
+				}'
+				></link-label-with-chevron>
+			</p>
+			
+        </div>
+    </a>
+
+</template>

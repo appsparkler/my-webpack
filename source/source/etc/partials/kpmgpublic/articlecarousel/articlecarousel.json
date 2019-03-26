@@ -1,0 +1,48 @@
+{
+    "hbs": {
+        "articleCarousel": {
+            "contentPopulation": true,
+            "carouselTitle": "Title",
+            "ctaLabel": "articleCarousel.ctaLabel",
+            "articleCarouselSolrUrl": "/etc/partials/kpmgpublic/articlecarousel/articlecarousel.export/1.json?arg=rand",
+            "articleData": [
+                {
+                    "articlePrimaryFormat": "Page",
+                    "articleImage": "/assets/fpo-images/owlCarouselSlider1.jpg",
+                    "authors": "/content/kpmgpublic/master/en/home/contacts/a/alex-freeman",
+                    "title": "Article Introduction",
+                    "shortTitle": "Say Goodbye to Tax Havens",
+                    "shortDescription": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services.",
+                    "articleDateTime": "12/01/204",
+                    "description": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services. We have more than 155,000 outstanding professionals.",
+                    "pagePath": "/content/kpmgpublic/master/en/home/insights/2014/11/article-detail.html",
+                    "articleType": "Blog Post"
+                },
+                {
+                    "articlePrimaryFormat": "Page",
+                    "articleImage": "/assets/fpo-images/owlCarouselSlider1.jpg",
+                    "authors": "/content/kpmgpublic/master/en/home/contacts/a/alex-freeman",
+                    "title": "Article Introduction",
+                    "shortTitle": "Say Goodbye to Tax Havens",
+                    "shortDescription": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services.",
+                    "articleDateTime": "12/01/204",
+                    "description": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services. We have more than 155,000 outstanding professionals.",
+                    "pagePath": "/content/kpmgpublic/master/en/home/insights/2014/11/article-detail.html",
+                    "articleType": "Blog Post"
+                },
+                {
+                    "articlePrimaryFormat": "Page",
+                    "articleImage": "/assets/fpo-images/owlCarouselSlider1.jpg",
+                    "authors": "/content/kpmgpublic/master/en/home/contacts/a/alex-freeman",
+                    "title": "Article Introduction",
+                    "shortTitle": "Say Goodbye to Tax Havens",
+                    "shortDescription": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services.",
+                    "articleDateTime": "",
+                    "description": "KPMG is a global network of professional firms providing Audit, Tax and Advisory services. We have more than 155,000 outstanding professionals.",
+                    "pagePath": "/content/kpmgpublic/master/en/home/insights/2014/11/article-detail.html",
+                    "articleType": "Blog Post"
+                }
+            ]
+        }
+    }
+}

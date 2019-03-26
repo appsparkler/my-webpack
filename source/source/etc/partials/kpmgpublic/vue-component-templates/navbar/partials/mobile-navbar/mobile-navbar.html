@@ -1,0 +1,58 @@
+<template id="mobile-navbar-component-template">
+    <header 
+        class="mobile-navbar-component vue-component d-xl-none"
+		v-if="vm"
+    >
+        <nav class="navbar fixed-top bg-white py-1 px-1"
+            v-dev="{isDev: $root.isDev, variant: 'danger'}"
+        >
+            <!-- Navigation Backdrop for top animation cover-->
+            <div class="navBackdrop bg-white"></div>
+            
+            <!-- LEFT SLIDE MENU -->
+            <mobile-menu-toggle-and-menu
+            :vm="vm"
+            ></mobile-menu-toggle-and-menu>
+
+            <!-- LOGO IMAGE -->
+            <logo-image 
+                v-dev="{isDev: $root.isDev, variant: 'primary' }" 
+                :vm="vm.logo" 
+                v-if="vm.logo"
+                class="mt-1"
+            ></logo-image>            
+
+            <!--PROFILE ICON-->            
+            <div id="user-profile-icon" 
+            v-if="vm.accountActionList.isVisible"
+            :vm="vm.accountActionList" 
+            role="button" class="btn border-0 p-0 mt-1 mr-4" aria-expanded="false">
+                <i class="icon"
+                v-if="vm && vm.accountActionList.iconStyle"
+                :class="vm.accountActionList.iconStyle"
+                :title="vm.accountActionList.title">
+                    <span class="path1 icon"></span>
+                    <span class="path2 icon"></span>
+                </i>
+                <span class="notVerified icon-notVerified"></span>
+            </div>
+
+            <!-- USER PROFILE -->
+            <mobile-nav-user-profile-tab-content
+            id="userprofiledata" 
+            v-if="vm.accountActionList.isVisible"
+            :vm="vm.accountActionList">
+            </mobile-nav-user-profile-tab-content>  
+
+        </nav>
+    </header>
+</template>
+
+
+
+<!-- MOBILE SECONDARY NAV LIST -->
+{{ 
+	include "MobileNavbarPartials" 
+	resourceType="/etc/partials/kpmgpublic/vue-component-templates/navbar/partials/mobile-navbar/mobile-navbar_partials.hbss"
+}}
+

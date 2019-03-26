@@ -1,0 +1,35 @@
+@import "../../global/css/_variables.less";
+
+.module-manualsubnav {
+    .tertiary-head {
+        .set-font-size(3.8);
+        padding: 0 0 10px 0px;
+        color: @kpmg-blue;
+        font-family: @kpmgLight;
+        line-height: 1;
+        font-weight: normal;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+    }
+
+    .nav-elements-list {
+        li {
+            padding: 0;
+        }
+        a {
+            .set-font-size(1.6);
+            color: @gray-101;
+            font-family: @arial;
+            line-height: 1;
+            display: block;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .devider {
+            margin: 10px 10px 10px 0px;
+            border-bottom: solid 1px @gray-101;
+        }
+    }
+}

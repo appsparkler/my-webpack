@@ -1,0 +1,66 @@
+<section class="module-contact-tabs component col-transparent">
+    <div class="contact-tabs row">
+        <div class="tabs-container two-tabs ">
+            <div class="contact-tabs-tab publications-container hide">
+
+                <a class="tablink  first" title="{{i18n hbs.contact-tabs.publications}}" data-tab-link="#publications" href="javascript:void(0)"><span class="text-link">{{i18n hbs.contact-tabs.publications}}</span>
+                <span class="resp-arrow icon-chevron-down"></span></a>
+                <div id="publications" class="custom-tab-content contact-tabs-publications" data-max-result-limit="{{hbs.contact-tabs.publicationMaxResultLimit}}" data-qv-label="{{i18n hbs.contact-tabs.quickView}}" data-basePath="{{hbs.contact-tabs.publicationBasePath}}">
+                    <div class="publications-content"></div>
+                     <div class=" btn-wrapper-publications col-md-12">
+                        <span tabindex="0" class="load-more">
+                        <span class="icon-add"></span>
+                        <span class="component-link btn-more hide" data-type="publications" >
+                            {{i18n hbs.contact-tabs.loadMore}}
+                        </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+             {{#if hbs.contact-tabs.affiliatedList}}
+            <div class="contact-tabs-tab affiliatedto-container hide">
+                    <a class="tablink  second" title='{{i18n "kpmg.contacttab.affiliatedto"}}' data-tab-link="#affiliatedTo" href="javascript:void(0)"><span class="text-link">{{i18n "kpmg.contacttab.affiliatedto"}}</span>
+                    <span class="resp-arrow icon-chevron-down"></span></a>
+
+                    <div id="affiliatedTo" class="custom-tab-content contact-tabs-affiliatedTo">
+                         <div class="affiliated-content"></div>
+                         <div class=" btn-wrapper-affiliatedTo col-md-12">
+                            <span tabindex="0" class="load-more">
+                            <span class="icon-add"></span>
+                            <span class="component-link btn-more hide" data-type="affiliatedTo">
+                                {{i18n hbs.contact-tabs.loadMore}}
+                            </span>
+                            </span>
+                        </div>
+                    </div>
+            </div>
+            {{/if}}
+            <div class="contact-tabs-tab connections-container hide">
+                 <a class="tablink   third" title="{{i18n hbs.contact-tabs.connections}}" data-tab-link="#connections" href="javascript:void(0)"><span class="text-link">{{i18n hbs.contact-tabs.connections}}</span>
+                 <span class="resp-arrow icon-chevron-down"></span></a>
+                 <div id="connections" class="custom-tab-content contact-tabs-connections  " data-basePath="{{hbs.contact-tabs.baseUrl}}" data-qv-label="{{i18n hbs.contact-tabs.quickViewInTile}}" data-connection-label="{{i18n hbs.contact-tabs.contactFormLinkCopy}}" data-connect-url="{{i18n hbs.contact-tabs.peopleContactFormLink}}">
+                     <div class="connections-content"></div>
+                     <div class=" btn-wrapper-connections col-md-12">
+                        <span tabindex="0" class="load-more">
+                        <span class="icon-add"></span>
+                        <span class="component-link btn-more hide" data-type="connections" >
+                            {{i18n hbs.contact-tabs.loadMore}}
+                        </span>
+                        </span>
+                    </div>
+                 </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="modal fade modalDialog modal-container-quick-view" id="contact-tab-quick-view" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+       <div class="modal-content">
+          <a href="#" class="btn-close" data-dismiss="modal"><span class="icon-close"><span class="sr-only">close</span></span></a>
+          <div class="modal-content-panel"></div>
+       </div>
+    </div>
+</div>

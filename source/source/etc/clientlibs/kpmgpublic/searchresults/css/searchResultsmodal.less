@@ -1,0 +1,225 @@
+@import url('../../global/css/_variables.less');
+.modalDialog {
+    .btn-close {
+        right: 0px;
+        top: 0px ;
+        color: @light-purple;
+        margin: 1px;
+        &.focusOutline {
+            box-shadow: 0 0 3px @light-purple;
+            outline: solid @light-purple 1px;
+        }
+    }
+    .modal-content {
+        float: left;
+        width: 100%;
+        position: relative;
+        border-radius: 0;
+
+        .modal-inside-modal {
+            display: inline-block;
+        }
+        
+       
+        .close {
+            background: none repeat scroll 0 0 rgba(0,0,0,0);
+            border: medium none;
+            color: @purple;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 10;
+            .font-size(2.5);
+        }
+        .modalBodyLeft {
+            width: 100%;
+            float: left;
+            .download {
+                small {
+                    display: none;
+                }
+            }
+            .imgContainer {
+                float: left;
+                width: 100%;
+                margin-top: 15px;
+                a.component-link {
+                    color: @gray-40;
+                    .font-size(1.6);
+                    text-transform: capitalize;
+                    line-height: 120%
+                }
+                a.component-link:hover, span.component-link:hover {
+                    color: @gray-40;
+                    text-decoration: underline;
+                    .font-size(1.6);
+                }
+            }
+            .downloadContainer, .shareContainer {
+                float: left;
+                width: 100%;
+                margin: 12px 0 0 0;
+                a.component-link {
+                    .promo-title(@gray-40);
+                    display: inline-block;
+                    text-transform: capitalize
+                }
+                a.component-link:hover, span.component-link:hover {
+                    color: @gray-40;
+                    text-decoration: underline;
+                    .font-size(1.6);
+                }
+            }
+            .shareContainer {
+                .module-share {
+                    display: block;
+                }
+                a.share-component {
+                    .cta-left(@gray-40);
+                    display: inline-block;
+                }
+            }
+            .icon-download, 
+            .icon-Download,
+            .icon-pdf,
+            .icon-share {
+                .font-size(1.6);
+                position: relative;
+                color: @light-green;
+                float: left;
+                padding-right: 5px;
+            }
+            .component-link {
+                color: @gray-40;
+                .font-size(1.6);
+                line-height: 120%
+            }
+        }
+        .modalBodyRight {
+            width: 100%;
+            float: left;
+            padding-left: 0px;
+            .quickViewIcon {
+                float: left;
+                .font-size(1.6);
+                color: @kpmg-blue;
+                margin: 10px 10px 10px 0; 
+            }
+            .quickViewIcon.icon-even{
+                font-size:2.2rem;
+            }
+            .secondary-head {
+                float: left;
+                .promo-title(@medium-blue);
+                width: 85%;
+                font-weight:normal;
+                a {
+                    .promo-title(@kpmg-blue);
+                    display: inline-block;
+                }
+                a.focusOutline {
+                    box-shadow: 0 0 3px @kpmg-blue !important;
+                    outline: solid @kpmg-blue 1px !important;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+                margin: 8px 18px 8px 0;
+            }
+            .publication-date {
+                .font-size(1.2);
+            }
+            p {
+                float: left;
+                width: 100%;
+            }
+            .insightsContent {
+                p.quickview-article-date, p.description {
+                   margin: 7px 0;
+                   .promo-description(@gray-20);
+                }
+            }
+            .eventContent {
+                p.eventType {
+                    margin: 7px 0;
+                    .hyphen;
+                    .promo-details(@gray-20);
+                    line-height: 130%;
+                }
+                p.eventStartDate {
+                    margin-top: 7px;
+                    margin-bottom: 0px;
+                    .hyphen;
+                    .promo-details(@gray-20);
+                    line-height: 130%;
+                }
+                p.eventLocation {
+                    margin-top: 0px;
+                    margin-bottom: 7px;
+                    .hyphen;
+                    .promo-details(@gray-20);
+                    line-height: 130%;
+                }
+                p.description {
+                    margin: 7px 0;
+                    .promo-description(@gray-20);
+                }
+            }
+            .peopleContactDetails {
+                .peopleDetails:first-child {
+                    .promo-title(@medium-blue);
+                    margin: 8px 18px 8px 0;
+                      a {
+                        .promo-title(@medium-blue);
+                      }
+                    a:hover {
+                        text-decoration: underline;
+                      }
+                }
+                .peopleDetails:nth-child(2), .peopleDetails:nth-child(3), .description {
+                    .promo-details(@gray-20);
+                    margin: 7px 0;
+                    line-height: 130%;
+                }
+
+                .contact-btn {
+                    margin: 1px;
+                    display: inline-block;
+                }
+
+                .contact-btn:focus {
+                    box-shadow: 0 0 3px @gray-40;
+                    outline: 1px solid @grey-text-transparent;
+
+                    .contact {
+                        text-decoration: underline;
+                    }
+                }
+                
+                .contact {
+                    .promo-title(@gray-40);
+                    text-transform: none;
+                }
+            }
+        }
+    }
+}
+@media (min-width:@desktop-min-fixed) {
+    .modalDialog {
+        .modal-content {
+            .modalBodyLeft {
+                width: 43%;
+                margin: 0 10px 0 0;
+                .imgContainer {
+                    width: 237px !important;
+                    margin-top: 0;
+                    position: relative;
+                }
+            }
+            .modalBodyRight {
+                width: 55%;
+                
+            }
+        }
+    }
+}

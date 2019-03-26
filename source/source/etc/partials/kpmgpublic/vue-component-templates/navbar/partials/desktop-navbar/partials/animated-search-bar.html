@@ -1,0 +1,21 @@
+<template id="animated-search-bar-component-template">
+    <div
+        class="animated-search-bar-component vue-component position-absolute d-none"
+    >
+        <!-- SEARCH ICON -->
+        <span
+            class="icon icon-search"
+            v-dev="{isDev: $root.isDev, variant: 'kpmg-blue'}"
+        ></span>
+
+        <!-- SEARCH INPUT -->
+	      <navbar-typeahead></navbar-typeahead>
+
+        <!-- CLOSE ICON -->
+        <span
+            class="icon icon-close text-kpmg-light-purple"
+            @click="hideSearchBar();"
+            v-dev="{isDev: $root.isDev, variant: 'danger'}"
+        ></span>
+    </div>
+</template>

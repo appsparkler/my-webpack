@@ -1,0 +1,42 @@
+
+<section class="module-contactdetail component clearfix">
+        
+            <h1 class="secondary-head">
+                {{#if hbs.contactDetail.salutation}}
+                    {{hbs.contactDetail.salutation}}
+                {{/if}}
+
+                {{#if hbs.contactDetail.firstName}}
+                    {{hbs.contactDetail.firstName}}                    
+                {{/if}}
+
+                {{#if hbs.contactDetail.middleInitial}}
+                    {{hbs.contactDetail.middleInitial}}                    
+                {{/if}}
+
+               
+
+                {{#if hbs.contactDetail.lastName}}
+                       
+                       {{#if hbs.contactDetail.suffix}}
+                            {{hbs.contactDetail.lastName}}
+                        {{else}}
+                             {{hbs.contactDetail.lastName}}
+                        {{/if}}
+                {{/if}}
+
+                
+
+                {{#if hbs.contactDetail.suffix}}
+                    {{hbs.contactDetail.suffix}}
+                {{/if}}
+
+            </h1>
+            <h3 class="tertiary-head">
+                <p>{{hbs.contactDetail.jobTitle}}</p>
+                <p>{{hbs.contactDetail.memFirmOrCompany}}</p>
+            </h3>            
+
+            <p>{{hbs.contactDetail.biography}}</p>    
+</section>
+

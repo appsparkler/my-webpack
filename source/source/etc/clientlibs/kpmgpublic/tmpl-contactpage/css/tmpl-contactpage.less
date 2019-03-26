@@ -1,0 +1,71 @@
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../share/css/share";
+@import "../../bodytext/css/bodytext";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../contactbutton/css/contactbutton";
+@import "../../partnerlocator/css/partnerlocator";
+@import "../../officelocator/css/officelocator";
+
+.module-tmpl-contactpage {
+    .inner-container .contactButtonContainer {
+        padding: 0px;
+    }
+    .inner-container .col-md-6 {
+        min-width: auto !important;
+    }
+    .inner-container .col-md-12 {
+        min-width: auto !important;
+    }
+    .contactButtonInnerContainer h3.line-clamp:after,
+    .contactButtonInnerContainer p.line-clamp:after {
+        background: none;
+    }
+    .inner-container .contactButtonContainer {
+        border-bottom: 5px #f1f1f1 solid;
+    }
+    .inner-container .contactButtonContainer:last-child {
+        border-bottom: none;
+    }
+    .module-promotionala .tertiary-head {
+        line-height: 1;
+    }
+    .module-partnerlocator .title {
+        padding: 14px 0 20px 0;
+    }
+    .module-officelocator .title {
+        padding: 14px 0 20px 0;
+    }
+    .module-promotionala .tertiary-desc {
+        margin: 20px 0 28px;
+        color: @gray-40;
+    }
+    .module-partnerlocator .compDescription {
+        color: @gray-40;
+    }
+
+    .module-officelocator .compDescription {
+        margin: 7px 13.3% 5px 13.3%;
+    }
+ 
+
+
+}
+
+@media only screen and (max-width: 640px) {
+    .module-tmpl-contactpage {
+         margin-top:8px;
+        .inner-container .contactButtonContainer {
+            border-bottom: 15px #f1f1f1 solid;
+            background: #ffffff;
+        }
+        .inner-container .contactButtonContainer:last-child {
+            border-bottom: 15px #f1f1f1 solid;
+        
+        }
+    }
+}

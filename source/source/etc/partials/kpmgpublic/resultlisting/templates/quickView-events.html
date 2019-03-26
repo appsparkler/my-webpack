@@ -1,0 +1,35 @@
+<div class="modalBodyLeft">
+   <div class="imgContainer">
+      <a href="{{this.KPMG_URL}}" title="{{this.KPMG_Title}}" tabindex="-1"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-src="" data-desktop="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{this.KPMG_Title}}" class="lazy"/></a>
+   </div>
+</div>
+<div class="modalBodyRight">
+   {{#if this.KPMG_Tab_Type}}
+   <div class="eventContent">
+      <span class="icon-date quickViewIcon"></span>
+      {{#if this.KPMG_Title}}
+         <h3 class="secondary-head"><a href="{{this.KPMG_URL}}">{{this.KPMG_Title}}</a></h3>
+      {{/if}}
+      <p class="eventStartDate">
+         {{#if this.KPMG_Event_Start_Date}}
+            {{this.KPMG_Event_Start_Date}}, 
+         {{/if}}
+         {{#if this.KPMG_Event_End_Date}}
+            {{this.KPMG_Event_End_Date}}
+         {{/if}}
+         {{#if this.KPMG_Event_Time_Zone}}
+            , {{this.KPMG_Event_Time_Zone}}
+         {{/if}}
+      </p>
+      {{#if this.KPMG_Event_Location}}
+         <p class="eventLocation">{{this.KPMG_Event_Location}}</p>
+      {{/if}}
+      {{#if this.KPMG_Event_Type}}
+         <p class="eventType">{{this.KPMG_Event_Type}}</p>
+      {{/if}}
+      {{#if this.KPMG_Description}}
+         <p class="description">{{this.KPMG_Description}}</p>
+      {{/if}}
+   </div>
+   {{/if}}
+</div>

@@ -1,0 +1,41 @@
+<template id="navbar-nav-list-item-component-template">
+    <li 
+        class="
+           navbar-nav-list-item-component vue-component 
+           nav-item 
+           d-inline-block
+       "
+		v-if="vm"
+      @mouseenter="addActiveClass"
+      @mouseleave="removeActiveClass"
+    >
+        <a
+          target="_blank"
+          x-cq-linkchecker="skip"
+          class="
+            nav-link text-kpmg-blue
+            pl-4 pr-4 pt-3
+          "
+            v-process-url="vm.linkURL "
+			v-if="vm.linkURL && vm.internalLinkFlag == 'false'"
+          @focus="addActiveClassOnTabFocus"
+          @blur="tabBlurAction"
+        >
+			\{{vm.i18nLabel}} <span class="sr-only"> \{{ vm.newTabAllow }} </span>
+        </a>
+        <a
+          class="
+            nav-link text-kpmg-blue
+            pl-4 pr-4 pt-3
+          "
+            v-process-url="vm.linkURL "
+			v-else-if="vm.linkURL"
+          @focus="addActiveClassOnTabFocus"
+          @blur="tabBlurAction"
+        >
+			\{{vm.i18nLabel}}
+        </a>
+      <!-- FLYOUT ON MOUSEOVER/HIDE ON MOUSEOUT -->
+        <nav-flyout-fullbleed :vm="vm.flyout" class="d-none"></nav-flyout-fullbleed>
+    </li>
+</template>

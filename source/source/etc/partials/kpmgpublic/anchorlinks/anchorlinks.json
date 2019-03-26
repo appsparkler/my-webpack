@@ -1,0 +1,33 @@
+{
+    "hbs": {
+        "anchorLinks": {
+            "highlights": "highlights",
+            "links": [
+                {
+                    "label": "Lean finance",
+                    "title": "Lean finance",
+                    "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    "url": "https://www.kpmg.com/#"
+                },
+                {
+                    "label": "Shared services",
+                    "title": "Shared services",
+                    "shortDescription": "Nulla sed tempus mauris, a lobortis purus. Integer id diam tincidunt",
+                    "url": "https://www.kpmg.com/#"
+                },
+                {
+                    "label": "Reliable forecasting",
+                    "title": "Reliable forecasting",
+                    "shortDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+                    "url": "https://www.kpmg.com/#"
+                },
+                {
+                    "label": "finance/risk alignment",
+                    "title": "finance/risk alignment",
+                    "shortDescription": "Integer dui mauris, iaculis id accumsan ac, lacinia in purus",
+                    "url": "https://www.kpmg.com/#"
+                }
+            ]
+        }
+    }
+}

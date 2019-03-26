@@ -1,0 +1,1373 @@
+@import "../../global/css/_variables.less";
+@mobile: ~"only screen and (max-width: 640px)";
+@desktop: ~"only screen and (min-width: 641px)";
+.focus-highlight {
+    outline-width: 1px;
+    outline-style: solid;
+    outline-color: @light-blue;
+}
+
+.gigya-screen-dialog,
+.gigya-screen-dialog-mobile {
+    .overlay-gray-extension {
+        height: 100vh;
+        background-color: @gray-94;
+    }
+    @media @desktop {
+        top: 125px !important;
+        .gigya-screen-dialog-main {
+            max-width: 568px !important;
+            width: 568px !important;
+        }
+    }
+    @media @mobile {
+        top: 70px !important;
+        left: 0 !important;
+        width: 100% !important;
+        .gigya-screen-dialog-main {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+        }
+    }
+    // label.success-message {
+    //     color: @light-green;
+    //     &:before {
+    //         content: "\e90a";
+    //         font-size: 14px;
+    //         font-family: 'icomoon';
+    //         padding-right: 5px;
+    //         padding-bottom: 50px;
+    //         position: absolute;
+    //         left: 30px;
+    //     }
+    // }
+    // .form-action-button.link-view {
+    //     &.return {
+    //         text-align: left;
+    //         .gigya-composite-control-link {
+    //            margin-left: 41px;
+    //         }
+    //     }
+    //     &.submit {
+    //        text-align: right;
+    //        .gigya-composite-control-link {
+    //            margin-right: 41px;
+    //        }
+    //     }
+    // }
+    // @media @mobile {
+    //     .form-action-button.link-view {
+    //         &.return {
+    //             text-align: center;
+    //             .gigya-composite-control-link {
+    //                 margin-left: 0px;
+    //             }
+    //         }
+    //         &.submit {
+    //             text-align: center;
+    //             .gigya-composite-control-link {
+    //                 margin-right: 0px;
+    //             }
+    //         }
+    //     }
+    // }
+    .gigya-screen-dialog-close {
+        line-height: 2;
+
+        @media @mobile {
+            position: absolute;
+            right: 28px;
+        }
+    }
+    .gigya-screen-dialog-close a {
+        img {
+            display: none;
+        }
+        &:focus {
+            .focus-highlight;
+        }
+        &:before {
+            top: 1px;
+            position: relative;
+            content: "\e911";
+            font-family: "icomoon";
+            color: @light-purple;
+            font-size: 16px;
+        }
+    }
+    .gigya-screen-dialog-main,
+    .gigya-screen-dialog-top {
+        background-color: white !important;
+        border-radius: 0px !important;
+    }
+    .gigya-screen-dialog-top {
+        margin: 18px 28px;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.42);
+        padding: 0 !important;
+        @media @mobile {
+            position: static !important;
+            margin: 0;
+            padding: 18px 28px !important;
+    }
+    }
+    .gigya-screen-dialog-caption {
+        .component-title(@kpmg-blue);
+        .hyphen;
+        display: block;
+    }
+    .gigya-screen-dialog-caption {
+        color: @kpmg-blue !important;
+        font-family: 'KPMG Light', Arial, Helvetica, sans-serif !important;
+        font-size: 38px !important;
+        font-size: 3.8rem !important;
+        .setall-non-latin-font-size(3.6);
+        margin-bottom: 11px !important;
+    }
+
+}
+#gigya-registration-done-screen,
+#gigya-login-done-screen {
+    .form-action-button {
+        &.submit span {
+            position: static !important;
+            padding-bottom: 16px;
+        }
+    }
+}
+.gigya-screen-dialog.gigya-ios, .gigya-screen-dialog-mobile.gigya-ios {
+    top: 0 !important;
+    background-color: @gray-94;
+}
+
+.kpmg-dialog-body, 
+.gigya-screen-dialog-mobile {
+    label.success-message {
+        color: @light-green;
+        &:before {
+            content: "\e90a";
+            font-size: 14px;
+            font-family: 'icomoon';
+            padding-right: 5px;
+            padding-bottom: 50px;
+            position: absolute;
+            left: 30px;
+        }
+    }
+    .form-action-button.link-view {
+        &.return {
+            text-align: left;
+            .gigya-composite-control-link {
+               margin-left: 41px;
+            }
+        }
+        &.submit {
+           text-align: right;
+           .gigya-composite-control-link {
+               margin-right: 41px;
+           }
+        }
+    }
+    @media @mobile {
+        .form-action-button.link-view {
+            &.return {
+                text-align: center;
+                .gigya-composite-control-link {
+                    margin-left: 0px;
+                }
+            }
+            &.submit {
+                text-align: center;
+                .gigya-composite-control-link {
+                    margin-right: 0px;
+                }
+            }
+        }
+    }
+}
+.kpmg-dialog-body,
+.gigya-screen-dialog-mobile,
+section.module-registrationuserinfo,
+.module-loginform {
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 0px;
+    outline: none;
+    input[type="text"]::-ms-clear {
+        display: none;
+   }
+
+    @media @mobile {
+        margin-bottom: 9px !important;
+    }
+    input[type='submit']:focus {
+        .focus-highlight;
+        outline-color: #0091da;
+    }
+    .no-margin table {
+        margin: 0px !important;
+    }
+    // .gigya-screen-dialog-close {
+    //     line-height: 2;
+
+    //     @media @mobile {
+    //         position: absolute;
+    //         right: 28px;
+    //     }
+    // }
+    // .gigya-screen-dialog-close a {
+    //     img {
+    //         display: none;
+    //     }
+    //     &:focus {
+    //         .focus-highlight;
+    //     }
+    //     &:before {
+    //         top: 1px;
+    //         position: relative;
+    //         content: "\e911";
+    //         font-family: "icomoon";
+    //         color: @light-purple;
+    //         font-size: 16px;
+    //     }
+    // }
+    input[type="submit"],.gigya-input-submit {
+        cursor: pointer;
+    }
+    // .gigya-screen-dialog-main,
+    // .gigya-screen-dialog-top {
+    //     background-color: white !important;
+    //     border-radius: 0px !important;
+    // }
+    // .gigya-screen-dialog-top {
+    //     margin: 18px 28px;
+    //     border-bottom: 1px solid rgba(128, 128, 128, 0.42);
+    //     padding: 0 !important;
+    //     @media @mobile {
+    //         position: static !important;
+    //         margin: 0;
+    //         padding: 18px 28px !important;
+    // }
+    // }
+    .gigya-screen-dialog-inner label {
+        font-weight: normal;
+        padding-bottom: 18px;
+    }
+    .kpmg-screen-dialog-caption{
+        font-weight: normal;
+        padding-bottom: 18px;
+    }
+    // .gigya-screen-dialog-caption {
+    //     color: @kpmg-blue !important;
+    //     font-family: 'KPMG Light', Arial, Helvetica, sans-serif !important;
+    //     font-size: 38px !important;
+    //     font-size: 3.8rem !important;
+    //     .setall-non-latin-font-size(3.6);
+    //     margin-bottom: 11px !important;
+    // }
+    .kpmg-gigya-screen .kpmg-input {
+        > label {
+            margin-top: 2px;
+        }
+    }
+    .password-strength-indicator {
+        bottom: 0px;
+        text-align: right;
+        width: ~"calc(100% - 25px)";
+        div {
+            height: 3px;
+            position: absolute;
+        }
+        span {
+            top: 2px;
+            position: relative;
+        }
+        &.weak {
+            div {
+                background-color: @red;
+                width: ~"calc((100% - 70px) * 0.25)";
+            }
+            span {
+                color: @red;
+            }
+        }
+        &.so-so {
+            div {
+                background-color: @orange;
+                width: ~"calc((100% - 70px) * 0.5)";
+            }
+            span {
+                color: @orange;
+            }
+        }
+        &.good {
+            div {
+                background-color: @green;
+                width: ~"calc((100% - 70px) * 0.75)";
+            }
+            span {
+                color: @green;
+            }
+        }
+        &.great {
+            div {
+                background-color: @dark-green;
+                width: ~"calc((100% - 70px) * 1)";
+            }
+            span {
+                color: @dark-green;
+            }
+        }
+    }
+    h1.gigya-screen-caption,
+    .no-display {
+        display: none;
+    }
+    .normal-font {
+        font-weight: normal;
+        &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+            line-height: 1.3;
+        }
+    }
+    .social-reg-container,
+    .login-container,
+    .login-container-mobile {
+        padding: 9px;
+        &.mobile-only {
+            border-top: 9px solid @gray-94;
+            border-bottom: 9px solid @gray-94;
+        }
+    }
+    .sign-up-desc {
+        margin-bottom: 28px;
+    }
+    .reg-configm-sign-up-desc {
+        margin-bottom: 28px;
+    }
+    .login-container {
+        &.desktop-only span.block-link {
+            display: inline-block;
+        }
+    }
+    .gigya-composite-control span {
+        border-width: 18px;
+    }
+    @media @desktop {
+        .social-reg-container {
+            height: 240px;
+        }
+        .social-reg-container.login {
+            height: auto;
+            background-color: @white;
+        }
+    }
+    @media @mobile {
+        .user-info-container,
+        .user-info-confirm-container,
+        .social-reg-container,
+        .login-container-mobile {
+            border-top: 9px solid @gray-94 !important;
+            border-bottom: 9px solid @gray-94 !important;
+        }
+    }
+    .empty-container {
+        background-color: @gray-94;
+    }
+    .user-info-container {
+        border:0;
+        padding: 9px;
+    }
+    .user-info-confirm-container {
+        padding: 9px;
+    }
+    .tabbing-button:focus {
+        .focus-highlight;
+    }
+    .social-icon-holder {
+        display: block;
+        padding-bottom: 10px;
+        &[class*="icon-"] {
+            font-size: 32px;
+            font-size: 3.2rem;
+        }
+        &.icon-twitter:before {
+            color: #55ACEE;
+        }
+        &.icon-linkedin:before {
+            color: #0077B5;
+        }
+        &.icon-facebook:before {
+            color: #3B5998;
+        }
+        &.icon-youtube:before {
+            color: #CD201F;
+        }
+        &.icon-googleplus:before {
+            color: #DC4E41;
+            content: "\e916";
+        }
+        &.icon-instagram:before {
+            color: #676767;
+        }
+        &.icon-slideshare:before {
+            color: #0077B5;
+        }
+        &.icon-xing:before {
+            color: #026466;
+        }
+        &.icon-pinterest:before {
+            color: #BD081C;
+        }
+        &.icon-vk:before {
+            color: #45668E;
+        }
+        &.icon-weibo:before {
+            color: #E92224;
+        }
+        &.icon-wechat:before {
+            color: #7BB32E;
+        }
+        &.icon-mixi:before {
+            color: #E0C074;
+        }
+        &.icon-viadeo:before {
+            color: #F07355;
+        }
+        &.icon-youku:before {
+            color: #EE4022;
+        }
+        &.icon-tudou:before {
+            color: #FF6600;
+        }
+        &.icon-line:before {
+            color: #00C300;
+        }
+    }
+    .kpmg-reg-head {
+        .component-title(@kpmg-blue);
+        .hyphen;
+        display: block;
+    }
+    .social-reg-container.login .kpmg-reg-head {
+        margin:0;
+        padding:14px 0 10px;
+    }
+    .kpmg-reg-head {
+        margin: 9px 0 28px;
+        @media @mobile {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin: 2px 10px 16px 0;
+        }
+    }
+    .gigya-login-providers,
+    .gigya-social-login-container {
+        height: 50px !important;
+    }
+    .gigya-login-provider {
+        margin-right: 10px !important;
+        padding-bottom: 10px;
+    }
+    .gigya-screen-dialog-caption {
+        margin: 0 0 18px 0;
+    }
+    .blue-color {
+        .promo-title(@kpmg-blue);
+    }
+    .button-link-text {
+        margin: 9px 0 7px;
+        .hyphen;
+    }
+    .gigya-input-checkbox,
+    input[type="checkbox"][name="data.terms"],
+    input[type="checkbox"][name="data.above13"],
+    input[type="checkbox"][name="subscriptions.communication_opt_in.email.isSubscribed"],
+    input[type="checkbox"][name="subscriptions.subscription_opt_in.email.isSubscribed"],
+    input[type="checkbox"][name="remember"] {
+        width: 1px;
+        height: 1px;
+        transform: scale(0);
+        position: absolute;
+    }
+    input[type="checkbox"]+label.mimic-terms-checkbox {
+        @media @desktop {
+            height: 44px;
+        }
+        position: absolute;
+        margin-right: 25px;
+    }
+    input[type="checkbox"]+label.mimic-terms-checkbox:before,
+    input[type="checkbox"]+label.mimic-remember-checkbox:before {
+        content: "";
+        left: 0;
+        top: 0px;
+        float: left;
+        bottom: 1px;
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+        position: relative;
+        display: inline-block;
+        background-color: @white;
+        border: 1px solid @gray-60;
+    }
+    input[type="checkbox"]+label.mimic-remember-checkbox:before {
+        width: 18px;
+        height: 18px;
+    }
+    input[type="checkbox"]:checked+label.mimic-terms-checkbox:before,
+    input[type="checkbox"]:checked+label.mimic-remember-checkbox:before {
+        content: "\e90a";
+        speak: none;
+        line-height: 1;
+        color: @light-green;
+        font-size: 13px;
+        line-height: 15px;
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        font-family: 'icomoon';
+        -webkit-font-smoothing: antialiased;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    input[type="checkbox"]:checked+label.mimic-terms-checkbox:before {
+        font-size: 18px;
+        padding-top: 3px;
+    }
+    .horizontal-rule {
+        border-top: 1px solid rgba(128, 128, 128, 0.42);
+        margin: 9px 0px 9px 0px;
+    }
+    label.required,
+    p.required {
+        .hyphen;
+        border-left: 4px solid @violet;
+        .promo-details(@gray-20);
+        padding-left: 5px !important;
+    }
+    .kpmg-input {
+        input, select {
+            width: ~"calc(100% - 25px)";
+            border: 1px solid @gray-60;
+            padding-left: 30px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            .promo-details(@gray-20);
+            &hover {
+                border: 1px solid @red;
+            }
+        }
+        &.login input {
+            width: 100%;
+        }
+    }
+    .kpmg-input input[type="password"] {
+        &::-ms-reveal {
+            display: none;
+        }
+    }
+    .kpmg-input input[data-required="true"],
+    .kpmg-input input[type="password"],
+    .kpmg-input input[name="email"],
+    .kpmg-input input[name="username"],
+    .kpmg-input input[name="profile.work.company"],
+    .kpmg-input select[name="profile.country"] {
+        border-left: 4px solid @violet;
+        border-radius: 0;
+        height: 25px;
+        white-space: nowrap;
+        .promo-details(@gray-20);
+        &:focus {
+            .focus-highlight;
+        }
+    }
+    .kpmg-input select[name="profile.country"]{
+        padding: 1px 0 0 30px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        position: relative;
+        z-index: 1;
+        background: none;
+        font-size: 1.7rem;
+        color: @placeholder-grey;        
+        &::-ms-expand{
+            display: none;
+        }
+        &.default{
+            font-size: 1.7rem;
+            color: @placeholder-grey;
+        }
+        &.others, option{
+            font-size: 1.8rem;
+            color: @gray-20;
+        }
+    }
+    .kpmg-input span[class*="icon-"] {
+        color: @violet;
+        position: relative;
+        top: 23px;
+        margin: 5px 5px 5px 10px;
+        
+        .font-size(1.6);
+        &::selection {
+            background: none;
+        }
+    }
+    .kpmg-input span.icon-country {
+        margin-left: 5px;
+    }    
+    .kpmg-input span.icon-dropdown-chevron {
+        margin-left: 5px;
+        background: @medium-blue;
+        top: 14px;
+        padding: 3px;
+        position: absolute;
+        z-index: 0;
+        right: 21px;
+        &:before{
+            color: @white;
+        }
+    }
+    .kpmg-input {
+        input[type="text"], input[type="password"] {
+            .set-font-size(1.8);
+        }
+        input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder{
+            .set-font-size(1.6);
+        }
+    }
+    span.forgot-pwd-link {
+        float: right;
+        margin-top: 18px !important;
+        .kpmg-link {
+            .set-font-size(1.6);
+        }
+    }
+    .invalid-login {
+        .set-font-size(1.6);
+        text-align: center;
+        padding: 0px 0px 0px 0px;
+    }
+    .kpmg-link {
+        &:focus {
+            .focus-highlight;
+        }
+        .promo-title(@kpmg-blue);
+        margin: 8px 5px;
+        .hyphen;
+        //color: @gray-40;
+    }
+    .kpmg-link:hover {
+        text-decoration: underline;
+    }
+    .mygigya-link.privacy-statement {
+        font-size: 14px !important;
+        font-size: 1.4rem !important;
+        .set-font-size(1.6);
+        color: @medium-blue;
+        line-height: 1.2 !important;
+    }
+    span.block-link {
+        display: block;
+        margin: 5px 0px;
+    }
+    .icon-email-information,
+    .icon-password-information {
+        right: ~"calc(56px - 100%)";
+        @media @desktop {
+            &:hover+span {
+                display: block;
+                color: @gray-60;
+            }
+        }
+        &+span {
+            background-color: @white;
+            border: 1px solid @gray-60;
+            padding: 25px 30px 15px 15px;
+            position: absolute;
+            right: -9px;
+            top: 50px;
+            width: 220px;
+            z-index: 1000;
+            &:before,
+            &:after {
+                bottom: 100%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+            }
+            &:after {
+                border-color: rgba(136, 183, 213, 0);
+                border-bottom-color: @white;
+                border-width: 6px;
+                margin-left: -4px;
+                right: 14px;
+            }
+            &:before {
+                border-color: rgba(194, 225, 245, 0);
+                border-bottom-color: @gray-60;
+                border-width: 7px;
+                margin-left: -5px;
+                right: 13px;
+            }
+        }
+        &:before {
+            color: @gray-40;
+            left: 3px;
+            content: "\e93a";
+            font-size: 13px;
+            font-size: 1.3rem;
+        }
+        &::selection {
+            background: none;
+        }
+    }
+    .kpmg-input span[class="icon-email-information"] {
+        margin-left: 7px;
+    }
+    .icon-password:before {
+        content: "\e93b";
+    }
+    // .icon-right:before {
+    //     content: "\e90e";
+    //     color: @light-green;
+    //     font-family: "icomoon";
+    // }
+    .gigya-required-display {
+        display: none;
+    }
+    .float-right-form-button {
+        float: right;
+        @media @mobile {
+            width: 100%;
+        }
+    }
+    .form-action-button {
+
+        .submit{
+             border:0;
+        }
+        &:hover span:nth-child(2n+2) {
+            text-decoration: underline;
+            &:before {
+                visibility: hidden;
+            }
+        }
+        &.link-view a span:nth-child(2n+2):before {
+            display: none;
+        }
+        div,
+        input {
+            opacity: 0.1;
+            height: 50px;
+            .set-font-size(1.8);
+            color: transparent;
+            background-color: @white;
+            border: 0px solid @gray-94;
+            margin: 9px;
+            user-select: none;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 100%;
+        }
+        span {
+            width: 100%;
+            height: 100%;
+            color: @gray-40;
+            .set-font-size(1.8);
+            padding-top: 16px;
+            position: absolute;
+            border: 9px solid @gray-94;
+            &:before {
+                padding-right: 10px;
+                font-size: 16px;
+                font-family: 'icomoon';
+            }
+        }
+        &.submit span {
+            text-align: center;
+            // &:before {
+            //     content: "\e90e";
+            //     color: @light-green;
+            // }
+        }
+        &.return {
+            text-align: right;
+        }
+        &.return span {
+            text-align: center;
+            background-color: @gray-94;
+            &:before {
+                content: "\e90d";
+                color: @light-green;
+            }
+        }
+        &.cancel a {
+            @media @mobile {
+                margin: 0;
+            }
+        }
+        &.cancel span {
+            text-align: left;
+            padding-left: 10px;
+            background-color: @gray-94;
+            @media @mobile {
+                text-align: center !important;
+                padding-left: 0px !important;
+            }
+            &:before {
+                margin-top: 3px;
+                content: "\e911";
+                color: @light-purple;
+                @media @mobile {
+                    color: @violet;
+                }
+            }
+        }
+        &.link-view {
+            text-align: center;
+            background-color: @gray-94;
+            @media @mobile {
+                text-align: center;
+            }
+            a {
+                line-height: 67px;
+                margin-left: 18px;
+                @media @mobile {
+                    margin-left: 0;
+                }
+                &:focus {
+                    .focus-highlight;
+                }
+                span {
+                    margin: 0px;
+                    padding: 0px;
+                    position: inherit;
+                    border: 0px solid black;
+                }
+            }
+        }
+        &.chevron-left span:before {
+            content: "\e90d";
+            color: @light-green;
+        }
+    }
+    div.horizontal-line {
+        margin-top:32px;
+        border:1pxÂ solid black !important;
+    }
+    /*all css overrides for login form to be done here*/
+    .kpmg-login {
+
+        form {
+            overflow: hidden;
+            // .icon-right:before{
+            //     color: @persian-green;
+            // }
+            .kpmg-button {
+                a {
+                    position: relative;
+                }
+                &.submit span {
+                    width:100%;
+                    border: 0;
+                    color: @white;
+                    &:before{
+                        color:@white;
+                    }
+                }
+                div,
+                input {
+                    margin: 0;
+                }
+                &.loginformSubmitBtn{
+                    background-color: #03A3A3;
+                }
+                span{
+                    height: auto;
+                }
+            }
+            span.block-link {
+                display: inline-block;
+
+            }
+            /* OR ON HORIZONTAL LINE*/
+            div#horizontal-line {
+                margin-top:35px;
+                border: 1px @gray-80 solid;
+            }
+            div#or-on-horizontal-line {
+                display: table;
+                margin:0 auto;
+                margin-top: -15px;
+                color: @white;
+            }
+            div#or-on-horizontal-line p {
+                display: table-cell;
+                width: 30px;
+                height: 30px;
+                border-radius: 15px;
+                text-align: center;
+                vertical-align: middle;
+                background-color: @gray-80;
+                color: @white;
+                font-weight:bold;
+            }
+            .social-reg-container{
+                padding: 0;
+            }
+            .user-info-container{
+                padding: 0;
+            }
+            .login-container{
+                padding: 0;
+                // &:before{
+                //     color:@persian-green;
+                //     content: "\e90e";
+                //     font-family: 'icomoon';
+                //     margin-right: 5px;
+                // }
+            }
+            .kpmg-reg-head{
+                margin:13px 0 6px;
+            }
+            .mimic-remember-checkbox{
+                margin-top:0;
+            }
+            .remember-checkbox{
+                margin-top:16px !important;
+                margin-bottom: 5px;
+            }
+            .createAccContainer{
+                margin:20px 0;
+            }
+            .loginScreenContainer{
+                padding-left: 23px;
+            }
+        }
+    }
+
+    #new-user-registration-info-container .form-action-button.link-view {
+        @media @desktop {
+            text-align: left;
+        }
+
+    }
+    @media @mobile {
+        .col-md-height:not(.col-nested) {
+            border-right: 9px solid @gray-94;
+            border-left: 9px solid @gray-94;
+        }
+    }
+    .kpmg-gigya-screen {
+        .gigya-terms-error {
+            padding: 0px;
+            border: 0px solid black;
+        }
+        .kpmg-input {
+            position: relative;
+            height: 48px;
+            .gigya-show-checkmark.gigya-valid {
+                background-image: none;
+            }
+            .input.gigya-error,
+            input[type="text"].gigya-error,
+            input[type="password"].gigya-error,
+            select[name="profile.country"].gigya-error {
+                border: 1px solid @red;
+                border-left: 4px solid @red;
+                border-radius: 0;
+                padding-left: 30px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+            select[name="profile.country"].gigya-error{
+                padding-top: 1px;
+                padding-bottom: 0;
+            }
+            .gigya-error-msg {
+                &.privacy-ack {
+                    top: -14px;
+                    @media (max-width: 392px) {
+                        top: -28px;
+                        -webkit-line-clamp: 2;
+                    }
+                }
+            }
+        }
+        .mygigya-captcha {
+            position: relative;
+            height: 141px;
+            .gigya-captcha {
+                padding-top: 15px;
+
+            }
+        }
+        .kpmg-input,
+        .mygigya-captcha {
+            .gigya-error-msg {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                position: absolute;
+                top: 5px;
+                .font-size(1.4);
+                &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                    top: 0;
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+    .gigya-terms-error {
+        padding: 0px;
+        border: 0px solid black;
+    }
+    .kpmg-input {
+        position: relative;
+        height: 48px;
+        .gigya-show-checkmark.gigya-valid {
+            background-image: none;
+        }
+        .input.gigya-error,
+        input[type="text"].gigya-error,
+        input[type="password"].gigya-error {
+            border: 1px solid @red;
+            border-left: 4px solid @red;
+            border-radius: 0;
+            padding-left: 30px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        .gigya-error-msg {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            position: absolute;
+            top: 5px;
+            .font-size(1.4);
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                top: 0;
+                line-height: 1.3;
+            }
+        }
+    }
+    .remember-checkbox {
+        margin-top: 20px !important;
+        height: auto !important;
+        min-height: auto !important;
+        width: 50%;
+    }
+    @media (max-width: 380px) {
+        .user-info-container {
+            height: 418px !important;
+        }
+    }
+    @media (max-width: 457px) {
+        .user-info-confirm-container .terms-checkbox {
+            margin-bottom: 20px;
+        }
+    }
+    @media (min-width: 381px) and (max-width: 457px) {
+        .user-info-container {
+            padding-bottom: 16px;
+        }
+    }
+    .terms-checkbox,
+    .above13-checkbox,
+    .remember-checkbox {
+        height: inherit;
+        min-height: 40px;
+        margin-top: 18px;
+        @media @desktop {
+            height: 38px !important;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        .gigya-label-text.gigya-checkbox-text {
+            top: -28px;
+            color: @gray-40;
+            float: left;
+            padding-left: 33px;
+            position: relative;
+            font-weight: normal;
+        }
+        .outer-shape {
+            border: none !important;
+            display: inline-table;
+            position: relative;
+            top: 3px;
+        }
+        .right-arrow {
+            float: left;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid @violet !important;
+            border-bottom: 10px solid transparent;
+            vertical-align: middle;
+        }
+        .arrow-label {
+            float: left;
+            width: auto;
+            background: @violet !important;
+            vertical-align: middle;
+            font-family: Arial, Helvetica, sans-serif;
+            .set-font-size(1.4);
+            line-height: 1.3;
+            color: @white;
+            padding: 1px 3px;
+        }
+    }
+    .remember-checkbox,
+    .above13-checkbox {
+        .gigya-label-text.gigya-checkbox-text {
+            top: 2px;
+            padding: 0px;
+        }
+    }
+    .terms-checkbox.gigya-terms-valid,
+    .above13-checkbox.gigya-terms-valid,
+    .kpmg-input {
+        label.mimic-terms-checkbox:before,
+        label.mimic-remember-checkbox:before {
+            border: 1px solid @dark-green;
+        }
+        .outer-shape .right-arrow {
+            border-right: 10px solid @dark-green !important;
+        }
+        .outer-shape .arrow-label {
+            background: @dark-green !important;
+        }
+    }
+    .terms-checkbox.gigya-terms-error,
+    .terms-checkbox.gigya-terms-valid.gigya-terms-invalid,
+    .terms-checkbox.gigya-terms-invalid,
+    .above13-checkbox.gigya-terms-error,
+    .remember-checkbox.gigya-terms-error {
+        .gigya-error-msg.privacy-ack {
+            visibility: visible;
+        }
+        label.mimic-terms-checkbox:before,
+        label.mimic-remember-checkbox:before {
+            border: 1px solid @red;
+        }
+        .outer-shape .right-arrow {
+            border-right: 10px solid @red !important;
+        }
+        .outer-shape .arrow-label {
+            background: @red !important;
+        }
+    }
+    .gray-background {
+        background-color: @gray-94;
+    }
+    .white-background {
+        background-color: @white;
+    }
+    .center-align {
+        text-align: center !important;
+    }
+    .no-visibility {
+        visibility: hidden;
+    }
+    #gigya-too-many-failed-attempts-screen {
+        .gigya-layout-row>div.gigya-layout-row {
+            border: 0px solid black;
+        }
+        .gigya-layout-row:nth-child(2)>div.gigya-layout-row {
+            border: 9px solid @gray-94;
+        }
+        label.header-text {
+            padding: 13px 34px 17px 30px;
+        }
+    }
+    .gigya-reset-password-form {
+        padding-top: 10px;
+    }
+    .gigya-reset-password-form .gigya-layout-row.row-same-height {
+        padding: 13px 28px 18px !important;
+    }
+
+    &#gigya-forgot-password-success-screen .gigya-layout-row label.success-message,
+    &#gigya-reset-password-success-screen .gigya-layout-row label.success-message {
+        padding: 13px 28px 18px 50px;
+    }
+    &#gigya-reset-password-screen {
+        @media @desktop {
+            min-width: 500px;
+            .kpmg-input {
+                height: auto;
+            }
+            .gigya-error-msg:first-child {
+                position: relative;
+                margin: 5px 0 -10px;   
+                -webkit-line-clamp: unset;
+            }
+        }
+        .content-container {
+            padding: 0px 26px 18px 26px;
+        }
+        .header-text {
+            color: @kpmg-blue;
+        }
+        .info-text {
+            color: rgba(128, 128, 128, 1);
+            font-style: italic;
+            padding-bottom: 15px;
+        }
+    }
+    #gigya-registration-cancel-screen .gigya-composite-control-label{
+       padding-top: 14px;
+    }
+
+    .tooltip-close {
+        position: absolute !important;
+        top: 2px !important;
+        right: 7px !important;
+        color: @light-purple !important;
+    }
+    @media @mobile {
+        .captcha-desktop-neighbour {
+            display: none;
+        }
+    }
+    .captcha-row {
+        display: none;
+        @media @mobile {
+            border-top: 9px solid @gray-94;
+            border-bottom: 9px solid @gray-94;
+        }
+        .captcha-container {
+            padding: 0;
+            border: none;
+            .captcha-text {
+                display: inline-block;
+                padding-bottom: 15px;
+            }
+            div[name="captchaText"] {
+                width: 100% !important;
+                height: auto !important;
+            }
+            table.recaptchatable {
+                @media @desktop {
+                    width: ~"calc(100% - 25px)";
+                }
+                border: 1px solid @gray-60 !important;
+                #recaptcha_image {
+                    margin: 0px 0px 0px 0px;
+                    height: auto !important;
+                    width: 100% !important;
+                    border: 1px solid @gray-60 !important;
+                    img {
+                        width: 100%;
+                    }
+                }
+                #recaptcha_response_field {
+                    width: ~"calc(100% - 7px)" !important;
+                    border: 1px solid @gray-60 !important;
+                }
+                #recaptcha_privacy {
+                    display: none;
+                }
+                input[name="recaptcha_response_field"]::-webkit-input-placeholder {
+                    color: @white;
+                }
+                .recaptcha_input_area {
+                    input {
+                        font-size: 1.6rem !important;
+                        .set-font-size(1.8);
+                    }
+                }
+            }
+            span.gigya-error-msg {
+                .set-font-size(1.4);
+            }
+
+        }
+    }
+    #gigya-screen-dialog-page-overlay {
+        background-color: @black !important;
+        opacity: 0.5 !important;
+    }
+    @media (max-width: 392px) {
+        .terms-checkbox {
+            margin-top: 30px !important;
+        }
+    }
+    .full-width {
+        width: 100% !important;
+    }
+
+    @media @mobile {
+        .kpmg-login {
+            form {
+                .user-info-container {
+                    border-right: 9px solid @gray-94 !important;
+                    border-left: 9px solid @gray-94 !important;
+                    border-top:0 !important;
+                    border-bottom: 0 !important;
+                }
+                .loginBtnContainer {
+                    border-right: 9px solid @gray-94 !important;
+                    border-left: 9px solid @gray-94 !important;
+                    padding: 9px;
+                }
+                .createAccContainer {
+                    border-right: 9px solid @gray-94 !important;
+                    border-left: 9px solid @gray-94 !important;
+                    padding: 9px;
+                    margin:0;
+                }
+                .remember-checkbox {
+                    margin-top:8px !important;
+                }
+                span.forgot-pwd-link {
+                    margin-top:10px !important;
+                }
+                .user-info-container {
+                    padding: 9px;
+                }
+                .social-reg-container {
+                    padding: 9px;
+                }
+                .loginScreenContainer {
+                    padding-left: 0;
+                }
+            }
+
+        }
+    }
+
+    @import "registration-design-overrides";
+}
+
+/* Fixed for both mobile "max-width:640px" and iPad "max-width:768px"  */
+@media only screen and (max-width: 768px) {
+    .module-loginform {
+        .remember-checkbox {
+            .gigya-label-text.gigya-checkbox-text{
+                float: none;
+            }
+        }
+    }
+}
+.grecaptcha-badge{
+    position: absolute !important;
+    z-index:11;
+    bottom: 105px !important;
+}
+.gigya-composite-control.gigya-composite-control-submit.form-action-button.submit.registration-submit-button {
+    margin-top: 60px;
+}
+/*include for RTE related css fixes*/
+@import "../../global/css/rtecss.less";
+span.defaultfontcolor{
+    line-height: 1.3 !important;
+}

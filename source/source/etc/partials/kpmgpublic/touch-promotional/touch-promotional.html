@@ -1,0 +1,72 @@
+<!-- Begin Component: TouchPromotional -->
+<section class="module-touch-promotional component promotional-cell-hover component-trackable">
+    <a href="{{hbs.promotional.primaryUrl}}" title="{{hbs.promotional.altText}}" data-topic="{{hbs.promotional.topic}}" x-cq-linkchecker="skip">
+        {{#if hbs.promotional.imageFileReference}}
+            {{#if hbs.promotional.imageConfigExists}}
+                <picture>
+                    {{#hbs.promotional.imageConfig}}
+                        {{#if this.isDesktop}}
+                            <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                                media="screen  and (min-width: 641px) and (max-width: 9440px)" >
+                        {{else}}
+                            <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                                media="screen  and (min-width: 0px) and (max-width: 640px)" >
+                        {{/if}}
+
+                        {{#if @last}}
+                            <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" alt="{{imageAltText}}" title="{{imageAltText}}"/>
+                        {{/if}}
+                    {{/hbs.promotional.imageConfig}}
+                </picture>
+
+            {{else}}
+                {{#if hbs.promotional.one}}
+                    <picture>
+                           <!--[if IE 9]><video style="display: none;"><![endif]-->
+                           <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.583.282.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+                           <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.418.203.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                           <!--[if IE 9]></video><![endif]-->
+                           <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.418.203.jpg" title="{{hbs.promotional.altText}}" alt="{{hbs.promotional.altText}}">
+                    </picture>
+                {{/if}}
+                {{#if hbs.promotional.two}}
+                    <picture>
+                           <!--[if IE 9]><video style="display: none;"><![endif]-->
+                           <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.583.282.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+                           <source srcset="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.484.232.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                           <!--[if IE 9]></video><![endif]-->
+                           <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{hbs.promotional.imageFileReference}}/jcr:content/renditions/cq5dam.web.484.232.jpg" title="{{hbs.promotional.altText}}" alt="{{hbs.promotional.altText}}">
+                    </picture>
+                {{/if}}
+            {{/if}}
+
+        {{/if}}
+        <div class="desc-wrapper">
+            {{#if hbs.promotional.publishDate}}
+                {{#if hbs.promotional.isFormated}}
+                    <p class="publish-date">{{hbs.promotional.publishDate}}</p>
+                {{else}}
+                    <p class="publish-date format-publish-date" data-publishedDate="{{hbs.promotional.publishDate}}"></p>
+                {{/if}}
+            {{/if}}
+
+            {{#if hbs.promotional.one}}
+                {{#if hbs.promotional.shortTitle}}
+                    <h3 class="tertiary-head line-clamp line-clamp-2">{{hbs.promotional.shortTitle}}</h3>
+                {{/if}}
+                {{#if hbs.promotional.shortDescription}}
+                    <p class="tertiary-desc line-clamp line-clamp-5">{{hbs.promotional.shortDescription}}</p>
+                {{/if}}
+            {{/if}}
+            {{#if hbs.promotional.two}}
+                {{#if hbs.promotional.title}}
+                    <h3 class="tertiary-head line-clamp line-clamp-2">{{hbs.promotional.title}}</h3>
+                {{/if}}
+                {{#if hbs.promotional.longDescription}}
+                    <p class="tertiary-desc line-clamp line-clamp-5">{{hbs.promotional.longDescription}}</p>
+                {{/if}}
+            {{/if}}
+        </div>
+    </a>
+</section>
+<!-- End Component: TouchPromotional -->

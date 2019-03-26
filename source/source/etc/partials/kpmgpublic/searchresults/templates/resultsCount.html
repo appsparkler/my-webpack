@@ -1,0 +1,45 @@
+<div class="resultFound">
+    {{#compare this.suggestions.suggestion-exists "neq" "true"}}
+    <h3>
+        {{#if this.totalResults.searchQuery}}
+            {{#compare this.totalResults.total "neq" "0"}}
+                <span id="totalResults">{{this.totalResults.total}}</span>
+                {{this.CQModel.i18nModel.resultsForCopy}} <span class="search-query-text hidden">{{{this.totalResults.searchQuery}}}</span>
+            {{/compare}}
+        {{else}}
+            <span id='totalResults'>{{this.totalResults.total}}</span> {{this.CQModel.i18nModel.resultsForCopyOne}}
+        {{/if}}
+
+        {{#compare this.totalResults.total "eq" "0"}}
+            {{this.CQModel.i18nModel.resultsLineOne}} <span class="search-query-text hidden">{{this.totalResults.searchQuery}}</span>
+        {{/compare}}
+    </h3>
+    <div class="noDataFound">
+        <div class="zero-results-suggestions hidden">
+            <p class="suggestions-heading">{{this.CQModel.i18nModel.noResultsCopyLineTwoPartOne}} <span class="search-query-text hidden">"{{this.totalResults.searchQuery}}"</span> {{this.CQModel.i18nModel.noResultsCopyLineTwoPartTwo}}</p>
+
+            <div class="suggestions-wrap">
+                <p class="suggestions-text">{{this.CQModel.i18nModel.noResultsCopyLineThree}}</p>
+                <p>- {{this.CQModel.i18nModel.noResultsCopyLineFour}}</p>
+                <p>- {{this.CQModel.i18nModel.noResultsCopyLineFive}}</p>
+                <p>- {{this.CQModel.i18nModel.noResultsCopyLineSix}}</p>
+            </div>
+        </div>
+    </div>
+    {{/compare}}
+    {{#compare this.suggestions.suggestion-exists "eq" "true"}}
+    <div class="noDataFound didYouMean">
+        <h3>
+            {{this.CQModel.i18nModel.resultsLineOne}} <span class="search-query-text hidden">{{this.totalResults.searchQuery}}</span>
+        </h3>
+        <div class="zero-results-suggestions hidden">
+            <p class="suggestions-heading">
+                {{this.CQModel.i18nModel.didYouMean}}
+                {{#each this.suggestions.suggested-items.suggested-item}}
+                <a data-link="{{{this.link}}}" title="{{this.word}}" class="didyoumeanlink">{{this.word}}</a>&nbsp;&nbsp;
+                {{/each}}
+            </p>
+        </div>
+    </div>
+    {{/compare}}
+</div>

@@ -1,0 +1,48 @@
+<section class="module-searchinputs component" data-search-waitTime="{{hbs.searchInput.waitTimeAutoSuggestionResponse}}" data-searchUrl="{{hbs.searchInput.searchResultPath}}">
+    <div class="searchInputsCQModel" data-CQModal='{"sesPrefixResultsLimit" :{{hbs.searchInput.sesPrefixResultsLimit}}, "commonModelId" : "{{hbs.searchInput.commonModelId}}", "localCountryModelId":"{{hbs.searchInput.localCountryModelId}}", "searchResultPath":"{{hbs.searchInput.searchResultPath}}","searchLanguage":"{{hbs.searchInput.SESLanguage}}","yourRecentSearchCopy":"{{i18n hbs.searchInput.yourRecentSearchCopy}}"}'></div>
+    <div class="btn-container hidden-xs hidden-sm" >
+        <a href="javascript:void(0);" class="btn-back"><span class="icon-chevron-left"></span><span class="hidden-xs">{{i18n "back"}}</span></a>
+    </div>
+    <div class="search-title">
+    	Search
+    </div>
+    <div class="search-container">
+        <div class="search-input">
+            <div class="form-group">
+                <label for="search" class="sr-only">{{i18n "search"}}</label>
+                <input name="search" class="search" type="text" placeholder="{{i18n hbs.searchInput.searchBarDefaultCopy}}"/>
+                <button type="submit" class="submitSearch" title="{{i18n hbs.searchInput.searchBarDefaultCopy}}" value="{{i18n hbs.searchInput.searchBarDefaultCopy}}">
+                <span class="icon-search hidden-sm hidden-xs"></span>
+                <span class="icon-chevron-right hidden-md hidden-lg"></span>
+                <span class="search-label">{{i18n hbs.searchInput.searchBarDefaultCopy}}</span>
+                </button>
+            </div>
+        </div>
+        <div class="radio-btns">
+            <h4 class="broaden-search">{{i18n "broadenSearch"}}</h4>
+            <div class="form-group">
+                <input name="search-type" type="radio" class="this-site" value="this-site" checked="checked" />
+                <label for="this-site">{{i18n "searchThisSite"}}</label>
+                <input name="search-type" type="radio" class="all-sites" value="all-sites" />
+                <label for="all-sites">{{i18n "searchAllSites"}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="mob-previous-search-container hidden-lg hidden-md visible-sm visible-xs">
+        <div class="top-divider"></div>
+        <div class="previous-heading"></div>
+        <p class="most-view-list-a"></p>
+        <p class="most-view-list-b"></p>
+        <p class="most-view-list-c"></p>
+        <div class="close-searchinput hidden-lg hidden-md vissible-xs vissible-sm">
+             <div class="searchinput-mob-close">
+                <p class="text-close">
+                    <em id="close-searchinput-btn">
+                        <em>{{i18n 'kpmg.search.closeSearch'}}</em>
+                        <span class="searchinput-close-icon icon-close"></span>
+                    </em>
+				</p>
+            </div>
+        </div>
+    </div>
+</section>

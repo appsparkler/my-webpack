@@ -1,0 +1,107 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-author-spotlight {
+    &.component {
+        padding: 0;
+    }
+    &:hover{
+        outline: 1px solid @grey-text-transparent;
+    }
+    .author-anchor {
+        display: inline-block;
+    }
+    .author-image{
+        overflow: hidden;
+        position: relative;
+        
+
+        img {
+            width: 100%;
+        }
+
+        span {
+            display: inline-block;
+            position: absolute;
+            width: 40px;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: @light-blue;
+        }
+    }
+    .author-details{
+        padding-left: 40px;
+        .author-name{
+            font-weight: bold;
+            line-height: 1.2;
+            font-size: 20px;
+            font-family: @arial;
+            color: @kpmg-blue;
+            padding-top: 22px;
+            padding-bottom: 10px;
+        }
+        .author-role{
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.2;
+            font-family: @arial;
+            color: @black;
+        }
+        .linkdln > span img, .kpmg-profile > span img, .email-me > span img {
+            background: @light-blue;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+        }
+
+        .kpmg-profile, .linkdln {
+            font-size: 18px;
+            line-height: 1.2;
+            font-family: @arial;
+            
+        }
+        .email-me {
+            font-size: 18px;
+            line-height: 1.2;
+            font-family: @arial;
+            margin-top: 8px;
+            .email-link {
+                display: inline-block;
+                padding: 7px 7px 7px 0;
+                
+            }
+            .email-label {
+                color: @black;
+            }
+
+        }
+        .kpmg-profile {
+            .kpmg-profile-link {
+                display: inline-block;
+                padding: 7px 7px 7px 0;
+                
+            }
+            .kpmg-profile-label {
+                color: @black;
+            }
+        }
+        .linkdln {
+            .linkdln-links {
+                display: inline-block;
+                padding: 7px 7px 7px 0;
+                
+            }
+            .linkdln-label {
+                color: @black;
+            }
+        }
+
+    }
+
+}
+
+@media (max-width: @mobile-max-fixed) {
+    .module-touch-author-spotlight{
+        display: none;
+    }
+}

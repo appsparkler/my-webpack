@@ -1,0 +1,17 @@
+{
+    "hbs": {
+        "eventtabs": {
+            "agendaTabLabel": "eventTabs.agenda",
+            "speakersTabLabel": "eventTabs.speakers",
+            "showMoreLabel": "loadMore",
+            "eventTabsSpeakers": {
+                "baseUrl": "/etc/partials/kpmgpublic/eventtabs/event_tabs",
+                "totalRecords": 11,
+                "currentPage": 1,
+                "recordsPerPage": 5
+            },
+            "guideTabLabel": "eventTabs.guide"
+        }
+    }
+}
+

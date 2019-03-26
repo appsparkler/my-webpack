@@ -1,0 +1,57 @@
+@import "../../global/css/_variables.less";
+
+// MIXIN
+.kpmg-background-colors(@bgColor) {
+	background:url('/etc/designs/kpmgpublic/images/blockquotes.png') no-repeat top 15px left 19px,
+		url('/etc/designs/kpmgpublic/images/blockquotes_inverse.png') no-repeat bottom 17px right 18px @bgColor;
+	margin: 10px;
+}
+
+// STYLES
+.module-quote {
+	&.kpmg_blue {
+		.kpmg-background-colors(@kpmg-blue);
+		&.no-quotes {
+			background: @kpmg-blue;
+			margin: 0 10px 0 10px;
+		}
+	}
+	&.medium_blue {
+		.kpmg-background-colors(@medium-blue);
+		&.no-quotes {
+			background: @medium-blue;
+		}
+	}
+	&.violet{
+		.kpmg-background-colors(@violet);
+		&.no-quotes {
+			background: @violet;
+		}
+	}
+	&.purple{
+		.kpmg-background-colors(@purple);
+		&.no-quotes {
+			background: @purple;
+		}
+	}
+	&.light_purple {
+		.kpmg-background-colors(@light-purple);
+		&.no-quotes {
+			background: @light-purple;
+		}
+	}
+
+	&.no-quotes {
+		p {
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+	}
+
+	p {
+        color: @white;
+        padding:60px 50px 36px 20px;
+		line-height:1.3;
+		word-wrap: break-word;
+    }
+}

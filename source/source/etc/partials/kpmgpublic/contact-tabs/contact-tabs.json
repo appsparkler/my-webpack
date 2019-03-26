@@ -1,0 +1,14 @@
+{
+    "hbs": {
+        "contact-tabs": {
+            "publications" : "contactTabs.publications",
+            "connections" : "contactTabs.connections",
+            "loadMore" : "loadMore",
+            "publicationBasePath" : "/etc/partials/kpmgpublic/contact-tabs/publications/1.json?",
+            "contactTabs": {
+                "baseUrl" : "/etc/partials/kpmgpublic/contact-tabs/connections"
+            },
+            "quickView" : "quickView"
+        }
+    }
+}

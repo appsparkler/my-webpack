@@ -1,0 +1,11 @@
+{
+    "hbs": {
+        "publicationSeries": {
+            "publicationSeriesTitle": "Publication Series List",
+            "publicationSeriesSolrUrl": "http://bangvmplkpmg41.sapient.com/solr/en_US/select?q=%22article-details-template%22&df=templatepath&fq=(publicationSeries:%22EN%20-%20Global%20-%20ACI%22)&sort=articleDate%20desc&wt=xslt&tr=publication.xsl",
+            "publicationIssueLabel": "publicationSeriesIssue",
+            "anchorId" : 2
+        }
+    }
+}
+

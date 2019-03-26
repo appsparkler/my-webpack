@@ -1,0 +1,13 @@
+<!-- Begin Component: Caasdocumentbodytext -->
+<section class="module-caasdocumentbodytext component bg-white clearfix">
+    {{#if hbs.caasdocumentbodytext.title}}
+    <h2 class="primary-head"
+        {{#if hbs.caasdocumentbodytext.anchorId}}
+        id="{{hbs.caasdocumentbodytext.anchorId}}"
+        {{/if}}>{{{hbs.caasdocumentbodytext.title}}}</h2>
+    {{/if}}
+    {{#if hbs.caasdocumentbodytext.bodyTextValue}}
+        <div class="bodytext-data">{{{hbs.caasdocumentbodytext.bodyTextValue}}}</div>
+    {{/if}}
+</section>
+<!-- End Component: Caasdocumentbodytext -->

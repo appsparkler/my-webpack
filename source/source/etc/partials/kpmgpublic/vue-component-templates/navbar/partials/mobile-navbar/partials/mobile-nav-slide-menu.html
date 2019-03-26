@@ -1,0 +1,67 @@
+<template id="mobile-nav-slide-menu-component-template" <!-- SLIDE MENU-CONTAINER -->
+    <div
+        id="kpmg-mobile-nav-dropdown-menu"
+        class="
+            mobile-nav-slide-menu-component vue-component 
+            position-absolute 
+            animated
+            text-left
+            collapse
+            slideOutTop
+        "
+        v-dev="{isDev: $root.isDev, variant:'success'}"
+    >
+        <!--  MOBILE NAVIGATION LIST -->
+        <ul class="list-unstyled mb-0 bg-gray-87">            
+	
+            <!-- SEARCH TAB -->
+            <li>
+                <mobile-nav-search-tab-content
+                ></mobile-nav-search-tab-content>
+            </li>
+
+            <!-- TABS WITH TAB CONTENT -->
+            <mobile-nav-menu-tabs :vm="vm"></mobile-nav-menu-tabs>
+            
+
+            <!-- MENU WITH SUB-LIST COLLAPSED -->
+
+            <mobile-primary-nav-list 
+                v-for="(item, index) in vm.navbarNav"
+                v-bind:key="index + '-primary-nav-item' "
+                :vm="item"
+            >
+            </mobile-primary-nav-list>
+
+
+            <!-- MENU WITHOU SUB-LIST -->
+            <li 
+                class="my-1"
+                v-if="vm.secondaryNav"
+                v-for="(listItem, idx) in vm.secondaryNav"
+                v-bind:key="idx + '-mobile-primary-nav-list'"
+            >
+                <mobile-secondary-nav-list
+                    :vm="listItem"
+                ></mobile-secondary-nav-list>
+            </li>
+            
+            <li 
+                class="siteSelectorli"    
+                v-if="vm.accountActionList && vm.siteSelectorList.flyout.cell2.type && vm.siteSelectorList.flyout.cell2.type === 'site-selector-card' "
+                :class="{'collapse': vm.accountActionList.iconStyle != 'icon-logged-out'}"
+                >
+                <!-- SITE-SELECTOR-CARD -->
+                <site-selector-card
+                    v-if="vm.siteSelectorList.flyout.cell2.type && vm.siteSelectorList.flyout.cell2.type === 'site-selector-card' "
+                    :vm="vm.siteSelectorList.flyout.cell2"
+                    class="nav-site-selector-card"
+                    v-dev="{isDev: $root.isDev, color: 'navy', show: true }"
+                ></site-selector-card>
+            </li>
+
+
+            
+        </ul>
+    </div>
+</template>

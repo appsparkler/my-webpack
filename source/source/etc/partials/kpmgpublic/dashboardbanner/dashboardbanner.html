@@ -1,0 +1,25 @@
+<section class="module-dashboardbanner component component-trackable">
+
+    <!-- SPINNER only on client-side and not on author-side -->
+    <div class="web-spinner {{#if hbs.isAuthor}} hide {{/if}}">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1082 378'%2F%3E"  width="1082" height="378" class="desktop-only img-responsive" />
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 640 490'%2F%3E"  width="640" height="580" class="mobile-only img-responsive" />
+    </div>
+
+    <!-- DO NOT DISPLAY when page is loaded on client side. -->
+    <a href="{{hbs.globalValues.assetDomainName}}{{hbs.DashBoardBanner.url}}" class="dashboard-banner-cta">
+        <div class="overlay-holder {{#unless hbs.isAuthor }}hide{{/unless}}">
+            <span class="stripe-1"></span> 
+            <span class="stripe-2"></span>
+            <span class="stripe-3"></span>
+            <span class="banner-title {{hbs.DashBoardBanner.variant}}">{{hbs.DashBoardBanner.title}}</span>
+        </div>
+    </a>
+    <a href="{{hbs.globalValues.assetDomainName}}{{hbs.DashBoardBanner.url}}" class="dashboard-banner-cta">
+        <img data-src="" class="img-responsive lazy {{#unless hbs.isAuthor }}hide{{/unless}}" alt="{{hbs.DashBoardBanner.bannerAltText}}" title="{{hbs.DashBoardBanner.bannerAltText}}"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1082 378'%2F%3E"
+            data-mobile="{{hbs.globalValues.assetDomainName}}{{hbs.DashBoardBanner.bannerimage}}/jcr:content/renditions/cq5dam.web.640.490.jpg"
+            data-desktop="{{hbs.globalValues.assetDomainName}}{{hbs.DashBoardBanner.bannerimage}}/jcr:content/renditions/cq5dam.web.1082.378.jpg"
+        />
+    </a>
+</section>

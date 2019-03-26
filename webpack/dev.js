@@ -29,7 +29,13 @@ module.exports = {
             // etc
             {
                 from: 'source'
-            }
+            },
+            // other files
+            {
+                from: 'src/xx',
+                to: 'xx'
+            },
+
         ])
     ],
 

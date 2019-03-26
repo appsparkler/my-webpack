@@ -1,0 +1,199 @@
+@import "../../global/css/_variables.less";
+
+.module-caasdocumentnav {
+
+    .subnavigation-accordiancontainer-sublevels.third-menu {
+        display: none;
+    }
+
+    .caas-page-title {
+        padding: 20px 0px 20px 20px !important;
+
+        a {
+            font-size: 22px !important;
+            color: @white !important;
+        }
+    }
+
+    .first-menu {
+        li.parent-not-selected {
+            background: @gray-20;
+        }
+        &>li>a {
+            font-size: 22px !important;
+            color: @white !important;
+            padding-left: 20px;
+        }
+    }
+
+    .second-menu {
+        li.any-child {
+            background: @gray-94;
+            border-bottom: 1px solid @gray-20;
+            &>a {
+                font-size: 22px !important;
+                color: @gray-40 !important;
+                font-style: italic;
+                padding: 0px 0px 5px 30px;
+            }
+        }
+        .subnavigation-list-group-item {
+            span {
+                margin-left: -5px;
+                left: -14px;
+                position: relative;
+            }
+        }
+        .third-menu {
+            li.any-grand-child {
+                background: @white;
+                border-bottom: 1px solid @gray-20;
+            }
+            .subnavigation-list-group-item {
+                a {
+                    color: @medium-blue;
+                    font-size: 22px !important;
+                    font-style: italic;
+                    padding: 0px 0px 5px 40px;
+                }
+            }
+        }
+    }
+
+    .first-menu > .subnavigation-list-group-item {
+            border-bottom: none;
+    }
+
+    background-color: transparent;
+    padding: 0px;
+    .subnavigation-accordianblock {
+        padding: 0px;
+    }
+    .subnavigation-accordianblock {
+        margin-bottom: 18px;
+    }
+    .subnavigation-industblock {
+        padding:20px 10px;
+        .icon-dots {
+            .font-size(1.6);
+            cursor: pointer;
+        }
+        .icon-dots {
+            color: @kpmg-blue;
+            &:hover{
+                color: @medium-blue;
+            }
+        }
+
+    }
+    .expand-reset{
+        padding-bottom: 10px;
+    }
+    .subnavigation-list-group {
+        margin-bottom: 0;
+    }
+    .subnavigation-list-group.first-menu {
+        .subnavigation-list-group-item.first-list {
+            cursor: default !important;
+        }
+    }
+    #sub-title:hover {
+        text-decoration: underline;
+    }
+    .sub-title {
+        text-decoration: none;
+        .promo-details(@gray-40);
+        cursor: pointer !important;
+        padding: 0px !important;
+    }
+    a.sub-title:hover {
+        color: @gray-40;
+    }
+    .subnavigation-list-group-item {
+        border-left: 0;
+        border-right: 0;
+        padding: 10px 0px 0px 0px;
+        vertical-align: middle;
+        list-style: none;
+        a {
+            display: inline-block !important;
+            .promo-details(@gray-40);
+            width: 90%;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+    .subnavigation-list-group-item:first-child,
+    .subnavigation-list-group-item:last-child {
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+    .subnavigation-list-group-item:first-child {
+        border-top: 0;
+    }
+    .subnavigation-list-group-item:last-child {
+        border-bottom: 0;
+    }
+    .subnavigation-accordiancontainer-sublevels,
+    .subnavigation-accordiancontainer {
+        margin-top: 13px;
+    }
+    .icon-chevron-down {
+        .font-size(1.6);
+        color: @kpmg-blue;
+        position: relative !important;
+        top: 4px !important;
+        cursor: pointer;
+        &:hover {
+            color: @medium-blue;
+        }
+    }
+    .icon-chevron-up {
+        color: @light-blue;
+        .font-size(1.6);
+        cursor: pointer;
+        &:hover {
+            color: @medium-blue;
+        }
+    }
+
+    .subnavigation-industblock a {
+        padding: 0px;
+        .promo-details(@gray-40);
+    }
+    .subnavigation-level {
+        padding-left: 0px !important;
+    }
+    .subnavigation-industriesexpand:hover {
+        text-decoration: underline !important;
+    }
+    .tertiary-trapezoid-bg {
+        margin: 0px 0px 10px 0px;
+        span {
+            .component-title(@kpmg-blue);
+        }
+    }
+    .subnavigation-list-group-item  {
+
+        a{
+            .promo-details(@gray-40);
+            cursor: pointer !important;
+        }
+    }
+
+    .current-true {
+        font-weight: bold !important;
+        &:hover{
+            text-decoration: none !important;
+        }
+    }
+    .first-list {
+        border: none;
+        padding-bottom: 0px;
+    }
+    .pad-bottom {
+        padding-bottom: 10px;
+    }
+}

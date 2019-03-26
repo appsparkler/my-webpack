@@ -1,0 +1,193 @@
+<!-- Begin Component: addtolibraryoverlay -->
+<div class="modal-box-container add-to-library-overlay" role="dialog">
+    <div class="module-addtolibraryoverlay component addtolibraryoverlay" tabindex="0">
+        <section>
+            <div class="overlay-header">
+                <h1 class="heading" id="myModalOverlayLabel">
+                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.saveittomylibrary"}}
+                </h1>
+                <hr class="divider"/>
+                <p class="description" id="overlayDescription">
+                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.instrutiontext"}}
+                </p>
+                <h2 class="article-title mobile-only"></h2>
+            </div>
+            <div class="overlay-content">
+                <div class="row-same-height row-full-height">
+                    <div class="col-md-6 col-md-height col-full-height col-top overlay-columns">
+                        <section aria-describedby="savetolibrary" class="overlay-column" tabindex="0">
+                            <div class=" row column-header desktop-only">
+                                <div class="col-md-12">
+                                    <div class="save-to-library trackable" id="savetolibrary">
+                                        {{i18n "kpmg.personalization.library.addtolibraryoverlay.savearticle"}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row alert-container hidden" id="error">
+                                <div class="alert alert-error alreadysaved">
+                                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.alreadysaved"}}
+                                </div>
+                            </div>
+                            <div class="row overlay-quicksave ">
+                                <div class="col-md-12">
+                                    <a class="btn-cta" href="javascript:;" id="quicksave">
+                                        <span class="icon-chevron-right"></span>
+                                        <span class="btn-copy">
+                                            {{i18n "kpmg.personalization.library.addtolibraryoverlay.quicksave"}}
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row desktop-only row-last">
+                                <div class="col-md-12 article-container">
+                                    <article class="article" id="articlePreview">
+                                        <img alt="" class="article-image" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E">
+                                            <div class="article-body">
+                                                <h2 class="article-title line-clamp line-clamp-1"></h2>
+                                                <p class="article-description line-clamp line-clamp-3"></p>
+                                            </div>
+                                        </img>
+                                    </article>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-6 col-md-height col-full-height col-top overlay-columns last-column">
+                        <section aria-describedby="chooselist" class="overlay-column" tabindex="0">
+                            <div class="row column-header">
+                                <div class="col-md-12">
+                                    <div class="choose-list " id="chooselist">
+                                        {{i18n "kpmg.personalization.library.addtolibraryoverlay.choosealist"}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="save-to-list-section">
+                                <div class="search-container">
+                                    <div class="search-input desktop-only">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="search">
+                                                Search
+                                            </label>
+                                            <input class="search" id="search" name="search" placeholder="{{i18n 'kpmg.personalization.public.list.sharelist.searchLibList'}}" type="text"/>
+                                            <button class="submitSearch" title="{{i18n 'kpmg.personalization.public.list.sharelist.searchLabel'}}" type="submit" value="Submit">
+                                                <span class="icon-search trackable"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="search-list mobile-only">
+                                        <div class="form-group custom-select">
+                                            <label class="sr-only" for="librarylistdropdown"></label>
+                                            <select class="form-control full-width" id="librarylistdropdown" name="librarylist"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-container desktop-only">
+                                    <ul class="list" id="librarylist">
+                                    </ul>
+                                </div>
+                                <div class="new-list-controls">
+                                    <a class="btn-cta btn-newlist trackable" href="javascript:" id="newlistbtn" tabindex="0">
+                                        <span class="icon-add"></span>
+                                        <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.createalist"}}</span>
+                                    </a>
+                                    <form action="" aria-hidden="true" class="form-createlist">
+                                        <div class="form-group">
+                                            <span class="error mobile-only inputerror" aria-hidden="true">
+                                                <span class="listnameexists">
+                                                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.listnameexists"}}
+                                                </span>
+                                                <span class="empty">
+                                                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.empty"}}
+                                                </span>
+                                            </span>
+                                            <label class="sr-only" for="newlist">
+                                                {{i18n "kpmg.personalization.library.addtolibraryoverlay.createalist"}}
+                                            </label>
+                                            <input class="" id="newlist" maxlength="35" placeholder="{{i18n 'kpmg.personalization.library.movetolibraryoverlay.enternewlist'}}" type="text" aria-labelledby="">
+                                            </input>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <a class="btn-cta createListBtn trackable" href=#"" id="createlist" tabindex="0" type="submit">
+                                                    <span class="icon-chevron-right"></span>
+                                                    <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.createalist"}}</span>
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <a class="btn-cta btn-cancel" href="#" id="cancelcreate" tabindex="0" type="cancel">
+                                                    <span class="icon-close"></span>
+                                                    <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.cancel"}}</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="overlay-footer">
+                    <div class="row-same-height row-full-height" >
+                        <div class="col-md-6 last-column col-md-push-6">
+                            <div class="overlay-controls">
+                                <button class="btn btn-cta btn-default" id="savetolist" type="button">
+                                    <span class="icon-chevron-right"></span>
+                                    <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.savetoalist"}}</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <div class="overlay-controls">
+                                <a class="btn-cta btn-cancel" href="#" id="cancelaction" data-dismiss="modal">
+                                    <span class="icon-close"></span>
+                                    <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.cancel"}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="articlelimit" id="articlelimit" tabindex="0">
+        <div>
+            <div class="modal-header">
+                <a href="#" class="btn-close" data-dismiss="modal"><span class="icon-close"><span class="sr-only">Close</span></span></a>
+            </div>
+            <div class="modal-content">
+                <div class="overlay-header">
+                    <h4 class="heading" id="myModalLabel">{{i18n "kpmg.personalization.library.addtolibraryoverlay.limitarticle"}}</h4>
+                    <hr class="divider">
+                </div>
+                <div class="overlay-content">
+                    <div class="overlay-content-inner">
+                        <p class="description" id="description">
+                            {{i18n "kpmg.personalization.library.addtolibraryoverlay.limitdescription"}}
+                        </p>
+                    </div>
+                </div>
+                <div class="overlay-footer">
+                    <div class="row ">
+                        <div class="col-md-6 last-column col-md-push-6">
+                            <div class="savearticle-controls">
+                                <button class="btn btn-cta btn-default trackable" id="gotolibbtn" type="button">
+                                    <span class="icon-chevron-right"></span>
+                                    {{i18n "kpmg.personalization.library.addtolibraryoverlay.gotolib"}}
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <div class="savearticle-controls">
+                                <a class="btn-cta btn-cancel cancel" href="#" id="cancelaction" data-dismiss="modal">
+                                    <span class="icon-chevron-left"></span>
+                                    <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.returntopage"}}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Component: SaveArticle -->

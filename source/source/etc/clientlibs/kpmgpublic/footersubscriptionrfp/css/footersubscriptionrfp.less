@@ -1,0 +1,181 @@
+@import "../../global/css/_variables.less";
+@import "../../global/css/_helpers.less";
+
+.module-footersubscriptionrfp {
+    overflow: hidden;
+    padding: 0;
+    margin:0;
+    .footersubscriptionrfpInnerContainer{
+        padding: 0;
+    }
+    .rfpCompoent{
+        display: none;
+        background-color: @green1;
+
+        .tertiary-head{
+            font-size: 36px;
+            color: @white;
+            .component-title(@white);
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+        .rfpDescription{
+            padding-bottom: 10px;
+            color: @white;
+            
+        }
+        .submitRfp{
+            width: 100%;
+            background-color: @green1;
+            border: none;
+            text-align: left;
+            margin: 2px;            
+        }
+    }
+    .authenticatedState{
+        display: none;
+        background-color: @green1;
+
+        .tertiary-head{
+            font-size: 36px;
+            color: @white;
+            .component-title(@white);
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+        .loggedInDescription{
+            padding-bottom: 10px;
+            color: @white;
+            
+        }
+        .loggedIn{
+            width: 100%;
+            border: none;
+            background-color: @green1;
+            text-align: left;
+        }
+    }
+    .annonymousState{
+        display: none;
+        background-color: @green1;
+        #email{
+            width: 75%;
+            margin-bottom: 10px;
+            padding:5px 0 5px 0;
+            color: @gray-20;
+            padding-left: 5px;
+            
+        }
+        .nextButton{
+            margin-bottom: 3px;
+            padding:5px 15px 5px 15px;
+            background-color: @gray-101;
+            color: @gray-96;
+            position: relative;
+            bottom: 0;
+            right: 0;
+            width: 24%;
+            text-align: center;
+        }
+        .tertiary-head{
+            font-size: 36px;
+            color: @white;
+            .component-title(@white);
+            border-bottom: 1px solid;
+            padding-bottom: 5px;
+        }
+
+    }
+    .authenticatedState .mobile{
+        display: none;
+    }
+    .rfpCompoent .mobile{
+        display: none;
+    }
+    .emailErrorMsg{
+        margin: 0 10px 10px 0;
+        color: @red;
+        display: none;
+    }
+   
+}
+
+@media only screen and (max-width: 1099px){
+    .module-footersubscriptionrfp{
+        padding: 0;
+        margin-bottom: 0 !important;
+        .footersubscriptionrfpInnerContainer{
+            padding-right: 0px;
+        }
+        .rfpCompoent{
+            .desktop{
+                display: none;
+            }
+        }
+        .rfpCompoent{
+            .mobile{
+                display: block;
+                padding-left: 10px;
+            }
+        }
+        .authenticatedState{
+            .tertiary-head {
+                border-bottom: none;
+                text-align: center;
+                font-family:@arial !important;
+                font-size: 18px !important;
+            }
+
+        }
+        .rfpCompoent{
+            .tertiary-head {
+                border-bottom: none;
+                text-align: center;
+            }
+        }
+        .annonymousState{
+            .tertiary-head {
+                border-bottom: none;
+                text-align: center;
+                padding-left: 10px;
+                font-family:@arial !important;
+                font-size: 18px !important;
+            }
+
+            #email{
+                width: 70% !important;
+                margin-left: 10px;
+                font-size: 16px;
+            }
+            .nextButton{
+                padding: 5px 15px 8px 15px;
+                margin-right: 0;
+                width: 25%;
+            }
+        }
+        .rfpDescription{
+            display: none;
+        }
+        .loggedInDescription{
+            display: none;
+        }
+        .authenticatedState {
+            .desktop{
+                display: none;
+            }
+        }
+        .authenticatedState{ 
+            .mobile{
+                display: block;
+                padding-left: 10px;
+            }
+        }
+        .emailErrorMsg{
+            margin: 0 10px 10px 10px;
+        }
+    }
+
+}
+
+
+

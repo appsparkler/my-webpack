@@ -1,0 +1,24 @@
+<!-- Begin Component: Enhanceddownload -->
+{{#if hbs.downloadButton.downloadButtonLink}}
+<div class="module-enhanceddownload component">
+    <a class="component-link" href="{{hbs.globalValues.assetDomainName}}{{hbs.downloadButton.downloadButtonLink}}" target="_blank" title="{{i18n hbs.downloadButton.downloadButtonLabel}} {{hbs.downloadButton.fileType}}" {{#if hbs.downloadButton.anchorId}} id="{{hbs.downloadButton.anchorId}}" {{/if}}>
+        <div class="contentContainer">
+            <div class="row download-text">
+                <div class="col-md-1 col-xs-2 pdfIcon"><img src="/etc/designs/kpmgpublic/images/pdf-icon-lg.png" alt="{{i18n hbs.downloadButton.downloadButtonLabel}}"/></div>
+                <div class="col-md-10 col-xs-10 pdfDetails">
+                    <div class="componentTitle line-clamp line-clamp-1">{{hbs.downloadButton.componenttitle }}</div>
+                    <div class="reportTitle line-clamp line-clamp-1">{{hbs.downloadButton.pdftitle}}</div>
+                    <div class="reportDesc line-clamp line-clamp-1 spacer">{{hbs.downloadButton.pdfdesc}}</div>
+                    <span class="visually-hidden">{{hbs.downloadButton.fileType}}</span>
+                    <span class="downloadLabel"> {{i18n hbs.downloadButton.downloadButtonLabel}}  <span class="downloadLblExtn">{{hbs.downloadButton.fileType}}</span></span>
+                    <span class="downloadSize"> ({{hbs.downloadButton.fileSize}}) </span>
+                </div>
+                <div class="col-md-1 hidden-xs downloadIcon">
+                    <img src="/etc/designs/kpmgpublic/images/pdf-component-download-icon-lg.png" alt="{{i18n hbs.downloadButton.downloadButtonLabel}}" />
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+{{/if}}
+<!-- End Component: Enhanceddownload -->

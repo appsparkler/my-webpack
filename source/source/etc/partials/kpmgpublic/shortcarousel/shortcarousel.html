@@ -1,0 +1,55 @@
+<section class="module-shortcarousel component self-contained" data-prevslidetext="{{ i18n 'kpmg.accessibility.prevSlide' }}" data-nextslidetext="{{ i18n 'kpmg.accessibility.nextSlide' }}">
+    <a href="javascript:void(0);" class="shortcarousel-tab-entry no-highlight"></a>
+    <div class="carousel {{#if hbs.shortCarousel.slides}}has-slides{{/if}}">
+        <ul class="slides owl-carousel">
+            {{#each hbs.shortCarousel.slides}}
+            <a href="{{this.ctaUrl}}" title="{{this.altText}}">
+                <li class="slide" data-slideno="{{@index}}" title="{{#if hbs.shortCarousel.imageConfigExists}}{{{{imageAltText}}}}{{else}}{{this.altText}} {{/if}}">
+
+                    {{#if hbs.shortCarousel.imageConfigExists}}
+                        <picture>
+                            {{#hbs.shortCarousel.imageConfig}}
+                                {{#if this.isDesktop}}
+                                    <source srcset="{{hbs.globalValues.assetDomainName}}{{../this.img}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                                        media="screen  and (min-width: 641px) and (max-width: 9440px)" >
+                                {{else}}
+                                    <source srcset="{{hbs.globalValues.assetDomainName}}{{../this.img}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg"
+                                        media="screen  and (min-width: 0px) and (max-width: 640px)" >
+                                {{/if}}
+
+                                {{#if @last}}
+                                    <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{../this.img}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" alt="{{this.altText}}" title="{{this.altText}}"/>
+                                {{/if}}
+                            {{/hbs.shortCarousel.imageConfig}}
+                        </picture>
+                     {{else}}
+                          <picture>
+                                 <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                 <source srcset="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.640.490.jpg" media="screen  and (min-width: 0px) and (max-width: 640px)">
+                                 <source srcset="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.1082.378.jpg" media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                                 <!--[if IE 9]></video><![endif]-->
+                                 <img class="img-responsive" src="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.1082.378.jpg" title="{{this.altText}}" alt="{{this.altText}}">
+                          </picture>
+                    {{/if}}
+
+                    <div class="mobile-silver {{{this.variant}}}"> </div>
+                    <div class="caption-wrapper left {{{this.variant}}}">
+                        <div class="caption">
+                            <h2 class="slide-header mobile-only">{{{this.shortTitle}}}</h2>
+                            <h2 class="slide-header desktop-only">{{{this.title}}}</h2>
+
+                            <div class="shortcarousel-content">
+                                <div class="short-carousel-description">
+                                    <p class="mobile-only {{{this.variant}}}">{{{this.shortDescription}}}</p>
+                                    <p class="desktop-only {{{this.variant}}}">{{{this.description}}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            {{/each}}
+        </ul>
+    </div>
+    <a href="javascript:void(0);" class="shortcarousel-tab-exit no-highlight"></a>
+</section>

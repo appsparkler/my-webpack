@@ -1,0 +1,57 @@
+<div class="bs4">
+  <pre class="bg-primary text-white pre-scrollable">
+
+    i18n Labels
+    {{{ i18n  hbs.formBuilder.readyToSubscribeInstructionMessage }}}
+
+    {{#each hbs.formBuilder.subscriptionDetails}}
+      {{ this.groupname }}
+      {{ this.gigyaMapping }}
+      {{ this.groupid }}
+      {{ this.frequencytext }}
+      {{ this.description }}
+      {{ this.externalid }}
+      {{ this.title }}
+      {{ this.summaries }}
+      {{#each this.interests }}
+       {{ this }}
+      {{/each}}
+      {{ this.frequency }}
+    {{/each}}
+
+    Terms & Conditions:
+    {{hbs.formBuilder.termsAndConditionsText1}}
+    {{hbs.formBuilder.termsAndConditionsText2}}
+    {{hbs.formBuilder.termsAndConditionsText3}}
+
+    {{#each hbs.formBuilder.assetDetails}}
+      this.assetPath: {{this.assetPath}}
+    {{/each}}
+
+    {{hbs.formBuilder.ctaTitle}}
+    {{hbs.formBuilder.ctaDescription}}
+    {{hbs.formBuilder.ctaLabel}}
+    {{hbs.formBuilder.fgeCtaLabel}}
+    {{hbs.formBuilder.ctaDescriptionLabel}}
+    {{hbs.formBuilder.ctaTitleLabel}}
+
+    {{hbs.formBuilder.eventType}}
+    {{hbs.formBuilder.subscription}}
+    {{hbs.formBuilder.isFastSubscription}}
+    {{hbs.formBuilder.isGatedContent}}
+    {{hbs.formBuilder.isEventRegistration}}
+
+    {{hbs.formBuilder.uniqueId}} //DONE
+    {{hbs.formBuilder.defaultInstructionMessage}} //DONE
+    {{hbs.formBuilder.loginPromptInstructionMessage}}
+    {{hbs.formBuilder.readyForDownloadInstructionMessage}}
+    {{hbs.formBuilder.readyToRegisterInstructionMessage}}
+    {{hbs.formBuilder.readyToSubscribeInstructionMessage}}
+
+    {{hbs.formBuilder.optionalFieldLabel}}
+    {{hbs.formBuilder.genericErrorMessage}}
+    {{hbs.formBuilder.emailErrorMessage}}
+    {{hbs.formBuilder.downloadNowLabel}}
+
+  </pre>
+</div>

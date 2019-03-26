@@ -1,0 +1,11 @@
+{
+    "hbs": {
+        "image": {
+        	"title":"Sample title",
+        	"imageSrc": "/assets/fpo-images/c068.jpg",           
+            "alt":"image",
+            "caption":"Sample caption",
+            "anchorId": "sampleId"
+        }
+    }
+}

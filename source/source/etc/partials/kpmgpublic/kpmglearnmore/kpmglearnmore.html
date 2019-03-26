@@ -1,0 +1,60 @@
+<!-- Begin Component: Kpmglearnmore -->
+<div class="modal-box-container {{#if hbs.learnmore.learnmoreauthenticated }}authLearnmore {{else}} unauthLearnmore {{/if}}">
+    <div class="module-kpmglearnmore component">
+        <div class="learnMoreModal" id="learnMoreModal" role="dialog">
+            <h2 class="kpmgmodal-title title-question" aria-label="{{hbs.learnmore.savearticlequestion}}">{{hbs.learnmore.savearticlequestion}} </h2>
+            <h2 class="kpmgmodal-title" aria-label="{{hbs.learnmore.panelTitle}}">{{hbs.learnmore.panelTitle}} </h2>
+            <a href="javascript:void(0);" class="learnmore-tab-entry no-highlight"></a>
+                <div class="carousel {{#if hbs.learnmore.slides}}has-slides{{/if}} hidden-xs">
+                    <ul class="slides owl-carousel">
+                        {{#each hbs.learnmore.slides}}
+                         <li class="slide" data-slideno="{{@index}}">
+                             <img src="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.512.341.jpg"
+                             data-src=""
+                             data-desktop="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.512.341.jpg"
+                             class="img-responsive" alt="{{this.altText}}"  title="{{this.altText}}" />
+                             <div class="caption-wrapper">
+                                 <div class="caption">
+                                     <h2 class="slide-header" aria-label="{{this.title}}">{{this.title}}</h2>
+                                     <p class="slide-desc" aria-label="{{this.description}}">{{{this.description}}}</p>
+                                 </div>
+                             </div>
+                         </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            <a href="javascript:void(0);" class="learnmore-tab-exit no-highlight"></a>
+            {{#each hbs.learnmore.slides}}
+            <div class="accordian-elements visible-xs">
+                <div class="accordion-title">
+                    {{this.title}}
+                    <span class="icon-chevron-down flip-flop"></span>
+                </div>
+                <div class="accordion-content">
+                    <div class="last-block">
+                        <div class="">
+                            <img src="{{this.img}}" data-src="{{this.img}}"  data-mobile="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.640.580.jpg" data-desktop="{{hbs.globalValues.assetDomainName}}{{this.img}}/jcr:content/renditions/cq5dam.web.512.341.jpg" class="img-responsive" alt="{{this.altText}}"  title="{{this.altText}}" />
+                            <div>
+                                <p class="slide-desc">{{{this.description}}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <a href="{{hbs.learnmore.registration_link}}"  class="btn-cta btn registerUser" title="{{ i18n "kpmg.personalization.overlay.learnmore.registernow"}}">
+                        <span class="icon-chevron-right"></span><span class="btn-copy">{{ i18n "kpmg.personalization.overlay.learnmore.registernow"}}</span>
+                    </a>
+                </div>
+                <div class="col-md-12 question">
+                    <a class="btn-cta btn loginUser"  href="{{hbs.learnmore.login_link}}" title="{{ i18n "kpmg.personalization.overlay.learnmore.login"}}">
+                        <span class="icon-chevron-right"></span><span class="btn-copy">{{ i18n "kpmg.personalization.overlay.learnmore.login"}}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Component: Kpmglearnmore -->

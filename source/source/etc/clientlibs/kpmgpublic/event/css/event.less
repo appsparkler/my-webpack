@@ -1,0 +1,66 @@
+@import url('../../global/css/_variables.less');
+.module-event {
+    .event-container {
+        position: relative;
+        background-color: @white;
+    }
+   
+   .alt-secondary-head
+   {
+   .line-height(1.2);
+    }
+    .event-event-date
+    {
+    padding-bottom: 15px;
+    }
+    .alt-tertiary-head {
+        margin: 14px 0 15px 0;
+        background-size: 100%;
+        .line-height(1.8);
+    }
+    .short-desc {
+        .line-height(1.5);
+    }
+    .svg-header-label-container svg {
+        fill: @red;
+    }
+    .svg-header-label-container{
+     min-height: 22px;
+    }
+    span.icon-chevron-right {
+        margin: 0 5px 0 0;
+        .font-size(1.4);
+    }
+    .event-custom-margin {
+        margin: 24px 0;
+    }
+    .event-event-address {
+        color: @red;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: table-cell;
+        width: 76.3333%;
+        vertical-align: middle;
+        height: 80px;
+    }
+    .event-event-calendar {
+        display: inline-block;
+        width: 23.3333%;
+        float: left;
+        margin-top: -4px;
+    }
+    .icon-date {
+        position: absolute;
+        .font-size(4.4);
+        color: @red;
+    }
+}
+
+@media (min-width:@desktop-min-fluid) {
+.module-event {
+.tertiary-trapezoid-bg {
+        margin-left: 0;
+   }
+ }
+}

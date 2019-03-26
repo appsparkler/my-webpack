@@ -1,0 +1,24 @@
+{
+    "hbs": {
+        "socialWidget": {
+          "height" : 840,
+          "header" : {
+      			"label":"socialLabel",
+      			"firstname":"firstName"
+    			},   
+          "widgetBaseUrl" : "http://192.241.189.49",
+          "parameters" : {
+              "showheader" : "false",            
+              "title" : "KPMG%20US",
+              "showimages" : "true",
+              "categories" : "value-of-audit,tax,advisory,management-consulting,risk,transactions-restructuring,automotive,careers,consumer-markets,corporate-citizenship,climate-change-sustainability,data-analytics,enr,chemicals,mining,oil-gas,power-utilities,financial-services,the-social-banker,capital-markets,insurance,investment-management,future-state-of-government,healthcare,industrial-manufacturing,technology-media-telecommunications,high-growth-markets",
+              "common" : "united-states",
+              "limit" : "50"
+          },
+          "showType" : false,
+          "linkLabel" : "See%20more",
+          "linkUrl" : "http://www.kpmg.com"
+        }
+    }
+}
+

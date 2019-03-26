@@ -1,0 +1,220 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-promotional/css/touch-promotional";
+
+.module-touch-author-list-header {
+    margin: 30px 20px 0px 20px;
+    padding: 0px;
+
+    div.inline-list-elements {
+        display: flex;
+        align-items: flex-start;
+        background: @gray-94;
+    }
+
+    div.details-container {
+        background: @white;
+        padding-top: 20px;
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+
+            .col-md-height {
+                border: none;
+                float: left;
+            }
+        }
+
+        .no-results {
+            text-align: center;
+           .no-results-wrapper{
+            display: inline-block;
+            padding: 30px 100px 35px 100px;
+            margin: 108px auto 148px;
+            border: 1px solid @gray-20;
+            color: @gray-101;
+
+            .nocontent-header {
+                font-size: 42px;
+                color: @kpmg-blue;
+                font-family: @kpmgLight;
+            }
+            .nocontent-description {
+                font-size: 18px;
+                color: @gray-40;
+            }
+        
+        }
+    }
+    }
+
+    div.img-wrapper {
+        position: relative;
+        min-height: 190px; // to maintain same height when images do not load
+    }
+
+    span.blue-strip {
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        background: @light-blue;
+    }
+
+    img {
+        display: inline-block;
+    }
+
+    div.list-header-info {
+        display: inline-block;
+        padding-left: 10px;
+        padding-top: 10px;
+
+        h2.list-item-title {
+            display: inline-block;
+            font-size: 42px;
+            color: @kpmg-blue;
+            line-height: 40px;
+            padding-bottom: 10px;
+            font-family: @kpmgLight;
+            max-height: 40px;
+            overflow: hidden;
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                font-size: 30px;
+            }
+
+            span.tag-line-text {
+                font-size: 22px;
+                color: @gray-40;
+                font-family: @arial;
+            }
+        }
+
+        div.social-links {
+            padding-bottom: 20px;
+            padding-top: 2px;
+
+            a.social-link {
+                padding-right: 20px;
+                font-size: 18px;
+                line-height: 1.2;
+                font-family: @arial;
+                color:@black;
+
+                &:hover {
+                    text-decoration: none;
+                }
+                span.link-text:hover {
+                    text-decoration: underline;
+                }
+                span.icon-email-me-1, span.icon-linkedin-profile-1 {
+                    color: @light-blue;
+                }
+                span.icon-kpmg-profile{
+                    color: @kpmg-blue;
+                }
+            }
+        }
+
+        div.author-description {
+            padding-top: 5px;
+
+            p.text {
+                font-size: 18px;
+                font-style: italic;
+                color: @gray-20;
+                font-family: @arial;
+                line-height: 1.389;
+                padding-right: 10px;
+            }
+            p.list-header-line-clamp {
+                -webkit-line-clamp: 3;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                position: relative;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 8rem;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    .view-author-spotlight {
+        background: @light-blue;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        padding: 20px 0px;
+        color: @white;
+        font-size: 24px;
+
+        &:hover {
+            color: @white;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    .module-touch-author-list-header {
+        margin: 0px;
+        div.details-container {
+            .no-results {
+                .no-results-wrapper{
+                    margin: 50px auto 66px;
+                    padding: 22px 67px 34px 67px;
+                    width: 96%;
+
+                    .nocontent-header {
+                        font-size: 42px;
+                        margin-bottom: 25px;
+                        line-height: 1;
+                    }
+                    .nocontent-description {
+                        font-size: 22px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        div.inline-list-elements {
+
+            display: block;
+
+            div.img-wrapper {
+                min-height: 114px; // to maintain same height when images do not load
+            }
+        }
+
+        div.list-header-info {
+            background: @white;
+            width: 100%;
+
+            h2.list-item-title {
+                padding-top: 20px;
+                max-height: none;
+                &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                    font-size: 25px;
+                }
+
+                span.tag-line-text {
+                    padding-top: 10px;
+                    display: block;
+                    font-size: 22px;
+                    line-height: 1.364;
+                }
+            }
+            div.social-links {
+                a.social-link {
+                    display: block;
+                    padding-bottom: 20px;
+                    font-size: 20px;
+                }
+            }
+            div.author-description {
+                display: none;
+            }
+        }
+    }
+}
