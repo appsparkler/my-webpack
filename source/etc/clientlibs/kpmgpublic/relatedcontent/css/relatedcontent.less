@@ -1,0 +1,303 @@
+@import "../../global/css/_variables.less";
+
+.module-relatedcontent.vertical {
+    margin: 0px;
+    padding: 0 9px;
+    .bg-width {
+        width: 100%;
+    }
+    p {
+        .hyphen;
+    }
+    .svg-header-label-container h3 {
+        padding: 1px 10px;
+    }
+    .relatedcomponent-innerContainer {
+        float:left;
+        margin-bottom:0;
+        padding-top:8px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        p {
+            padding-left: 0 !important;
+            .promo-description(@gray-20);
+            margin: 7px 0px;
+        }
+        .bg-white.grid:hover {
+            box-shadow: inset 0px 0px 0px 1px @gray-80;
+        }
+        .relatedcontent-custom-margin {
+            padding-right: 9px;
+        }
+        .library-desktop {
+            position: static;
+        }
+        .tertiary-head {
+            .promo-title(@kpmg-blue);
+            margin:8px 0px;
+            padding: 0px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .btn-cta {
+            .related-cta(@gray-40);
+            display: inline;
+            float: right;
+        }
+    }
+    .relatedcontent-custom-margin {
+        margin: 15px 0 10px 0;
+        text-align: right;
+    }
+    .tertiary-head {
+        .component-title(@kpmg-blue);
+        .hyphen;
+        padding: 9px 10px 0;
+        margin: 18px 0 0 0;
+        background-color: @white;
+    }
+    .relatedcomponent-image {
+        padding-top:0;
+        position:relative;
+        width:237px;
+    }
+    .relatedComponent-image-desc {
+       .font-size(1.4);
+       .hyphen;
+    }
+    .svg-header-label-container {
+        display: table;
+        min-height: 20px;
+        width: 96%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .svg-header-label-container svg {
+        fill: @light-blue;
+        opacity:.6;
+    }
+    .img-responsive {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+    }
+    .img-title-bg {
+        position:absolute;
+        bottom:0px;
+        width: 94%;
+        left:10px;
+    }
+    .grid {
+        border-bottom: solid 18px #f0f0f0;
+        &:last-child {
+            padding-bottom: 3px;
+            border-bottom: none;
+        }
+    }
+    .related-description {
+        margin-bottom: 35px;
+    }
+    .focusOutline {
+        box-shadow: inset 0px 0px 0px 1px @gray-80;
+    }
+}
+
+.module-relatedcontent.horizontal {
+    margin-left: -9px;
+    margin-right: -9px;
+    display: table;
+    background: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    width: auto;
+    .bg-width {
+        width: 100%;
+    }
+    .bg-white {
+        background: none;
+    }
+    p {
+        .hyphen;
+    }
+    .svg-header-label-container h3 {
+        padding: 1px 10px;
+    }
+    .relatedcomponent-innerContainer {
+        display: table;
+        .tertiary-head {
+           .promo-title(@kpmg-blue);
+            margin:8px 0px;
+            padding: 0px;
+            word-wrap: break-word !important;
+            word-break: break-word !important;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .bg-white.grid:hover {
+            box-shadow: inset 0px 0px 0px 1px @gray-80;
+        }
+    }
+    .relatedcontent-custom-margin {
+        margin: 15px 0 10px 0;
+        text-align: right;
+    }
+    .tertiary-head {
+       .component-title(@kpmg-blue);
+        .hyphen;
+        margin: 9px 9px 10px 18px;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    .relatedcomponent-image {
+       position:relative;
+    }
+    .relatedComponent-image-desc {
+       .font-size(1.4);
+       .hyphen;
+    }
+    .svg-header-label-container {
+        display: table;
+        min-height: 20px;
+        width: 96%;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .svg-header-label-container svg {
+        fill: @light-blue;
+        opacity:.6;
+    }
+    .img-responsive {
+        display: block;
+        width: 100% !important;
+        max-width: 100%;
+    }
+    .img-title-bg {
+        position:absolute;
+        bottom:0px;
+        width: 94%;
+        left:10px;
+    }
+    .col-xs-12.relatedcomponent-innerContainer.bg-white {
+        background: #fff;
+        margin-bottom: 18px;
+        padding: 10px;
+    }
+    .btn-cta {
+        display: block;
+        margin-top: 10px;
+        text-align: right;
+    }
+    .related-description {
+        margin-bottom: 62px;
+        .promo-description(@gray-20);
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    .focusOutline {
+        position: absolute;
+        box-shadow: inset 0px 0px 0px 1px @gray-80;
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-relatedcontent.vertical {
+        margin: -9px;
+        padding: 9px;
+        // everything in here will be for breakpoint at 641px and up (until the next breakpoint)
+        .relatedcomponent-innerContainer {
+            float:none;
+            padding-left:0 !important;
+            padding-right:0 !important;
+            padding-bottom: 0px !important;
+            p {
+                padding-left: 0 !important;
+                .promo-description(@gray-20);
+                margin: 7px 0px;
+            }
+            .relatedcontent-custom-margin {
+                padding-right: 9px;
+            }
+            .tertiary-head {
+                .promo-title(@kpmg-blue);
+                margin:8px 0px;
+                padding: 0px;
+            }
+        }
+        .tertiary-head {
+            margin: 0px 0px 14px 0px;
+            background-color: transparent;
+        }
+        .svg-header-label-container {
+            display: table;
+            min-height: 25px;
+            width: 96%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+    }
+    .module-relatedcontent.horizontal {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        .relatedcontent-container {
+            margin: 0 -9px;
+        }
+        .svg-header-label-container {
+            display: table;
+            min-height: 25px;
+            width: 96%;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+        .col-md-12.col-xs-12.relatedcomponent-innerContainer.bg-white {
+            border: 9px solid @white;
+            display: table-cell;
+            float: none;
+            background-color: #fff;
+            width: 25%;
+            margin-bottom: 0;
+            padding: 10px;
+            vertical-align:top;
+        }
+    }
+}
+
+@media (min-width: @desktop-min-fluid) {
+    .module-relatedcontent.vertical {
+        // everything in here will be for breakpoint at 980px and up
+        .relatedcomponent-innerContainer {
+            float:none;
+            padding-left:0 !important;
+            padding-right:0 !important;
+            p {
+                padding-left: 9px;
+            }
+            .relatedcontent-custom-margin {
+                padding-right: 9px;
+            }
+        }
+        .tertiary-head {
+            padding: 0 0 0 10px;
+        }
+    }
+    .module-relatedcontent.horizontal {
+        width: 100%;
+        // everything in here will be for breakpoint at 980px and up
+        .col-md-12.col-xs-12.relatedcomponent-innerContainer.bg-white {
+            border: 9px solid @white;
+            display: table-cell;
+            float: none;
+            background-color: #fff;
+            width: 25%;
+            margin-bottom: 0;
+            padding: 10px;
+            vertical-align: top;
+        }
+    }
+}

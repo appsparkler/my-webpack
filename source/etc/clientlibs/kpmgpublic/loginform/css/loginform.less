@@ -1,0 +1,28 @@
+
+
+@import "../../global/css/_variables.less";
+@import "../../registrationuserinfo/css/registrationuserinfo";
+
+.module-loginform {
+    div#gigya-login-screen {
+        
+            // DESKTOP VERSION
+            @media (min-width:@desktop-min-fixed) {
+                .col-md-6 {
+                    float: none;
+                    margin: 0 auto;
+                }
+            }
+        }
+    .kpmg-input {
+        input[type="text"], input[type="password"] {
+            .set-font-size(1.8);
+        }
+        input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder{
+            .set-font-size(1.6);
+        }
+    }
+}
+
+
+

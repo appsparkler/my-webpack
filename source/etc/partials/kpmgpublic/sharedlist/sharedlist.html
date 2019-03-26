@@ -1,0 +1,51 @@
+<!-- Begin Component: sharedlist -->
+<div class="module-sharedlist component">
+    <div class="sharedlist-header col-md-12">
+        <div class="col-md-4">
+            <div class="custom-select ">
+                <select aria-controls="sortable-articles" aria-describedby="Article sort options" aria-label="sorting options" aria-live="assertive" class="form-control pcountryinput" id="sort-articles">
+                   <option aria-label="{{i18n 'kpmg.personalization.public.list.sharelist.articlesavedate'}}" title="{{i18n 'kpmg.personalization.public.list.sharelist.articlesavedate'}}" value="0">
+                        {{i18n "kpmg.personalization.public.list.sharelist.articlesavedate"}}
+                    </option>
+                    <option aria-label="{{i18n 'kpmg.personalization.public.list.sharelist.articlepublishdatea'}}" title="{{i18n 'kpmg.personalization.public.list.sharelist.articlepublishdatea'}}" value="1">
+                        {{i18n "kpmg.personalization.public.list.sharelist.articlepublishdatea"}}
+                    </option>
+                    <option aria-label="{{i18n 'kpmg.personalization.public.list.sharelist.articlepublishdated'}}" title="{{i18n 'kpmg.personalization.public.list.sharelist.articlepublishdated'}}" value="2">
+                        {{i18n "kpmg.personalization.public.list.sharelist.articlepublishdated"}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4 hidden-xs ">
+            <span class="listtitle">
+
+            </span>
+        </div>
+        <div class="col-md-4 hidden-xs">
+            <span class="pull-right listcount">
+                0 {{i18n "kpmg.personalization.public.list.sharelist.itemsLabel"}}
+            </span>
+        </div>
+    </div>
+    <div id="sortable-articles">
+        <input id="activeList" type="hidden"/>
+        <input id="activeSort" type="hidden"/>
+        <input id="itemsLabel" type="hidden" value="{{i18n 'kpmg.personalization.public.list.sharelist.items'}}">
+        <div class="resultsListContainer">
+            <div class="row row-same-height row-full-height resultSet col-nested article-container">
+
+            </div>
+            <div class="loadMore">
+                <a class="component-link btn-more" href="" title="Load more">
+                    <span class="icon-add">
+                    </span>
+                    <span class="text-link">
+                        {{i18n "kpmg.loadmore.loadMoreLabel"}}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- End Component: sharedlist -->

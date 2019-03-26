@@ -1,0 +1,230 @@
+
+<div class="facets-results-container">
+   {{#resultSetEmptyCheck customer-results.resultset.featured_products.result customer-results.resultset.results.result}}
+   <div class="col-md-3 facets-container">
+      <div class="facetsContent">
+         <div class="facetsTitle">
+            <span class="cancelFilter pull-left">CANCEL</span>
+            <h3 class="secondary-head">{{i18Labels.title}}</h3>
+            <span class="applyFilter pull-right">APPLY</span>
+         </div>
+         <div class="clearAll">
+            <span class="icon-chevron-right"></span>
+            <a href="#" class="component-link clear-all-filters" title="CLEAR ALL" data-link="{{customer-results.breadcrumbs.breadcrumb.breadcrumb-item.1.link}}">{{i18Labels.clearAllCopy}}</a>
+
+         </div>
+         <div class="facetsGroup">
+            <ul class="resp-tabs-list">
+               {{#each customer-results.facets-rail.facet}}
+               <li class="facetFilters {{this.facet-title}}">
+                  <h4 class="component-head"><span class="facetTitle">{{this.facet-title}}</span> <span class="icon-chevron-up"></span></h4>
+                  <div class="facetsContainer">
+                     <ul class="facetsOptions">
+                        {{#each this.facet-values.facet-item}}
+                        {{#moreItemsCheck @index}}
+                        <li class="LT5Facets">
+                           <label class="facetsCheckbox">
+                           {{#if this.facet-selected}}
+                           <input type="checkbox"  data-link="{{this.undolink}}" {{checkboxValidation this.facet-selected}}>
+                           {{else}}
+                           <input type="checkbox"  data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}>
+                            {{/if}}
+                           <span class="facetName">{{this.facet-name}}({{this.facet-count}})</span>
+
+                        </label>
+                           {{#if this.facet-selected}}
+                           <span class="icon-checkmark mblCheckmark"></span>
+                           {{/if}}
+                           {{#if this.facet-children}}
+                           <span class="icon-chevron-up pull-right nestedFacetsToogleBtn"></span>
+                           <ul class="nestedFacets">
+                              {{#each this.facet-children.facet-child}}
+                              {{#moreItemsCheck @index}}
+                              <li class="LT5Facets"><label>
+                                 <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}><span class="facetName">{{this.facet-name}}({{this.facet-count}})</span></label>
+                              </li>
+                              {{else}}
+                              <li class="GT5Facets"><label>
+                                 <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}><span class="facetName">{{this.facet-name}}({{this.facet-count}})</span></label>
+                              </li>
+                              {{/moreItemsCheck}}
+                              {{/each}}
+                              {{#moreFacetsCheck this.facet-children.facet-child}}
+                              <div class="moreFacets">
+                                 <span class="icon-chevron-down"></span>
+                                 <p class="component-link moreNestedFacetsLink" data-more="more-topics" title="{{../../../../../i18Labels.facetMoreButtonCopy}}">{{../../../../../i18Labels.facetMoreButtonCopy}}</a>
+                              </div>
+                              {{/moreFacetsCheck}}
+                           </ul>
+                           {{/if}}
+                        </li>
+                        {{else}}
+                        <li class="GT5Facets">
+                           <label>
+                           <input type="checkbox" class="facetsCheckbox" data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}><span class="facetName">{{this.facet-name}}({{this.facet-count}})</span></label>
+                           {{#if this.facet-selected}}
+                           <span class="icon-checkmark mblCheckmark"></span>
+                           {{/if}}
+                           {{#if this.facet-children}}
+                           <span class="icon-chevron-up pull-right nestedFacetsToogleBtn"></span>
+                            <ul class="nestedFacets">
+                              {{#each this.facet-children.facet-child}}
+                              {{#moreItemsCheck @index}}
+                              <li class="LT5Facets"><label>
+                                 <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}><span class="facetName">{{this.facet-name}}({{this.facet-count}})</span></label>
+                              </li>
+                              {{else}}
+                              <li class="GT5Facets"><label>
+                                 <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}" {{checkboxValidation this.facet-selected}}><span class="facetName">{{this.facet-name}}({{this.facet-count}})</span></label>
+                              </li>
+                              {{/moreItemsCheck}}
+                              {{/each}}
+                              {{#moreFacetsCheck this.facet-children.facet-child}}
+                              <div class="moreFacets">
+                                 <span class="icon-chevron-down"></span>
+                                 <p class="component-link moreNestedFacetsLink" data-more="more-topics" title="{{../../../../../i18Labels.facetMoreButtonCopy}}">{{../../../../../i18Labels.facetMoreButtonCopy}}</a>
+                              </div>
+                              {{/moreFacetsCheck}}
+                           </ul>
+                           {{/if}}
+                        </li>
+                        {{/moreItemsCheck}}
+                        {{/each}}
+                     </ul>
+                     <div class="dottedLine"></div>
+                  </div>
+                  {{#moreFacetsCheck this.facet-values.facet-item}}
+                  <div class="moreFacets">
+                     <span class="icon-chevron-down"></span>
+                     <a class="component-link moreFacetsLink" data-more="more-topics"  title="{{../../i18Labels.facetMoreButtonCopy}}" href="javascript:void(0);">{{../../i18Labels.facetMoreButtonCopy}}</a>
+                  </div>
+                  {{/moreFacetsCheck}}
+               </li>
+               {{/each}}
+            </ul>
+         </div>
+      </div>
+   </div>
+   {{/resultSetEmptyCheck}}
+   <div class="col-md-9 resultsListingcontainer"> 
+      <div class="resultslistingContent ">
+       
+         <div class="resultsContainer">
+            <div class="searchresults-view">
+                <div class="pull-left">
+                   <span class="component-head">{{i18Labels.view}}</span>
+                   <a href="javascript:void(0);" title="List View" class="icon-list-view active containerListView"></a>
+                   <a href="javascript:void(0);" title="Tile View" class="icon-tile-view containerTileView"></a>
+                </div>
+            </div>   
+            <div class="sortResults">
+                
+               <div class="resultFound">                 
+                  {{#showNoDataFound customer-results.resultset.featured_products.result customer-results.resultset.results.result}}
+                  <div class="noDataFound">
+                     <p>{{i18Labels.noResultsCopy}}<p>
+                     <h3>Suggestions</h3>
+                     <p>{{i18Labels.noResultsCopyLineOne}}</p>  
+                     <p>{{i18Labels.noResultsCopyLineTwo}}</p>  
+                     <p>{{i18Labels.noResultsCopyLineThree}}</p>   
+                  </div>
+                  {{/showNoDataFound}}
+               </div>
+               
+            </div>
+            {{#resultSetEmptyCheck customer-results.resultset.featured_products.result customer-results.resultset.results.result}}
+            <div class="resultsListContainer">
+               {{#each customer-results.resultset.featured_products.result}}
+               <div class="result desktopContainer">
+                  <div class="badge">
+                     <span class="icon-star-badge"></span>
+                  </div>
+                  <div class="imgContainer">
+                     <a title="{{this.KPMG_Title}}" href="{{this.KPMG_URL}}" tabindex="-1">
+                     <img data-desktop="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.512.341.jpg" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-src="" alt="{{this.KPMG_Title}}" class="img-responsive lazy" />
+                     </a>
+                     {{#if this.KPMG_Contact_FN}}
+                     <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title">
+                        <span>
+                           {{this.KPMG_Contact_FN}} {{this.KPMG_Contact_LN}}
+                           {{#if this.KPMG_Contact_City}}
+                               &#124; {{this.KPMG_Contact_City}}, {{this.KPMG_Contact_Country}}
+                           {{else}}
+                               &#124; {{this.KPMG_Contact_Country}} 
+                           {{/if}}
+                        </span>
+                     </h3>
+                     {{/if}}
+                  </div>
+                  <div class="textContainer">
+                     <h3 class="secondary-head"><a href="{{this.KPMG_URL}}" title="{{this.KPMG_Title}}">{{this.KPMG_Title}}</a></h3>
+                    <span class="icon-{{contentTypeIcon this.KPMG_Cont_Type_Path}} icon"></span>
+                    
+                     <p class="description">{{this.KPMG_Description}}</p>
+                     {{#quickViewCond this.KPMG_Tab_Type "People"}}
+                        <p class="contact-tabs-date">{{this.KPMG_Article_Date_Time}}</p>
+                     {{/quickViewCond}}
+                     {{#quickViewCond this.KPMG_Tab_Type "Insights"}}
+                        <p class="contact-tabs-date contact-tabs-date-insights">{{this.KPMG_Article_Date_Time}}</p>
+                     {{/quickViewCond}}
+                     {{#quickViewCond this.KPMG_Tab_Type "Events"}}
+                        <p class="contact-tabs-date">{{this.KPMG_Event_Start_time}}</p>
+                     {{/quickViewCond}}
+                     <div class="quickView">
+                        <span class="icon-chevron-right"></span>
+                        <a href="#modal-container-quick-view{{@index}}" role="button" class="component-link" data-toggle="modal">{{../i18Labels.quickViewContactLinkCopy}}</a>  
+                     </div>
+                  </div>
+               </div>
+               {{/each}}
+               {{#each customer-results.resultset.results.result}}
+               <div class="result desktopContainer">
+                  <div class="imgContainer">
+                     <a title="{{this.KPMG_Title}}" href="{{this.KPMG_URL}}" tabindex="-1">
+                     <img src="{{../assetDomainName}}{{this.KPMG_Image}}" alt="{{this.KPMG_Title}}" class="img-responsive lazy" />
+                     </a>
+                     {{#if this.KPMG_Contact_FN}}
+                     <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title">
+                        <span>
+                           {{this.KPMG_Contact_FN}} {{this.KPMG_Contact_LN}}
+                           {{#if this.KPMG_Contact_City}}
+                               &#124; {{this.KPMG_Contact_City}}, {{this.KPMG_Contact_Country}}
+                           {{else}}
+                               &#124; {{this.KPMG_Contact_Country}} 
+                           {{/if}}
+                        </span>
+                     </h3>
+                     {{/if}}
+                  </div>
+                  <div class="textContainer">
+                     <h3 class="secondary-head"><a href="{{this.KPMG_URL}}" title="{{this.KPMG_Title}}">{{this.KPMG_Title}}</a></h3>
+                    <span class="icon-{{contentTypeIcon this.KPMG_Cont_Type_Path}} icon"></span>
+                    
+                     <p class="description">{{this.KPMG_Description}}</p>
+                     {{#quickViewCond this.KPMG_Tab_Type "People"}}
+                        <p class="contact-tabs-date">{{this.KPMG_Article_Date_Time}}</p>
+                     {{/quickViewCond}}
+                     {{#quickViewCond this.KPMG_Tab_Type "Insights"}}
+                        <p class="contact-tabs-date">{{this.KPMG_Article_Date_Time}}</p>
+                     {{/quickViewCond}}
+                     {{#quickViewCond this.KPMG_Tab_Type "Events"}}
+                        <p class="contact-tabs-date">{{this.KPMG_Event_Start_time}}</p>
+                     {{/quickViewCond}}
+                     <div class="quickView">
+                        <span class="icon-chevron-right"></span>
+                        <a href="#modal-container-quick-view{{@index}}" role="button" class="component-link" data-toggle="modal">{{../i18Labels.quickViewContactLinkCopy}}</a>  
+                     </div>
+                  </div>
+               </div>
+               {{/each}}
+               <div class="loadMore">
+                  <span class="icon-add"></span>
+                  <a class="component-link btn-more" href="#"  title="{{i18Labels.moreButtonCopy}}">{{i18Labels.moreButtonCopy}}</a>
+               </div>
+
+            </div>
+            {{/resultSetEmptyCheck}}
+         </div>
+      </div>
+   </div>
+</div>

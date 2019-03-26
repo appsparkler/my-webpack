@@ -1,0 +1,89 @@
+<section class="module-tmpl-home">
+    <div class="row" data-desktop-cell="1" data-mobile-cell="1">
+        {{include "herocarousel" resourceType="/apps/kpmgpublic/components/listing/herocarousel"}}
+   </div>
+   <div class="inner-container">
+       <div class="row">
+            <div class="row-same-height row-full-height">
+                <div class="col-md-12 col-md-height col-full-height col-top col-nested">
+                    <!-- ROW 1 -->
+                    <div class="row-same-height row-full-height">
+                        <div class="col-md-6 col-md-height col-full-height col-top" data-desktop-cell="2" data-mobile-cell="2">
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent"}}
+                        </div>
+
+                        <div class="col-md-3 col-md-height col-full-height col-top" data-desktop-cell="3" data-mobile-cell="3" >
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell4"}}
+                        </div>
+
+                        <div class="col-md-3 col-md-height col-full-height col-top" data-desktop-cell="4" data-mobile-cell="4" hidePromoInTemplate ="{{hbs.hidePromoInTemplateVal}}">
+                            {{#if hbs.isSitePersonalizeAndRhfEnabled}}
+                                {{#if hbs.isAuthor}}
+
+                                        {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell5" }} 
+
+                                      {{else}}
+
+                                        {{include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell5" }} 
+                                        {{include "mykpmgpromob" resourceType="/etc/partials/kpmgpublic/mykpmgpromob/mykpmgpromob.hbss" }} 
+
+                                {{/if}}
+                            {{else}}
+                                {{#if hbs.isSitePersonalize}} 
+                                    {{#if hbs.isAuthor}}
+                                        {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell5" }} 
+
+                                      {{else}}
+
+                                       {{include "mykpmgpromob" resourceType="/etc/partials/kpmgpublic/mykpmgpromob/mykpmgpromob.hbss" }}
+                                       
+                                    {{/if}}
+                                {{else}}
+                                    {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell5" }} 
+                                {{/if}}
+                            {{/if}}
+                        </div>
+                    </div>
+
+                    <!-- ROW 2 -->
+                    <div class="row-same-height row-full-height">
+                        {{ include "layoutcontainer" resourceType="/apps/kpmgpublic/components/global/layoutcontainer" path="cell6" }}
+
+                        <div class="col-md-3 col-md-height col-full-height col-top" data-desktop-cell="7" data-mobile-cell="7">
+                            {{ include "promotionala_1" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent"}}
+                        </div>
+
+                        <div class="col-md-3 col-md-height col-full-height col-top" data-desktop-cell="8" data-mobile-cell="8">
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell8"}}
+                        </div>
+                    </div>
+
+                    <!-- ROW 3 (TOPPICKS ROW) -->
+                    <div id="toppicks-container" class="row-same-height row-full-height">
+                        <div class="col-sm-12 col-md-height col-full-height col-top" data-desktop-cell="9" data-mobile-cell="9">
+                            {{ include "toppicks" resourceType="/apps/kpmgpublic/components/personalization/toppicks" }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 (Flex components) -->
+            <div class="row">
+                {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell10" }}
+                    {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell10" }}
+                {{/render}}
+            </div>
+        </div>
+    </div>
+</section>
+{{#unless hbs.isAuthor}}
+{{#if hbs.isSitePersonalizeAndRhfEnabled}}
+        <script>
+            (function(){
+               document.getElementsByClassName("module-mykpmgpromob")[0].previousElementSibling.style.visibility="hidden";
+               document.getElementsByClassName("module-mykpmgpromob")[0].style.visibility="hidden";
+
+            })();
+        </script>
+{{/if}}
+{{/unless}}

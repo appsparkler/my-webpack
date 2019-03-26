@@ -1,0 +1,67 @@
+<section class="module-subnavigation component clearfix">
+<nav>
+   <div class="col-md-12 bg-white subnavigation-accordianblock">
+      {{#if hbs.subNavigation.parentPageShortTitle}}
+      <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title"><span>{{hbs.subNavigation.parentPageShortTitle}}</span></h3>
+      {{/if}}
+     
+      {{#if hbs.subNavigation.subNavTitle}}
+      <li class="subnavigation-list-group-item first-list">
+         <a href="{{hbs.subNavigation.pathLtwo}}" id="sub-title" class="sub-title current-{{hbs.subNavigation.mainPageFlag}}">{{hbs.subNavigation.subNavTitle}}</a>
+           {{#if hbs.subNavigation.links}}
+               <span class="icomoon pull-right icon-chevron-up" id="main-sub" tabindex="0"></span>
+           {{/if}}
+      </li>
+      {{/if}}
+      <ul class="subnavigation-list-group first-menu">
+         {{#each hbs.subNavigation.links}}
+         <li class="subnavigation-list-group-item">
+            <a href ="{{this.path}}" class="subnavigation-link current-{{this.currentPageFlag}}">{{this.title}}</a>
+            {{#if this.subLevel}}
+            <span class="icomoon subnavigation-accordiantrigger pull-right icon-chevron-down" tabindex="0"></span>
+            {{/if}}
+            <div class="subnavigation-accordiancontainer">
+               <ul class="subnavigation-list-group subnavigation-level">
+                  {{#each this.subLevel}}
+                  <li class="subnavigation-list-group-item">
+                     <a class="subnavigation-accordian_trigger current-{{this.currentPageFlag}}" href="{{this.path}}">
+                     {{this.title}}
+                     </a>
+                     {{#if this.subLevel}}
+                     <span class="icomoon subnavigation-accordiantrigger-sublevels pull-right icon-chevron-down" tabindex="0"></span>
+                     {{/if}}
+                     <div class="subnavigation-accordiancontainer-sublevels">
+                        <ul class="subnavigation-list-group subnavigation-level">
+                           {{#each this.subLevel}}
+                           <li class="subnavigation-list-group-item" id="sublevel-links">
+                              <a class="subnavigation-accordian_trigger current-{{this.currentPageFlag}}" href="{{this.path}}">
+                              {{this.title}}
+                              </a>
+                           </li>
+                           {{/each}}
+                        </ul>
+                     </div>
+                  </li>
+                  {{/each}}
+               </ul>
+            </div>
+         </li>
+         {{/each}}
+      </ul>
+      
+   </div>
+   <div class="col-md-12 bg-white subnavigation-industblock">
+      <a href="javascript:void(0);" class="subnavigation-industriesexpand">
+      {{i18n hbs.subNavigation.all}} {{hbs.subNavigation.allIndusties}}</a>
+      <span class="icomoon pull-right icon-dots" id="allindustries" tabindex="0"></span>
+      <ul class="subNavigation-list-group" id="subnavigation-industrieslist">
+         {{#each hbs.subNavigation.industries}}
+         <li class="subnavigation-list-group-item">
+            <a href="{{this.path}}">
+            {{this.title}}</a>
+         </li>
+         {{/each}}
+      </ul>
+   </div>
+</nav>
+</section>

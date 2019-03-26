@@ -1,0 +1,38 @@
+<!-- Begin Component: TmplPrivacyPreferences -->
+<div class="module-tmpl-privacy-preferences component">
+    <div class="row hidden-xs">
+        <div class="col-md-12 bread-crumb-full" data-desktop-cell="1" data-mobile-cell="1">
+            <div class="inner-container">
+                {{ include "breadcrumb" resourceType = "/apps/kpmgpublic/components/hidden/breadcrumb" }}
+            </div>
+        </div>
+    </div>
+    <div class="row tmpl-row basic-title-row">
+        <div class="col-md-12 full-page-title" data-desktop-cell="2" data-mobile-cell="2">
+            <div class="inner-container">
+                {{ include "basicpagetitle" resourceType = "/apps/kpmgpublic/components/global/basicpagetitle"}}
+            </div>
+        </div>
+    </div>
+    <div class="inner-container">
+        <div class="row-same-height row-full-height">
+            <div class="col-md-9 col-md-height col-full-height col-top col-nested">
+                {{ include "privacypreferences" resourceType="/apps/kpmgpublic/components/personalization/privacypreferences"}}
+            </div>
+            <div class="col-md-3 col-md-height col-full-height col-top col-nested hidden-xs">
+                <div class="row-same-height row-full-height library-summary">
+                    <div class="col-md-height col-full-height col-top">
+                        {{ include "librarysummary" resourceType="/apps/kpmgpublic/components/personalization/librarysummary"}}
+                    </div>
+                </div>
+                <div class="row-same-height row-full-height interests-summary">
+                    <div class="col-md-height col-full-height col-top">
+                        {{ include "interestssummary" resourceType="/apps/kpmgpublic/components/personalization/interestssummary"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Component: TmplPrivacyPreferences -->

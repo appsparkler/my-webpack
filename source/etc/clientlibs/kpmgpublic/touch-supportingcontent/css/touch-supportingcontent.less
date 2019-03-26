@@ -1,0 +1,64 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-promotional/css/touch-promotional";
+
+.module-touch-supportingcontent {
+   background: @white;
+   padding: 6px 40px;
+
+   .module-touch-promotional {
+       border: 18px solid @white;
+       padding: 0;
+
+       .tertiary-head{
+           max-height: 50px;
+            &:after{
+                background: linear-gradient(to left, @white, rgba(255,255,255,0) 0%);
+            }
+        }
+        .tertiary-desc{
+            max-height: 105px;
+            &:after{
+            background: linear-gradient(to left, @white, rgba(255,255,255,0) 0%);
+            }
+        }
+   }
+
+   .blog {
+       border: none;
+   }
+
+   .btn-wrapper {
+       text-align: center;
+   }
+
+   .loadmore-btn {
+        width: 910px;
+        background: @white;
+        font-size: 20px;
+        color: @black;
+        padding: 20px;
+        line-height: 1;
+        border: 1px solid @kpmg-blue;
+        margin: 44px 0 32px 0;
+   }
+}
+
+@media only screen and (max-width: 640px) {
+    .module-touch-supportingcontent {
+        padding: 30px 0 0;
+
+        .module-touch-promotional {
+            border: none;
+        }
+
+        .btn-wrapper {
+            padding: 0 8px;
+        }
+
+        .loadmore-btn {
+            width: 100%;
+            padding: 15px;
+            margin: 18px 0 22px 0;
+        }
+    }
+}

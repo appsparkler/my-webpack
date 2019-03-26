@@ -1,0 +1,12 @@
+<section class="module-tagcloud component">
+   <div class="tagcloud-container">
+      <h3 class="tertiary-head">
+         {{i18n hbs.tagcloud.subHeader}}
+      </h3>
+      <div class="tagContainer">
+         {{#each hbs.tagcloud.tags}}
+            <span class="tags">{{this}}</span>
+         {{/each}}
+	  </div>	         
+   </div>
+</section>

@@ -1,0 +1,16 @@
+<div class="module-globalleadership component globalLeadership" id="global-leadership">
+    <div class="inner-container">
+        <div>
+            <h2 class="line-clamp line-clamp-1">{{hbs.globalleadership.title}}</h2>
+            <p class="description line-clamp line-clamp-4">{{{hbs.globalleadership.description}}}</p>
+            <p><a href="{{hbs.globalleadership.ctaUrl}}" class="btn cta">{{hbs.globalleadership.ctaLabel}}</a></p>
+        </div>
+        <div class="leaders col-lg-10">
+		{{#each hbs.globalleadership.leadersList}}
+            <article class="col-lg-2">   
+                <a href="{{this.profileLink}}" class="name">{{this.name}}</a>
+                <p class="location">{{this.memberFirm}}</p>
+            </article>
+        {{/each}}
+    </div>
+</div>

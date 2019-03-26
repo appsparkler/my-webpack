@@ -1,0 +1,43 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-author-summary {
+    padding: 10px 20px 0px 20px;
+
+    .author-title {
+        display: none;
+    }
+    .author-summary-details{
+        font-style: italic;
+        font-family: @arial;
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    .module-touch-author-summary {
+        padding: 10px 15px;
+
+        .author-title {
+            display: block;
+            font-size: 56px;
+            line-height: 53px;
+            color: @black;
+            font-family: @kpmgLight;
+            font-weight: 300;
+            &:lang(ja), &:lang(zh), &:lang(ko), &:lang(vi) {
+                font-size: 30px;
+                line-height: 1.3;
+            }
+        }
+        .author-summary-details {
+            font-size: 20px;
+        }
+        .author-name{
+            color: @kpmg-blue;
+        }
+    }
+        
+}
+

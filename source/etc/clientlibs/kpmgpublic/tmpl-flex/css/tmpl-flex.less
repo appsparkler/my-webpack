@@ -1,0 +1,263 @@
+@import "../../global/css/_variables.less";
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../downloadbutton/css/downloadbutton";
+@import "../../audiovideo/css/audiovideo";
+@import "../../connectandrfp/css/connectandrfp";
+@import "../../relatedcontent/css/relatedcontent";
+@import "../../bodytext/css/bodytext";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../mykpmgpromob/css/mykpmgpromob";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+@import "../../enhanceddownload/css/enhanceddownload";
+@import "../../printbutton/css/printbutton";
+@import "../../fullbleedbanner/css/fullbleedbanner";
+@import "../../share/css/share";
+@import "../../quote/css/quote";
+@import "../../sidebartextandimage/css/sidebartextandimage";
+@import "../../manualsubnav/css/manualsubnav";
+@import "../../subnavigation/css/subnavigation";
+@import "../../inlinelist/css/inlinelist";
+@import "../../contactpromo/css/contactpromo";
+@import "../../contactbutton/css/contactbutton";
+@import "../../addtolibrary/css/addtolibrary";
+@import "../../registration-promo/css/registration-promo";
+@import "../../touch-columncontrol/css/touch-columncontrol";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../touch-image/css/touch-image";
+@import "../../copyrightlist/css/copyrightlist";
+@import "../../disclaimer/css/disclaimer";
+@import "../../contactlist/css/contactlist";
+@import "../../eventtabs/css/eventtabs";
+@import "../../eventresources/css/eventresources";
+@import "../../fge-cta/css/fge-cta";
+@import "../../formbuilder/css/formbuilder";
+
+.module-tmpl-flex {
+    background-color: @white;
+    .bread-crumb-full {
+        margin: 0 auto;
+    }
+    .mid-row{
+        border-top: 9px solid @white;
+    }
+    .full-page-title{
+        padding: 0;
+    }
+    .registrationpromo-row {
+        display: none;
+    }
+    .module-basicpagetitle {
+        .pagetitle-wrapper {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 9px;
+        }
+    }
+
+    .module-share {
+        padding-left: 10px;
+        background-color: @white;
+        margin: 0px;
+    }
+
+    .module-downloadbutton {
+        background: @white;
+        margin-top: 0;
+        padding: 0px 10px;
+        min-height: auto;
+    }
+
+    .module-printbutton {
+        padding: 0px 10px;
+        .pull-left {
+            float: none !important;
+        }
+    }
+
+    .people-connect{
+        position: static;
+        float: right;
+    }
+
+    .rfp-container:before{
+        background: none;
+        content: none !important;
+    }
+    .connectandrfp-rfp .rfp-container{
+        position: static;
+    }
+    .connectandrfp-rfp .rfp-space{
+        height: 0;
+    }
+    .rfp-container .btn-cta {
+        position: static;
+    }
+    .rfp-cta-space {
+        display: none;
+    }
+
+    .tmpl-row {
+        border-top:9px solid @white;
+        border-bottom: 9px solid @white;
+    }
+
+    .col-md-height {
+        border: 9px solid @white;
+    }
+    .promotional-cell-hover {
+        position: relative;
+        height: auto;
+    }
+
+    .libraryLimit-value{
+        display: none;
+    }
+    .module-addtolibrary{
+        margin: 0 10px 0 0;
+        .addtolibrary-cta{
+            .btn-copy {
+                display: inline;
+            }
+        }
+    }
+
+    .contactpromo.parbase .col-md-12{
+        min-width: auto;
+    }
+
+    .download-and-library-components .parsys-row.clearfix:nth-child(even){
+        border-top: 18px solid @white;
+    }
+
+    .contact-component .flex-cell-hover:hover{
+        outline : none !important;
+    }
+
+    .module-bodytext {
+        .bodytext-data {
+            p, a, table tr td {
+                line-height: 1.4;
+            }
+            p {
+                margin: 0 0 15px 0;
+            }
+        }
+    }
+
+    .module-audiovideo {
+        .video-js.responsive {
+            height: 32em;
+            max-width: 100%;
+        }
+    }
+
+    .flex-informative-image{
+        display: none;
+        &.show-informative-image{
+            display: block;
+        }
+    }
+
+}
+
+@media (max-width: @mobile-max-fixed) {
+    .module-tmpl-flex{
+        .download-and-library-components {
+            border-top:1px solid @white !important;
+            .parsys-row.clearfix:nth-child(even){
+                border-top: 10px solid @white;
+            }
+        }
+        .form-builder {
+          padding:0px;
+          width: 0px;
+          height: 0px;
+        }
+        .form-builder-show {
+            @import '../../formbuilder/css/formbuilder-max-mobile-width.less';
+            width: auto;
+            height: auto;
+        }
+        .left-flex {
+            display: none;
+        }
+        .cta-hide {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-tmpl-flex  {
+        display: flex;
+        .module-connectandrfp {
+            box-shadow: inset 0px 0px 0px 1px @gray-10;
+        }
+        .module-contactpromo {
+            outline: 1px solid @gray-10 !important;
+        }
+        .module-promotionale {
+            img.three-col {
+                max-width: none;
+            }
+        }
+        .flex-container {
+            width: 100%;
+            margin: 0px auto;
+            -webkit-transition: width 0.5s;
+            transition: width 0.5s;
+        }
+        .left-flex {
+            width: 65%;
+            margin: 0px;
+            float: left;
+        }
+        .form-builder {
+            // display: none;
+            width: 0px;
+            height: 0px;
+            background-color: @gray-94;
+            float: left;
+            -webkit-transition: width 0.5s;
+            transition: width 0.5s;
+        }
+        .form-builder-show {
+            width: 35%;
+            height: auto;
+        }
+        .cta-hide {
+            display: none;
+        }
+    }
+}
+@media (min-width: 1140px) {
+    .module-tmpl-flex {
+
+
+        .module-basicpagetitle {
+            .pagetitle-wrapper {
+                width: 100%;
+            }
+        }
+        .flex-container {
+            width: 82%;
+            margin: 0px auto;
+        }
+        .left-flex {
+            width: 65%;
+            margin: 0px;
+            float: left;
+        }
+    }
+}
+
+.template {
+    .global-footer {
+        margin-top: 0px;
+    }
+}

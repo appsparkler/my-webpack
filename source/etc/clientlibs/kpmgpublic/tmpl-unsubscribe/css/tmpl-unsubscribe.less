@@ -1,0 +1,35 @@
+@import "../../global/css/_variables.less";
+@import "../../fullbleedbanner/css/fullbleedbanner";
+@import "../../bodytext/css/bodytext";
+@import "../../unsubscribe/css/unsubscribe";
+
+.module-tmpl-unsubscribe {
+    background-color: @white;
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-tmpl-unsubscribe {
+        .module-bodytext {
+            padding: 44px 0;
+            font-style: italic;
+        }
+        .module-unsubscribe {
+            padding: 10px 0 15px;
+        }
+    }
+    .global-footer {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .module-tmpl-unsubscribe {
+        .module-bodytext {
+            padding: 0 20px;
+            font-style: italic;
+        }
+        .module-unsubscribe {
+            padding: 30px 20px 10px;
+        }
+    }
+}

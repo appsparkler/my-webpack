@@ -1,0 +1,19 @@
+<section class="module-newstool component clearfix">
+    <div class="newstool-container">                    
+        <div class="svg-header-label-container {{#if hbs.newsTool.isNews}} svg-header-label-container-news {{/if}}">
+            {{#if hbs.newsTool.isNews}}
+             <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title"><span>{{i18n hbs.newsTool.title}}</span></h3>
+             {{else}}
+             <h3 class="alt-secondary-head tertiary-trapezoid-bg-tool image-title"><span>{{i18n hbs.newsTool.title}}</span></h3>
+            {{/if}}
+        </div>
+        <h3 class="alt-tertiary-head">{{hbs.newsTool.shortTitle}}</h3>
+        <p class="short-desc">{{hbs.newsTool.shortDescription}}</p>
+        <p class="newstool-custom-margin">
+            {{#if hbs.newsTool.ctaUrl}}
+            <span class="icon-chevron-right"></span>
+            <a href="{{hbs.newsTool.ctaUrl}}" title="{{i18n hbs.newsTool.cta}}" class="component-link">{{i18n hbs.newsTool.cta}}</a>
+            {{/if}}
+        </p>
+    </div>
+</section>

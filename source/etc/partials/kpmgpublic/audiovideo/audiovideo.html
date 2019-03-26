@@ -1,0 +1,27 @@
+
+<section class="module-audiovideo component test" data-mediaId="{{hbs.audioVideo.mediaId}}">
+    {{#if hbs.audioVideo.mediaId}}
+    <div class="row audiovideo-container"
+         {{#if hbs.audioVideo.anchorId}}
+         id="{{hbs.audioVideo.anchorId}}"
+         {{/if}}>
+         <div class="col-md-12 audiovideo-video">
+           <!--data-player attribute is hard coded now with JhXRe0mwH to test. TODO: to be replaced with {{hbs.audioVideo.playerKey}} after testing-->
+            <video
+              id = "audiovideo_{{hbs.audioVideo.mediaId}}"
+              data-account="{{hbs.audioVideo.readToken}}"
+              data-player="{{hbs.audioVideo.playerKey}}"
+              data-embed="default"
+              data-video-id="{{hbs.audioVideo.mediaId}}"
+              data-language="{{hbs.audioVideo.pageLocale}}"
+              class="video-js" controls>
+            </video>
+
+        </div>
+        <div class="col-md-12 audiovideo-data">
+            <h2 class="tertiary-head audiovideo-title"></h2>
+            <div class="audiovideo-description" ></div>
+        </div>
+    </div>
+    {{/if}}
+</section>

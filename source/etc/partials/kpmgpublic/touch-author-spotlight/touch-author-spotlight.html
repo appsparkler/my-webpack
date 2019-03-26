@@ -1,0 +1,44 @@
+<!-- Begin Component: TouchAuthorSpotlight -->
+<div class="module-touch-author-spotlight component">
+    <a href="{{hbs.authorSpotLight.authorLink}}" class="author-anchor" x-cq-linkchecker="skip" title="{{hbs.authorSpotLight.altText}}">
+        <div class="author-image">
+            <img src="{{hbs.globalValues.assetDomainName}}{{hbs.authorSpotLight.authorImage}}/jcr:content/renditions/cq5dam.web.310.190.jpg" alt="{{hbs.authorSpotLight.altText}}"/>
+            <span class="blue-overlay"></span>
+        </div>
+    </a>
+
+    <div class="author-details">
+        <a href="{{hbs.authorSpotLight.authorLink}}" class="author-anchor" x-cq-linkchecker="skip" title="{{hbs.authorSpotLight.altText}}">
+            <h3 class="author-name tertiary-head">
+                {{hbs.authorSpotLight.firstName}} {{hbs.authorSpotLight.lastName}}
+            </h3>
+            <p class="author-role">
+                {{hbs.authorSpotLight.authorRole}}, {{hbs.authorSpotLight.areaOfExpertise}}
+            </p>
+        </a>
+        <div class="email-me">
+            <a class="email-link people-connect social-link" data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#kpmgModal" data-remote="{{hbs.authorSpotLight.contactFormLink}}{{hbs.authorSpotLight.authorPageLink}}" href="javascript:void(0);" title="{{hbs.authorSpotLight.emailMeAddress}}">
+                <span class="icon-email-me-1"></span>
+                <span class="email-label">{{hbs.authorSpotLight.emailLabel}}</span>
+            </a>
+        </div>
+        {{#if hbs.authorSpotLight.socialMedialink}}
+            <div class="linkdln">
+                <a x-cq-linkchecker="skip" data-stoptrack="true" class="linkdln-links social-link" data-link-location="{{hbs.authorSpotLight.firstName}} {{hbs.authorSpotLight.lastName}}" href="{{hbs.authorSpotLight.socialMedialink}}" title="{{hbs.authorSpotLight.sociallabel}}">
+                    <span class="icon-linkedin-profile-1"></span>
+                    <span class="linkdln-label">{{hbs.authorSpotLight.sociallabel}}</span>
+                </a>
+            </div>
+        {{/if}}
+        {{#if hbs.authorSpotLight.kpmgProfileUrl}}
+            <div class="kpmg-profile">
+                <a x-cq-linkchecker="skip" class="kpmg-profile-link social-link" data-link-location="{{hbs.authorSpotLight.firstName}} {{hbs.authorSpotLight.lastName}}" href="{{hbs.authorSpotLight.kpmgProfileUrl}}" title="{{hbs.authorSpotLight.kpmgProfileLabel}}">
+                    <span class="icon-kpmg-profile"></span>
+                    <span class="kpmg-profile-label">{{hbs.authorSpotLight.kpmgProfileLabel}}</span>
+                </a>
+            </div>
+        {{/if}}
+
+    </div>
+</div>
+<!-- End Component: TouchAuthorSpotlight -->

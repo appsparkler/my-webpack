@@ -1,0 +1,81 @@
+<section class="module-tmpl-myaccount bs4">
+    <div class="row visible-sm-block visible-md-block visible-lg-block">
+        <div class="col-md-12 bread-crumb-full">
+            {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb" id="1"}}
+        </div>
+    </div>
+    <div class="row tmpl-row">
+        <div class="col-md-12 col-xs-12 full-page-title" data-desktop-cell="1" data-mobile-cell="1">
+            {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"}}
+        </div>
+    </div>
+    <div class="row full-width-row">
+        <div class="col-md-9 col-xs-12 tablet-full-width" data-desktop-cell="1" data-mobile-cell="1">
+            <!-- New accordian tab structure using bootstrap 4 accordian structure-->
+            <!-- profile tab -->
+            <div class="accordion" id="profile-information">
+                <div class="card">
+                    <div class="card-header" id="general-information">
+                      <h5 class="mb-0 accordion-header">
+                        <button class="btn btn-link accordian-btn" type="button" data-toggle="collapse" data-target="#general-information-container"
+                                aria-expanded="false" aria-controls="general-information-container">
+                                {{i18n "kpmg.personalization.profile.generalinformation"}}
+                        </button>
+                        <span class="icon-chevron-down  pull-right"></span>
+                      </h5>
+                    </div>
+                    <div id="general-information-container" class="collapse" aria-labelledby="general-information" data-parent="#profile-information">
+                        <div class="card-body">
+                            {{ include "profile" resourceType="/apps/kpmgpublic/components/personalization/profile"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="communication-preferences">
+                      <h5 class="mb-0 accordion-header">
+                        <button class="btn btn-link collapsed accordian-btn" type="button" data-toggle="collapse"
+                                data-target="#communication-preferences-container" aria-expanded="false" aria-controls="communication-preferences-container">
+                          {{i18n "kpmg.personalization.profilePage.subscriptionpreference"}}
+                        </button>
+                        <span class="icon-chevron-down pull-right"></span>
+                      </h5>
+                    </div>
+                    <div id="communication-preferences-container" class="collapse" aria-labelledby="communication-preferences" data-parent="#profile-information">
+                        <div class="card-body p-0">
+                            {{ include "communicationpreferences" resourceType="/apps/kpmgpublic/components/personalization/communicationpreferences"}}
+                        </div>
+                    </div>
+                </div>
+                <div class="card last-accordian">
+                    <div class="card-header" id="privacy-preferences">
+                        <h5 class="mb-0 accordion-header">
+                            <button class="btn btn-link collapsed accordian-btn" type="button" data-toggle="collapse"
+                                    data-target="#privacy-preferences-container" aria-expanded="false" aria-controls="privacy-preferences-container">
+                                    {{i18n "kpmg.personalization.registration.profilePage.privacypreference"}}
+                            </button>
+                            <span class="icon-chevron-down pull-right"></span>
+                        </h5>
+                    </div>
+                    <div id="privacy-preferences-container" class="collapse" aria-labelledby="privacy-preferences" data-parent="#profile-information">
+                        <div class="card-body">
+                            {{ include "privacypreferences" resourceType="/apps/kpmgpublic/components/personalization/privacypreferences"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Accordion Bootstrap 4 ends-->
+        </div>
+        <div class="col-md-3 tablet-full-width col-top col-nested {{#unless hbs.isAuthor}}hidden-xs hidden-sm{{/unless}}">
+            <div class="library-summary">
+                <div class="col-top">
+                    {{ include "librarysummary" resourceType="/apps/kpmgpublic/components/personalization/librarysummary"}}
+                </div>
+            </div>
+            <div class="interests-summary">
+                <div class="col-top">
+                    {{ include "interestssummary" resourceType="/apps/kpmgpublic/components/personalization/interestssummary"}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

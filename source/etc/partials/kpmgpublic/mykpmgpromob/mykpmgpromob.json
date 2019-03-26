@@ -1,0 +1,22 @@
+{
+    "hbs": {
+        "myKpmgPromob": {
+            "title" : "MYKPMG", 
+			"description" :"First rate personlaised content",
+			"cta" :"mykpmgtitle",
+			"personalized" : true,
+			"newUserTitle" :"Welcome",
+			"newUserFirstName" :"JOhn",
+			"newUserDescription" :"browse artcles ",
+			"newUsercta" :"Read More",
+			"nonNewUserTitle" :"WElcome Back",
+			"nonNewUserFirstName" :"JOhn",
+			"nonNewUserLastName" :"Beckhma",
+			"nonNewUserDescription" :"You have been a member since",
+			"nonNewUserFirstLogin":"Nov 1 , 2016",
+			"nonNewUsercta" :"Read More",
+
+        	
+        }
+    }
+}

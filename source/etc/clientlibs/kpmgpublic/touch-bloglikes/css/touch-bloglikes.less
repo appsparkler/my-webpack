@@ -1,0 +1,56 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-bloglikes {
+    padding: 0;
+    margin-top: 10px;
+    background: @gray-94;
+    
+    .gig-reaction-bar-container > table{
+        width: 100%;
+        .gig-button-container{
+            display: block;
+        }
+    }
+    .blog-likes{
+        .gig-reaction-button-text{
+            font-size: 30px;
+            padding: 10px 10px 10px 20px;
+            color: @gray-60;
+        }
+        .gig-button{
+            padding-left: 10px;
+        }
+        #userReaction-reaction0-icon_img{
+            width: 57px;
+        }
+    }
+   
+}
+
+@media (max-width: 640px) {
+    .module-touch-bloglikes {
+        background: @gray-94;
+        padding: 0;
+        margin: 10px 10px 0 10px;
+
+        .blog-likes{
+            #userReaction-reaction0-icon_img{
+                width: 45px;
+                padding-left: 7px;
+            }
+            .gig-reaction-button-text{
+                font-size: 24px;
+                line-height: 1.2;
+                padding: 10px 10px 10px 30px;
+            }
+            .gig-button{
+                padding-left: 0;
+            }
+
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,138 @@
+@import "../../global/css/_variables.less";
+
+.registration-promo-overlay {
+    @media only screen and (min-width: 768px) {
+        .modal-dialog {
+            width: 570px;
+        }
+    }
+
+    .modal-content {
+        padding: 0;
+    }
+
+    .modal-header {
+        padding: 12px 50px 12px 30px;
+        border-bottom: none;
+    }
+
+    .title {
+        font-size: 38px;
+        font-family: @kpmgLight;
+        color: @medium-blue;
+        word-break: break-word;
+        font-weight: 300;
+
+        .lang(ja,{
+            font-size: 30px;
+        });
+        .lang(zh-CN,{
+            font-size: 30px;
+        });
+        .lang(zh-TW,{
+            font-size: 30px;
+        });
+        .lang(ko,{
+            font-size: 30px;
+        });
+        .lang(vi,{
+            font-size: 30px;
+        });
+    }
+
+    .btn-close {
+        position: absolute;
+        padding: 25px 30px;
+        width: 76px;
+        height: 66px;
+        cursor:pointer;
+    }
+
+    .modal-body {
+        background-color: @gray-94;
+        padding: 18px 18px 15px;
+    }
+
+    .overlay-image {
+        background-color: @white;
+        padding: 22px;
+        border-radius: 10px 10px 0 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .overlay-content {
+        background-color: @white;
+        padding: 53px 24px 24px;
+        font-size: 20px;
+        line-height: 1.2;
+        color: @kpmg-blue;
+        border-radius: 0 0 10px 10px;
+        word-break: break-word;
+    }
+
+    .modal-footer {
+        border-top: 0;
+        background-color: @gray-94;
+        padding: 0 18px 18px;
+    }
+
+    .btn {
+        border: none;
+        padding: 19px !important;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    .register-btn {
+        background-color: @medium-blue;
+        color: @white;
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .login-btn {
+        margin-left: 0 !important;
+        margin-top: 10px;
+        color: @kpmg-blue;
+        background-color: @white;
+        font-size: 18px;
+        word-break: break-word;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .registration-promo-overlay {
+        .modal-header {
+            padding: 12px 50px 12px 15px;
+        }
+
+        .btn-close {
+            padding: 25px 15px;
+            width: 46px;
+        }
+
+        .modal-body {
+            padding: 18px 10px 15px;
+        }
+
+        .overlay-image {
+            padding: 10px;
+        }
+
+        .overlay-content {
+            padding: 30px 15px 15px;
+        }
+
+        .modal-footer {
+            padding: 0 10px 18px !important;
+
+            .col-md-12:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+
+}

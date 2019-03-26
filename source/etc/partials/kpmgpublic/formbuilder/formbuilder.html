@@ -1,0 +1,190 @@
+<!-- Begin Component: Formbuilder-->
+<div class="module-formbuilder component bs4"
+     id="formbuilder-id-{{hbs.formBuilder.uniqueId}}">
+
+  <!-- EXISTING USER LOGIN FORM  -->
+   {{ include 'existinguserform' @ resourceType='/etc/partials/kpmgpublic/formbuilder/existing-user-login-form.hbss' }}
+
+  <div class="default-form animated">
+
+    <!--  TITLE AND CANCEL BUTTON for mobile-only -->
+    <div class="title-and-cancel-button mobile-only">
+        <div class="cancelButton chrome">
+          <button class="chrome">
+            <span class="icon-close  chrome"></span>
+          </button>
+        </div>
+        <div class="title">
+          <h1>
+            {{{ i18n hbs.formBuilder.formDocumentTitleLabel }}}
+          </h1>
+        </div>
+    </div>
+
+    <!--  CANCEL BUTTON -->
+    <div class="cancelButton desktop-only">
+      <button>
+        <span class="icon-close "></span>
+      </button>
+    </div>
+
+    <!--  INSTRUCTIONS -->
+    <div class="instructions">
+      <p>
+        {{{ i18n hbs.formBuilder.defaultInstructionMessage }}}
+      </p>
+    </div>
+
+    <!--  FORM -->
+    <div class="formDiv">
+      <form>
+        {{#each hbs.formBuilder.fieldDetails}}
+          <div class="formfield-wrapper">
+
+            <!--  ERROR MESSAGE CONTAINER -->
+            <div class="error-message hide-errormsg">
+                {{#if this.isEmail}}
+                    {{ i18n hbs.formBuilder.emailErrorMessage }}
+                  {{else}}
+                    {{ i18n hbs.formBuilder.genericErrorMessage }}
+                {{/if}}
+            </div>
+
+            <!-- SELECT FIELD-->
+            {{#if this.isSelectField}}
+              <div class="custom-select-with-styled-dropdown">
+                  <div class="custom-chevron">
+                      <span class="icon-chevron-down"></span>
+                  </div>
+                  <select name="{{this.fieldName}}" class="dynamic-select-country" required>
+                    <option value="{{this.fieldLabel}}">{{this.fieldLabel}}</option>
+                  </select>
+              </div>
+              {{else}}
+                <!--  TEXTAREA -->
+                {{#if this.isTextArea}}
+                  <textarea name="{{this.fieldName}}"
+                            placeholder="{{this.fieldLabel}} {{#if this.isMandatory}}{{else}}{{i18n hbs.formBuilder.optionalFieldLabel}}{{/if}}"
+                            {{#if this.isMandatory}}required{{/if}}></textarea>
+
+                  {{else}}
+                    <!-- EMAIL -->
+                    {{#if this.isEmail}}
+                      <input type="email"
+                             name="{{this.fieldName}}"
+                             placeholder="{{this.fieldLabel}}  {{#if this.isMandatory}}{{else}}{{i18n hbs.formBuilder.optionalFieldLabel}}{{/if}}"
+                             {{#if this.isMandatory}}
+                               required{{/if}} />
+
+                      {{else}}
+                        <!-- TEXTFIELD -->
+                        <input type="text"
+                               name="{{this.fieldName}}"
+                               placeholder="{{this.fieldLabel}}  {{#if this.isMandatory}}{{else}}{{i18n hbs.formBuilder.optionalFieldLabel}}{{/if}}"
+                               {{#if this.isMandatory}}
+                               required{{/if}} />
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+          </div>
+        {{/each}}
+
+
+        <!--  TERMS AND CONDITIONS -->
+        <div class="terms-and-conditions">
+          <!--  TC 1-->
+          {{#if hbs.formBuilder.termsAndConditionsText2}}
+            <div class="custom-tc">
+              {{#if hbs.formBuilder.checkboxVisibleOption2}}
+              <div class="checkbox-cell">
+
+                <button type="button"
+                        class="custom-checkbox">
+                  <span class="icon-checkmark"></span>
+                </button>
+              </div>
+              {{/if}}
+              <input type="checkbox"
+                     hidden
+                     name="termsAndConditions2"
+                     value="{{hbs.formBuilder.termsAndConditionsText2}}" {{#if hbs.formBuilder.checkboxCheckedOption2}} checked {{/if}} />
+
+              <div class="tc-cell">
+                {{{hbs.formBuilder.termsAndConditionsText2}}}
+              </div>
+            </div>
+          {{/if}}
+
+
+          <!-- TC 2 -->
+          {{#if hbs.formBuilder.termsAndConditionsText1}}
+            <div class="custom-tc">
+              {{#if hbs.formBuilder.checkboxVisibleOption1}}
+              <div class="checkbox-cell">
+                <button type="button"
+                        class="custom-checkbox">
+                  <span class="icon-checkmark"></span>
+                </button>
+              </div>
+              {{/if}}
+              <input type="checkbox"
+                     hidden
+                     name="termsAndConditions1"
+                     value="{{hbs.formBuilder.termsAndConditionsText1}}" {{#if hbs.formBuilder.checkboxCheckedOption1}} checked {{/if}} />
+
+              <div class="tc-cell">
+                {{{hbs.formBuilder.termsAndConditionsText1}}}
+              </div>
+            </div>
+          {{/if}}
+          
+          <!--  TC 3-->
+          {{#if hbs.formBuilder.termsAndConditionsText3}}
+            <div class="custom-tc">
+              <div class="checkbox-cell">
+                <button type="button"
+                        class="custom-checkbox">
+                  <span class="icon-checkmark"></span>
+                </button>
+              </div>
+
+              <input type="checkbox"
+                     hidden
+                     name="termsAndConditions3"
+                     value="{{hbs.formBuilder.termsAndConditionsText3}}" />
+
+              <div class="tc-cell">
+                {{{hbs.formBuilder.termsAndConditionsText3}}}
+              </div>
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="optional-statement">
+          {{#if hbs.formBuilder.optionalStatement }}
+            {{ i18n hbs.formBuilder.optionalStatement }}
+          {{/if}}
+        </div>
+
+        <!--  FORM CTA -->
+        <div class="form-cta-button-wrapper">
+          <button class="submit-form"
+                  type="button">
+                  {{#if hbs.formBuilder.isEventRegistration }}
+                    {{ i18n hbs.formBuilder.formEventCtaLabel }}
+                  {{/if}}
+
+                  {{#if hbs.formBuilder.isGatedContent}}
+                    {{ i18n hbs.formBuilder.formGatedContentCtaLabel }}
+                  {{/if}}
+
+                  {{#if hbs.formBuilder.isFastSubscription }}
+                    {{ i18n hbs.formBuilder.formFastSubscriptionCtaLabel }}
+                  {{/if}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- End Component: Formbuilder -->

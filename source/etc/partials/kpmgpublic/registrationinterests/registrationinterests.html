@@ -1,0 +1,39 @@
+<!-- Begin Component: Registrationinterests -->
+<section class="module-registrationinterests component">
+    <div class="no-display content-template" style="display: none;">
+        <div class="tab-menu no-padding col-md-12 desktop-only">
+            ++#each tags--
+                <a class="tab-title" href="#" onclick="return false" data-zthes-id="++zthes-id--" data-english-name="++english-name--" data-index="++@index--">++name--</a>
+            ++/each--
+        </div>
+
+        ++#each tags--
+        	<div class="tab-title-accordion mobile-only" data-zthes-id="++zthes-id--" data-english-name="++english-name--" data-index="++@index--">
+        		<span class="text-data">++name--</span>
+                <span class="expand-status"></span>
+            </div>
+            <ul class="tags-holder no-padding col-md-12" data-index="++@index--">
+            ++#each tags--
+                <li class="tag-holder" tabindex="0" data-zthes-id="++zthes-id--" data-parent-index="++@../index--">
+                    <span class="text-data">++name--</span>
+                    <span class="action-icon"></span>
+                </li>
+            ++/each--
+            </ul>
+        ++/each--
+    </div>
+
+    <div style="height:200px;width:100%;border:9px solid #f0f0f0;padding-top:10px;background-color:#f0f0f0;" id="loader-container">
+        <img style="margin:80px auto 40px auto;" src="/etc/designs/kpmgpublic/images/loading.gif"></img>
+    </div>
+    <section class="content-container no-padding col-md-12 no-display">
+    </section>
+    <div class="clear"></div>
+    <a  onclick="return false" class="done-button no-display">
+        <div tabindex="0">
+            <span class="next-btn hide">{{i18n "kpmg.personalization.registration.subscription.nextstep"}}</span>
+            <span class="finish-btn hide">{{i18n "kpmg.personalization.registration.subscription.finish"}}</span>
+        </div>
+    </a>
+</section>
+<!-- End Component: Registrationinterests -->

@@ -1,0 +1,10 @@
+{
+    "hbs": {
+        "DashBoardBanner": {
+            "title": "Title",
+            "bannerimage": "Banner image",
+            "bannerAltText": "Alternate text",
+            "font": "Font"
+        }
+    }
+}

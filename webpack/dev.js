@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HTMLPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
@@ -14,28 +14,52 @@ module.exports = {
     },
 
     resolve: {
-        root: path.join(__dirname, '/..'),
         modules: [
-            'node_modules',
-            path.resolve(__dirname, '../src')
+            path.resolve(__dirname, '../node_modules'),
+            path.resolve(__dirname, '../source')
         ]
     },
 
     plugins: [
-        new HtmlWebpackPlugin({
-            template: path.join(__dirname, '../src/index.pug')
+        new HTMLPlugin({
+            template: path.join(__dirname, '../src/index.pug'),
+            // inject:false
         }),
         new CopyPlugin([
-          // etc
-          {
-              from: 'clientlibs',
-              to: 'clientlibs'
-          }
+            // etc
+            {
+                from: 'source'
+            }
         ])
     ],
 
     module: {
         rules: [
+            // FONT LOADER
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [{
+                    loader: 'file-loader'
+                }]
+            },
+            // IMAGES
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            // lESS
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: 'style-loader' // creates style nodes from JS strings
+                }, {
+                    loader: 'css-loader' // translates CSS into CommonJS
+                }, {
+                    loader: 'less-loader' // compiles Less to CSS
+                }]
+            },
             // CSS
             {
                 test: /\.css$/,

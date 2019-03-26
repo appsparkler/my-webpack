@@ -1,0 +1,164 @@
+<template id="mobile-nav-sub-list-group-component-template">
+    <!-- MOBILE-MENU NAVIGATION SUBLIST (COLLAPSE) -->
+    <ul 
+        class="
+            mobile-nav-sub-list-group-component vue-component 
+            px-0 
+            mb-0  
+            collapse 
+            rounded-0 
+            bg-gray-99
+        " 
+        tabindex="0"
+        role="tabpanel"
+        v-if="vm.flyout && vm.flyout.cell1 && vm.flyout.cell1.links && vm.flyout.cell1.links.length" 
+        :id="vm.id.split(' ').join('-')" 
+        data-parent="#kpmg-mobile-nav-dropdown-menu"
+    >
+        <!-- SUB-LIST ITEM -->
+        <sub-list-item 
+            v-for="(item, key) in vm.flyout.cell1.links" 
+            v-bind:key=" key + 'primary-nav-sublist-item' " 
+           :vm="{url: item.url, label: item.label, internalFlag: item.internalFlag, newTabAllow: item.newTabAllow}"
+        ></sub-list-item>
+
+        
+
+        <!-- CARD LINK ITEM for cell2-->
+        <li 
+        class="
+            sub-list-item-component vue-component 
+            list-unstyled 
+            px-0 
+        "
+        v-if="vm && vm.flyout.cell2.type === 'card-link'"
+        >        
+                <!-- CARD LINK -->
+            <span>
+               
+                <!-- CARD LABEL -->
+                <a  
+                    class="
+                    sub-list-item-component-text-color
+                    text-dark
+                    bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    "
+                    v-if="vm.flyout.cell2.linkUrl && vm.flyout.cell2.internalLinkFlag == 'false'"
+                    v-process-url="vm.flyout.cell2.linkUrl"
+                    target="_blank"
+                    x-cq-linkchecker="skip"
+                >                    
+                <span class="extra-link"> \{{ vm.flyout.cell2.title }} </span> <span class="sr-only"> \{{ vm.flyout.cell2.newTabAllow }} </span>
+                </a>
+                <a  
+                    class="
+                    sub-list-item-component-text-color
+                    text-dark
+                    bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    "
+                    v-else-if = "vm.flyout.cell2.linkUrl"
+                    v-process-url="vm.flyout.cell2.linkUrl"                    
+                >                    
+                <span class="extra-link"> \{{ vm.flyout.cell2.title }} </span>
+                </a>
+            </span>
+        </li>
+
+        <!-- CARD LINK ITEM for cell3-->
+        <li 
+        class="
+            sub-list-item-component vue-component 
+            list-unstyled 
+            px-0 
+        "
+        v-if="vm && vm.flyout.cell3.type === 'card-link'"
+        >        
+                <!-- CARD LINK -->
+            <span>
+               
+                <!-- CARD LABEL -->
+                <a  
+                    class="
+                    sub-list-item-component-text-color
+                    text-dark
+                    bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    "
+                    v-if="vm.flyout.cell3.linkUrl && vm.flyout.cell3.internalLinkFlag == 'false'"
+                    v-process-url="vm.flyout.cell3.linkUrl"
+                    target="_blank"
+                    x-cq-linkchecker="skip"
+                >                    
+                <span class="extra-link"> \{{ vm.flyout.cell3.title }} </span> <span class="sr-only"> \{{ vm.flyout.cell3.newTabAllow }} </span>
+                </a>
+                <a  
+                    class="
+                    sub-list-item-component-text-color
+                    text-dark
+                    bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    "
+                    v-else-if = "vm.flyout.cell3.linkUrl"
+                    v-process-url="vm.flyout.cell3.linkUrl"                    
+                >                    
+                <span class="extra-link"> \{{ vm.flyout.cell3.title }} </span>
+                </a>
+            </span>
+        </li>
+
+        <!-- VIEW-ALL ITEM -->
+        <li 
+        class="
+            sub-list-item-component vue-component 
+            list-unstyled 
+            px-0 
+        "
+        v-if="vm && vm.flyout.cell1.viewAll"
+        >        
+                <!-- VIEW ALL (MASTER) LINK -->
+            <span>
+               
+                <!-- LINK LABEL -->
+                <a  
+                    class="
+                    text-kpmg-violet bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    font-weight-bold                    
+                    "
+                    v-if="vm.flyout.cell1.viewAll.linkURL && vm.flyout.cell1.viewAll.internalLinkFlag == 'false'"
+                    v-process-url="vm.flyout.cell1.viewAll.linkURL"
+                    target="_blank"
+                    x-cq-linkchecker="skip"
+                >                    
+                    <span class="extra-link"> \{{ vm.flyout.cell1.viewAll.label }} </span> <span class="sr-only"> \{{ vm.flyout.cell1.viewAll.newTabAllow }} </span>
+                </a>
+                <a  
+                    class="
+                    text-kpmg-violet bg-kpmg-light-sky-blue 
+                    rounded-0 
+                    py-4-1 p-4 
+                    d-block
+                    font-weight-bold
+                    "
+                    v-else-if = "vm.flyout.cell1.viewAll.linkURL"
+                    v-process-url="vm.flyout.cell1.viewAll.linkURL"                    
+                >                    
+                <span class="extra-link"> \{{ vm.flyout.cell1.viewAll.label }} </span>
+                </a>
+            </span>
+        </li>
+
+    </ul>
+</template>

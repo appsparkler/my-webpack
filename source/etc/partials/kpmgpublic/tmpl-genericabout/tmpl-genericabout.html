@@ -1,0 +1,57 @@
+<section class="module-tmpl-genericabout"  {{#if hbs.isAuthor}}style="position:fixed; left:-10000px;"{{/if}}>
+   <div class="row visible-sm-block visible-md-block visible-lg-block about-breadcrumb">
+      <div class="col-md-12 bread-crumb-full">
+         <div class="inner-container">
+            {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb" }}
+         </div>
+      </div>
+   </div>
+
+   <div class="row tmpl-row">
+      <div class="col-md-12 full-page-title" data-desktop-cell="1" data-mobile-cell="1">
+            <div class="inner-container">
+                {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"}}
+            </div>
+        </div>
+   </div>
+   
+   <div class="inner-container">
+      <div class="row">
+         <div class="col-md-12" data-desktop-cell="2" data-mobile-cell="2">
+            {{ include "shortcarousel" resourceType="/apps/kpmgpublic/components/content/shortcarousel" }}
+         </div>
+      </div>
+
+      <div class="row">
+            <div class="row-same-height row-full-height">
+                <div class="col-md-3 col-md-height col-full-height col-top col-transparent"  data-desktop-cell="3" data-mobile-cell="7">
+                  {{ include "subnavigation" resourceType="/apps/kpmgpublic/components/content/subnavigation" }}
+                </div>
+
+                <div class="col-md-9 col-full-height col-top col-nested col-md-height">
+                     {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell6"}}
+                        <div class="row">
+                           <div class="col-md-12" data-desktop-cell="4" data-mobile-cell="3">
+                              {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell6"}}
+                           </div>
+                        </div>
+                     {{/render}}
+
+                    <div class="row-same-height row-full-height">
+
+                        <div class="col-md-3 col-md-height col-full-height col-top" data-desktop-cell="5" data-mobile-cell="4">
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell7"}}
+                        </div>
+
+                        <div class="col-md-3 col-md-height col-full-height  col-top" data-desktop-cell="6" data-mobile-cell="5">
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell8"}}
+                        </div>
+                        <div class="col-md-3 col-md-height col-full-height  col-top" data-desktop-cell="7" data-mobile-cell="6">
+                            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell9"}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+   </div>
+</section>

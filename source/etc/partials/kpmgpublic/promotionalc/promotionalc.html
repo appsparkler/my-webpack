@@ -1,0 +1,118 @@
+<section class="module-promotionalc component component-trackable" personalize="{{hbs.promotionalC.personalized}}" {{#if hbs.promotionalC.personalized}}hidden{{/if}} no-of-results-required="{{hbs.promotionalC.numberOfContents}}" article ="{{hbs.promotionalC.externalLink}}" tabindex="0">
+    <div class="promotionalc-container clearfix {{#if hbs.promotionalC.secondaryUrl}}add20paddingbottom{{/if}}">
+        <a href="{{hbs.promotionalC.primaryUrl}}" title="{{hbs.promotionalC.shortTitle}}">
+            <h3 class="alt-secondary-head image-title ">
+                {{#if hbs.promotionalC.personalized}}
+                {{#if hbs.promotionalC.numberOfContents}}
+                {{i18n hbs.promotionalC.eventLabel}}
+                {{else}}
+                {{hbs.promotionalC.eventLabel}}
+                {{/if}}
+                {{else}}
+                {{i18n hbs.promotionalC.eventLabel}}
+                {{/if}}
+            </h3>
+        </a>
+        {{#if hbs.promotionalC.shortTitle}}
+        {{#if hbs.promotionalC.rfpForm}}
+        <a tabindex="-1" href="javascript:void(0)"
+        data-remote="{{hbs.promotionalC.primaryUrl}}" title="{{hbs.promotionalC.shortTitle}}"
+        data-toggle="modal" data-backdrop="static" data-target="#kpmgModal"
+        data-modal-url="/etc/partials/kpmgpublic/rfpprocess/rfpprocess.html" id="rfp-process-modal">
+        <h4 class="alt-tertiary-head line-clamp line-clamp-3">{{hbs.promotionalC.shortTitle}}</h4>
+    </a>
+    {{else}}
+    {{#if hbs.promotionalC.contactForm}}
+    <a tabindex="-1" href="javascript:void(0)"
+    data-remote="{{hbs.promotionalC.primaryUrl}}"
+    title="{{hbs.promotionalC.shortTitle}}"
+    {{#if hbs.promotionalC.contactForm}}
+    data-modal-url="/etc/partials/kpmgpublic/contact-form/contact-form.html"
+    id="contact-form-modal"
+    {{/if}}
+    data-toggle="modal" data-target="#kpmgModal">
+    <h4 class="alt-tertiary-head line-clamp line-clamp-3">{{hbs.promotionalC.shortTitle}}</h4>
+</a>
+{{else}}
+<a href="{{hbs.promotionalC.primaryUrl}}" title="{{hbs.promotionalC.shortTitle}}">
+    <h4 class="alt-tertiary-head line-clamp line-clamp-3">{{hbs.promotionalC.shortTitle}}</h4>
+</a>
+{{/if}}
+{{/if}}
+{{/if}}
+{{#if hbs.promotionalC.liveTextMonth}}
+{{#if hbs.promotionalC.liveTextDay}}
+<a href="{{hbs.promotionalC.primaryUrl}}" title="{{hbs.promotionalC.shortTitle}}">
+    <div class="promotionalc-event-date">
+        <div class="promotionalc-event-calendar">
+            <div class="promotionalc-event-icon">
+                <div class="promotionalc-event-month">{{hbs.promotionalC.liveTextMonth}}</div>
+                <span class="icon-date"></span>
+                <div class="promotionalc-event-day">{{hbs.promotionalC.liveTextDay}}</div>
+            </div>
+        </div>
+        <ul class="promotionalc-event-address">
+            {{#if hbs.promotionalC.eventDuration}}
+            <li>{{hbs.promotionalC.eventDuration}}</li>
+            {{/if}}
+            {{#if hbs.promotionalC.eventVenue}}
+            <li>{{hbs.promotionalC.eventVenue}}</li>
+            {{/if}}
+            {{#if hbs.promotionalC.eventCity}}
+            {{#if hbs.promotionalC.eventState}}
+            <li>{{hbs.promotionalC.eventCity}},
+                {{else}}
+                {{hbs.promotionalC.eventCity}}</li>
+                {{/if}}
+                {{/if}}
+                {{#if hbs.promotionalC.eventState}}
+                <li>{{hbs.promotionalC.eventState}}</li>
+                {{/if}}
+            </li>
+            {{#if hbs.promotionalC.eventCountry}}
+            <li>{{hbs.promotionalC.eventCountry}}</li>
+            {{/if}}
+        </ul>
+    </div>
+</a>
+{{/if}}
+{{/if}}
+
+{{#if hbs.promotionalC.shortDescription}}
+    {{#if hbs.promotionalC.rfpForm}}
+        <a title="{{hbs.promotionalC.shortTitle}}"
+            tabindex="-1" href="javascript:void(0)"
+            data-remote="{{hbs.promotionalC.primaryUrl}}"
+            data-toggle="modal" data-backdrop="static" data-target="#kpmgModal"
+            data-modal-url="/etc/partials/kpmgpublic/rfpprocess/rfpprocess.html" id="rfp-process-modal">
+            <p class="desciption line-clamp line-clamp-5">{{hbs.promotionalC.shortDescription}}</p>
+        </a>
+    {{else}}
+        {{#if hbs.promotionalC.contactForm}}
+            <a title="{{hbs.promotionalC.shortTitle}}"
+                tabindex="-1" href="javascript:void(0)"
+                data-remote="{{hbs.promotionalC.primaryUrl}}"
+                data-toggle="modal" data-backdrop="static" data-target="#kpmgModal"
+                data-modal-url="/etc/partials/kpmgpublic/contact-form/contact-form.html" id="contact-form-modal">
+                <p class="desciption line-clamp line-clamp-5">{{hbs.promotionalC.shortDescription}}</p>
+            </a>
+        {{else}}
+            <a href="{{hbs.promotionalC.primaryUrl}}" title="{{hbs.promotionalC.shortTitle}}">
+                <p class="desciption line-clamp line-clamp-5">{{hbs.promotionalC.shortDescription}}</p>
+            </a>
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+{{#if hbs.promotionalC.externalLink}}
+<div class="library-desktop {{#if hbs.promotionalC.isBlog}} hidden{{/if}}">
+    <div class="module-addtolibrary component self-contained clearfix" aria-label="add to Library" data-description="{{{hbs.promotionalC.longDescription}}}" data-shortDescription="{{{hbs.promotionalC.shareDescription}}}" data-href="{{hbs.promotionalC.primaryUrl}}" data-image="{{hbs.promotionalC.imageFileReference}}" data-title="{{{hbs.promotionalC.shortTitle}}}" data-shortTitle="{{hbs.promotionalC.shortTitle}}" article="{{hbs.promotionalC.externalLink}}" style="display:none;" data-article-type="{{ hbs.promotionalC.articleType }}">
+        <a href="#" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0" title="Add to library" aria-haspopup="true">
+            <span class="icon-star"></span>
+        </a>
+    </div>
+</div>
+<div class="primary-cta-space">&nbsp;</div>
+{{/if}}
+</div>
+</section>

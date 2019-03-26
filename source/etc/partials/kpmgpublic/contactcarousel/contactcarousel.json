@@ -1,0 +1,60 @@
+{
+    "hbs": {
+        "contactCarousel": {
+            "title": "sat",
+            "contactCarouselTagUrl": "/etc/partials/kpmgpublic/contactcarousel/contactcarousel.export/1.json?arg=rand",
+            "ctaLabel": "contactCarousel.ctaLabel",
+            "manualSelection": true,
+            "tagId": "Common model and facets/Personas/Client Experience,Common model and facets/Personas/Potential Clients,Common model and facets/Personas/Clients",
+            "contactData": [
+                {
+                    "lastName": "Houwer",
+                    "location": "US-KPMG LLP (US)",
+                    "state": "",
+                    "pagePath": "/content/kpmgpublic/us/en/Home/Contacts/H/hilda-mulock-houwer.html",
+                    "companyName": "",
+                    "shortDescription": "Hilda Mulock Houwer is the Global Head of Advisory for KPMGÂs Energy & Natural Resources (ENR) practice. She led the redesign of the Business Intelligence function of the global ENR Group, developed the business model design for national oil companies and implemented cost optimization techniques at several oil & gas and mining companies.",
+                    "suffix": "",
+                    "contactProfile": "/assets/fpo-images/owlCarouselSlider1.jpg",
+                    "country": "US",
+                    "city": "newyork",
+                    "email": "",
+                    "description": "",
+                    "pageTitle": "Hilda Mulock Houwer",
+                    "alt": "",
+                    "memberFirm": "US-KPMG LLP (US)",
+                    "telephoneNumber": "456-783-9281",
+                    "middleInitial": "",
+                    "contactType": "Leadership",
+                    "salutation": "Ms",
+                    "firstName": "Hilda 1",
+                    "jobTitle": "Partner and Global Advisory Leader Energy & Natural Resources KPMG"
+                },
+                {
+                    "lastName": "Houwer",
+                    "location": "US-KPMG LLP (US)",
+                    "state": "",
+                    "pagePath": "/content/kpmgpublic/us/en/Home/Contacts/H/hilda-mulock-houwer.html",
+                    "companyName": "",
+                    "shortDescription": "Hilda Mulock Houwer is the Global Head of Advisory for KPMGÂs Energy & Natural Resources (ENR) practice. She led the redesign of the Business Intelligence function of the global ENR Group, developed the business model design for national oil companies and implemented cost optimization techniques at several oil & gas and mining companies.",
+                    "suffix": "",
+                    "contactProfile": "/assets/fpo-images/owlCarouselSlider1.jpg",
+                    "country": "US",
+                    "city": "newyork",
+                    "email": "",
+                    "description": "",
+                    "pageTitle": "Hilda Mulock Houwer",
+                    "alt": "",
+                    "memberFirm": "US-KPMG LLP (US)",
+                    "telephoneNumber": "456-783-9281",
+                    "middleInitial": "",
+                    "contactType": "Leadership",
+                    "salutation": "Ms",
+                    "firstName": "Hilda 1",
+                    "jobTitle": "Partner and Global Advisory Leader Energy & Natural Resources KPMG"
+                }
+            ],
+            "templateName": ""
+        }
+    }
+}

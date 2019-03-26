@@ -1,0 +1,70 @@
+<!-- Begin Component: TouchTrifectabanner -->
+<div class="module-touch-trifectabanner component component-trackable">
+    <div class="row-same-height row-full-height trifecta-row">
+        <div class="col-12 col-md-height col-full-height col-top col-nested main-feature-blog">
+            <!-- Main feature blog post -->
+            <a href="{{hbs.touchTrifectaBanner.mainFeatureBlogPost.url}}"
+            class="dashboard-banner-cta" data-topic="{{hbs.touchTrifectaBanner.mainFeatureBlogPost.primaryTopic}}" x-cq-linkchecker="skip" title="{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageAltText}}">
+                <picture>
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.898.549.jpg"
+                        media="screen and (min-width: 641px) and (max-width: 9440px)">
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.584.487.jpg"
+                        media="screen and (min-width: 0px) and (max-width: 640px)">
+                    <img class="main-feature-img img-responsive" src="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.898.549.jpg"
+                        alt="{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageAltText}}" title="{{hbs.touchTrifectaBanner.mainFeatureBlogPost.imageAltText}}"/>
+                </picture>
+                <div class="banner-overlay main-overlay">
+                    <h2 class="banner-text main-overlay-text hidden-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.mainFeatureBlogPost.title}}
+                    </h2>
+                    <h2 class="banner-text main-overlay-text visible-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.mainFeatureBlogPost.shortTitle}}
+                    </h2>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-height col-full-height col-top col-nested second-feature-blog">
+            <!-- Second feature blog post -->
+            <a href="{{hbs.touchTrifectaBanner.secondFeatureBlogPost.url}}"
+            class="dashboard-banner-cta second-blog col-12" data-topic="{{hbs.touchTrifectaBanner.secondFeatureBlogPost.primaryTopic}}" x-cq-linkchecker="skip" title="{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageAltText}}">
+                <picture>
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.537.271.jpg"
+                        media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.583.241.jpg"
+                        media="screen  and (min-width: 0px) and (max-width: 640px)">
+                    <img class="second-feature-img img-responsive" src="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.537.271.jpg"
+                        alt="{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageAltText}}" title="{{hbs.touchTrifectaBanner.secondFeatureBlogPost.imageAltText}}"/>
+                </picture>
+                <div class="banner-overlay secondary-overlay">
+                    <h2 class="banner-text secondary-overlay-text hidden-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.secondFeatureBlogPost.title}}
+                    </h2>
+                    <h2 class="banner-text secondary-overlay-text visible-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.secondFeatureBlogPost.shortTitle}}
+                    </h2>
+                </div>
+            </a>
+            <!-- Second feature blog post -->
+            <a href="{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.url}}"
+            class="dashboard-banner-cta third-blog col-12" data-topic="{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.primaryTopic}}" x-cq-linkchecker="skip" title="{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageAltText}}">
+                <picture>
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.537.271.jpg"
+                        media="screen  and (min-width: 641px) and (max-width: 9440px)">
+                    <source srcset="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.583.241.jpg"
+                        media="screen  and (min-width: 0px) and (max-width: 640px)">
+                    <img class="second-feature-img img-responsive" src="{{hbs.touchTrifectaBanner.assetDomainName}}{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageFileReference}}/jcr:content/renditions/cq5dam.web.537.271.jpg"
+                        alt="{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageAltText}}" title="{{hbs.touchTrifectaBanner.thirdFeatureBlogPost.imageAltText}}"/>
+                </picture>
+                <div class="banner-overlay secondary-overlay">
+                    <h2 class="banner-text secondary-overlay-text hidden-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.thirdFeatureBlogPost.title}}
+                    </h2>
+                    <h2 class="banner-text secondary-overlay-text visible-xs trifecta-line-clamp">
+                        {{hbs.touchTrifectaBanner.thirdFeatureBlogPost.shortTitle}}
+                    </h2>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- End Component: TouchTrifectabanner -->

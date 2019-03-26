@@ -1,0 +1,88 @@
+<section class="module-connectwithme component">
+
+       {{#if hbs.connectWithMe.titleRequired}}
+            <h3 class="primary-head">
+                {{i18n hbs.connectWithMe.cwmTitle}} {{hbs.connectWithMe.firstName}}
+            </h3>
+        {{else}}
+
+			<h3 class="primary-head">
+                {{i18n hbs.connectWithMe.connectwithmeTitle}}
+            </h3>
+	   {{/if}}
+
+
+        <ul class="list-group">
+            <li class="list-group-item" tabindex="0">
+                <span class="icon-location pull-left" aria-label="{{ i18n "kpmg.rfpForm.location" }}"></span>
+                <span class="connectwithme-connect-custom-padding list-desc location-details">
+
+                  {{#if hbs.connectWithMe.city}}
+						   {{#if hbs.connectWithMe.country}}
+								{{hbs.connectWithMe.city}},
+								{{#if hbs.connectWithMe.state}}
+									{{hbs.connectWithMe.state}},
+								{{/if}}
+							{{else}}
+								{{#if hbs.connectWithMe.state}}
+									{{hbs.connectWithMe.city}}, {{hbs.connectWithMe.state}}
+								{{else}}
+									{{hbs.connectWithMe.city}}
+								{{/if}}
+							{{/if}}
+                  {{/if}}
+
+                  {{hbs.connectWithMe.country}}
+
+                </span>
+            </li>
+            {{#if hbs.connectWithMe.telephoneNumber}}
+            <li class="list-group-item">
+                <span class="icon-mobile pull-left"></span>
+                <a class="connectwithme-connect-custom-padding tel-anchor list-desc usrtel" x-cq-linkchecker="skip" href="tel:{{hbs.connectWithMe.telephoneNumber}}" title="{{hbs.connectWithMe.telephoneNumber}}" aria-label="{{i18n "kpmg.rfpForm.phone" }}">
+                  {{hbs.connectWithMe.telephoneNumber}}
+                </a>    
+            </li>
+            {{/if}}
+            <li class="list-group-item people-modal" role="button" tabindex="0">
+
+                <span class="icon-email pull-left"></span>
+                <span id="{{hbs.connectWithMe.contactPageName}}" class="email-data-link people-connect connectwithme-connect-custom-padding connectwithme-contact btn-modal list-desc"
+                data-toggle="modal" data-target="#kpmgModal" data-backdrop="static" data-keyboard="false" data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html"
+                data-remote="{{ hbs.connectWithMe.contactFormLink}}{{ hbs.connectWithMe.contactDetailsLink}}"
+                title="{{i18n hbs.connectWithMe.cwmContactLabel}}">{{i18n hbs.connectWithMe.cwmContactLabel}}
+                </span>
+            </li>
+             {{#if hbs.connectWithMe.channelLinks}}
+                {{#each hbs.connectWithMe.channelLinks}}
+                    <li class="list-group-item">
+                        <span class="icon-{{this.socialIcon}} pull-left"></span>
+                          <a  class="connectwithme-connect-custom-padding list-desc channel-links-icon" href="{{this.socialUrl}}" target="_blank" title="{{this.socialName}}">
+                              {{this.socialName}}
+                          </a>
+                    </li>
+                {{/each}}
+            {{/if}}
+        </ul>
+        {{#if hbs.connectWithMe.cwmRfpShow}}
+        <div class="connectwithme-rfp">
+          <div class="rfp-space">&nbsp;</div>
+          <div class="rfp-container">
+             <h4 class="tertiary-head">{{i18n hbs.connectWithMe.cwmRfpTitle}}</h4>
+            <div class="rfp-cta-space">&nbsp;</div>
+             <p class="pull-right">
+             <img class="rfp-loading show" src="/etc/designs/kpmgpublic/images/loading.gif" alt="" />
+              <span role="button" class="btn-cta submit_focus" tabindex="0">
+                <span class="icon-chevron-right hide"></span>
+                <span class="component-data-link btn-modal hide" id="rfp-process-modal" data-modal-url="/etc/partials/kpmgpublic/rfpprocess/rfpprocess.html"
+                data-remote="{{hbs.connectWithMe.cwmRfpButtonLink}}" data-toggle="modal" data-keyboard="false" data-backdrop="static"
+                data-target="#kpmgModal" title="{{i18n hbs.connectWithMe.cwmRfpButtonText}}">{{i18n hbs.connectWithMe.cwmRfpButtonText}}
+                </span>
+              </span>
+            </p>
+          </div>
+        </div>
+        {{/if}}
+
+
+</section>

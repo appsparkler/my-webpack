@@ -1,0 +1,11 @@
+<!-- Begin Component: TouchRelatedposts -->
+<div class="module-touch-relatedposts component">
+    <h3 class="tertiary-head relatedposts-heading hidden">{{hbs.touchBlogRelatedPosts.relatedPostLabel}}</h3>
+    <div class="web-spinner" {{#if hbs.isAuthor}} style="display:none;" {{/if}}>
+        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1082 547'%2F%3E"  width="1082" height="547" style="height: 400px;" class="desktop-only img-responsive" />
+        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 640 580'%2F%3E"  width="640" height="580" class="mobile-only img-responsive" />
+    </div>
+    <div class="content-wrapper row-same-height row-full-height" data-path="{{hbs.touchBlogRelatedPosts.relatedContentSolrUrl}}" data-items="{{hbs.touchBlogRelatedPosts.noOfItems}}" data-timeboxparam="{{hbs.touchBlogRelatedPosts.timeboxParam}}"></div>
+</div>
+<!-- End Component: TouchRelatedposts -->
+

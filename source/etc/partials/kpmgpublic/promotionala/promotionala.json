@@ -1,0 +1,23 @@
+{
+    "hbs": {
+        "promotionalA": {
+        	"title": "GLOBAL MINING",
+        	"shortTitle" : "GLOBAL",
+        	"shortDescription": "Mining organizations need to adapt across the mining asset lifecycle",
+			"longDescription": "Mining organizations need to adapt across the mining asset lifecycle, from expansion to closure, as changing economic, political...",
+            "imageFileReference": "/assets/fpo-images/promotionalA.jpg",
+            "loadingImage": "/assets/fpo-images/blank.gif",
+            "altText":"Global Mining",
+            "firstName" :"Daniel",
+            "lastName" : "Forrest",
+            "country" : "Toronto",
+            "primaryLabel":"readMore",
+            "primaryUrl":"http://google.com",
+            "secondaryLabel":"Read More",
+            "secondaryUrl":"/readmore.html",
+            "overlay": true,
+            "personalized": false,
+            "numberOfContents": 1
+        }
+    }
+}

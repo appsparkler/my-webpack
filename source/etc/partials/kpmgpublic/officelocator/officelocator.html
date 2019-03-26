@@ -1,0 +1,84 @@
+<!-- Begin Component: Office locator -->
+<section class="module-officelocator component">
+    <div class="col-md-12 findOfficeContainer">
+        <div class="col-md-6 queryContainer" data-countryurl="{{hbs.officelocator.countryJsonPath}}" data-cityserurl="{{hbs.officelocator.cityJsonPath}}" data-officeSearchUrl="{{hbs.officelocator.officesJsonPath}}" data-apikey="{{hbs.officelocator.googleApiKey}}">
+            <div class="titleContainer">
+                <h3 class="secondary-head title">{{i18n hbs.officelocator.title}}</h3>
+                <div class="officeLocatordefaultDescription">
+                    {{i18n hbs.officelocator.description}}
+                </div>                
+            </div>
+            <div class="col-md-12 aligncenter btnContainer">
+                <button class="btn-primary-blue currentLocationBtn"><span class="icon-location"></span>
+                {{i18n hbs.officelocator.geolocationLabel}}</button>
+            </div>
+            <div class="compDescription aligncenter"><span>{{i18n hbs.officelocator.orText}}</span></div>
+
+            <div class="dropdownContainer">
+                <div class="col-md-12 custom-select custom-class-name">
+                    <label for="officecountryselect">{{ i18n hbs.officelocator.selectCountryText }}</label>
+                    <select name="country" class="officecountrydd" id="officecountryselect">
+                        <option title="{{ i18n hbs.officelocator.selectCountryText }}" value="">   
+                            {{ i18n hbs.officelocator.selectCountryText }}
+                        </option>
+                    </select>
+                    <span class="icon-dropdown-chevron select-ikon"></span>
+                </div>
+                <div class="col-md-12 custom-select custom-class-name">
+                    <label for="officecityselect">{{ i18n hbs.officelocator.selectCityText }}</label>
+                    <select name="industry" class="officecitydd" id="officecityselect">
+                        <option title="{{ i18n hbs.officelocator.selectCityText}}" value="">    
+                            {{ i18n hbs.officelocator.selectCityText}} 
+                        </option>
+                    </select>
+                    <span class="icon-dropdown-chevron select-ikon"></span>
+                </div>
+            </div>
+
+            <div class="searchBtnContainer">
+                <a role="button" class="btn-cta searchBtn ctaDisabled" href="javascript:void(0);" title="{{i18n hbs.officelocator.cTALabel}}">
+                    <span class="btn-copy searchLabel">{{i18n hbs.officelocator.cTALabel}}</span>
+                </a>
+            </div>
+        </div>  
+        <div class="col-md-6 partnerResultContainer">            
+            <div class="col-md-12 no-results">
+                {{i18n hbs.officelocator.noResultsText}} 
+            </div>
+            <div class="col-md-12 defaultResultContainer imageContainer no-padding hidden-xs">
+                <div class="defaultImageContainer">
+                    <img src="/etc/designs/kpmgpublic/images/officeLocator_defaultimg_blue.png" alt="Location pin icon"/>
+                </div>
+            </div>
+            <div class="resultsContainer">
+              
+            </div>
+            <div class="row load-more">
+                <div class="col-md-12 alignCenter">
+                    <button class="btn-primary-blue load-more-link">{{i18n hbs.officelocator.loadMoreText}}</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="modal fade languageModal" id="langSelectionModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content langModalContentContainer">
+                <div class="modal-header modal-header-padding">
+                    <span class="icon-close  btn-close close langCloseBtn" data-dismiss="modal"><span class="sr-only"  >{{i18n hbs.officelocator.close}}</span></span>
+                    <h4 class="languageModal-title">{{i18n hbs.officelocator.languageOverlayTitle}}</h4>
+                </div>
+                <div class="modal-body modal-body-padding">
+                    
+                    <div class="modalDescription">{{i18n hbs.officelocator.languageOverlayDescription}}</div>
+                    <div class="selectLangText">{{i18n hbs.officelocator.languageOverlaySelectText}}</div>
+                    <div class="langListContainer">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Component: officelocator -->
+</section>

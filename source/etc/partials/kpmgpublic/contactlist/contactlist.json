@@ -1,0 +1,32 @@
+{
+    "hbs": {
+        "contactList": {
+            "items": [
+                {
+                    "firstName": "Dignissim",
+                    "lastName": "Dignissim",
+                    "jobTitle": "lorem ipusm",
+                    "phoneNumber": "416.778.928",
+                    "contactDetailPageLink": "/content/kpmgpublic/master/en/home/contacts/a/example-contact-detail-page-2.html"
+                },
+                {
+                    "firstName": "Dignissim",
+                    "lastName": "Dignissim",
+                    "jobTitle": "lorem ipusm",
+                    "phoneNumber": "416.778.928",
+                    "contactDetailPageLink": "/content/kpmgpublic/master/en/home/contacts/a/example-contact-detail-page-2.html"
+                },
+                {
+                    "firstName": "Dignissim",
+                    "lastName": "Dignissim",
+                    "jobTitle": "lorem ipusm",
+                    "phoneNumber": "416.778.928",
+                    "contactDetailPageLink": "/content/kpmgpublic/master/en/home/contacts/a/example-contact-detail-page-2.html"
+                }
+            ],
+            "contactTitle": "contactTitle",
+            "contactLink": "#",
+            "contactLabel": "contact"
+        }
+    }
+}

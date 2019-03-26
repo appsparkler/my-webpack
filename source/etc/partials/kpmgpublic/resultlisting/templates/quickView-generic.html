@@ -1,0 +1,20 @@
+<div class="modalBodyLeft">
+   <div class="imgContainer">
+      <a href="{{this.KPMG_URL}}" title="{{this.KPMG_Title}}" tabindex="-1"><img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-src="" data-desktop="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{../assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{this.KPMG_Title}}" class="lazy"/></a>
+   </div>
+</div>
+<div class="modalBodyRight">
+   {{#if this.KPMG_Tab_Type}}
+   <div class="insightsContent">
+      {{#if this.KPMG_Article_Primary_Format}}
+         <span class="icon-{{this.KPMG_Article_Primary_Format}} quickViewIcon"></span>
+      {{/if}}
+      {{#if this.KPMG_Title}}
+         <h3 class="secondary-head"><a href="{{this.KPMG_URL}}">{{this.KPMG_Title}}</a></h3>
+      {{/if}}
+      {{#if this.KPMG_Description}}
+         <p class="description">{{this.KPMG_Description}}</p>
+      {{/if}}
+   </div>
+   {{/if}}
+</div>

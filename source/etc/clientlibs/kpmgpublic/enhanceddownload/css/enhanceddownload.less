@@ -1,0 +1,124 @@
+@import "../../global/css/_variables.less";
+@import "../../global/css/_helpers.less";
+.module-enhanceddownload {
+    min-width: 200px;
+    min-height: 40px;
+    background: none;
+    padding: 0 10px 0 10px;
+    .icon-pdf {
+		.set-font-size(1.8);
+    	color: @light-green;
+    	margin: 0px 5px 0px 0px;
+    }
+    .downloadLabel {
+        .page-description(@gray-40);
+        font-size: 14px;
+        line-height: 12px;
+        display:inline-block;
+        .sentence-case();
+        .downloadLblExtn{
+        	text-transform: uppercase;
+        }
+    }
+    .downloadSize {
+        .file-size(@gray-40);
+    }
+    .download-text {
+		.component-link {
+            .page-description(@gray-40);
+            &:hover {
+              text-decoration:none;
+                .downloadLabel,
+                .downloadSize {
+                    text-decoration: underline;
+                }
+            }
+		}
+    }
+    .contentContainer {
+    	background-color: #F7F7F7;
+    	padding: 12px 10px 15px 10px;
+	}
+	.downloadIcon {
+		float: right;
+    	padding: 0;
+    	margin-top:6px;
+    	img{
+    		float: right;
+    	}
+	}
+	.reportTitle{
+		color:@kpmg-blue;
+		.set-font-size(1.8);
+		line-height: 18px;
+		.hyphen;
+        margin-top:5px;
+        .add-line-clamp(1,1.8rem,1.2,1.8rem,1.2);
+		&.line-clamp.line-clamp:after {
+			display: block !important;
+            background: -webkit-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* Standard syntax*/
+		}
+	}
+	.componentTitle{
+		.page-description(@gray-40);
+        font-family: @kpmgLight;
+        font-size:3.8rem;
+        color: @kpmg-blue;
+        line-height: 3.6rem;
+        .hyphen;
+        .add-line-clamp(1,3.8rem,1,3.8rem,1);
+		&.line-clamp.line-clamp:after {
+			display: block !important;
+            background: -webkit-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* Standard syntax*/
+		}
+	}
+	.reportDesc{
+		color:@gray-40;
+		.set-font-size(1.6);
+		line-height: 18px;
+		.hyphen;
+        .add-line-clamp(1,1.6rem,1.2,1.6rem,1.2);
+		&.line-clamp.line-clamp:after {
+			display: block !important;
+            background: -webkit-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(to left, rgba(247,247,247,1), rgba(255, 255, 255, 0) 30%); /* Standard syntax*/
+		}
+	}
+	.spacer{
+		margin-bottom: 5px;
+	}
+	
+	.pdfIcon{
+		margin-top:6px;
+        padding:0;
+	}
+	.pdfDetails{
+		padding:0 0 0 20px;
+	}
+	@media only screen and (max-width: 640px) {
+	   .pdfDetails{
+			padding:0;
+		}
+        .reportTitle{
+            .add-line-clamp(2,1.6rem,1.2,1.6rem,1.2);
+        }
+        .componentTitle{
+            .add-line-clamp(2,3.6rem,1,3.6rem,1);
+        }
+        .reportDesc{
+            .add-line-clamp(2,1.4rem,1.2,1.4rem,1.2);
+        } 
+
+	}
+}   
+
+
+

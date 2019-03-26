@@ -1,0 +1,11 @@
+{
+    "hbs": {
+        "downloadButton": {
+            "downloadButtonLabel"   : "downloadButtonLabel",
+            "fileType"              : "pdf",
+            "fileSize"              : "656 KB",
+            "downloadButtonLink"    : "https://www.google.com",
+            "anchorId"              : "sampleId"
+        }
+    }
+}

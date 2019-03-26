@@ -1,0 +1,26 @@
+<section class="module-eventpagetitle component clearfix">
+    <h1 class="event-title">{{hbs.eventPageTitle.title}}</h1>
+    {{#if hbs.eventPageTitle.shareButton}}
+    <div class="share-mobile module-share mobile-only">
+        <a id="share-mobile-sharetooltip" class="share-component share-mobile-in-eventpagetitle" href="#" onclick="javascript:showShareUI(gigyaPageProperties); return false;">          
+              <span class="icon-share"></span>
+              <span class="component-link share-label"></span>
+        </a> 
+    </div>
+    <div class="share-desktop desktop-only">
+        {{include "share" resourceType="/apps/kpmgpublic/components/social/share"}}
+    </div>
+    {{/if}}
+    <p class="event-desc">
+        {{hbs.eventPageTitle.description}}
+    </p>
+    <p class="event-date">{{hbs.eventPageTitle.date}} {{hbs.eventPageTitle.location}}</p>
+    {{#if hbs.eventPageTitle.showRegister}}
+       {{#if hbs.eventPageTitle.url}}
+        <a href="{{ hbs.eventPageTitle.url }}" class="btn-cta clearfix">
+            <span class="icon-chevron-right"></span>
+            <span class="btn-copy">{{ i18n hbs.eventPageTitle.defaultRegisterName}}</span>
+        </a>
+       {{/if}}
+    {{/if}}
+</section>

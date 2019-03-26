@@ -1,0 +1,66 @@
+@import "../../global/css/_variables.less";
+
+.module-toppicks.component {
+    padding: 0px;
+    padding-bottom: 7px;
+    h3.component-header {
+        color: #05368b;
+        font-family: 'KPMG Light',Arial,Helvetica,sans-serif;
+        .set-font-size(3.8);
+        line-height: 1;
+        font-weight: normal;
+        padding: 10px;
+    }
+
+    div.articles {
+        padding: 1px;
+        div.article {
+            padding: 8px;
+            border: 1px solid @white;
+            h4.heading {
+                font-family: Arial,Helvetica,sans-serif;
+                .set-font-size(1.8);
+                font-weight: 400;
+                margin-top: 16px;
+                color: @kpmg-blue;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            p.content {
+                font-family: Arial,Helvetica,sans-serif;
+                .set-font-size(1.6);
+                color: @gray-20;
+                padding-top: 14px;
+                padding-bottom: 0;
+            }
+            img {
+                width: 100%;
+            }
+            &.focusOutline{                
+                border : 1px solid @gray-40;
+                box-shadow: 0 0 3px @gray-40;
+            }
+            &.promotional-cell-hover:hover{
+                a {
+                    position: relative;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 640px) {
+    .module-toppicks.component .articles {
+        padding: 10px 10px;
+    }
+    .module-toppicks .article .heading {
+        font-size: 20px;
+        padding-top: 21px;
+    }
+    .module-toppicks .article .content {
+        padding-top: 19px;
+        padding-bottom: 31px;
+    }
+}

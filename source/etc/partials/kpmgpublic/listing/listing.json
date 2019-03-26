@@ -1,0 +1,56 @@
+{
+    "hbs": {
+        "listing": {
+        	"heading" : "Corporate Responsibility",
+            "isHyperLink" : false,
+                  "itemLinks": [
+                    {
+                        "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sitList item, lorem ipsum dolor sit"
+                    },
+                    {
+                       "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "linkUrl": "#",
+                        "linkText": "List item, lorem ipsum dolor sit"
+                    }
+                    
+                ],
+             "itemPlain": [
+                   {
+                        "plainText": "List item, lorem ipsdsadsum dolor sit"
+                    },
+                    {
+                         "plainText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "plainText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "plainText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                        "plainText": "List item, lorem ipsum dolor sit"
+                    },
+                    {
+                         "plainText": "List item, lorem ipsum dolor sit"
+                    }
+
+             ]
+        }
+    }
+}

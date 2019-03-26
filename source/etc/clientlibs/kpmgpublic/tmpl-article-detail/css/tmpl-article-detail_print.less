@@ -1,0 +1,23 @@
+@import "../../global/css/_variables.less";
+
+.printable {
+    .module-tmpl-article-detail {
+        margin: 0 auto !important;
+        overflow: visible !important;
+        padding-top: 0pt !important;
+
+        .module-bodytext .bodytext-data p {
+            float: none;
+        }
+        .parsys-row,
+        .module-bodytext {
+            padding: 0 !important;
+        }
+        .inner-container {
+            width: auto;
+            [class*="col-"] {
+                padding-left: 0;
+            }
+        }
+    }
+}

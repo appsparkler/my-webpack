@@ -1,0 +1,46 @@
+@import "../../../../../../../global/css/_variables";
+//
+ul.mobile-nav-tab-collapse-triggers-component {
+    li {
+        color: @white;
+		&.tab-list-item {
+			font-size: 3.1rem;
+            .icon-text{
+                font-family: @arial;                
+                .set-font-size(1.6);
+                position: relative;
+                left: 0px;
+                //top: -7px;
+                //display: inline-block;
+                //KPMGS-21522
+                padding-left: 10px;
+                display: table-cell;
+                width: auto;
+                white-space: normal;
+                text-align: left;
+                vertical-align: middle;
+                //padding-top: 8px;
+                height: auto;
+                //KPMGS-21522
+                &.default{
+                    display: none;
+                }
+            }
+            .icon-site-selector{
+                display: table;
+                margin: 0 auto;
+            }
+        }
+        &[data-target="#language-locale"] {
+            background-color: @green1 !important;
+        }
+        &.collapsed{
+            .icon-text{
+                display: none;
+                &.default{
+                    display: table-cell;
+                }
+            }
+        }
+    }
+}

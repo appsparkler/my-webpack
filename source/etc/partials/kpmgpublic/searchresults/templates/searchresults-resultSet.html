@@ -1,0 +1,72 @@
+<a title="{{this.KPMG_Title}}" href="{{this.KPMG_URL}}">
+    <div class="result {{this.resultsView}} col-md-height col-sm-height col-full-height" tabindex="0">
+        {{#if this.favourite}}
+        <div class="badge">
+            <span class="icon-star-badge"></span>
+        </div>
+        {{/if}}
+        <div class="imgContainer">
+            <img src="{{assetDomainName}}/content/dam/kpmg/images/platform/blank.gif" data-src="" data-desktop="{{assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{assetDomainName}}{{this.KPMG_Image}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{this.KPMG_Title}}" class="img-responsive lazy" />
+            {{#if this.KPMG_Contact_FN}}
+            <h3 class="alt-secondary-head tertiary-trapezoid-bg image-title">
+                <span>
+                    {{this.KPMG_Contact_FN}} {{this.KPMG_Contact_LN}}
+                    {{#if this.KPMG_Contact_City}}
+                    &#124; {{this.KPMG_Contact_City}}, {{this.KPMG_Contact_Country}}
+                    {{else}}
+                    &#124; {{this.KPMG_Contact_Country}}
+                    {{/if}}
+                </span>
+            </h3>
+            {{/if}}
+        </div>
+        <div class="textContainer">
+            <h3 class="secondary-head line-clamp line-clamp-3"><p> {{this.KPMG_Title}} </p></h3>
+            {{#compare this.KPMG_Tab_Type "eqi" "people"}}
+            <p class="peopleDetails line-clamp line-clamp-2">{{this.KPMG_Contact_Job_Ttl}}</p>
+            {{/compare}}
+            {{#compare this.KPMG_Tab_Type "eqi" "events"}}
+            <span class="icon-date icon"></span>
+            {{/compare}}
+            {{#compare this.KPMG_Tab_Type "neq" "events"}}
+            {{#compare this.KPMG_Tab_Type "neq" "Events"}}
+            {{#compare this.KPMG_Tab_Type "neq" "people"}}
+            {{#compare this.KPMG_Tab_Type "neq" "People"}}
+            {{#if this.KPMG_Article_Primary_Format}}
+            <span class="icon-{{this.KPMG_Article_Primary_Format}} icon"></span>
+            {{else}}
+            <span class="icon-page icon"></span>
+            {{/if}}
+            {{/compare}}
+            {{/compare}}
+            {{/compare}}
+            {{/compare}}
+            {{#if this.KPMG_Article_Date}}
+            <p class="contact-tabs-date contact-tabs-date-insights">{{formatDate this.KPMG_Article_Date_Time}}</p>
+            {{else}}
+            <p class="contact-tabs-date">{{formatDate this.KPMG_Event_Start_time}}</p>
+            {{/if}}
+
+            {{#if this.KPMG_Event_Type}}
+            <p class="contact-tabs-date event-type">{{this.KPMG_Event_Type}}</p>
+            {{/if}}
+
+            <p class="description line-clamp line-clamp-5">{{this.KPMG_Short_Desc}}</p>
+
+            <div class="row">
+                <div class="contactFmLink">
+                    {{#compare this.KPMG_Tab_Type "eqi" "people"}}
+                    <div class="cta-space">&nbsp;</div>
+                    <div class=" pull-right">
+                        <span class="btn-cta contact-btn" tabindex="0">
+                            <span class="icon-email"></span>
+                            <span data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html" data-remote="{{this.peopleContactFormLink}}{{this.KPMG_URL}}" class="contact btn-modal pcfLink modal-open">{{this.contactFormLinkCopy}}
+                            </span>
+                        </span>
+                    </div>
+                    {{/compare}}
+                </div>
+            </div>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,16 @@
+  .laic-transitions(@opacity:opacity; @time:20ms; @trans:ease; @duration:0s) {
+                transition: @arguments;
+                -ms-transition: @arguments;
+                -moz-transition: @arguments;
+                -webkit-transition: @arguments;
+                -o-transition: @arguments;                
+            }
+
+   .laic-gradient(@opacity:70)
+            {
+            filter:  "progid:DXImageTransform.Microsoft.Alpha(Opacity=@opacity)";
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=@opacity)";
+            }
+
+ 
+  

@@ -1,0 +1,41 @@
+div.terms-and-conditions {
+  margin-bottom: 10px;
+
+  div.custom-tc {
+    margin-top: 15px;
+    display: table;
+
+    div {
+      display: table-cell;
+
+      &.checkbox-cell {
+        button.custom-checkbox {
+          border: 1px @gray-80 solid;
+          background-color: @white;
+          color: @light-green;
+          height: 30px;
+          width: 30px;
+
+          span.icon-checkmark {
+            display: none;
+            font-size: 18px;
+          }
+        }
+      }
+
+      &.tc-cell {
+        text-align: justify;
+        vertical-align: top;
+
+        > p {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+div.optional-statement {
+  p {
+    text-align: justify;
+  }
+}

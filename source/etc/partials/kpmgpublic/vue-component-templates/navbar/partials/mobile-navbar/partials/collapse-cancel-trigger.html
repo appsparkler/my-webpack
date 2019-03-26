@@ -1,0 +1,16 @@
+<template id="collapse-cancel-trigger-component-template">
+    <h3 
+        class="
+			collapse-cancel-trigger-component vue-component
+			text-right
+			py-4-1 p-4
+		" 
+		@click="closeCollapse"
+        v-dev="{ isDev: $root.isDev, variant: 'light-purple' }"
+		v-if="vm"
+    >
+        <span class="text-kpmg-violet">
+			\{{ vm.closeTabLabel }}
+		</span>
+    </h3>
+</template>

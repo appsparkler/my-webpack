@@ -1,0 +1,643 @@
+<div class="modal-box-container">
+   <div class="module-rfpprocess component" id="RFPModal"
+      data-RFPModal='{
+      "selectterritory":"{{ i18n hbs.rfpProcess.select }} {{ i18n hbs.rfpProcess.territory }}",
+      "alreadyclientyes":"{{i18n hbs.rfpProcess.alreadyClient.alreadyClientYes}}",
+      "alreadyclientno":"{{i18n hbs.rfpProcess.alreadyClient.alreadyClientNo}}",
+      "industrylangid":"{{hbs.rfpProcess.industryList.industryZthesId}}",
+      "industrylanguage":"{{hbs.rfpProcess.industryList.sesLanguage}}",
+      "analyticid":"{{hbs.rfpProcess.analyticId}}",
+      "countryid":"{{hbs.rfpProcess.countryId}}",
+      "author":{{hbs.rfpProcess.isEditMode}},
+      "serviceurl":"{{hbs.rfpProcess.rfpServiceURL}}",
+      "fileuploadurl":"{{hbs.rfpProcess.rfpFileUploadURL}}",
+      "modifyurl":"{{hbs.rfpProcess.rfpModifyURL}}",
+      "geturl":"{{hbs.rfpProcess.rfpGetURL}}",
+      "submiturl":"{{hbs.rfpProcess.rfpSubmitURL}}",
+      "captchaurl":"{{hbs.rfpProcess.rfpCaptchaURL}}",
+      "deleteurl":"{{hbs.rfpProcess.rfpDeleteURL}}",
+      "cancelurl":"{{hbs.rfpProcess.rfpCancelURL}}",
+      "macgenurl":"{{hbs.rfpProcess.rfpMacGenURL}}",
+      "browse":"{{ i18n hbs.rfpProcess.browse }}",
+      "cancel":"{{ i18n hbs.rfpProcess.cancelFileUpload }}",
+      "remove":"{{ i18n hbs.rfpProcess.remove}}",
+      "corruptfile":"{{ i18n hbs.rfpProcess.errors.errorFileCorrupt}}",
+      "invalidtoken":"{{ i18n hbs.rfpProcess.errors.errorInvalidToken}}",
+      "uploadlimit":"{{ i18n hbs.rfpProcess.errors.errorUploadLimit}}",
+      "generalerror":"{{ i18n hbs.rfpProcess.errors.errorGeneral}}",
+      "duplicatefile":"{{ i18n hbs.rfpProcess.errors.errorDuplicateFile}}",
+      "invalidrfp":"{{ i18n hbs.rfpProcess.errors.errorInvalidRfp}}",
+      "connectionerror":"{{ i18n hbs.rfpProcess.errors.errorConnectionError}}",
+      "nofileselected":"{{i18n hbs.rfpProcess.noFileSelected}}",
+      "servletUrl":"{{i18n hbs.rfpProcess.servletUrl}}"
+      }'
+      >
+      <div class="step" id="start">
+         <div class="row rfp-page-title desktop-only">
+            <div class="inner-container">
+               <div class="col-md-12 rfp-header">
+                  <h2 class="rfp-head" data-starttitle="{{i18n hbs.rfpProcess.start.title }}" data-confirmtitle="{{ i18n hbs.rfpProcess.cancelDialog.cancelDialogTitle }}">{{i18n hbs.rfpProcess.start.title }}</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row" id="rfpMain">
+            <div class="col-md-12 rfp-page-stepcounter">
+               <div class="inner-container">
+                  <div class="steps">
+                     <ul class="current-step">
+                        <li class="active" title="{{ i18n hbs.rfpProcess.start.stepAltText }}" data-stepcounterTitle="{{ i18n hbs.rfpProcess.start.stepName }}">
+                           <span class="text">
+                              <a href="javascript:void(0);" class="rfpSteps">
+                                 <div class="number-group"">
+                                    <span class="number">1</span>
+                                 </div>
+                              </a>
+                           </span>
+                        </li>
+                        <li title="{{ i18n hbs.rfpProcess.step1.stepAltText }}" data-stepcounterTitle="{{ i18n hbs.rfpProcess.step1.stepName }}">
+                           <span class="text">
+                              <a href="javascript:void(0);" class="rfpSteps">
+                                 <div class="number-group">
+                                    <span class="number">2</span>
+                                 </div>
+                              </a>
+                           </span>
+                        </li>
+                        <li title="{{ i18n hbs.rfpProcess.step2.stepAltText }}" data-stepcounterTitle="{{ i18n hbs.rfpProcess.step2.stepName }}">
+                           <span class="text">
+                              <a href="javascript:void(0);" class="rfpSteps">
+                                 <div class="number-group">
+                                    <span class="number">3</span>
+                                 </div>
+                              </a>
+                           </span>
+                        </li>
+                        <li title="{{ i18n hbs.rfpProcess.step3.stepAltText }}" data-stepcounterTitle="{{ i18n hbs.rfpProcess.step3.stepName }}">
+                           <span class="text">
+                              <a href="javascript:void(0);" class="rfpSteps">
+                                 <div class="number-group">
+                                    <span class="number">4</span>
+                                 </div>
+                              </a>
+                           </span>
+                        </li>
+                        <div class="pull-right cancelRFP">
+                           <a href="javascript:void(0);" class="rfp-confirm">
+                              <span class="icon-close rfp-confirm"></span>
+                              <span class="sr-only">{{ i18n hbs.rfpProcess.close }}</span>
+                           </a>
+                        </div>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="rfp-page-steps">
+               <div class="col-md-12 start step0 form-step clearfix">
+                  <div class="row rfp-step-title">
+                     <div class="inner-container">
+                        <h3>{{ i18n hbs.rfpProcess.start.stepName }}</h2>
+                        <p>{{ i18n hbs.rfpProcess.start.description }}</p>
+                     </div>
+                  </div>
+                  <div  class="inner-container">
+                     <div class="text-border author-mode-review-holder" >{{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder"}}</div>
+                     <div class="IE9-msg-area err-msg-area clearfix">
+                        <span class="icon-warning"></span>
+                        <p class="errorMsg">{{ i18n hbs.rfpProcess.ie9FileUploadTitle }}</p>
+                        <p>{{ i18n hbs.rfpProcess.ie9FileUploadMessage }}</p>
+                     </div>
+                     <div class="rfp-nav col-md-12">
+                        <h2 class="primary-head ">{{ i18n hbs.rfpProcess.termsAndConditions }}</h2>
+                        <form action="" role="form" method="post" id="rfpFormStep0" autocomplete="off">
+                           <div class="form-group half-width">
+                              <a href="javascript:void(0);" class="rfp-privacy-entry no-highlight">{{ i18n hbs.rfpProcess.termsAndConditions }}</a>
+                              <input type="checkbox" id="overview-privacy" name="overview-privacy" class="form-control fallback-check" required  data-errormessage-value-missing="{{i18n hbs.rfpProcess.privacyPolicy.errorMsg }}" />
+                              <label class="rfp-start" for="overview-privacy">
+                              {{#if hbs.rfpProcess.privacyStatement}}
+                              {{{hbs.rfpProcess.privacyStatement}}}
+                              {{else}}
+                              <p>
+                              {{i18n hbs.rfpProcess.privacyPolicy.privacyText }}
+                                 <a href="javascript:void(0);" class="rfp-privacy-exit no-highlight"></a>
+                                 <a href="{{ hbs.rfpProcess.privacyPolicy.url }}" class="overfiew-privacy" target="_blank">{{ i18n hbs.rfpProcess.privacyPolicy.label }}</a>
+                                 <div class="outer-shape arrow-bg">
+                                    <div class="right-arrow"></div>
+                                    <div class="arrow-label left-box">{{i18n hbs.rfpProcess.required }}</div>
+                                 </div>
+                            </p>
+                              {{/if}}
+                              </label>
+                           </div>
+                           {{#each hbs.rfpProcess.checkboxes}}
+                           <div class="form-group half-width">
+                              <a href="javascript:void(0);" class="rfp-required-entry no-highlight"></a>
+                              <input type="checkbox" id="{{ this.label }}" name="{{this.label}}" class="form-control fallback-check rfpCheck-input" required data-errormessage-value-missing="{{ this.errorMsg }}" />
+                              <label for="{{this.label}}" class="rfpChecks">
+                                 {{ this.label }}
+                                 <div class="outer-shape arrow-bg">
+                                    <div class="right-arrow"></div>
+                                    <div class="arrow-label left-box">{{i18n hbs.rfpProcess.required }}</div>
+                                 </div>
+                              </label>
+                              <a href="javascript:void(0);" class="rfp-required-exit no-highlight"></a>
+                              <div class="clr"></div>
+                           </div>
+                           {{/each}}
+                           <div>
+                              <div class="clr"></div>
+                              <button type="submit" disabled="disabled" class="btn-cta btn-step0 btn-disabled pull-right">
+                              <span class="btn-copy">
+                              {{ i18n hbs.rfpProcess.continue }}
+                              </span>
+                              </button>
+                              <div class="clr"></div>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="clr"></div>
+                  </div>
+               </div>
+               <div class="col-md-12 contact-info step1 form-step clearfix" data-switchlog="{{hbs.rfpProcess.firstnameLastnameSwitch}}">
+                  <div class="row rfp-step-title">
+                     <div class="inner-container">
+                        <h3>{{ i18n hbs.rfpProcess.step1.stepName }}</h2>
+                        <p>{{ i18n hbs.rfpProcess.step1.description }}</p>
+                     </div>
+                  </div>
+                  <div class="inner-container">
+                     <form action="" role="form" name="rfp-step1" id="rfpFormStep1" autocomplete="off">
+                        {{#if hbs.rfpProcess.firstnameLastnameSwitch}}
+                            <div class="form-group">
+                               <label for="LastName" data-original-label="{{ i18n hbs.rfpProcess.lastNameErrorLabel }}">{{i18n hbs.rfpProcess.lastName }}</label>
+                               <input type="text" class="form-control" name="LastName" id="LastName" maxlength="100" title=""  required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.lastNameErrorLabel }}"/>
+                            </div>
+                            <div class="form-group">
+                               <label for="FirstName" data-original-label="{{ i18n hbs.rfpProcess.firstNameErrorLabel }}">{{i18n hbs.rfpProcess.firstName }}</label>
+                               <input type="text" class="form-control" name="FirstName" id="FirstName" maxlength="100" title=""  required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.firstNameErrorLabel }}" />
+                            </div>
+                        {{else}}
+                            <div class="form-group">
+                               <label for="FirstName" data-original-label="{{ i18n hbs.rfpProcess.firstNameErrorLabel }}">{{i18n hbs.rfpProcess.firstName }}</label>
+                               <input type="text" class="form-control" name="FirstName" id="FirstName" maxlength="100" title=""  required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.firstNameErrorLabel }}" />
+                            </div>
+                            <div class="form-group">
+                               <label for="LastName" data-original-label="{{ i18n hbs.rfpProcess.lastNameErrorLabel }}">{{i18n hbs.rfpProcess.lastName }}</label>
+                               <input type="text" class="form-control" name="LastName" id="LastName" maxlength="100" title=""  required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.lastNameErrorLabel }}"/>
+                            </div>
+                        {{/if}}
+
+                        <div class="clr"></div>
+                        <div class="form-group">
+                           <label for="Email" data-original-label="{{ i18n hbs.rfpProcess.emailErrorLabel }}">{{i18n hbs.rfpProcess.email }}</label>
+                           <input type="email" class="form-control" name="Email" id="Email" title="" maxlength="50"   required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.emailErrorLabel }}" data-errormessage-value-required="{{ i18n hbs.rfpProcess.emailError }}"/>
+                        </div>
+                        <div class="form-group">
+                           <label for="Phone" data-original-label="{{ i18n hbs.rfpProcess.phoneErrorLabel }}">{{i18n hbs.rfpProcess.phone }}</label>
+                           <input type="tel" class="form-control" name="Phone" id="Phone" maxlength="20" title=""   required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.phoneErrorLabel }}" />
+                        </div>
+                        <div class="clr"></div>
+                        <div class="form-group">
+                           <label for="Company" data-original-label="{{ i18n hbs.rfpProcess.companyErrorLabel }}">{{i18n hbs.rfpProcess.company }}</label>
+                           <input type="text" class="form-control" name="Company" id="Company" maxlength="100" title="" required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.companyErrorLabel }}" />
+                        </div>
+                        <div class="form-group">
+                           <label for="JobTitle" data-original-label="{{ i18n hbs.rfpProcess.jobTitleErrorLabel }}">{{i18n hbs.rfpProcess.jobTitle }}</label>
+                           <input type="text" class="form-control" name="JobTitle" id="JobTitle" maxlength="100" title="" required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.jobTitleErrorLabel }}" />
+                        </div>
+                        <div class="clr"></div>
+                        <div class="form-group">
+                           <div class="col-md-12 custom-select custom-class-name">
+                              <label for="Industry" data-original-label="{{ i18n hbs.rfpProcess.industryErrorLabel }}">{{ i18n hbs.rfpProcess.select }} {{ i18n hbs.rfpProcess.industry }} / {{ i18n hbs.rfpProcess.sector }}</label>
+                              <select class="form-control" name="Industry" id="Industry" required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.industryErrorLabel }}">
+                                 <option value="" tille="{{ i18n hbs.rfpProcess.select }} {{ i18n hbs.rfpProcess.industry }} / {{ i18n hbs.rfpProcess.sector }}">{{ i18n hbs.rfpProcess.select }} {{ i18n hbs.rfpProcess.industry }} / {{ i18n hbs.rfpProcess.sector }}</option>
+                              </select>
+                              <div class="selectbox-bg">
+                                 <span class="icon-chevron-down select-icon"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <div class="col-md-12 custom-select custom-class-name">
+                              <label for="Locations" data-original-label="{{ i18n hbs.rfpProcess.locationErrorLabel }}">{{ i18n hbs.rfpProcess.select }}  {{ i18n hbs.rfpProcess.country }} / {{ i18n hbs.rfpProcess.location }} </label>
+                              <select  class="form-control" id="Locations" name="Locations" required data-errormessage-value-missing="{{ i18n hbs.rfpProcess.locationErrorLabel }}">
+                                 <option value="" tille="{{ i18n hbs.rfpProcess.select }}  {{ i18n hbs.rfpProcess.country }} / {{ i18n hbs.rfpProcess.location }}">{{ i18n hbs.rfpProcess.select }}  {{ i18n hbs.rfpProcess.country }} / {{ i18n hbs.rfpProcess.location }}</option>
+                                 {{#each hbs.rfpProcess.locations}}
+                                 <option title="{{ this.locationName }}" value="{{ this.locationEnglishName }}~{{ this.locationCode}}" data-territory="{{ this.territory }}">{{ this.locationName }}</option>
+                                 {{/each}}
+                              </select>
+                              <div class="selectbox-bg">
+                                 <span class="icon-chevron-down select-icon"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="form-group" id="rfpTerritory">
+                           <div class="col-md-12 custom-select custom-class-name">
+                              <label for="Territory">{{ i18n hbs.rfpProcess.select }} {{ i18n hbs.rfpProcess.territory }}</label>
+                              <select class="form-control" id="Territory" name="Territory" data-errormessage-value-missing="{{ i18n hbs.rfpProcess.territoryError }}">
+                              </select>
+                              <div class="selectbox-bg">
+                                <span class="icon-chevron-down select-icon"></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label tabindex="0" for="AlreadyClient">{{ i18n hbs.rfpProcess.client }}</label>
+                           <input type="button" class="rfp-cta-yes isactive-client" value="{{ i18n hbs.rfpProcess.alreadyClient.alreadyClientYes }}"/>
+                           <input type="button" class="rfp-cta-no" value="{{ i18n hbs.rfpProcess.alreadyClient.alreadyClientNo }}"/>
+                           <input type="checkbox" id="AlreadyClient" name="AlreadyClient" class="form-control" checked />
+                        </div>
+                        <div class="form-group" id="captcha-block">
+                           <input type="hidden" name="rfpcq_captchakey" id="rfpcq_captchakey" value=""/>
+                           <div class="rfp-captchaDescription">{{ i18n hbs.rfpProcess.captchaDescription }}</div>
+                           <div id="rfpcq_captchatimer" class="rfpcq_captchatimer">
+                              <div class="rfpform_captchatimer_bar"></div>
+                           </div>
+                           <img id="rfpcq_captchaimg" src="/etc/designs/kpmgpublic/images/loading.gif" data-src="{{hbs.rfpProcess.captcha.url}}" alt="" />
+                           <div class="row">
+                              <div class="col-md-7 pcf-captcha">
+                                 <label for="captcha" data-original-label="{{ i18n hbs.rfpProcess.captchaErrorLabel}}">{{i18n hbs.rfpProcess.captcha.label }}</label>
+                                 <input required type="text" id="captcha" name="captcha" class="form-control"  data-errormessage-value-missing="{{ i18n hbs.rfpProcess.captchaError }}" size="6"/>
+                                 <div class="rfp-captchaHelpLabel">{{ i18n hbs.rfpProcess.captchaHelpLabel }}</div>
+                              </div>
+                              <div class="col-md-12" id="captcha-refresh">
+                                 <a href="javascript:void(0);" class="btn-cta pcf-refresh btn-refresh pull-left">
+                                 <span class="icon-refresh"></span>{{i18n hbs.rfpProcess.captchaRefresh}}
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="rfp-nav col-md-12">
+                           <button type="submit" class="btn-cta btn-step1 pull-right">
+                           <img class="loading-step-one hide pull-right" src="/etc/designs/kpmgpublic/images/loading.gif" alt="" />
+                           <span class="btn-copy">{{ i18n hbs.rfpProcess.continue }}</span>
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-md-12 request-details step2 form-step clearfix">
+                  <div class="row rfp-step-title">
+                     <div class="inner-container">
+                        <h3>{{ i18n hbs.rfpProcess.step2.stepName }}</h2>
+                        <p>{{ i18n hbs.rfpProcess.step2.description }}</p>
+                     </div>
+                  </div>
+                  <div class="inner-container">
+                     <form class="form-modify" action="" role="form" enctype="multipart/form-data" method="post" name="rfp-step2" autocomplete="off">
+                        <div class="form-group row">
+                           <div class="col-md-12">
+                              <p>{{{ hbs.rfpProcess.step2.stepDescription1 }}}</p>
+                           </div>
+                        </div>
+                        <div class="form-group IE9-msg-area err-IE9-area clearfix">
+                           <span class="icon-warning"></span>
+                           <p class="errorMsg">{{ i18n hbs.rfpProcess.ie9FileUploadTitle }}</p>
+                           <p>{{ i18n hbs.rfpProcess.ie9FileUploadMessage }}</p>
+                        </div>
+                        <div class="form-group err-msg-area clearfix">
+                           <span class="icon-close pull-right err-close"></span>
+                           <span class="icon-warning"></span>
+                           <p class="errorMsg" id="rfpfiletext">{{ i18n hbs.rfpProcess.errorUploading }}</p>
+                           <p class="err-msg errorMsg"></p>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-8 col-xs-9 desktop-col">
+                              <div class="output-file" name="output-file-1" id="output-file-1">{{i18n hbs.rfpProcess.noFileSelected}}</div>
+                           </div>
+                           <div class="fileSelect">
+                              <span class="btnWrap">
+                                 <div class="col-md-4 col-xs-3 upload-group">
+                                    <div class="btn-group">
+                                       <a href="javascript:void(0);" tabindex="-1" class="file-browse" id="file-action-1"><span class="icon-search"></span><span class="text-rfpBrowse">{{ i18n hbs.rfpProcess.browse }}</span></a>
+                                    </div>
+                                    <input type="file" class="input-file" name="file-1" id="file-1" title="" />
+                                    <label class="file-upload-label-hidden" tabindex="-1" for="file-1">{{ i18n hbs.rfpProcess.browse }}</label>
+                                 </div>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-8 col-xs-9 desktop-col">
+                              <div class="output-file" name="output-file-2" id="output-file-2">{{i18n hbs.rfpProcess.noFileSelected}}</div>
+                           </div>
+                           <div class="fileSelect">
+                              <span class="btnWrap">
+                                 <div class="col-md-4 col-xs-3 upload-group">
+                                    <div class="btn-group">
+                                       <a href="javascript:void(0);" tabindex="-1" class="file-browse" id="file-action-2"><span class="icon-search"></span><span class="text-rfpBrowse">{{ i18n hbs.rfpProcess.browse }}</span></a>
+                                    </div>
+                                    <input type="file" class="input-file" name="file-2" id="file-2" title="" />
+                                    <label  class="file-upload-label-hidden" tabindex="-1" for="file-2">{{ i18n hbs.rfpProcess.browse }}</label>
+                                 </div>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-8 col-xs-9 desktop-col">
+                              <div class="output-file" name="output-file-3" id="output-file-3">{{i18n hbs.rfpProcess.noFileSelected}}</div>
+                           </div>
+                           <div class="fileSelect">
+                              <span class="btnWrap">
+                                 <div class="col-md-4 col-xs-3 upload-group">
+                                    <div class="btn-group">
+                                       <a href="javascript:void(0);" tabindex="-1" class="file-browse"  id="file-action-3"><span class="icon-search"></span><span class="text-rfpBrowse">{{ i18n hbs.rfpProcess.browse }}</span></a>
+                                    </div>
+                                    <input type="file" class="input-file" name="file-3" id="file-3" title="" />
+                                    <label class="file-upload-label-hidden" tabindex="-1" for="file-3">{{ i18n hbs.rfpProcess.browse }}</label>
+                                 </div>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-8 col-xs-9 desktop-col">
+                              <div class="output-file" name="output-file-4" id="output-file-4">{{i18n hbs.rfpProcess.noFileSelected}}</div>
+                           </div>
+                           <div class="fileSelect">
+                              <span class="btnWrap">
+                                 <div class="col-md-4 col-xs-3 upload-group">
+                                    <div class="btn-group">
+                                       <a href="javascript:void(0);" tabindex="-1" class="file-browse" id="file-action-4"><span class="icon-search"></span><span class="text-rfpBrowse">{{ i18n hbs.rfpProcess.browse }}</span></a>
+                                    </div>
+                                    <input type="file" class="input-file" name="file-4" id="file-4" title="" />
+                                    <label class="file-upload-label-hidden" tabindex="-1" for="file-4">{{ i18n hbs.rfpProcess.browse }}</label>
+                                 </div>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="form-group row">
+                           <div class="col-md-8 col-xs-9 desktop-col">
+                              <div class="output-file" name="output-file-5" id="output-file-5">{{i18n hbs.rfpProcess.noFileSelected}}</div>
+                           </div>
+                           <div class="fileSelect">
+                              <span class="btnWrap">
+                                 <div class="col-md-4 col-xs-3 upload-group">
+                                    <div class="btn-group">
+                                       <a href="javascript:void(0);" tabindex="-1" class="file-browse" id="file-action-5"><span class="icon-search"></span><span class="text-rfpBrowse">{{ i18n hbs.rfpProcess.browse }}</span></a>
+                                    </div>
+                                    <input type="file" class="input-file" name="file-5" id="file-5" title="" />
+                                    <label class="file-upload-label-hidden" tabindex="-1" for="file-5">{{ i18n hbs.rfpProcess.browse }}</label>
+                                 </div>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="msg-space-step2">
+                              <textarea name="{{ i18n hbs.rfpProcess.message }}" class="form-control" id="message" placeholder="{{ i18n hbs.rfpProcess.message }}"></textarea>
+                              <label for="message" class="sr-only">{{ i18n hbs.rfpProcess.message }}</label>
+                              <p class="help-block">{{ i18n hbs.rfpProcess.remainingChars }}<span>5000</span></p>
+                           </div>
+                        </div>
+                        <div class="rfp-nav col-md-12">
+                           <div class="pull-right">
+                              <button type="submit" class="btn-cta btn-step2 pull-right btn-upload">
+                              <img class="loading-step-two hide pull-right" src="/etc/designs/kpmgpublic/images/loading.gif" alt="" />
+                              <span class="btn-copy">{{ i18n hbs.rfpProcess.continue }}</span>
+                              </button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-md-12 contact-info step3 form-step clearfix">
+                  <div class="row rfp-step-title">
+                     <div class="inner-container">
+                        <h3>{{ i18n hbs.rfpProcess.step3.stepName }}</h3>
+                        <p>{{ i18n hbs.rfpProcess.step3.description }}</p>
+                     </div>
+                  </div>
+                  <div class="inner-container">
+                     <div class="col-md-12 err-reviewformmsg-area clearfix">
+                        <span class="icon-warning"></span>
+                        <p class="err-reviewformmsg"></p>
+                     </div>
+                     <div class="col-md-12 col-xs-12 noPad">
+                        {{#if hbs.rfpProcess.step3.title}}
+                            <h2>{{hbs.rfpProcess.step3.title}}</h2>
+                        {{/if}}
+                        <div class="reviewInfo">{{i18n hbs.rfpProcess.step3.stepDescription1}}</div>
+                        <h2 class="cntctHeader">{{i18n hbs.rfpProcess.step3.contactInfo}}</h2>
+                     </div>
+                     <form action="" role="form" name="rfp-step3" class="clearfix">
+                        <div class="clr"></div>
+                        {{#if hbs.rfpProcess.firstnameLastnameSwitch}}
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.lastName }}:&nbsp;</div>
+                           <div class="review-lastname rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.firstName }}:&nbsp;</div>
+                           <div class="review-firstname rfp-review"></div>
+                        </div>
+                        {{else}}
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.firstName }}:&nbsp;</div>
+                           <div class="review-firstname rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.lastName }}:&nbsp;</div>
+                           <div class="review-lastname rfp-review"></div>
+                        </div>
+                        {{/if}}
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.email }}:&nbsp;</div>
+                           <div class="review-email rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.phone }}:&nbsp;</div>
+                           <div class="review-phone rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.jobTitle }}:&nbsp;</div>
+                           <div class="review-jobtitle rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{i18n hbs.rfpProcess.company }}:&nbsp;</div>
+                           <div class="review-company  rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title">{{ i18n hbs.rfpProcess.industry }} / {{ i18n hbs.rfpProcess.sector }}:&nbsp;</div>
+                           <div class="review-industry rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix">
+                           <div class="review-title"> {{ i18n hbs.rfpProcess.country }} / {{ i18n hbs.rfpProcess.location }}:&nbsp;</div>
+                           <div class="review-location rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix territoryBlock">
+                           <div class="review-title"> {{ i18n hbs.rfpProcess.territory }}:&nbsp;</div>
+                           <div class="review-territory rfp-review"></div>
+                        </div>
+                        <div class="form-group review-holder clearfix" id="review-marbottom">
+                           <div class="review-title">{{ i18n hbs.rfpProcess.kpmgClient }}:&nbsp;</div>
+                           <div class="review-alreadyclient rfp-review"></div>
+                        </div>
+                        <div class="request-details-section col-md-12" id="requestDetailsBlock">
+                           <h2>{{i18n hbs.rfpProcess.step3.requestDetails }}</h2>
+                           <div class="form-group">
+                              <div class="row attached-documents">
+                                 <div class="col-md-12 rfp-request">{{ i18n hbs.rfpProcess.attachedDocument }}:&nbsp;</div>
+                                 <div class="clr"></div>
+                                 <ol class="review-attachments rfp-review"></ol>
+                              </div>
+                              <div class="row submit-message">
+                                 <div class="col-md-12 rfp-request rfp-msgHeader">{{ i18n hbs.rfpProcess.messageTemp }}:&nbsp;</div>
+                                 <div class="review-message rfp-review"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="rfp-nav col-md-12">
+                           <button type="submit" class="btn-cta btn-step3 pull-right">
+                           <img class="loading-step-three hide pull-right" src="/etc/designs/kpmgpublic/images/loading.gif" alt="" />
+                           <span class="btn-copy">{{ i18n hbs.rfpProcess.submitRFP }}</span>
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-md-12 contact-info step4 complete form-step clearfix">
+                  <div class="row rfp-step-title">
+                     <div class="inner-container">
+                        <h3>{{ i18n hbs.rfpProcess.step4.stepName }}</h2>
+                        <p>{{ i18n hbs.rfpProcess.step4.description }}</p>
+                     </div>
+                  </div>
+                  <div class="inner-container">
+                     <div class="col-md-12 rfp-success-block">
+                        <div class="rev-desc">{{i18n hbs.rfpProcess.step4.stepDescription1}}</div>
+                        <div class="rev-desc">{{i18n hbs.rfpProcess.step4.stepDescription2}}</div>
+                        <div class="rev-desc rev-desc-spacing">{{i18n hbs.rfpProcess.receiptReferenceText }}</div>
+                        <p><span class="rfpID rfpBold"></span></p>
+                     </div>
+                     <form action="" role="form" name="rfp-step3" class="clearfix">
+                        <div class="col-md-12">
+                            <!-- <div class="review-border divider"></div> -->
+                            <div class="expectation-text-block">
+                                {{ include "bodytext" resourceType="/apps/kpmgpublic/components/content/bodytext"}}
+                            </div>
+                            <!-- <div class="review-border divider"></div> -->
+                        </div>
+                        <div class="clr"></div>
+                        <div class="col-xs-12 col-md-6">
+                           <div class="pull-left printFocus">
+                              <a href="javascript:void(0);" id="printrfp"><span class="icon-print-rfp"></span><span class="printtext">{{ i18n "Print" }}</span></a>
+                           </div>
+                        </div>
+                        <div class="rfp-nav col-xs-12 col-md-6 pull-right btn-cta">
+                           <a href="" class="removeRFP" data-dismiss="modal"><span id="removeRFP"></span>{{ i18n hbs.rfpProcess.close }}</a>
+                        </div>
+                        <div class="clr"></div>
+                     </form>
+                  </div>
+               </div>
+               <div class="clr"></div>
+            </div>
+         </div>
+         <div class="rfp-page-steps">
+            <div class="inner-container cancel-screen">
+               <div class="col-md-12 contact-info form-step steps rfp-nav cancel-rfp-step" id="rfpConfirmBox">
+                  <h2>{{ i18n hbs.rfpProcess.cancelDialog.cancelDialogTitle }}</h2>
+                  <div class="confirm-block">
+                     <div class="col-xs-12 col-md-6">
+                        <div class="pull-left"><a href="" class="removeRFP" data-dismiss="modal">{{ i18n hbs.rfpProcess.cancelDialog.cancelDialogContinue }}</a>
+                        </div>
+                     </div>
+                     <div class="col-xs-12 col-md-6">
+                        <div class="pull-right" id="rfpMobileConfirm"><a href="javascript:void(0);" class="rfpCancel">{{ i18n hbs.rfpProcess.cancelDialog.cancelDialogBack }}</a>
+                        </div>
+                     </div>
+                     <div class="clr"></div>
+                  </div>
+                  <p>{{ i18n hbs.rfpProcess.cancelDialog.cancelDialogDesc1 }}</p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="rfpPrint">
+         <img id="printLogo" src="/etc/designs/kpmgpublic/images/print_rfp_logo.png" width="100" height="40"/>
+         <div class="clr"></div>
+         <h2 class="printReceipt" id="print-head">{{i18n hbs.rfpProcess.step4.description }} (<span class="rfpID" id="noBold"></span>) </h2>
+         <div class="rev-desc">{{i18n hbs.rfpProcess.step4.stepDescription1 }}</div>
+         <div class="rev-desc">{{i18n hbs.rfpProcess.step4.stepDescription2 }}</div>
+         <div class="rev-desc rev-desc-spacing">{{i18n hbs.rfpProcess.receiptReferenceText }}</div>
+         <p><span class="rfpID rfpBold"></span></p>
+         <div class="expectation-text-block" id="printBody">
+
+            {{ include "bodytext" resourceType="/apps/kpmgpublic/components/content/bodytext"}}
+
+         </div>
+         <p class="reviewInfo">{{i18n hbs.rfpProcess.printInfoSubmitted}}</p>
+         <div class="review-border divider"></div>
+         <h2 class="printHeader">{{i18n hbs.rfpProcess.step3.contactInfo }}</h2>
+         {{#if hbs.rfpProcess.firstnameLastnameSwitch}}
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.lastName }}:&nbsp;</div>
+            <div class="review-lastname rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.firstName }}:&nbsp;</div>
+            <div class="review-firstname rfp-review"></div>
+         </div>
+         {{else}}
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.firstName }}:&nbsp;</div>
+            <div class="review-firstname rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.lastName }}:&nbsp;</div>
+            <div class="review-lastname rfp-review"></div>
+         </div>
+         {{/if}}
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.email }}:&nbsp;</div>
+            <div class="review-email rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.phone }}:&nbsp;</div>
+            <div class="review-phone rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.jobTitle }}:&nbsp;</div>
+            <div class="review-jobtitle rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{i18n hbs.rfpProcess.company }}:&nbsp;</div>
+            <div class="review-company  rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title">{{ i18n hbs.rfpProcess.industry }} / {{ i18n hbs.rfpProcess.sector }}:&nbsp;</div>
+            <div class="review-industry rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix">
+            <div class="print-title"> {{ i18n hbs.rfpProcess.country }} / {{ i18n hbs.rfpProcess.location }}:&nbsp;</div>
+            <div class="review-location rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix territoryBlock">
+            <div class="print-title"> {{ i18n hbs.rfpProcess.territory }}:&nbsp;</div>
+            <div class="review-territory rfp-review"></div>
+         </div>
+         <div class="print-group review-holder clearfix" id="review-marbottom">
+            <div class="print-title">{{ i18n hbs.rfpProcess.client }}:&nbsp;</div>
+            <div class="review-alreadyclient rfp-review"></div>
+         </div>
+         <div class="request-details-section" id="requestDetailsBlock">
+            <h2 class="printHeader">{{i18n hbs.rfpProcess.step3.requestDetails }}</h2>
+            <div class="print-group">
+               <div class="attached-documents">
+                  <div class="print-request">{{ i18n hbs.rfpProcess.attachedDocument }}:&nbsp;</div>
+                  <div class="review-attachments print-review"></div>
+               </div>
+               <div class="submit-message">
+                  <div class="print-request rfp-msgHeader">{{ i18n hbs.rfpProcess.message }}:&nbsp;</div>
+                  <div class="review-message print-review"></div>
+               </div>
+            </div>
+         </div>
+         <div class="review-border divider"></div>
+         <div id="printFooter"></div>
+      </div>
+      <div class="clr"></div>
+   </div>
+</div>
+</div>
+</div>

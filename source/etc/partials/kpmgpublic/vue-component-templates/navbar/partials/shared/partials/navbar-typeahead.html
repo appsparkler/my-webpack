@@ -1,0 +1,19 @@
+<template id="navbar-typeahead-component-template">
+	
+	<type-ahead
+		class="
+			navbar-typeahead-component vue-component 
+			d-inline
+		"
+		:src="url"
+		:getresponse="getResponse"
+		:delaytime="parseInt($store.state.data.search.serverData.config.typeaheadDelayTime)"
+		:selectfirst="false"
+		:onhit="onHit"
+		:placeholder="$store.state.data.search.serverData.config.placeholder"
+		@keyup.enter="onEnter"
+		v-model="inputValue"
+		@typeaheadkeyupenter="onEnter"
+	></type-ahead>
+
+</template>

@@ -1,0 +1,67 @@
+<div id="navigation-v2-data-search"
+	data-mobile-tab='{
+		"id": "search",
+		"icon": "icon-search",
+		"closeTabLabel": "{{i18n 'kpmg.search.closeSearch'}}"
+	}'
+	
+    data-search='{
+        "title": "{{i18n hbs.navigation.searchIconToolTip}}"                 
+    }'
+     
+	data-server-data='{
+		"queryParams":{
+			"typeahead": {
+				"FILTER": "DE={{hbs.searchInput.commonModelId}}",
+				"DE": "{{hbs.searchInput.localCountryModelId}}",
+				"prefix_results": "{{hbs.searchInput.sesPrefixResultsLimit}}",
+				"language": "{{hbs.searchInput.SESLanguage}}",
+				"lang": "{{hbs.searchInput.SESLanguage}}",
+				"service": "PREFIX",
+				"TBDB": "disp_taxonomy",
+				"template": "service.json"			
+			}
+		},
+		"config": {
+			"searchResultsPath": "{{hbs.searchInput.searchResultPath}}",
+			"typeaheadWait": "{{hbs.searchInput.waitTimeAutoSuggestionResponse}}",
+			"placeholder": "{{i18n hbs.searchInput.searchBarDefaultCopy}}"
+		}
+	}'
+	
+	data-query-params='{
+		"sesPrefixResultsLimit" :{{hbs.searchInput.sesPrefixResultsLimit}}, 
+		"commonModelId" : "{{hbs.searchInput.commonModelId}}", 
+		"localCountryModelId":"{{hbs.searchInput.localCountryModelId}}", 
+		"searchResultPath":"{{hbs.searchInput.searchResultPath}}",
+		"searchLanguage":"{{hbs.searchInput.SESLanguage}}",
+		"yourRecentSearchCopy":"{{i18n hbs.searchInput.yourRecentSearchCopy}}"
+	}'
+	
+	data-i18n-labels='{
+		"search": "{{i18n hbs.searchInput.searchBarDefaultCopy}}"
+	}'
+>
+</div>
+<!--
+
+	
+	'{
+		"sesPrefixResultsLimit" :{{hbs.searchInput.sesPrefixResultsLimit}}, 
+		"commonModelId" : "{{hbs.searchInput.commonModelId}}",
+		"localCountryModelId":"{{hbs.searchInput.localCountryModelId}}",
+		"searchResultPath":"{{hbs.searchInput.searchResultPath}}",
+		"searchLanguage":"{{hbs.searchInput.SESLanguage}}",
+		"yourRecentSearchCopy":"{{i18n hbs.searchInput.yourRecentSearchCopy}}"
+	}'
+
+
+	// for alt text, placeholder
+	{{i18n hbs.searchInput.searchBarDefaultCopy}}
+
+	{{i18n "search"}}
+	
+
+	// to close search tab
+	
+-->

@@ -1,0 +1,30 @@
+@import "../../global/css/_variables.less";
+
+div.articles-placeholder {
+  margin-top: 15px !important;
+
+  div.col-lg-4 {
+    height: 155px;
+
+    div {
+      background-color: fade(@white, 40%);
+      height: 100%;
+      padding: 40px 53px;
+
+      input[type=button] {
+        width: 100%;
+        background-color: @light-blue;
+        border: 0;
+        color: @white;
+        padding: 14px;
+        font-weight: bold;
+        width: 240px !important;
+        overflow: hidden;
+
+          &:hover, &:active {
+            background: @kpmg-blue;
+        }
+      }
+    }
+  }
+}

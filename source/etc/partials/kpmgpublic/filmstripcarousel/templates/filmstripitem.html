@@ -1,0 +1,71 @@
+{{#if this.isArticle}}
+<li class="each-slide article">
+   <a href="{{#if  this.translatedCTAURL }} {{this.translatedCTAURL}} {{else}} {{this.articleURL}} {{/if}}" class="item" title="{{this.imageAltText}}">
+      <div class="item-header-container">
+         <h4 class="item-header line-clamp line-clamp-2">{{this.shortTitle}}</h4>
+      </div>
+      <span class="pull-left">
+	  {{#if this.imageGalleryConfigExists}}
+                    <div data-picture data-alt='{{this.imageAltText}}'>
+
+
+                        {{#this.imageGalleryConfig}}
+
+                        <div data-src="{{../../assetDomainName}}{{../this.imageFileReference}}/jcr:content/renditions/cq5dam.web.{{this.width}}.{{this.height}}.jpg" data-media="(min-width: {{this.dwidth}}px)"></div>
+                        {{#if @last}}
+                                <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.width}} {{this.height}}'%2F%3E" alt="{{imageAltText}}" />
+                        {{/if}}
+                        {{/this.imageGalleryConfig}}
+
+          				</div>
+                      {{else}}
+                 <img data-desktop="{{../assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.300.jpg" data-mobile="{{../assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.300.jpg" alt="{{this.imageAltText}}" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 300'%2F%3E" class="lazy" />
+                    {{/if}}
+
+	  </span>
+      <span class="pull-left short-description line-clamp line-clamp-5">
+      {{this.shortDescription}}
+      </span>
+   </a>
+</li>
+{{else}}
+<li class="each-slide event">
+   <a href="{{#if  this.translatedCTAURL }} {{this.translatedCTAURL}} {{else}} {{this.eventURL}} {{/if}}" class="item">
+      <div class="item-header-container">
+         <h4 class="item-header line-clamp line-clamp-2">{{this.eventShortTitle}}</h4>
+      </div>
+      <div class="filmstripcarousel-event-date">
+         <div class="filmstripcarousel-event-calendar">
+            <div class="filmstripcarousel-event-icon">
+               <div class="filmstripcarousel-event-month">{{this.liveTextMonth}}</div>
+               <span class="icon-calendar"></span>
+               <div class="filmstripcarousel-event-day">{{this.liveTextDate}}</div>
+            </div>
+         </div>
+          <div class="filmstripcarousel-event-address line-clamp line-clamp-5">
+            {{#compare this.eventStartDate "eq" this.eventEndDate}}
+            <p>{{formateDateSolr this.eventStartDateLocal 'mmm dd' this.eventStartDate}}  </p>
+            {{/compare}}
+             {{#compare this.eventStartDate "neq" this.eventEndDate}}
+            <p>{{formateDateSolr this.eventStartDateLocal 'mmm dd' this.eventStartDate}}  - {{formateDateSolr this.eventEndDateLocal 'mmm dd' this.eventEndDate}} </p>
+            {{/compare}}
+            {{#if this.venue}}
+              <p>{{this.venue}}</p>
+            {{/if}}
+            {{#if this.city}}
+              <p>{{this.city}}</p>
+            {{/if}}
+            {{#if this.state}}
+              <p>{{this.state}}</p>
+            {{/if}}
+            {{#if this.country}}
+              <p>{{this.country}}</p>
+            {{/if}}
+         </div>
+      </div>
+      <p class="filmstripcarousel-event-description line-clamp line-clamp-3">
+        {{this.eventShortDescription}}
+      </p>
+   </a>
+</li>
+{{/if}}

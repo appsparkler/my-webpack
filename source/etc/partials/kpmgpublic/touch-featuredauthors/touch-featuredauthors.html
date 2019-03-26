@@ -1,0 +1,19 @@
+<!-- Begin Component: TouchFeaturedauthors -->
+<div class="module-touch-featuredauthors clearfix component">
+
+    {{#each hbs.touchFeaturedAuthors.featuredAuthorsList}}
+    <a class="author" href="{{this.pagePath}}" title="{{this.altText}}" x-cq-linkchecker="skip" data-countquery="{{this.postCount}}">
+        <div class="author-image">
+        <img src="{{this.image}}/jcr:content/renditions/cq5dam.web.310.190.jpg" alt="{{this.altText}}" title="{{this.altText}}"/>
+        </div>
+        <div class="author-details-overlay">
+            <h3 class="author-name">{{this.salutation}} {{this.firstName}} {{this.middleName}} {{this.lastName}}</h3>
+            <p class="author-role">{{this.authorRole}}</p>
+            <p class="blogs-count"><span class="count"></span> {{hbs.touchFeaturedAuthors.postCountLabel }}</p>
+        </div>
+
+    </a>
+    {{/each}}
+
+</div>
+<!-- End Component: TouchFeaturedauthors -->

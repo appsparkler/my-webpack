@@ -1,0 +1,103 @@
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../share/css/share";
+@import "../../connectandrfp/css/connectandrfp";
+@import "../../image/css/image";
+@import "../../global/css/_variables.less";
+@import "../../bodytext/css/bodytext";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../amcharts/css/amcharts";
+@import "../../ammaps/css/ammaps";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+@import "../../addtolibrary/css/addtolibrary";
+
+.module-tmpl-tool {
+
+	.module-amcharts {
+
+        p {
+            padding-left: 0;
+        }
+
+        .tertiary-head {
+            margin-left: 0;
+        }
+    }
+
+    .module-ammaps {
+        p {
+            padding-left: 0;
+        }
+
+        .tertiary-head {
+            margin-left: 0;
+        }
+    }
+
+    .module-amcharts,
+    .module-ammaps {
+        .codeSnippet {
+            margin: 0;
+        }
+    }
+
+    .parsys-container {
+        border: 0 none;
+
+        .parsys-row {
+            border-top: 0 none;
+        }
+    }
+}
+
+@media (min-width:@desktop-min-fixed) {
+
+    .module-tmpl-tool {
+
+        .parsys-container {
+            border: 9px solid @gray-94;
+
+            .parsys-row {
+                border-top: 18px solid @gray-94;
+                &:first-child {
+                  border-top: 0 none;
+                }
+            }
+        }
+
+    }
+
+}
+
+@media (min-width:@desktop-min-fluid) {
+
+    .module-tmpl-tool {
+
+        .parsys-container {
+            border: 9px solid @gray-94;
+
+            .parsys-row {
+                border-top: 18px solid @gray-94;
+                &:first-child {
+                  border-top: 0 none;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 640px) {
+
+	.module-tmpl-tool {
+		/* To fix iphone issue: KPMGS-10965 */
+		.module-htmlcontainer iframe {
+		    width: 100vw;
+		}
+	}
+}

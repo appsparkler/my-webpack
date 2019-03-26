@@ -1,0 +1,243 @@
+    @import "../../global/css/_variables.less";
+//Media queries
+@mobile: ~"only screen and (max-width: 640px)";
+@desktop: ~"only screen and (min-width: 641px)";
+body {
+    overflow: scroll;
+}
+
+.access-outline1 {
+    outline: none;
+    box-shadow: inset 0 0 3px @light-blue;
+}
+.access-outline2 {
+    outline: none;
+    box-shadow: 0 0 3px @light-blue;
+}
+
+.module-registrationinterests {
+    background-color: transparent;
+    position: relative !important;
+    @media @mobile {
+        padding-top: 0px;
+    }
+    .tab-menu {
+        background-color: transparent;
+        a {
+            width: 200px;
+            margin: 0px;
+            float: left;
+            color: @gray-40;
+            line-height: 50px;
+            text-align: center;
+            text-transform: capitalize;
+            background-color: @gray-87;
+            /*As per KPMGS-14156 requirement*/
+            .set-font-size(1.8);
+            &.tab-title:hover {
+                text-decoration: underline;
+            }
+            &:nth-child(4n+1) {
+                margin: 0px 5px 0px 0px;
+            }
+            &:nth-child(4n+2),
+            &:nth-child(4n+3) {
+                margin: 0px 5px 0px 5px;
+            }
+            &:nth-child(4n+4) {
+                margin: 0px 0px 0px 5px;
+            }
+            @media @mobile {
+                margin: 0px 10px 0px 0px !important;
+            }
+            &.active {
+                color: @kpmg-blue;
+                background-color: @white;
+            }
+        }
+        a:focus {
+            .access-outline1;
+        }
+    }
+    .tab-title-accordion {
+        margin: 0px 0px 10px 0px;
+        float: left;
+        width: 100%;
+        padding: 15px 10px;
+        background-color: @white;
+        span.action-icon {
+            margin-left: 0px;
+            color: @kpmg-blue;
+            background-color: @white;
+        }
+        span.text-data {
+            padding-left: 5px;
+        }
+        span.expand-status:after {
+            float: right;
+            color: @kpmg-blue;
+            content: "\e90c";
+            font-family: "icomoon";
+            font-size: 16px;
+            font-size: 1.6rem;
+            top: 1px;
+            position: relative;
+        }
+        &.active {
+            span.expand-status:after {
+                content: "\e90f";
+            }
+        }
+    }
+    span.action-icon {
+        display: inline;
+        &:after {
+            top: 2px;
+            right: -5px;
+            content: "\e900";
+            font-size: 16px;
+            font-size: 1.6rem;
+            color: @light-green;
+            position: relative;
+            font-family: "icomoon";
+        }
+    }
+    span.text-data {
+        padding-left: 18px;
+        line-height: normal;
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(~"100% - 50px");
+    }
+    .tags-holder {
+        float: left;
+        width: 100%;
+        background-color: @white;
+        @media @mobile {
+            margin: 0px 0px 10px 0px;
+            padding-top: 10px !important;
+        }
+        .tag-holder-wrapper {
+            width: 25%;
+            float: left;
+            .tag-holder:focus {
+                .access-outline2;
+            }
+            @media @mobile {
+                width: 100%;
+            }
+        }
+        @media @desktop {
+            &.column-arrangement {
+                .tag-holder {
+                    &.column1 {
+                        margin: 9px 24px 9px 9px;
+                        width: calc(~"100% - 33px");
+                    }
+                    &.column2 {
+                        margin: 9px 18px 9px 15px;
+                        width: calc(~"100% - 33px");
+                    }
+                    &.column3 {
+                        margin: 9px 14px 9px 19px;
+                        width: calc(~"100% - 33px");
+                    }
+                    &.column4 {
+                        margin: 9px 10px 9px 23px;
+                        width: calc(~"100% - 33px");
+                    }
+                }
+            }
+        }
+        .tag-holder {
+            float: left;
+            margin: 10px;
+            cursor: pointer;
+            line-height: 76px;
+            box-sizing: border-box;
+            width: calc(~"100% - 20px");
+            border: 1px solid @gray-80;
+            background-color: transparent;
+            @media @mobile {
+                margin: 0px 10px 10px 10px;
+            }
+            @media @desktop {
+                &:nth-child(4n+1) {
+                    margin: 10px 20px 10px 10px;
+                    width: calc(~"25% - 30px");
+                }
+                &:nth-child(4n+2),
+                &:nth-child(4n+3) {
+                    width: calc(~"25% - 40px");
+                    margin: 10px 20px 10px 20px;
+                }
+                &:nth-child(4n+4) {
+                    width: calc(~"25% - 30px");
+                    margin: 10px 10px 10px 20px;
+                }
+            }
+            &.add {
+                color: @white;
+                background-color: @medium-blue;
+                border: 1px solid @medium-blue;
+                span.action-icon {
+                    &:after {
+                        color: @white;
+                        content: "\e93f";
+                    }
+                }
+            }
+        }
+    }
+    .done-button {
+        margin: 20px 0px 10px 10px;
+        float: right;
+        color: @kpmg-blue;
+        line-height: 48px;
+        text-align: center;
+        display: inline-block;
+        width: calc(~"25% - 13px");
+        background-color: @white;
+        .set-font-size(1.8) ;
+        cursor: pointer;
+        @media @mobile {
+            margin: 10px 0px 15px 0px;
+            width: 100%;
+        }
+        // div:before {
+        //     content: "\e90e";
+        //     font-size: 16px;
+        //     font-size: 1.6rem;
+        //     color: @light-green;
+        //     font-family: "icomoon";
+        // }
+        &:hover span {
+            text-decoration: underline;
+        }
+        @media @mobile {
+            margin: 10px 0 16px;
+        }
+    }
+    .done-button.div:focus {
+        .access-outline2;
+    }
+    .no-display {
+        display: none;
+    }
+    .no-padding {
+        padding: 0px;
+    }
+    .clear {
+        clear: both;
+    }
+    @media @desktop {
+        .mobile-only {
+            display: none !important;
+        }
+    }
+    @media @mobile {
+        .desktop-only {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+/* IMPORT ALL THE COMPONENT LESS FILES */
+@import "../../contactdetail/css/contactdetail";
+@import "../../image/css/image";
+@import "../../tagcloud/css/tagcloud";
+@import "../../contactcredentials/css/contactcredentials";
+@import "../../connectwithme/css/connectwithme";
+@import "../../contact-tabs/css/contact-tabs";
+@import "../../socialwidget/css/socialwidget";
+@import "../../bodytext/css/bodytext";
+@import "../../htmlcontainer/css/htmlcontainer";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+
+.module-tmpl-contact-detail {
+	.contacts .module-bodytext {
+        padding-left: 10px;
+    }   
+}
+@media (min-width: @desktop-min-fixed) { 
+    .module-tmpl-contact-detail {
+        .connectwithmewrap {
+            position: relative !important; 
+        }
+        .contactcredentials > h4 {
+            margin-left: 10px;
+        }
+        .contact-tabs > h4 {
+            margin-left: 5px;
+        }
+
+    }
+    
+}

@@ -1,0 +1,141 @@
+@import "../../global/css/_variables.less";
+
+#modal-container-quick-view-people {
+   // everything in here is for the mobile break point (currently up to 640px)
+    .modal-dialog {    	
+		.modal-content {
+			border-radius: 0;
+		    border-top: 5px solid @yellow;
+		    padding: 0px 25px 20px 20px;
+    		   
+		.close {
+			background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    		border: medium none;					        
+	        color: @purple;
+	        .font-size(3.0);
+	        opacity: 1;
+	        position: absolute;
+			right: -14px;
+			top: -14px;
+			z-index: 10;
+		}	
+		
+		.no-padding{
+			padding:0;
+			margin:10px 0;
+		}		
+		.module-share{
+			margin: 0 0 10px;
+    		padding: 0;
+		}
+		.e-date{
+			margin:15px 0px 15px;
+		}
+		span.icon-chevron-right {
+	      //color: @light-green;
+	      margin: 0 5px 0 0;
+	      .font-size(1.4);
+	    }
+		.col8{
+			padding-left:0;
+			span.mobile-only.event-date{
+				.font-size(1.4);	
+				color: @kpmg-blue;
+				display: inline-block!important;
+				padding-right: 5px;
+			}
+			.cta{
+				margin-top: 60px;	
+			}
+			.contact{
+				color:@light-blue;
+				margin: 20px 0px 0px;
+			}			
+			.component-head{
+				line-height:20px;
+				margin-bottom: 10px;
+			}
+			.col6{
+				padding: 0;
+				text-transform: uppercase;
+				a{
+					color: @gray-40;					
+					.font-size(1.4);
+				}
+				a:hover{
+					color: @light-green;
+				}
+			}			
+		}		
+		.mobile-only {
+			display:block !important;
+		}
+		.desktop-only {
+			display:none !important;
+		}
+		}
+	}
+}	
+@media (min-width: @desktop-min-fixed) {
+    #modal-container-quick-view-people { 
+        // everything in here will be for breakpoint at 641px and up (until the next breakpoint)
+        .modal-dialog {		
+			.modal-content{
+	    		
+		    	padding: 13px 25px 20px 20px; 	    
+			    
+			    .modal-body {		        
+					padding: 0;
+			    }
+			    
+			    .row {
+			        margin: 0;
+			    }
+			    span.icon-chevron-right {
+					//color: @light-green;
+					.font-size(1.4);
+					margin: 0 5px 0 0;
+				}
+				.top-star {
+					left: 35px;
+					position: absolute;
+					top: 0;
+					z-index: 9;
+				}			
+				.component{
+					padding:0
+				}
+				.module-share{
+					margin: 10px 0 0;
+		    		padding: 0;
+				}	    
+			   
+			    .col-md-4,
+				.col-md-6,
+			    .col-md-8,
+				.col-md-12{
+			        padding: 0;
+			    }
+			    .module-downloadbutton span{
+			    	margin-right: 10px;
+			    }
+				.col-md-3,.col-md-9 {
+					margin: 10px 0;
+					padding:0;
+				}
+				.col-md-8 {
+					padding-left: 10px;
+				}				
+			    .mobile-only {
+					display:none !important;
+				}
+				.desktop-only {
+					display:block !important;
+				}
+			}
+		}	
+	}
+}
+
+
+

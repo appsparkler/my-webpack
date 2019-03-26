@@ -1,0 +1,36 @@
+<template id="site-selector-card-component-template">
+    <a
+        class="
+			site-selector-card-component vue-component
+			card
+            p-3
+			h-100
+			rounded-0
+		"
+        v-process-url="vm.linkUrl"
+        v-if="vm && vm.linkUrl"
+        v-dev="{ isDev: $root.isDev, variant: 'warning' }"
+    >
+        <!-- CARD HEADING -->
+        <h3
+            class="card-title text-white"
+        >
+            \{{ vm.title }}
+        </h3>
+
+        <!-- DESCRIPTION -->
+        <div
+            class="card-text text-white"
+        >
+            \{{ vm.description }}
+        </div>
+
+        <!-- IMAGE -->
+        <img
+            class="card-img rounded-0"
+            :src="vm.imgUrl"
+            :alt="vm.altText"
+        >
+
+    </a>
+</template>

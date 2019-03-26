@@ -1,0 +1,38 @@
+<template id="desktop-navbar-component-template">
+    <!-- DESKTOP NAVBAR -->
+    <nav 
+        class="
+            desktop-navbar-component vue-component
+            navbar navbar-expand 
+            bg-white  
+            position-static rounded-0
+        "
+        v-dev="{isDev: $root.isDev, show: true }"
+        v-if="vm && vm.logo && vm.navbarNav"
+    >
+        <!-- NAVBAR BRAND -->
+        <logo-image
+            v-dev="{isDev: $root.isDev, show:true, color: 'deeppink' }" 
+            v-if="vm.logo"
+            :vm="vm.logo" 
+        ></logo-image>
+
+        <!--NAV LINKS-->
+        <navbar-nav
+            class="mx-auto"
+            v-if="vm.navbarNav"
+            :vm="vm.navbarNav"
+        ></navbar-nav>
+
+        <!-- NAVBAR ICON MENU -->
+        <navbar-ikon-menu 
+            :vm="vm"
+        ></navbar-ikon-menu>
+    </nav>
+</template>
+
+
+<!-- DESKTOP NAVBAR PARTIALS -->
+{{ include 
+	"desktop-navbar-partials" resourceType="/etc/partials/kpmgpublic/vue-component-templates/navbar/partials/desktop-navbar/desktop-navbar_partials.hbss"
+}}

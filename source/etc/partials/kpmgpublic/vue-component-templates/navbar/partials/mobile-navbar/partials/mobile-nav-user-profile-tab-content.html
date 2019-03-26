@@ -1,0 +1,24 @@
+<template id="mobile-nav-user-profile-tab-content-component-template">
+	<div
+		class="
+			mobile-nav-user-profile-tab-content-component vue-component collapse
+		"
+		v-if="vm"
+	>
+		<!--LINK LIST-->
+		<ul class="text-left">
+			<sub-list-item
+				v-for="(item, key) in vm.flyout.cell1.links"
+				v-bind:key=" key + 'account-list-sublist-item' "
+				:vm="item"
+				v-if="item.label"
+			></sub-list-item>
+		</ul>
+
+		<collapse-cancel-trigger 
+			:vm="vm"
+		>
+		</collapse-cancel-trigger>
+		
+	</div>
+</template>

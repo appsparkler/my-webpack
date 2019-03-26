@@ -1,0 +1,63 @@
+<!-- Begin Component: CommunicationPreferences -->
+<section class="module-communication-preferences component p-0">
+    <div class="subscriptions-overlay">&nbsp;</div>
+    <div class="preferences-wrapper" id="communication-preferences-tabs"></div>
+</section>
+<!-- End Component: SubscriptionPreferences -->
+<!-- unsaved changes modal -->
+<div class="modal fade save-changes-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="icon-close btn-close close" data-dismiss="modal">
+                    <span class="sr-only">{{i18n "kpmg.personalization.myaccount.profile.close"}}</span>
+                </span>
+                <h4 class="heading">{{i18n  "kpmg.personalization.myinterests.interests.unsavedchanges"}}</h4>
+            </div>
+            <div class="modal-body">
+                <p class="changes-msg">
+                    {{i18n "kpmg.personalization.myinterests.interests.navigatefrompage_withoutsaving"}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-6 col-xs-12 pull-right">
+                    <button type="button" class="btn btn-default return-to-page" data-dismiss="modal">
+                        <span class="icon-chevron-right"></span>
+                        {{i18n "kpmg.personalization.myinterests.interests.returntopage"}}
+                    </button>
+                </div>
+                <div class="col-md-6 col-xs-12 pull-left">
+                    <button type="button" class="no-btn btn continue">
+                        <span class="icon-close"></span>
+                        {{i18n "kpmg.rfpForm.continue"}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- successfull save changes modal -->
+<div class="modal fade changes-saved verfyEmailModal"  role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="icon-close btn-close close" data-dismiss="modal">
+                    <span class="sr-only">{{i18n "kpmg.personalization.myaccount.verifyemail.close"}}</span>
+                </span>
+                <h4 class="verfyEmailModal-title">{{i18n "kpmg.personalization.myaccount.profile.changessaved"}}</h4>
+            </div>
+            <div class="modal-body">
+                <p class="success-msg alert-success">
+                    <span class="icon-checkmark"></span>{{i18n "kpmg.personalization.myaccount.profile.yourchangessavedsuccessfully"}}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-default col-md-6 pull-left btn" data-dismiss="modal">
+                    <span class="icon-close"></span>{{i18n "kpmg.personalization.myaccount.profile.close"}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Component: CommunicationPreferences -->

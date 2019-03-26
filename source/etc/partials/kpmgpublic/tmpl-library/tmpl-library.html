@@ -1,0 +1,27 @@
+<section class="module-tmpl-library" aria-describedby="page-content">
+    <div class="row ">
+        <div class="col-md-12 full-page-title" data-desktop-cell="1" data-mobile-cell="1">
+            <div class="inner-container">
+                {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb"  path="cell2"}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 full-page-title" role="banner" data-desktop-cell="2" data-mobile-cell="2">
+            <div class="inner-container">
+                {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"  path="cell3"}}
+            </div>
+        </div>
+    </div>
+
+    <div class="inner-container" role="main">
+        <div class="row tmpl-row">
+            <div class="col-md-3" data-desktop-cell="3" data-mobile-cell="3">
+                {{ include "librarylistmanagement" resourceType="/apps/kpmgpublic/components/personalization/librarylistmanagement"  path="cell4"}}
+            </div>
+            <div class="col-md-9" data-desktop-cell="4" data-mobile-cell="4">
+                {{ include "librarylist" resourceType="/apps/kpmgpublic/components/personalization/librarylist" path="cell5"}}
+            </div>
+        </div>
+    </div>
+</section>

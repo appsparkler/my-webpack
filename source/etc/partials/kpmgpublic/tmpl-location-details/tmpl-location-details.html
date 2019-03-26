@@ -1,0 +1,43 @@
+<section class="module-tmpl-location-details" {{#if hbs.isAuthor}}style="position:fixed; left:-10000px;"{{/if}}>
+
+    <div class="row tmpl-row">
+        <div class="col-md-12 fullbleed-banner" data-desktop-cell="1" data-mobile-cell="1">
+            {{ include "fullbleedbanner" resourceType="/apps/kpmgpublic/components/global/fullbleedbanner"}}
+        </div>
+    </div>
+
+    <div class="inner-container">
+        <div class="row visible-sm-block visible-md-block visible-lg-block">
+            <div class="col-md-12 bread-crumb-full" data-desktop-cell="2" data-mobile-cell="2">
+                {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb" }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9 tmpl-row">
+                <div class="row ohp-bodytext" data-desktop-cell="3" data-mobile-cell="3">
+                    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell7"}}
+                        {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell7"}}
+                    {{/render}}
+                </div>
+                <div class="row" data-desktop-cell="4" data-mobile-cell="4">
+                    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell9"}}
+                        {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell9"}}
+                    {{/render}}
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row tmpl-row" data-desktop-cell="5" data-mobile-cell="6">
+                    {{ include "connectandrfp" resourceType="/apps/kpmgpublic/components/global/connectandrfp"}}
+                </div>
+                <div class="row tmpl-row" data-desktop-cell="6" data-mobile-cell="5">
+                    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell11"}}
+                        {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell11"}}
+                    {{/render}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,38 @@
+<template id="mobile-nav-tab-menu-component-template">
+	<div 
+		class="
+			mobile-nav-tab-menu-component vue-component
+			position-relative
+		"
+		v-if="vm.mobileTabs"
+	>
+    <!-- USER COLLAPSE -->
+	<mobile-nav-tab
+		v-for="(tab, index) in vm.mobileTabs"
+		v-bind:key=" index + '-mobile-nav-tab'"
+		:vm="tab"
+        data-parent="#kpmg-mobile-nav-dropdown-menu"
+	>
+		<!-- USER PROFILE -->
+		<mobile-nav-user-profile-tab-content
+			v-if="(tab.id === 'user-profile')"
+			:vm="vm.accountActionList"
+		>
+		</mobile-nav-user-profile-tab-content>		
+		
+	
+		<!-- SEARCH TAB -->
+		<mobile-nav-search-tab-content
+			v-else-if="(tab.id === 'search')"
+		></mobile-nav-search-tab-content>
+		
+		<!-- LANGUAGE LOCALE SITES-->
+		<mobile-nav-language-locale-tab-content
+			v-else-if="(tab.id === 'language-locale')"
+			:vm="vm.siteSelectorList.flyout.cell1"
+		></mobile-nav-language-locale-tab-content>
+		
+	</mobile-nav-tab>
+</div>
+
+</template>

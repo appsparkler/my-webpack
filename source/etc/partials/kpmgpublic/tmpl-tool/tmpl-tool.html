@@ -1,0 +1,46 @@
+<section class="module-tmpl-tool">
+
+  <div class="row tmpl-row">
+      <div class="col-md-12 full-page-title">
+          <div class="inner-container">
+              {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"}}
+          </div>
+      </div>
+   </div>
+
+  <div class="inner-container">
+    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell3"}}
+    <div class="row">
+        <div class="col-md-12 parsys-container">
+              {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell3"}}
+        </div>
+    </div>
+    {{/render}}
+
+    {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder,/apps/kpmgpublic/components/hidden/placeholder,/apps/kpmgpublic/components/hidden/placeholder,/apps/kpmgpublic/components/hidden/placeholder" path="cell4,cell5,cell6,cell7"}}
+    <div class="row">
+        <div class="row-same-height row-full-height">
+
+            <div class="col-md-3 col-md-height col-full-height  col-top">
+                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell4"}}
+            </div>
+
+            <div class="col-md-3 col-md-height col-full-height  col-top">
+                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell5"}} 
+            </div>
+
+            <div class="col-md-3 col-md-height col-full-height  col-top">
+                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell6"}}
+            </div>
+
+            <div class="col-md-3 col-md-height col-full-height  col-top">
+                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell7"}}
+            </div>
+
+        </div>
+    </div>
+    {{/render}}
+
+  </div>
+
+</section>

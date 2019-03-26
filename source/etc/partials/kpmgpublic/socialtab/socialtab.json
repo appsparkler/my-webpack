@@ -1,0 +1,9 @@
+{
+    "hbs": {
+        "socialTabs": {
+        	"showBlog" : true,
+            "socialDashboard" : "<div id=\"shore-embed-dashboard\"></div><script type=\"text/javascript\"> (function(d, t) { var s = d.createElement(t), options = { id: 'shore-embed-dashboard', src: 'http://kpmgstaging.shore.uno', height: '4000' }; s.src = 'http://kpmgstaging.shore.uno/static/js/embed.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { se = new ShoreEmbed(); se.initialize(options); se.display(); } catch (e) {} }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>",
+            "socialWidget" : "<div id=\"shore‐embed-widget\"></div> <script type=\"text/javascript\"> (function(d, t) { var s = d.createElement(t), options = { id: 'shore‐embed-widget', src: 'http://kpmgstaging.shore.uno/widgets', height: '4000' }; s.src = 'http://kpmgstaging.shore.uno/static/js/embed.js'; s.onload = s.onreadystatechange = function() { var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return; try { se = new ShoreEmbed(); se.initialize(options); se.display(); } catch (e) {} }; var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr); })(document, 'script'); </script>"
+        }
+    }
+}

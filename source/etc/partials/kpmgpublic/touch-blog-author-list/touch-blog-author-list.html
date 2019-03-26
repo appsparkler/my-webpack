@@ -1,0 +1,64 @@
+<!-- Begin Component: TouchBlogAuthorList -->
+<div class="module-touch-blog-author-list component">
+    <ul class="header-list">
+        {{#each hbs.blogAuthorList.authorDetails}}
+            <li class="list-item" data-author-name="{{this.pagePath}}" data-author="{{this.firstName}} {{this.lastName}}">
+                <div class="inline-list-elements" data-href="{{this.authorDetailsLink}}" tabindex="0">
+                    <div class="img-wrapper">
+                        <span class="blue-strip"></span>
+                        <picture>
+                            <source srcset="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.310.190.jpg"
+                                media="screen and (min-width: 641px) and (max-width: 9440px)">
+                            <source srcset="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.310.190.jpg"
+                                media="screen and (min-width: 0px) and (max-width: 640px)">
+                            <img class="main-feature-img img-responsive" src="{{hbs.globalValues.assetDomainName}}{{this.image}}/jcr:content/renditions/cq5dam.web.310.190.jpg"
+                                alt="{{this.altText}}" title="{{this.altText}}"/>
+                        </picture>
+                    </div>
+                    <div class="list-header-info">
+                        <h2 class="list-item-title"> {{this.firstName}} {{this.lastName}}:
+                            <span class="tag-line-text"> {{this.authorRole}}, {{this.areaOfExpertise}} </span>
+                        </h2>
+                        <div class="social-links">
+                            <a class="social-link email-me people-connect" href="javascript:void(0);" data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#kpmgModal" data-remote="{{hbs.blogAuthorList.contactFormLink}}{{this.authorPageLink}}">
+                                <span class="icon-email-me-1"></span>
+                                <span class="link-text">{{hbs.blogAuthorList.emailMeLabel}} </span>
+                            </a>
+                            {{#if this.socialMediaLink}}
+                                <a x-cq-linkchecker="skip" data-stoptrack="true" class="social-link social-media" data-link-location="{{this.firstName}} {{this.lastName}}" target="_blank" rel="noopener noreferrer" href="{{this.socialMediaLink}}">
+                                    <span class="icon-linkedin-profile-1"></span>
+                                    <span class="link-text">{{hbs.blogAuthorList.socialProfileLabel}}</span>
+                                </a>
+                            {{/if}}
+                            {{#if this.kpmgProfileUrl}}
+                                <a x-cq-linkchecker="skip" class="social-link kpmg-profile" data-link-location="{{this.firstName}} {{this.lastName}}" href="{{this.kpmgProfileUrl}}">
+                                    <span class="icon-kpmg-profile"></span>
+                                    <span class="link-text">{{hbs.blogAuthorList.kpmgProfileLabel}}</span>
+                                </a>
+                            {{/if}}
+                        </div>
+                        <div class="author-description">
+                            <p class="text list-header-line-clamp"> {{this.description}} </p>
+                        </div>
+                    </div>
+                    <span class="icon-circle-chevron-down pull-right accordion-icon" role="button" aria-expanded="false" tabindex="0"></span>
+
+                </div>
+                <div class="details-container">
+                    <div class="web-spinner" {{#if hbs.isAuthor}} style="display:none;" {{/if}}>
+                        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1082 547'%2F%3E"  width="1082" height="547" style="height: 400px;" class="desktop-only img-responsive" />
+                        <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 640 580'%2F%3E"  width="640" height="580" class="mobile-only img-responsive" />
+                    </div>
+                    <div class="content-wrapper" data-authorlink="{{this.authorDetailsLink}}" data-showall="{{hbs.blogAuthorList.seeAllOfLabel}}"></div>
+                    <div class="no-results hidden">
+                        <div class="no-results-wrapper" tabindex="0">
+                            <h3>{{hbs.blogAuthorList.noAuthorContentFoundLabel}}</h3>
+                            <p>{{hbs.blogAuthorList.checkLaterLabel}}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+<!-- End Component: TouchBlogAuthorList -->

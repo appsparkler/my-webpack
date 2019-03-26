@@ -1,0 +1,57 @@
+<!-- Begin Component: Mykpmgflyout -->
+<section class="module-mykpmgflyout component">
+    <div class="row">
+        <div class="row-same-height row-full-height">
+            <div class="col-md-6 col-md-height col-full-height col-top first-block ">
+                <ul class="nonlogged-in-list" style="display:none;">
+                    {{#each hbs.myKpmgFlyout.nonLoggedInList}}
+                    <li><a href="#" data-uri="{{this.link}}" data-name="{{this.dataName}}" >{{i18n this.name}} </a></li>
+                    {{/each}}
+                </ul>
+                <ul class="logged-in-list" style="display:none;">
+                    {{#each hbs.myKpmgFlyout.loggedInList}}
+                    <li><a href="#" data-uri="{{this}}">{{i18n @key}} </a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-md-6 col-md-height col-full-height col-top col-border-right last-block">
+                <a class="flyout-cell-hover" href="{{hbs.myKpmgFlyout.URL}}" title="{{hbs.myKpmgFlyout.altText}}">
+                    <div class="navflyoutb-feature-link navflyoutb-background">
+                    {{#with hbs.myKpmgFlyout}}
+                    {{#if hbs.myKpmgFlyout.imageConfigExists}}
+                    <div data-picture data-alt='{{hbs.myKpmgFlyout.altText}}'>
+                        {{#hbs.myKpmgFlyout.imageConfig}}
+                        <div data-src="{{hbs.globalValues.assetDomainName}}{{../cellTwoFeaturedItemImage}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+                        {{#if @last}}
+                        <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+                        {{/if}}
+                        {{/hbs.myKpmgFlyout.imageConfig}}
+                    </div>
+                    {{else}}
+                    <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" alt="{{hbs.myKpmgFlyout.altText}}" class="lazy img-responsive" data-desktop="{{hbs.globalValues.assetDomainName}}{{this.cellTwoFeaturedItemImage}}/jcr:content/renditions/cq5dam.web.237.158.jpg" />
+                    {{/if}}
+                    <div>
+                        <h3 class="navflyoutb-heading line-clamp line-clamp-2 float-head">
+                            <h3 class="navflyoutb-heading line-clamp line-clamp-2">{{this.heading}}</h3>
+                        </h3>
+                        <div style="clear:both;"></div>
+                        <p class="navflyoutb-description line-clamp line-clamp-5">{{this.description}}</p>
+                    </div>
+                    {{/with}}
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="close-mykpmg hidden-lg hidden-md vissible-xs vissible-sm">
+        <div class="mykpmg-mob-close">
+            <p class="text-close">
+                <em id="close-mykpmg-btn">
+                    <em>{{i18n hbs.myKpmgFlyout.closeMyKPMGmenuLabel}}</em>
+                    <span class="mykpmg-close-icon icon-close"></span>
+                </em>
+            </p>
+        </div>
+    </div>
+</section>
+<!-- End Component: Mykpmgflyout -->

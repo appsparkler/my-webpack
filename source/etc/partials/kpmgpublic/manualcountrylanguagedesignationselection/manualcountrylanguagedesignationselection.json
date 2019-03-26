@@ -1,0 +1,193 @@
+{
+  "hbs": {
+    "manualcountrylanguagedesignationselection": {
+      "regions": [
+        {
+          "subRegions": [
+            {
+              "subRegionName": "South Afirca",
+              "countryList": [
+                {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                }
+              ]
+            },
+            {
+              "subRegionName": "South Afirca",
+              "countryList": [
+                {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                },
+                 {
+                  "url": "/content/projects",
+                  "country": "SA"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile",
+                  "country": "Epypt"
+                }
+              ]
+            }
+          ],
+          "regionName": "middleEastAfrica"
+        },
+        {
+          "subRegions": [
+            {
+              "subRegionName": "north america",
+              "countryList": [
+                {
+                  "url": "/content/geometrixx_mobile/en",
+                  "country": "usa"
+                },
+                {
+                  "url": "/content/ped",
+                  "country": "canada"
+                }
+              ]
+            }
+          ],
+          "regionName": "americas"
+        },
+        {
+          "subRegions": [
+            {
+              "subRegionName": "East Asia",
+              "countryList": [
+                {
+                  "url": "/content/geometrixx-media/en",
+                  "country": "japan"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors/en/women",
+                  "country": "china"
+                }
+              ]
+            }
+          ],
+          "regionName": "asiaPacific"
+        },
+        {
+          "subRegions": [
+            {
+              "subRegionName": "gulf",
+              "countryList": [
+                {
+                  "url": "/content/communities",
+                  "country": "irak"
+                },
+                {
+                  "url": "/content/geometrixx_mobile/en",
+                  "country": "israel"
+                }
+              ]
+            }
+          ],
+          "regionName": "europe"
+        },
+        {
+          "subRegions": [
+            {
+              "subRegionName": "ocenia region",
+              "countryList": [
+                {
+                  "url": "/content/communities",
+                  "country": "oc1"
+                },
+                {
+                  "url": "/content/geometrixx-outdoors-mobile/en",
+                  "country": "oc2"
+                }
+              ]
+            }
+          ],
+          "regionName": "Oceania"
+        }
+      ],
+      "gobalSiteName": "gobalsitename",
+      "gobalSiteUrl": "/content/catalogs"
+    }
+  }
+}

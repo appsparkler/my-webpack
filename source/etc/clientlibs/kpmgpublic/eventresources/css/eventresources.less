@@ -1,0 +1,140 @@
+@import url('../../global/css/_variables.less');
+.module-eventresources {
+    background: none;
+    .primary-head {
+        .component-title(@kpmg-blue);
+        margin: 0 10px 10px;
+    }
+    .tertiary-head {
+        .promo-title(@kpmg-blue);
+        margin: 8px 0px;
+    }
+    .module-eventresources-content {
+        background-color: @white;
+        padding: 10px;
+        float: left;
+        width:100%;
+
+        p {
+            .promo-details(@gray-20);
+            margin: 7px 0px;
+        }
+        .left-align {
+            margin-bottom: 25px;
+            min-height: 150px;
+        }
+
+        .module-copyrightlist {
+            float: left;
+        }
+
+        .module-eventresources-content-item  {
+            border-top: 0;
+            border-bottom: 0;
+            border-color: @white;
+            margin-bottom: 18px;
+
+            &:first-child {
+                border-left: 0;
+            }
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+    .cta-space {
+        .cta-left(@gray-40);
+        margin-top: 12px;
+    }
+
+    .buttonContainer {
+        display: inline-block;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+            .downloadDesc {
+              color: @gray-40;
+                .resouceLabel {
+                    .cta-left(@gray-40);
+                    position: relative;
+                    left: 0px;
+                    margin-right: 0px;
+                }
+                .resourceSize {
+                    .file-size(@gray-40);
+                    margin-right: 0px;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+    }
+    .module-eventresources-loadMoreBtn {
+
+        text-align: center;
+        width: 100%;
+        clear: both;
+        display: inline-block;
+        margin: 18px 0 1px;
+        span.icon-add {
+            color: @light-green;
+        }
+        a {
+            display: inline-block;
+            .cta-left(@gray-40);
+            position: relative;
+            left: 0px;
+            margin: 0px;
+            &:hover {
+                span.icon-add {
+                    color: @light-green;
+                    text-decoration:none;
+                }
+                }
+            .loadmoreLabel{
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        a.btn-more:focus {
+            .cta-focus(@gray-40);
+            .loadmoreLabel {
+                text-decoration: underline;
+            }
+        }
+    }
+    .downloadbutton {
+        .icon-pdf {
+            .font-size(1.6);
+            color: @light-green;
+            float: left;
+            margin-right: 5px;
+        }
+        .downloadDesc {
+            float: left;
+        }
+
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-eventresources {
+        .tertiary-head {
+            .promo-title(@kpmg-blue);
+            margin: 8px 0px;
+        }
+
+        .module-eventresources-content {
+            .left-align {
+                margin-bottom: 8px !important;
+            }
+
+            .module-eventresources-content-item {
+                margin: 0;
+            }
+        }
+    }
+}

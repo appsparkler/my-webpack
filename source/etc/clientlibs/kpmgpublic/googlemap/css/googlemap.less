@@ -1,0 +1,39 @@
+@import url('../../global/css/_variables.less');
+
+.module-googlemap {
+    float: left;
+    width: 100%;
+    padding: 10px !important;
+    background: @white;
+    .secondary-head {
+          .component-title(@kpmg-blue);
+           margin:0px 0px 10px 0px;
+       }
+    .googlemap-container {
+        position: relative;
+        height: 460px;
+        padding: 5px 1px;
+        overflow: hidden;
+      
+        iframe {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    
+
+    
+}
+@media (min-width:@desktop-min-fixed) {
+    .module-googlemap {
+        .googlemap-container {
+            iframe {
+                left: 0px;
+            }
+        }
+    }
+}
+

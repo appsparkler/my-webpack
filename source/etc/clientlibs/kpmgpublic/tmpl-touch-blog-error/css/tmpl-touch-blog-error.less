@@ -1,0 +1,144 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-bodytext/css/touch-bodytext";
+
+.module-tmpl-touch-blog-error {
+    padding: 110px 50px;
+    background-color: @white;
+
+    .error-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .content-wrapper {
+        background-color: @gray-94;
+    }
+
+    .module-touch-bodytext {
+        background-color: @gray-94;
+        padding: 45px 35px 0;
+
+        .primary-head {
+            font-size: 28px;
+            line-height: 1.2;
+            color: @kpmg-blue;
+        }
+
+        .tertiary-head {
+            font-size: 28px;
+            line-height: 1.2;
+            color: @kpmg-blue;
+            margin-bottom: 50px;
+        }
+
+        .bodytext-data {
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 40px;
+        }
+    }
+
+    .module-searchinputs {
+        background-color: @gray-94;
+        padding: 10px 35px 30px;
+
+        .btn-back,
+        .radio-btns {
+            display: none;
+        }
+
+        .btn-container {
+            margin-bottom: 0;
+        }
+
+        .search-container {
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+
+            input {
+                height: 48px;
+                max-width: none;
+                border: 1px solid @white;
+                border-radius: 10px;
+                padding-right: 280px;
+            }
+
+            button {
+                width: 280px;
+                height: 48px;
+                border-radius: 0 10px 10px 0;
+                border: none;
+                background-color: @persian-green;
+            }
+
+            .icon-search,
+            .icon-chevron-right {
+                display: none !important;
+            }
+
+            .search-label{
+                display: inline-block;
+                font-size: 16px;
+            }
+        }
+
+        .typeahead-elem {
+            top: 0px;
+            margin-left: 3px;
+            font-size: 1.6rem;
+            height: 48px;
+            line-height: 48px;
+            float: left;
+        }
+    }
+}
+@media only screen and (max-width: 640px) {
+    .module-tmpl-touch-blog-error {
+        padding: 35px 0;
+
+        .module-touch-bodytext {
+            padding: 35px 25px;
+            margin-bottom: 0;
+
+            .bodytext-data {
+                margin-bottom: 65px;
+            }
+        }
+
+        .module-searchinputs {
+            padding: 10px 15px 30px;
+
+            .search-title {
+                display: none;
+            }
+
+            .search-input {
+                input {
+                    border-radius: 6px;
+                    padding-right: 120px;
+                }
+
+                button {
+                    width: 120px;
+                    border-radius: 0 6px 6px 0;
+                }
+
+                .icon-search,
+                .icon-chevron-right {
+                    display: none !important;
+                }
+            }
+
+            .close-searchinput {
+                display: none;
+            }
+
+            .typeahead-elem {
+                margin-left: 2px;
+            }
+        }
+    }
+}

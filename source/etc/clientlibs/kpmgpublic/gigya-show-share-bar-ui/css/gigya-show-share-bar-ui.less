@@ -1,0 +1,40 @@
+@import "../../global/css/_variables.less";
+@import "legacy";
+
+div#gig_showSimpleShareUI.gig-simpleShareUI {
+  z-index:101;
+  max-height: 150px;
+  width: 280px;
+  display: none;
+  position: absolute;
+  margin:1px 0 0 -10px;
+
+  .social-share-button-override {
+    line-height:16px;
+    height: 16px;
+    padding-left:20px;
+    display:block;
+    font-size: 11px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .gig-button-container {
+    width: 34%;
+    margin-right: 10%;
+  }
+
+  .icon-gig-simpleShareUI-closeButton {
+    font-size: 8px;
+    color: gray;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+    float: right;
+    &:after {
+      content: '\E911';
+    }
+  }
+}

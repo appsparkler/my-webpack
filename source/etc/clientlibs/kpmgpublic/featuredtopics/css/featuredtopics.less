@@ -1,0 +1,201 @@
+@import "../../global/css/_variables.less";
+
+.module-featuredtopics {
+
+    img {
+   	  width: 100%;
+      position: relative;
+    }
+
+    .bg-white {
+   	  float:left;
+      width: 100%
+    }
+    .alt-secondary-head {
+      .promo-title(@kpmg-blue);
+      margin:8px 0px;
+      &.visible-sm {
+            color: @kpmg-blue;
+      }
+    }
+
+    .featuredtopics-rfp{
+      .featuredtopics-desc-mobile {
+          .promo-description(@gray-20);
+          margin: 7px 0px;
+      }
+
+      .primary-cta-space {
+        .cta-right(@gray-40);
+      }
+
+      .pull-bottom {
+        .component-link {
+            .cta-right(@gray-40);
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            text-decoration: none;
+        }
+        a {
+          &:hover .btn-copy {
+              text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .featuredtopics-data,
+    .featuredtopics-imgcont
+    {
+    position:relative;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    .featuredtopics-rectangle {
+      .title-box(@medium-blue);
+        &.visible-lg {
+          display:none;
+        }
+    }
+
+    .title {
+       .promo-title(@kpmg-blue);
+        margin:8px 0px;
+        position: relative;
+        top: 0px;
+    }
+
+    .visible-lg-FeatTopic {
+      display:none;
+    }
+    .visible-xs-FeatTopic {
+      display:block;
+    }
+    .visible-lg-FeatTopicHead {
+        display:none;
+    }
+    .featuredtopics-imgcont {
+        margin: 0 0 10px 0;
+        width: 100%;
+        float: left;
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-featuredtopics {
+        // everything in here will be for breakpoint at 641px and up
+        .bg-white {
+         	padding:10px;
+        }
+        img {
+          position: relative;
+          max-width: 237px;
+        	float: right;
+        }
+        .alt-secondary-head{
+          .promo-title(@white);
+          margin:8px 0px;
+          padding: 0px 10px;
+        	position: absolute;
+        	top:0px;
+        }
+        .title {
+            .component-title(@white);
+            position: absolute;
+            margin:0px 0px 10px 0px;
+            width: 50%;
+            top: 40px;
+            padding: 0px 10px;
+        }
+        .featuredtopics-rfp {
+          .featuredtopics-imgcont {
+            width: 100%;
+            float: left;
+            margin: 0 0 10px 0;
+          }
+          .featuredtopics-rectangle {
+              .title-box(@medium-blue);
+                &.visible-lg {
+                  display:block !important;
+                }
+          }
+          .pull-right {
+             margin-top: 16px;
+          }
+          .featuredtopics-desc-desktop {
+            .promo-description(@gray-20);
+            margin: 7px 0px;
+          }
+        }
+        .visible-lg-FeatTopic {
+            display:block;
+        }
+        .visible-xs-FeatTopic {
+            display:none;
+        }
+        .visible-lg-FeatTopicHead {
+          display:block;
+        }
+        .featuredtopics-rectangle.visible-lg {
+          display: block !important;
+        }
+    }
+}
+@media (min-width: @desktop-min-fluid) {
+    .module-featuredtopics {
+        // everything in here will be for breakpoint at 980px and up
+        .bg-white {
+          padding:10px;
+        }
+        img {
+          position: relative;
+        }
+        .alt-secondary-head{
+          .promo-title(@white);
+          margin:8px 0px;
+          padding: 0px 10px;
+          position: absolute;
+          top:0px;
+        }
+        .title {
+            .component-title(@white);
+            position: absolute;
+            margin:0px 0px 10px 0px;
+            width: 50%;
+            top: 40px;
+            padding: 0px 10px;
+
+        }
+        .featuredtopics-rfp {
+          .pull-right {
+             margin-top: 16px;
+          }
+          .featuredtopics-desc-desktop {
+            .promo-description(@gray-20);
+            margin: 7px 0px;
+          }
+        }
+        .visible-lg-FeatTopic {
+            display:block;
+        }
+        .visible-xs-FeatTopic {
+            display:none;
+        }
+        .visible-lg-FeatTopicHead {
+          display:block;
+        }
+        .featuredtopics-rectangle.visible-lg {
+          display: block !important;
+        }
+        .featuredtopics-imgcont {
+          width: 100%;
+          float: left;
+          margin: 0 0 10px 0;
+        }
+        .featuredtopics-rfp {
+          width: 100%;
+          float: left;
+        }
+    }
+}

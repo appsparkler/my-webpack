@@ -1,0 +1,65 @@
+<div
+	id="navigation-v2-data-i18n-labels"
+	{{#if hbs.personalizationValues.blog}}
+	data-i18n-labels='{
+		"interestSummary": {
+			"title": "{{hbs.personalizationValues.interestssummarytitle}}",
+			"description": "{{hbs.personalizationValues.description}}",
+			"yourInterests": "{{hbs.personalizationValues.yourinterests}}",
+			"industry": "{{hbs.personalizationValues.industries}}",
+			"topic": "{{hbs.personalizationValues.topics}}",
+			"service": "{{hbs.personalizationValues.services}}",
+			"country": "{{hbs.personalizationValues.countries}}",
+			"lastUpdated": "{{hbs.personalizationValues.lastupdated}}",
+			"selectedInterests": "{{hbs.personalizationValues.selectinterests}}"
+		},
+		"promotional": {
+			"welcome": "{{hbs.personalizationValues.welcome}}",
+			"myKpmgProfile": "{{hbs.personalizationValues.mykpmgprofile}}",
+			"newUser1": "{{hbs.personalizationValues.newusermsg1}}",
+			"unknownUser": "{{hbs.personalizationValues.unknownusermsg}}",
+			"newUser2": "{{hbs.personalizationValues.newusermsg2}}",
+			"newUser3": "{{hbs.personalizationValues.newusermsg3}}",
+			"newUser4": "{{hbs.personalizationValues.newusermsg4}}",
+			"myProfileCTA":"{{hbs.personalizationValues.mykpmgprofilecta}}",
+			"oldUser": "{{hbs.personalizationValues.nonnewusermsg}}"
+		},
+		"siteSelector": {
+			"title": "{{hbs.personalizationValues.featureitemtitle}}",
+			"description": "{{hbs.personalizationValues.featureitemdescription}}"
+		}
+	}'
+
+	{{else}}
+	data-i18n-labels='{
+		"interestSummary": {
+			"title": "{{i18n "kpmg.personalization.myaccount.interestssummary.title"}}",
+			"description": "{{i18n "kpmg.personalization.myaccount.interestssummary.description"}}",
+			"title": "{{i18n "kpmg.personalization.myaccount.interestssummary.title"}}",
+			"yourInterests": "{{i18n "kpmg.personalization.myaccount.interestssummary.yourinterests"}}",
+			"industry": "{{i18n "kpmg.personalization.myaccount.interestssummary.industries"}}",
+			"topic": "{{i18n "kpmg.personalization.myaccount.interestssummary.topics"}}",
+			"service": "{{i18n "kpmg.personalization.myaccount.interestssummary.services"}}",
+			"country": "{{i18n "kpmg.personalization.myaccount.interestssummary.countries"}}",
+			"lastUpdated": "{{i18n "kpmg.personalization.myaccount.interestssummary.lastupdated"}}",
+			"selectedInterests": "{{i18n "kpmg.personalization.myaccount.interestssummary.selectinterests"}}"
+		},
+		"promotional": {
+			"welcome": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.welcome"}}",
+			"myKpmgProfile": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.mykpmgprofile"}}",
+			"newUser1": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.newusermsg1"}}",
+			"unknownUser": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.unknownusermsg"}}",
+			"newUser2": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.newusermsg2"}}",
+			"newUser3": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.newusermsg3"}}",
+			"newUser4": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.newusermsg4"}}",
+			"myProfileCTA":"{{i18n "kpmg.personalization.homepage.mykpmgpromo.mykpmgprofilecta"}}",
+			"oldUser": "{{i18n "kpmg.personalization.homepage.mykpmgpromo.nonnewusermsg"}}"
+		},
+		"siteSelector": {
+			"title": "{{i18n "kpmg.siteselectorpromo.featureitemtitle"}}",
+			"description": "{{i18n "kpmg.siteselectorpromo.featureitemdescription"}}"
+		}
+	}'
+
+	{{/if}}
+></div>

@@ -1,0 +1,120 @@
+@import "../../global/css/_variables.less";
+@import "../../touch-popularposts/css/touch-popularposts";
+@import "../../touch-populartags/css/touch-populartags";
+@import "../../socialchannels/css/socialchannels";
+@import "../../footersubscriptionrfp/css/footersubscriptionrfp";
+
+.module-touch-blog-footer {
+    background: @gray-94;
+    padding: 0;
+
+    .content-wrapper {
+        padding: 10px 30px;
+    }
+
+    .rfp-row {
+        background: @gray-94;
+        padding: 10px;
+    }
+
+    .popular-tags-row,
+    .popular-posts-row {
+        background: @gray-94;
+    }
+
+    .module-socialchannels {
+        margin-bottom: 112px;
+        float: none;
+    }
+
+    .module-footersubscriptionrfp {
+        overflow: auto;
+        width: 100%;
+    }
+
+    .text-wrapper {
+        background-color: @gray-87;
+        padding: 20px 50px 30px;
+    }
+}
+
+// accessibility styles
+.focusOutline {
+    box-shadow: 0 0 3px @gray-40 !important;
+    outline: 1px solid @grey-text-transparent !important;
+}
+
+@media only screen and (max-width: 640px) {
+    .module-touch-blog-footer {
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        .popular-posts-row {
+            order: 2;
+            width: 100%;
+        }
+        .popular-tags-row {
+            order: 3;
+            width: 100%;
+        }
+        .rfp-row {
+            order: 1;
+            width: 100%;
+            padding: 0 0 10px 0;
+        }
+        .module-socialchannels {
+            padding: 0;
+            margin-bottom: 92px;
+            .socialchannel-links {
+                width: auto;
+                li {
+                    margin-right: 20px;
+                    a {
+                        span {
+                            .font-size(5.575);
+                        }
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                
+            }
+        }
+        .module-footersubscriptionrfp {
+            padding: 0 8px 0 8px;
+        }
+        .text-wrapper {
+            padding: 30px 20px;
+        }
+
+    }
+}
+@media (min-width: @desktop-min-fixed) {
+    .module-touch-blog-footer {
+        .module-socialchannels {
+            ul.socialchannel-links {
+                li {
+                    a span {
+                        .font-size(5.4);
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: @desktop-min-fluid) {
+    .module-touch-blog-footer {
+        .module-socialchannels {
+            ul.socialchannel-links {
+                li {
+                    a span {
+                        .font-size(5.4);
+                    }
+                }
+            }
+        }
+    }
+}

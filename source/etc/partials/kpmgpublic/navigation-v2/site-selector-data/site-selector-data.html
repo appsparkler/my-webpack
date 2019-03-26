@@ -1,0 +1,57 @@
+
+<div id="navigation-v2-data-site-selector"
+	style="min-height:0.5px;"
+	data-mobile-tab='{
+		"id": "language-locale",
+		"icon": "icon-site-selector",
+		"closeTabLabel": {{#if hbs.personalizationValues.blog}} "{{hbs.quickselectoroverlay.closeSiteSelectorLabelValue}}"{{else}} "{{i18n hbs.quickselectoroverlay.closeSiteSelectorLabel}}" {{/if}}
+	}'
+
+	data-site-selector='{
+		"iconStyle": "icon-site-selector",
+		"isVisible": true,
+		"id": "site-selector",
+        "title": {{#if hbs.personalizationValues.blog}} "{{hbs.navigation.siteSelectorIconToolTipValue}}"{{else}} "{{i18n hbs.navigation.siteSelectorIconToolTip}}" {{/if}},
+		"flyout": {
+			"cell1": {
+				"type": "site-selector-menu",
+				"heading": {{#if hbs.personalizationValues.blog}} "{{hbs.quickselectoroverlay.selectMessageCountryLangValue}}"{{else}} "{{i18n hbs.quickselectoroverlay.selectMessageCountryLang}}" {{/if}}{{#if hbs.quickselectoroverlay.countryLangList}},
+				"sites":[
+					{{#each hbs.quickselectoroverlay.countryLangList}}
+						{
+							"selected": {{this.selected}},
+							"countryLocale": "{{this.countryLocale}}",
+							"link": "{{this.link}}"
+						}{{#unless @last}},{{/unless}}
+					{{/each}}
+				]{{/if}}{{#if hbs.quickselectoroverlay.global.countryLocale}},
+				"global": {
+					"selected": {{hbs.quickselectoroverlay.global.selected}},
+					"link": "{{hbs.quickselectoroverlay.global.link}}",
+					"countryLocale": "{{hbs.quickselectoroverlay.global.countryLocale}}"
+				}
+				{{/if}},
+				"allCountries": {
+					"link": "{{hbs.quickselectoroverlay.allCountryLangLink}}",
+					"i18nLabel": {{#if hbs.personalizationValues.blog}} "{{hbs.quickselectoroverlay.allCountryLangLabelValue}}"{{else}} "{{i18n hbs.quickselectoroverlay.allCountryLangLabel}}" {{/if}}
+				}
+			},
+			"cell2": {
+				"type": "card-link",
+				"title": "{{hbs.quickselectoroverlay.cellTwoFeaturedItemHeading}}",
+				"linkUrl": "{{hbs.quickselectoroverlay.cellTwoFeaturedItemUrl}}",
+				"description": "{{hbs.quickselectoroverlay.cellTwoFeaturedItemDescription}}",
+				"altText": "{{hbs.quickselectoroverlay.cellTwoFeaturedItemAltText}}",
+				"imgUrl": "{{hbs.quickselectoroverlay.authoredCellTwoFeaturedItemImage}}"
+			},
+			"cell3": {
+				"type": "card-link",
+				"title": "{{hbs.quickselectoroverlay.cellThreeFeaturedItemHeading}}",
+				"linkUrl": "{{hbs.quickselectoroverlay.cellThreeFeaturedItemUrl}}",
+				"description": "{{hbs.quickselectoroverlay.cellThreeFeaturedItemDescription}}",
+				"altText": "{{hbs.quickselectoroverlay.cellThreeFeaturedItemAltText}}",
+				"imgUrl": "{{hbs.quickselectoroverlay.authoredCellThreeFeaturedItemImage}}"
+			}
+		}
+	}'>
+</div>

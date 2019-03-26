@@ -1,0 +1,49 @@
+@import "../../global/css/_variables.less";
+
+.module-touch-post-stats {
+    border: 1px solid @gray-94;
+    margin: 37px 0 0 0;
+
+    h2.stats-title {
+        margin-bottom: 18px;
+        font-size: 20px;
+        line-height: 1.444;
+        color: @gray-103;
+        font-family: @arial;
+    }
+
+    .post-stats-list {
+        li.list-item {
+            display: inline-block;
+            border: 1px solid @gray-40;
+            margin: 5px 3px 5px 0px;
+            padding: 0px 10px 0px 10px;
+            border-radius: 10px;
+            font-size: 20px;
+            line-height: 1.65;
+            @media (min-width: @desktop-min-fixed) {
+                &:hover {
+                    background: @kpmg-blue;
+                    border: 1px solid @kpmg-blue;
+                    a.list-item-text {
+                        color: @white;
+                    }
+                }
+            }
+            a.list-item-text {
+                color: @kpmg-blue;
+                font-family: @arial;
+                @media (min-width: @desktop-min-fixed) {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: @mobile-max-fixed) {
+    .module-touch-post-stats {
+        margin: 12px 15px 0 15px;
+    }
+}

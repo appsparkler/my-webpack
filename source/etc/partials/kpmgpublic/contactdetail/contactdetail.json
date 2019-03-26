@@ -1,0 +1,15 @@
+{
+    "hbs": {
+        "contactDetail": {
+            "salutation": "TITLE",
+            "firstName": "FIRST",
+            "middleInitial": "",
+            "lastName": "LAST",
+            "suffix": "",
+            "jobTitle": "POSITION / TITLE",
+            "memFirmOrCompany": "FIRM / COMPANY NAME",
+            "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat est sed orci viverra malesuada. Proin ornre quam vitae mi tristique mollis. Praesent tellus purus, bibendum nec ullamcorper eu, porta quis lorem. Fusce fermentum, leo vestibulum mattis faucibus, ante odio dictum nisl, non condimentum nunc lorem ut mauris. Pellentesque aliquet rhoncus suscipit. Cras in vehicula tortor, dapibus volutpat nisi. In orci urna, interdum ac felis a, gravida ultris mauris. Morbi tincidunt porta mi, eget vestibulum nunc laoreet in. Donec sit amet turpis tempor leo blandit feugiat. Nunc tortor purus, tincidunt nec sapien vitae, fringilla pulvinar lacus."
+        }
+    }
+}
+

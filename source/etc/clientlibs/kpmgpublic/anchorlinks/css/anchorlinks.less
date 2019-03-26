@@ -1,0 +1,28 @@
+@import "../../global/css/_variables.less";
+
+.module-anchorlinks {      
+    .component-head {
+        .component-title(@kpmg-blue);        
+    }
+    
+    li {
+        clear: both;
+        margin: 8px 0px 8px 10px;
+        .promo-description(@gray-20);
+		line-height: 1.2;
+            &:before {
+                    .font-size(1.4);
+                    content: "\00b7";
+                    position: absolute;
+                    margin-left: -10px;
+            }
+            a {
+                .promo-description(@medium-blue);                    
+                display: inline-block;
+				line-height: 1.2;
+            }            
+            a:hover {
+                text-decoration: underline;
+            }
+    } 
+}

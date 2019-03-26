@@ -1,0 +1,14 @@
+<template id="logo-image-component-template">
+    <!-- LINK -->
+    <a 
+    	class="logo-image-component vue-component 
+			navbar-brand  
+			p-0
+		"
+    	v-process-url="vm.linkURL"
+		v-if="vm"
+   	>
+        <!-- LOGO IMAGE -->
+        <img :src="$store.state.data.siteInfo.assetsDomain + vm.imgURL" :alt="vm.altText"  />
+    </a>
+</template> 

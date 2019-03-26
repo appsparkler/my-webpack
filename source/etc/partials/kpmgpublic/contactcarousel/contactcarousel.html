@@ -1,0 +1,93 @@
+
+<!--<div id='contactcarouselconfig' contactcarouselrendition='{"imageGalleryConfig":[
+{{#hbs.contactCarousel.imageConfig}}
+{
+"width":{{this.imagewidth}},
+"height":{{this.imageheight}},
+"dwidth":{{this.devicewidth}}
+},
+{{/hbs.contactCarousel.imageConfig}}
+{}
+],
+"imageGalleryConfigExists":{{#if hbs.contactCarousel.imageConfigExists}}true{{else}}false{{/if}}
+}'
+
+></div>-->
+
+<div class='contactcarouselconfig' contactcarouselrendition='{"imageGalleryConfig":[
+{{#hbs.contactCarousel.imageConfig}}
+{
+    "width":{{this.imagewidth}},
+    "height":{{this.imageheight}},
+    "dwidth":{{this.devicewidth}}
+},
+{{/hbs.contactCarousel.imageConfig}}
+{}
+],
+"imageGalleryConfigExists":{{#if hbs.contactCarousel.imageConfigExists}}true{{else}}false{{/if}}
+}'
+
+></div>
+
+
+<section class="module-contactcarousel component" data-items="{{hbs.contactCarousel.noOfItems}}" data-contact-key="{{i18n hbs.contactCarousel.ctaLabel}}" data-title="{{hbs.contactCarousel.title}}" data-autoplay="{{hbs.contactCarousel.rotationSelection}}" data-autoplayTimeout="{{hbs.contactCarousel.rotationSpeed}}">
+    <a href="javascript:void(0);" class="contactcarousel-tab-entry no-highlight"></a>
+    {{#if hbs.contactCarousel.manualSelection}}
+    <h3 class="secondary-head contactcarousel-item-title">{{hbs.contactCarousel.title}}</h3>
+    <!--<div id="manualCarouselElem"  class="contactcarousel-owl-carousel manualCarouselElem carousel slide {{#if hbs.contactCarousel.contactData}}has-slides{{/if}}"> -->
+    <div class="contactcarousel-owl-carousel manualCarouselElem carousel slide {{#if hbs.contactCarousel.contactData}}has-slides{{/if}}">
+
+        {{#each hbs.contactCarousel.contactData}}
+        <a href="{{this.pagePath}}" title="{{this.pageTitle}}">
+            <div class="contactcarousel-item" data-slideno="{{@index}}">
+                <div class="contactcarousel-item-row">
+                    <div class="col-md-6 col-xs-6">
+                        {{#if hbs.contactCarousel.imageConfigExists}}
+                        <div data-picture data-alt='{{this.pageTitle}}'>
+
+                            {{#hbs.contactCarousel.imageConfig}}
+                            <div data-src="{{hbs.globalValues.assetDomainName}}{{../this.contactProfile}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+                            {{#if @last}}
+                            <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+                            {{/if}}
+                            {{/hbs.contactCarousel.imageConfig}}
+
+                        </div>
+                        {{else}}
+                        <img class="img-responsive lazy" data-desktop="{{hbs.globalValues.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.237.jpg" data-mobile="{{hbs.globalValues.assetDomainName}}{{this.contactProfile}}/jcr:content/renditions/cq5dam.web.237.237.jpg" alt="{{this.alt}}" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 237'%2F%3E" data-src="" />
+                        {{/if}}
+                    </div>
+                    <div class="contactcarousel-item-description">
+                        {{#if this.firstName}}
+                        <p>{{#if this.salutation}}{{this.salutation}} {{/if}}{{this.firstName}} {{this.middleInitial}} {{this.lastName}} {{#if this.suffix}}{{this.suffix}}{{/if}}</p>
+                        {{/if}}
+                        <div class="contactcarousel-container">
+                            {{#if this.jobTitle}}
+                            <span class="contactcarousel-item-description-title"> {{this.jobTitle}}, </span>
+                            {{/if}}
+                            {{#if this.location}}
+                            <span class="contactcarousel-item-description-title"> {{this.location}},</span>
+                            {{/if}}
+                            {{#if this.city}}
+                            <span class="contactcarousel-item-description-title"> {{this.city}}</span>
+                            {{/if}}
+                            {{#if this.state}}
+                            <span class="contactcarousel-item-description-title">, {{this.state}}</span>
+                            {{/if}}
+                        </div>
+                        <div class="contactcarousel-item-partnerDescription line-clamp line-clamp-7">{{this.shortDescription}}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+    {{else}}
+    <h3 class="secondary-head contactcarousel-item-title">{{hbs.contactCarousel.title}}</h3>
+    <!--<div id="autoCarouselElem" class="contactcarousel-owl-carousel autoCarouselElem carousel slide" data-is-manual="{{../../hbs.contactCarousel.manualSelection}}"  data-path="{{hbs.contactCarousel.contactCarouselTagUrl}}"></div>  -->
+    <div class="contactcarousel-owl-carousel autoCarouselElem carousel slide" data-is-manual="{{../../hbs.contactCarousel.manualSelection}}"  data-path="{{hbs.contactCarousel.contactCarouselTagUrl}}"></div>
+
+
+    {{/if}}
+    <a href="javascript:void(0);" class="contactcarousel-tab-exit no-highlight"></a>
+</section>

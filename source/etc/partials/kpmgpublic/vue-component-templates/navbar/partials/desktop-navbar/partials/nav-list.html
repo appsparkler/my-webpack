@@ -1,0 +1,102 @@
+<template id="nav-list-component-template">
+    <nav 
+        class="nav-list-component vue-component d-flex flex-column h-100"
+        v-dev="{ isDev: $root.isDev, variant: 'kpmg-blue' }"
+        v-if="vm"
+    >
+        <!-- LINKS -->
+		<template 
+			v-for="(item, idx) in vm.links"
+			v-if="item.label"
+		>
+			<!-- V-IF -->
+			<legacy-nav-list-item
+				v-if=" (item.key === 'kpmg.personalization.homepage.mykpmgflyout.aboutMyKpmg')  ||
+                	   (item.key === 'kpmg.personalization.homepage.mykpmgflyout.learnMore') 
+			   "
+				:vm="item"
+				:key=" (idx + '-legacy-nav-list-item') "
+			>
+			</legacy-nav-list-item>
+			
+			<!-- V-ELSE-IF -->
+			<legacy-logout-link
+				v-else-if="(item.key === 'kpmg.personalization.homepage.mykpmgflyout.logout')"
+				:vm="item"
+				:key=" idx + '-legacy-logout-link' "
+			></legacy-logout-link>
+			
+			<!-- V-ELSE-->
+			<div 
+				v-else 
+				class="nav-list-link-container">
+				<a
+					class="
+						text-kpmg-blue line-clamp line-clamp-3
+						border border-top-0 border-left-0 border-right-0
+					"
+					:key="idx + '-nav-list-item'"
+					v-process-url="item.url"
+					v-if="item.internalFlag == 'false' && item.url"
+					target="_blank"
+					x-cq-linkchecker="skip"
+				>				
+					\{{ item.label }} <span class="sr-only"> \{{ item.newTabAllow }} </span>
+				</a>
+				<a
+					class="
+						text-kpmg-blue line-clamp line-clamp-3
+						border border-top-0 border-left-0 border-right-0
+					"
+					:key="idx + '-nav-list-item'"
+					v-process-url="item.url"
+					v-else-if = "item.url"
+				>				
+					\{{ item.label }}
+				</a>
+			</div>
+		</template>
+
+        <!-- VIEW ALL (MASTER) LINK -->
+        <span  
+            class="pr-2 pb-2 d-block mt-auto mr-0 ml-auto text-right last-link"
+            v-if="vm && vm.viewAll"
+        >
+           
+			<!-- LINK LABEL -->
+			<a  
+                class="
+                    text-kpmg-grey 
+                    line-clamp line-clamp-3
+                "
+				v-if="vm.viewAll.linkURL && vm.viewAll.internalLinkFlag == 'false'"
+				v-process-url="vm.viewAll.linkURL"
+				target="_blank"
+				x-cq-linkchecker="skip"
+			>
+				<!-- ICON (CHEVRON-RIGHT)  -->
+				<span 
+					class="icon icon-chevron-right"
+					v-if="vm.viewAll.label"
+				></span>
+                \{{ vm.viewAll.label }} <span class="sr-only"> \{{ vm.viewAll.newTabAllow }} </span>
+            </a>
+            <a  
+                class="
+                    text-kpmg-grey 
+                    line-clamp line-clamp-3
+                "
+				v-else-if = "vm.viewAll.linkURL"
+				v-process-url="vm.viewAll.linkURL"
+				
+			>
+				<!-- ICON (CHEVRON-RIGHT)  -->
+				<span 
+					class="icon icon-chevron-right"
+					v-if="vm.viewAll.label"
+				></span>
+                \{{ vm.viewAll.label }}
+            </a>
+        </span>
+    </nav>
+</template>

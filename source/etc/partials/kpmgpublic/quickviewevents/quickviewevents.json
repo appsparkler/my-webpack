@@ -1,0 +1,18 @@
+{
+    "hbs": {
+        "quickViewEvents": {
+        	"quickViewLabel": "quickView",
+        	"flag": 1, 
+            "thumbnail": "/assets/fpo-images/quick-view-image.jpg",
+            "alt": "Sample Text",
+            "title": "SINGAPORE ELECTRICITY FUTURES MARKET",
+            "description": "On the 25th April 2014, an industry workshop organized at Amara Hotel in Singapore, witnessed a slew of compelling topics presented by industry leaders. Mr. Toh Seong Wah(Senior VP Market Operations & IT of EMC) introduced the forum to the National Electricity Market of Singapore (NEMS).<br/><br/>Singapore Exchange Limited(SGX) is set to launch Asia's first electricity futures market on October 2014. Inconjunction with this milestone development, Singapore Exchange Limited held a forum to introduce the electricity futures market in Singapore. The Energy Market Company (EMC) and KPMG participated in the forum and a post-event of the forum can be read at the...",
+			"date":"04/24/14, 8AM - 4PM, SGT",
+			"eventDate":"Event Date:",
+			"viewDetailsLabel":"viewDetails",
+			"viewDetailsLink":"#",
+			"registerLabel":"register",
+			"registerLink":"#"        
+        }
+    }
+}

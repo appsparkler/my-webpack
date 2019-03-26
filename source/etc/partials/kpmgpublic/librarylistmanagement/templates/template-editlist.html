@@ -1,0 +1,49 @@
+<div class="edit-list-controls is-editing">
+    <form action="" aria-hidden="true" class="form-editlist" role="form">
+        <div class="form-group">
+            <span class="error mobile-only inputerror" aria-hidden="true">
+                <span class="listnameexists">
+                    {{#if hbs.createlistoverlay}}
+                        {{hbs.createlistoverlay.thatNameIsTaken}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.library.listmanagement.thatNameIsTaken"}}
+                    {{/if}}                    
+                </span>
+                <span class="empty">
+                    {{#if hbs.createlistoverlay}}
+                        {{hbs.createlistoverlay.empty}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.library.addtolibraryoverlay.empty"}}
+                    {{/if}}
+                </span>
+            </span>
+            <label class="sr-only" for="editlistinput">
+                {{#if hbs.createlistoverlay}}
+                    {{hbs.createlistoverlay.createAList}}
+                {{else}}
+                    {{i18n "kpmg.personalization.library.listmanagement.createAList"}}
+                {{/if}}                
+            </label>
+            <input class="editlistinput" maxlength="35" placeholder="Rename list" type="text" aria-labelledby="">
+        </div>
+        <div class="row librarylist-controls">
+            <div class="col-xs-6 full-bleed">
+                <a class="btn-cta btn-cancel canceleditbtn" href="#" tabindex="0" type="cancel"><span class="icon-close"></span>
+                {{#if hbs.createlistoverlay}}
+                    {{hbs.createlistoverlay.cancel}}
+                {{else}}
+                    {{i18n "kpmg.personalization.library.listmanagement.cancel"}}
+                {{/if}}
+                </a>
+            </div>
+            <div class="col-xs-6 full-bleed">
+                <a class="btn-cta editlistbtn" href=#"" tabindex="0" type="submit"><span class="icon-chevron-right"></span>
+                {{#if hbs.createlistoverlay}}
+                    {{hbs.createlistoverlay.save}}
+                {{else}}
+                    {{i18n "kpmg.personalization.library.listmanagement.save"}}
+                {{/if}}    </a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,765 @@
+@import "../../global/css/_variables.less";
+@mobile: ~"only screen and (max-width: 640px)";
+
+.module-subscription-preferences {
+    padding: 0;
+    background-color: transparent;
+    position: relative !important;
+    .subscription-preferences {
+        .subscription-list-wraper {
+            overflow: hidden;
+            /*border: 1px solid @gray-102;*/
+            .subscription-interest-in-title{
+                padding-top: 22px;
+                display: inline-block;
+                width: 100%;
+                color: @gray-102;
+                font-size: 21px;
+                padding-left:28px;
+                background: @white;
+            }
+            .groupHeader{
+                padding: 5px 0px 20px 10px;
+                background : @white;
+                color: @kpmg-blue;
+                .set-font-size(1.8);
+                width: 100%;
+            }
+            .subscription-list-search-wraper{
+                display: block;
+                border: 1px solid @gray-102;
+            }
+        }
+        .subscription-list {
+            background-color: @white;
+        }
+        .list-item {
+            margin: 15px;
+            padding: 10px 15px;
+            border: 1px solid @gray-80;
+        }
+        .table-wraper {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+        .col-1 {
+            display: table-cell;
+            width: 75%;
+            padding-right: 10px;
+            vertical-align: top;
+        }
+        .col-2 {
+            display: table-cell;
+            text-align: right;
+            width: 25%;
+            padding-left: 10px;
+            vertical-align: top;
+        }
+        .icon-wraper {
+            font-size: 1.5rem;
+            .icon-add {
+                color: @light-green;
+            }
+            .icon-minus {
+                color: @white;
+            }
+        }
+        .title {
+            color: @kpmg-blue;
+            .set-font-size(1.6);
+            word-wrap: break-word;
+        }
+        .description {
+            color: @gray-40;
+            .set-font-size(1.5);
+            margin-top: 5px;
+            word-wrap: break-word;
+        }
+        .frequency {
+            color: @gray-40;
+            margin-top: 15px;
+            .set-font-size(1.6);
+            word-wrap: break-word;
+        }
+        .list-item.subscribe {
+            background-color: @medium-blue;
+
+            .title,
+            .description,
+            .frequency {
+                color: @white;
+            }
+        }
+        .btn-wraper {
+            margin-top: 15px;
+            text-align: center;
+            .btn {
+                padding: 15px 30px;
+                min-width: 260px;
+                background-color: @white;
+                border: none;
+            }
+            .finish-btn {
+                .icon-chevron-right {
+                    display: none;
+                }
+            } 
+        }
+        .focusOutline {
+            box-shadow: 0 0 3px @gray-40 !important;
+            outline: 1px solid @grey-text-transparent !important;
+        }
+    }
+
+    .subscriptions-overlay {
+        display:none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0.5;
+        z-index: 1;
+        background:@white url(/etc/designs/kpmgpublic/images/loading.gif) center center no-repeat;
+    }
+
+    // communication preferences view styles
+    .communication-preferences {
+        padding-bottom: 18px;
+
+        .disable-action {
+            opacity: .5;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        .subscription-list-wraper {
+            padding: 0px 0px 0px 10px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .communication-preference-header {
+            padding-left: 10px;
+        }
+
+        .communication-preference-header, .subscription-list-wraper {
+            background: @white;
+            h3 {
+                .set-font-size(3.8);
+                font-family: @kpmgLight;
+                line-height: 43px;
+                margin: 0;
+                padding-bottom: 20px;
+            }
+        }
+
+        .optin-wraper {
+            padding-left: 10px;
+            background: @white;
+            .subscription-optin, .communication-optin {
+                padding: 0px 0px 10px 10px;
+                display: block;
+            }
+            .preference-optin-container, .preference-optin-container  {
+                p {
+                    .set-font-size(1.5);
+                    font-family: @arial;
+                    color: @gray-40;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        /* The container */
+        .preference-optin-container {
+            display: inline-block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            .set-font-size(2.4);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .preference-optin-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 21px;
+            width: 21px;
+            border: 1px solid @teal;
+            background: @white;
+        }
+
+        /* Style the checkmark/indicator */
+        .preference-optin-container .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 8px;
+            height: 13px;
+            border: solid @teal;
+            border-width: 0 4px 4px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .preference-optin-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .subscription-list {
+            padding-left: 0px;
+            padding-right: 0px;
+
+            .list-item {
+                padding-bottom: 18px;
+                display: inline-block;
+                width: 100%;
+
+                .communication-subscriptions-row {
+                    margin: 2px;
+                    .title {
+                        .set-font-size(1.8);
+                        font-family: @arial;
+                        line-height: 16px;
+                        color: @gray-40;
+                        display: inline-block;
+                        vertical-align: top;
+                        padding-left: 0px;
+                        word-wrap: break-word;
+                    }
+                    .description {
+                        .set-font-size(1.5);
+                        font-family: @arial;
+                        line-height: 14px;
+                        color: @gray-40;
+                        word-wrap: break-word;
+                        padding-left: 50px;
+                    }
+
+                    .frequency {
+                        .set-font-size(1.6);
+                        font-family: @arial;
+                        line-height: 19px;
+                        font-style: italic;
+                        color: @gray-40;
+                        word-wrap: break-word;
+                    }
+
+                    // toggle button styles
+                    .subscription-switch {
+                        position: relative;
+                        display: inline-block;
+                        width: 50px;
+                        height: 24px;
+                    }
+
+                    .subscription-switch input {display:none;}
+
+                    .slider {
+                        position: absolute;
+                        cursor: pointer;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        border: 1px solid @persian-green;
+                        background-color: @white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    .slider:before {
+                        position: absolute;
+                        content: "";
+                        height: 17px;
+                        width: 17px;
+                        left: -1px;
+                        bottom: -1px;
+                        border: 1px solid @persian-green;
+                        background-color: white;
+                        -webkit-transition: .4s;
+                        transition: .4s;
+                    }
+
+                    input:checked + .slider {
+                        background-color: @persian-green;
+                    }
+
+                    input:focus + .slider {
+                        box-shadow: 0 0 1px @persian-green;
+                    }
+
+                    input:checked + .slider:before {
+                        -webkit-transform: translateX(18px);
+                        -ms-transform: translateX(18px);
+                        transform: translateX(18px);
+                    }
+
+                    /* Rounded sliders */
+                    .slider.round {
+                        border-radius: 8px;
+                        width: 34px;
+                        height: 17px;
+                    }
+
+                    .slider.round:before {
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+        .btn-wraper {
+            background: @gray-94;
+            display: inline-block;
+            width: 100%;
+            padding-top: 18px;
+
+            .disable-action {
+                opacity: .5;
+                cursor: not-allowed;
+                text-decoration: none;
+            }
+
+            .cancel-btn, .save-changes-btn {
+                width: 49%;
+                background: @white;
+                .set-font-size(1.8);
+                line-height: 19px;
+                font-family: @arial;
+                border: none;
+                color: @gray-40;
+                height: 38px;
+                .text:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .icon-close {
+                color: @light-purple;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-subscription-preferences {
+        .subscription-preferences {
+            .subscription-list {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+            .list-item {
+                width: calc(~"50% - 22px");
+                margin: 10px;
+                cursor: pointer;
+            }
+            .btn-wraper {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media (max-width: @desktop-min-fixed) {
+    .module-subscription-preferences {
+        .subscription-preferences {
+            .frequency {
+                font-size: 14px;
+                font-family: @arial;
+                line-height: 1.2;
+            }
+            .description {
+                font-size: 13px;
+                font-family: @arial;
+                line-height: 1.1;
+            }
+            .title {
+                font-size: 14px;
+                line-height: 1.2;
+                font-family: @arial;
+            }
+        }
+
+    }
+}
+
+@media (max-width: @desktop-min-fixed) {
+    .communication-preferences {
+        padding-bottom: 9px !important;
+        .btn-wraper{
+            padding-top: 9px !important;
+            .save-changes-btn, .cancel-btn {
+                width: 100% !important;
+            }
+            .cancel-btn {
+                .icon-close {
+                    margin: 0 5px 0 -52px;
+                }
+            }
+            .separator {
+                padding-bottom: 9px;
+            }
+        }
+         .subscription-list .list-item .communication-subscriptions-row .description {
+             padding-bottom: 9px;
+             padding-right: 10px;
+         }
+
+         .communication-subscriptions-row {
+             .frequency {
+                 padding-left: 50px;
+             }
+             .description {
+                 padding-left: 50px !important;
+             }
+         }
+
+    }
+}
+
+// unsaved changes modal styles
+.save-changes-modal {
+    .modal-content {
+        padding: 0;
+        background-color: @gray-94;
+    }
+    .modal-dialog {
+        max-width: 568px;
+        top: 120px;
+    }
+    .modal-header {
+        padding: 18px 28px 0 28px;
+        background-color: @white;
+        border-bottom: 0;
+    }
+    .modal-body {
+        padding: 18px 28px;
+        background-color: @white;
+    }
+    .modal-footer {
+        padding: 18px 9px;
+    }
+    .heading {
+        color: @kpmg-blue;
+        font-family: @kpmgLight;
+        .set-font-size(3.8);
+        line-height: 36px;
+        font-weight: normal;
+        word-wrap: break-word !important;
+        word-break: normal !important;
+        padding-bottom: 18px;
+        border-bottom: 1px solid @gray-60;
+    }
+    .btn-close {
+        color: @light-purple;
+        position: static;
+        display: inline;
+        float: right;
+        width: 16px;
+        cursor: pointer;
+        height: 16px;
+        padding-right: 16px;
+    }
+    .btn.no-btn {
+        background: none transparent;
+    }
+    .btn {
+        border-radius: 0;
+        padding: 15px ;
+        .set-font-size(1.8);
+        border: none;
+        color: @gray-40;
+        width: 100%;
+        background: @white;
+    }
+    .icon-close {
+        margin-right: 7px;
+        color: @light-purple;
+    }
+    .icon-chevron-left {
+        color: @light-green;
+    }
+}
+.modal .modal-dialog {
+    margin-top: 0px;
+    top: 125px !important;
+    width: auto;
+    @media @mobile {
+        top: 57px !important;
+    }
+    .icon-close.close {
+        padding: 15px;
+        margin-right: 5px;
+        &:focus {
+            outline-width:0px;
+        }
+    }
+    .alert-success {
+        .set-font-size(1.8);
+        width: 92%;
+        span {
+            padding-right: 5px;
+        }
+        &.success-msg {
+            color: @light-green;
+        }
+        &.error-msg {
+            color: @red;
+            .icon-close {
+                float: left;
+                height: 33px;
+            }
+        }
+        &:focus {
+            outline-width:0px;
+        }
+    }
+    .no-padding {
+        padding: 0px;
+    }
+}
+
+
+.subscription-preferences-searchbar {
+    background-color: @white;
+    border: 1px @gray-70 solid;
+    border-radius: 15px;
+    height: 30px;
+    margin:20px auto;
+    position: relative;
+    width:95%;
+    .ui-widget-content{
+        position: relative !important;
+        top:1px !important;
+        width: 98% !important;
+        left:10px !important;
+    }
+    #subscriptionsSearchbar {
+        background: none;
+        height: 27px;
+        width: 99%;
+        vertical-align: top;
+        border: 0;
+        padding-top: 2px;
+        margin-left: 6px;
+        border: 0;
+    }
+}
+.subscription-preferences-tags {
+    border: 1px solid @persian-green;
+    min-height: 80px;
+    margin-bottom: 20px;
+    padding: 5px;
+    display: none;
+    span {
+        background: @medium-blue;
+        color: @white;
+        border: none;
+        border-radius: 15px;
+        padding:3px 7px;
+        /*margin-right: 5px;*/
+        margin: 2px;
+        text-transform: lowercase;
+        display:inline-block;
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 15px;
+        }
+    }
+}
+
+.hideBlock{
+    display: none;
+}
+
+.subscription-preferences-subscribedList {
+    margin-bottom: 20px;
+    display: table;
+    border: 1px solid @gray-102;
+    width:100%;
+    display: none;
+    /*border: 1px solid @gray-102;*/
+    .interests-based-subscription-text {
+        padding-top: 22px;
+        display: inline-block;
+        width: 100%;
+        color: @persian-green;
+        font-size: 21px;
+        padding-left:28px;
+        background: @white;
+        &.onboarding {
+            display: none;
+        }
+    }
+    
+    .subscription-preferences {
+        border: 1px solid @gray-102;
+    }
+    #selectedSubscriptionList {
+        display: flex;
+    }
+    &.onboardingFlow{
+        .interests-based-subscription-text {
+            display: none;
+            &.onboarding {
+                display: block;
+            }
+        }
+    }
+}
+
+.subscription-preferences-search-container {
+    .selected-interests-header-text{
+        display: none;
+        font-weight: bold;
+    }
+}
+.subscription-list-search-wraper{    
+    border: 1px solid #a9a9a9;
+    background: #fff;
+    .subscription-interest-in-title {
+        padding-top: 22px;
+        display: inline-block;
+        width: 100%;
+        color: #a9a9a9;
+        font-size: 21px;
+        padding-left: 28px;
+        background: #ffffff;
+    }
+    .clearBoth {
+        clear: both;
+    }
+}
+
+@media @mobile {
+    .changes-saved {
+        .modal-dialog {
+            width: 100%;
+            margin: 0px;
+        }
+    }
+    .save-changes-modal {
+        position: fixed !important;
+        &.modal {
+            width: 100vw !important;
+            position: fixed !important;
+        }
+        .modal-content {
+            min-height: 700px;
+        }
+        .modal-dialog {
+            top: 73px;
+            width: 100%;
+            margin: 0;
+        }
+        .modal-header {
+            padding: 18px 20px 0 20px;
+        }
+        .modal-body {
+            padding: 18px 20px;
+        }
+        .modal-footer {
+            padding: 18px 10px !important;
+        }
+    }
+
+    .subscription-preferences-search-container{
+        /*margin-top:6px;*/
+        padding:10px 0 20px 0px;
+        background:  @gray-94;
+        .selected-interests-header-text{
+            padding:20px 30px 0 15px !important;
+            &.showHide{
+                display:block;
+            }
+        }
+    }
+
+    .module-subscription-preferences{
+        .subscription-preferences{
+            .subscription-list-wraper{
+                border:0px;
+                .subscription-interest-in-title{
+                    padding: 20px 30px 0 15px;
+                    font-size: 18px;
+                }
+                .groupHeader{
+                    padding: 10px 0px 10px 10px;
+                    .set-font-size(1.6);
+                }
+                .subscription-list-search-wraper{
+                    border:0px;
+                    .subscription-list{
+                        padding-left :0px !important;
+                    }
+                }
+            }
+        }
+
+        .subscription-preferences-tags{
+            border:0px;
+            padding:0px;
+            min-height:27px;
+            margin:15px 30px 0px 15px;
+            span {
+                display:inline-block;
+                margin:2px;
+            }
+        }
+
+        .subscription-preferences-searchbar {
+            width:94%;
+            margin:0px 14px 0px 12px;
+            .ui-widget-content{
+                width: 94% !important;
+            }
+            #subscriptionsSearchbar {
+                background: none;
+                width: 94%;
+            }
+        }
+    }
+
+    .subscription-preferences-subscribedList {
+        border:0px;
+        .interests-based-subscription-text{
+            padding: 20px 30px 0 15px;
+            font-size: 18px;
+        }
+    }
+    
+}
+
+// accessibility styles
+.focusOutline {
+    box-shadow: 0 0 3px @gray-40 !important;
+    outline: 1px solid @grey-text-transparent !important;
+}

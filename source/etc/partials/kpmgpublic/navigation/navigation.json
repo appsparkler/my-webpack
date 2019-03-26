@@ -1,0 +1,54 @@
+{
+    "hbs": {
+        "navigation": {
+            "kpmgLogoAltText":"KPMG",
+            "kpmgLogoImage":"/etc/clientlibs/kpmgpublic/images/navigation/header-logo.png",
+
+            "homePageLabel":"kpmg.navigation.homePageLabel",
+            "homePageUrl":"/homePageLanding.html",
+
+            "contactLabel":"kpmg.navigation.contactLabel",
+            "contactFormLink":"/etc/partials/kpmgpublic/contact-form/contact-form.html",
+
+            "hideAlumniNav" : false,
+            "hideSocialNav" : true,
+
+            "insightsLabel" : "kpmg.navigation.insightsLabel",
+            "insightsLandingUrl" : "/insightsLanding.html",
+
+            "industriesLabel":"kpmg.navigation.industriesLabel",
+            "industriesLandingUrl":"/industriesLanding.html",
+
+            "servicesLabel":"kpmg.navigation.servicesLabel",
+            "servicesLandingUrl":"/servicesLanding.html",
+
+            "eventsLabel" : "kpmg.navigation.eventsLabel",
+            "eventsLandingUrl":"/eventsLanding.html",
+
+            "optionalLabelText":"[OPTIONAL]",
+            "optionalLabelUrl":"/optionalLabel.html",
+
+            "careersLabel":"kpmg.navigation.careersLabel",
+            "careerLandingUrl":"/careerLanding.html",
+
+            "alumniLabel":"kpmg.navigation.alumniLabel",
+            "alumniLandingUrl":"/alumniLanding.html",
+
+            "mediaLabel":"kpmg.navigation.mediaLabel",
+            "mediaLandingUrl":"/mediaLanding.html",
+
+            "socialLabel":"kpmg.navigation.socialLabel",
+            "socialLandingUrl":"/socialLanding.html",
+
+            "aboutLabel":"kpmg.navigation.aboutLabel",
+            "aboutLandingUrl":"/aboutLanding.html",
+
+            "searchResultCollectionName" : "Search",
+            "searchResultPath" : "http://www.kpmg.com",
+
+            "optionalLabelText2":"[OPTIONAL]",
+            "optionalLabelUrl2":"/optionalLabel.html"
+
+        }
+    }
+}

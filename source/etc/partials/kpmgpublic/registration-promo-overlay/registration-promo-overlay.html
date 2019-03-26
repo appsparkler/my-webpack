@@ -1,0 +1,52 @@
+<!-- Begin Component: RegistrationPromoOverlay -->
+<section class="module-registration-promo-overlay component hidden">
+    <div class="modal fade registration-promo-overlay" role="dialog" tabindex="0">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="title">
+                        {{#if hbs.registrationPromoOverlay.blogFlag}}
+                            {{{hbs.registrationPromoOverlay.blogPromoOverlayTitleLabel}}}
+                        {{else}}
+                            {{{i18n hbs.registrationPromoOverlay.promoOverlayTitleLabel}}}
+                        {{/if}}
+                    </h4>
+                    <span class="icon-close btn-close close chrome" tabindex="0" data-dismiss="modal"></span>
+                </div>
+                <div class="modal-body">
+                    <div class="overlay-image">
+                        <img src="{{hbs.globalValues.assetDomainName}}{{hbs.registrationPromoOverlay.imageUrl}}" alt="{{hbs.registrationPromoOverlay.imageAltText}}" title="{{hbs.registrationPromoOverlay.imageAltText}}"/>
+                    </div>
+                    <div class="overlay-content">
+                        {{#if hbs.registrationPromoOverlay.blogFlag}}
+                            {{{hbs.registrationPromoOverlay.blogPromoOverlayDescriptionLabel}}}
+                        {{else}}
+                            {{{i18n hbs.registrationPromoOverlay.promoOverlayDescriptionLabel}}}
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn col-md-12 register-btn" data-dismiss="modal">
+                        <span>
+                            {{#if hbs.registrationPromoOverlay.blogFlag}}
+                                {{hbs.registrationPromoOverlay.blogPromoOverlayRegisterNowLabel}}
+                            {{else}}
+                                {{i18n hbs.registrationPromoOverlay.promoOverlayRegisterNowLabel}}
+                            {{/if}}
+                        </span>
+                    </button>
+                    <button type="button" class="btn col-md-12 login-btn" data-dismiss="modal">
+                        <span>
+                            {{#if hbs.registrationPromoOverlay.blogFlag}}
+                                {{hbs.registrationPromoOverlay.blogPromoOverlayLoginLabel}}
+                            {{else}}
+                                {{i18n hbs.registrationPromoOverlay.promoOverlayLoginLabel}}
+                            {{/if}}
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Component: RegistrationPromoOverlay -->

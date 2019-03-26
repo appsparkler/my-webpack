@@ -1,0 +1,20 @@
+{
+    "hbs": {
+        "featuredArticles": {
+            "label" : "featuredArticleLabel",
+        	"title" : "CHANGING MARKETS AND BUSINESS ENVIRONMENT",
+            "shortTitle" : "CHANGING MARKETS",
+        	"imageUrl": "/assets/fpo-images/KPMG_B1_INSIGHTS.jpg",
+        	"alt" : "Featured Article",
+        	"description" : "The future of any organization is influenced by understanding of economic, social and technological challenges. Companies need to adapt to turn challenges into opportunities.",
+        	"shortDescription" : "The future of any organization is influenced by understanding of economic, social and technological challenges.",
+        	"firstName" : "Dan",
+        	"lastName" : "Mckay",
+        	"location" : "Vancouver, CA",
+        	"fpRfpButtonText" : "readMore",
+            "fpRfpButtonLink" :"#",
+			"personalized": true,
+			"numberOfContents": 1
+        }
+    }
+}

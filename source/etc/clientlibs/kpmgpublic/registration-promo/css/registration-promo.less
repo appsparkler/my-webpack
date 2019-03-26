@@ -1,0 +1,149 @@
+@import "../../global/css/_variables.less";
+
+.module-registration-promo {
+   .promo-wrapper {
+       position: relative;
+       background-color: @medium-blue;
+       border-radius: 5px;
+       padding: 25px 150px 25px 15px;
+       min-height: 140px;
+       cursor: pointer;
+
+       &:hover {
+            animation: shake 150ms 2 linear;
+            -moz-animation: shake 150ms 2 linear;
+            -webkit-animation: shake 150ms 2 linear;
+            -o-animation: shake 150ms 2 linear;
+       }
+   }
+
+   .heading {
+       font-size: 40px;
+       font-family: @kpmgLight;
+       font-weight: 200;
+       color: @white;
+       line-height: 1;
+       margin: 0;
+
+       .lang(ja,{
+           font-size: 30px;
+       });
+       .lang(zh-CN,{
+           font-size: 30px;
+       });
+       .lang(zh-TW,{
+           font-size: 30px;
+       });
+       .lang(ko,{
+           font-size: 30px;
+       });
+       .lang(vi,{
+           font-size: 30px;
+       });
+   }
+
+   .description {
+       font-size: 16px;
+       font-family: @arial;
+       color: @white;
+       line-height: 1.167;
+       padding-top: 20px;
+   }
+
+   .promo-image {
+        position: absolute;
+        right: 50px;
+        bottom: 25px;
+   }
+
+    @keyframes shake {
+        0% {
+            transform: translate(3px, 0);
+        }
+        50% {
+            transform: translate(-3px, 0);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @-moz-keyframes shake {
+        0% {
+            -moz-transform: translate(3px, 0);
+        }
+        50% {
+            -moz-transform: translate(-3px, 0);
+        }
+        100% {
+            -moz-transform: translate(0, 0);
+        }
+    }
+
+    @-webkit-keyframes shake {
+        0% {
+            -webkit-transform: translate(3px, 0);
+        }
+        50% {
+            -webkit-transform: translate(-3px, 0);
+        }
+        100% {
+            -webkit-transform: translate(0, 0);
+        }
+    }
+
+    @-ms-keyframes shake {
+        0% {
+            -ms-transform: translate(3px, 0);
+        }
+        50% {
+            -ms-transform: translate(-3px, 0);
+        }
+        100% {
+            -ms-transform: translate(0, 0);
+        }
+    }
+
+    @-o-keyframes shake {
+        0% {
+            -o-transform: translate(3px, 0);
+        }
+        50% {
+            -o-transform: translate(-3px, 0);
+        }
+        100% {
+            -o-transform: translate(0, 0);
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .module-registration-promo {
+        padding: 0;
+        .promo-wrapper {
+            padding: 15px;
+        }
+        .promo-image {
+            display: none;
+        }
+        .heading {
+            font-size: 34px;
+
+            .lang(ja,{
+                font-size: 30px;
+            });
+            .lang(zh-CN,{
+                font-size: 30px;
+            });
+            .lang(zh-TW,{
+                font-size: 30px;
+            });
+            .lang(ko,{
+                font-size: 30px;
+            });
+            .lang(vi,{
+                font-size: 30px;
+            });
+        }
+    }
+}

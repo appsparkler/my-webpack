@@ -1,0 +1,46 @@
+<!-- Begin Component: Deleteaccountlink -->
+<div class="module-deleteaccountlink component">
+  <a class="btn-cta cta-secondary deleteAccount trackable"  title="{{i18n 'kpmg.personalization.myaccount.deleteAccount.deleteAccountLink'}}">
+    <span class="icon-close"></span><span class="btn-copy">{{i18n "kpmg.personalization.myaccount.profile.deletemyaccount"}}</span>
+  </a>
+  <!-- Modal -->
+  <div class="modal fade deleteModal" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="icon-close close btn-close" data-dismiss="modal"><span class="sr-only"  >{{i18n "kpmg.personalization.myaccount.profile.close"}}</span></span>
+          <h4 class="deleteModal-title">{{i18n "kpmg.personalization.myaccount.profile.deletemyaccount"}}</h4>
+        </div>
+        <div class="modal-body">
+          <p class="delete-msg">{{i18n "kpmg.personalization.myaccount.profile.deletemyaccountdescription"}}</p>
+        </div>
+        <div class="modal-footer col-md-12">
+          <div class="col-md-6">
+            <button type="button" class="no-btn btn" data-dismiss="modal"> <span class="icon-chevron-left"></span>{{i18n "kpmg.personalization.myaccount.profile.nogoback"}}</button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btn deleteSuccess" data-toggle="modal"   data-dismiss="modal"><span class="icon-chevron-right"></span>{{i18n "kpmg.personalization.myaccount.profile.yesdelete"}} </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade deleteModal" id="deleteSuccessModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="icon-close  btn-close close" data-dismiss="modal"><span class="sr-only"  >{{i18n "kpmg.personalization.myaccount.profile.close"}}</span></span>
+          <h4 class="deleteModal-title">{{i18n "kpmg.personalization.myaccount.profile.deletemyaccount"}}</h4>
+        </div>
+        <div class="modal-body">
+          <p class="success-msg alert-success"><span class="icon-checkmark"></span>{{i18n "kpmg.personalization.myaccount.profile.deletemyaccountsucessful"}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-default col-md-6 pull-left btn delete-close" data-dismiss="modal"><span class="icon-close"></span>{{i18n "kpmg.personalization.myaccount.profile.close"}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Component: Deleteaccountlink -->

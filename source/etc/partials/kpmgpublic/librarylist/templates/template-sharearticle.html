@@ -1,0 +1,71 @@
+<div class="defaultoverlay clearfix">
+    <div class="overlay-header" role="header">
+        <h4 class="heading" id="myModalLabel">
+            {{#if hbs.shareArticle}}
+                {{hbs.shareArticle.shareThisList}}
+            {{else}}
+                {{i18n "kpmg.personalization.library.listmanagement.shareThisList"}}
+            {{/if}}
+        </h4>
+        <hr class="divider"/>
+    </div>
+    <div class="overlay-content" role="main">
+        <div class="overlay-content-inner">
+            <p class="description" id="description">
+                {{#if hbs.shareArticle}}
+                    {{hbs.shareArticle.shareThisListDescription}}
+                {{else}}
+                    {{i18n "kpmg.personalization.library.listmanagement.shareThisListDescription"}}
+                {{/if}}
+            </p>
+            <input class="alert alert-info"  type="text" id="clipboardinput" value=""/>
+        </div>
+        <div class="alert alert-success" role="alert">
+            <span class="icon-chevron-right"></span>
+            {{#if hbs.shareArticle}}
+                {{hbs.shareArticle.successDescription}}
+            {{else}}
+                {{i18n "kpmg.personalization.library.listmanagement.successDescription"}}
+            {{/if}}
+        </div>
+    </div>
+    <div class="overlay-footer" role="footer">
+        <div class="row ">
+            <div class="col-md-6 last-column col-md-push-6">
+                <div class="savearticle-controls">
+                    <button class="btn btn-cta btn-default" id="copytocb" type="button">
+                        <span class="icon-chevron-right">
+                        </span>
+                        {{#if hbs.shareArticle}}
+                            {{hbs.shareArticle.copy}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.copy"}}
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-pull-6">
+                <div class="savearticle-controls">
+                    <a class="btn-cta btn-cancel cancel" href="#" id="cancelaction" data-dismiss="modal">
+                        <span class="icon-close">
+                        </span>
+                        {{#if hbs.shareArticle}}
+                            {{hbs.shareArticle.cancel}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.cancel"}}
+                        {{/if}}
+                    </a>
+                    <button class="btn-cta close btn-default" href="#" data-dismiss="modal">
+                        <span class="icon-close">
+                        </span>
+                        {{#if hbs.shareArticle}}
+                            {{hbs.shareArticle.close}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.close"}}
+                        {{/if}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

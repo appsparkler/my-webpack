@@ -1,0 +1,52 @@
+<section class="module-contactpromo component clearfix">
+    <div class="contactpromo-item row">
+            <div class="col-md-12 col-full-width">
+                <a title="{{hbs.contactpromo.altText}}" href="{{hbs.contactpromo.contactDetailsLink}}">
+                    {{#if hbs.contactpromo.image}}
+                    {{#if hbs.contactpromo.imageConfigExists}}
+                    <div data-picture data-alt='{{hbs.contactpromo.altText}}'>
+                        {{#hbs.contactpromo.imageConfig}}
+                        <div data-src="{{hbs.globalValues.assetDomainName}}{{hbs.contactpromo.image}}/jcr:content/renditions/cq5dam.web.{{this.imagewidth}}.{{this.imageheight}}.jpg" data-media="(min-width: {{this.devicewidth}}px)"></div>
+                        {{#if @last}}
+                        <img class="img-responsive lazy" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 {{this.imagewidth}} {{this.imageheight}}'%2F%3E" alt="{{imageAltText}}" />
+                        {{/if}}
+                        {{/hbs.contactpromo.imageConfig}}
+                    </div>
+                    {{else}}
+                    <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-desktop="{{hbs.globalValues.assetDomainName}}{{hbs.contactpromo.image}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{hbs.globalValues.assetDomainName}}{{hbs.contactpromo.image}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{hbs.contactpromo.altText}}" class="lazy img-responsive" />
+                    {{/if}}
+                    {{/if}}
+                </a>
+                <div class="contactpromo-content">
+                    <a href="{{hbs.contactpromo.contactDetailsLink}}">
+                        <h3 class="tertiary-head">{{hbs.contactpromo.salutation}} {{hbs.contactpromo.firstName}} {{hbs.contactpromo.middleName}} {{hbs.contactpromo.lastName}} {{hbs.contactpromo.suffix}}</h3>
+                        <p>{{hbs.contactpromo.jobTitle}}</p>
+                        {{#if hbs.contactpromo.memberFirm}}
+                        <p>{{hbs.contactpromo.memberFirm}}</p>
+                        {{else}}
+                        <p>{{hbs.contactpromo.companyName}}</p>
+                        {{/if}}
+                    </a>
+                    {{#if hbs.contactpromo.showTelephonNumber}}
+                    <p class="contactpromo-phone">
+                        <a href="tel:{{hbs.contactpromo.telephonNumber}}" title="{{hbs.contactpromo.telephonNumber}}" x-cq-linkchecker="skip">{{hbs.contactpromo.telephonNumber}}</a>
+                    </p>
+                    {{/if}}
+                    {{#if hbs.contactpromo.showEmailAddress}}
+                    <p class="contact-email line-clamp line-clamp-3">
+                        <a href="mailto:{{hbs.contactpromo.emailAddress}}" target="_top">{{hbs.contactpromo.emailAddress}}</a>
+                    </p>
+                    {{/if}}
+                </div>
+            </div>
+    </div>
+    {{#if hbs.contactpromo.showCTALabel}}
+    <div class="clearfix">
+        <div class="primary-cta-space">&nbsp;</div>
+        <span tabindex="0" id="{{hbs.contactpromo.contactPageName}}" class="btn-cta btn-modal people-connect contact-promo-label contact-modal" data-modal-url="/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#kpmgModal" data-remote="{{hbs.contactpromo.contactFromLink}}{{hbs.contactpromo.contactDetailsLink}}" id="{{hbs.contactpromo.contactDetailsLink}}">
+            <span class="icon-email"></span>
+            <span class="btn-copy  email-data-link">{{i18n hbs.contactpromo.contactLabel}}</span>
+        </span>
+    </div>
+    {{/if}}
+</section>

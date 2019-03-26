@@ -1,0 +1,54 @@
+<section class="module-tmpl-contact-detail">
+    
+        <div class="inner-container">
+            <div class="row">
+                <div class="row-same-height row-full-height">
+                    <div class="col-md-9 col-md-height col-full-height col-top">
+                        
+                        <div class="row contacts" data-desktop-cell="1" data-mobile-cell="1">
+                            {{ include "contactdetail" resourceType="/apps/kpmgpublic/components/content/contactdetail" path="contactDetail"}}
+                            {{#render resourceType="/apps/kpmgpublic/components/content/bodytextr" path="bodytext"}}
+                                {{ include "bodytext" resourceType="/apps/kpmgpublic/components/content/bodytext" path="bodytext"}}
+                            {{/render}}
+                        </div>
+    
+                        <div class="row" data-desktop-cell="2" data-mobile-cell="3"> 
+                        {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell8"}}
+                            {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell8"}}
+                        {{/render}}
+                        </div>
+                    </div>
+    
+                    <div class="col-md-3 col-md-height col-full-height  col-top" data-desktop-cell="3" data-mobile-cell="2">
+                        {{ include "image" resourceType="/apps/kpmgpublic/components/content/image-component" path="image-comp"}}
+                    </div>
+                </div>   
+    
+                <div class="row-same-height row-full-height">
+                    <div class="col-md-9 col-md-height col-full-height col-top col-transparent mid-row col-nested  ">
+                        <div class="row "  data-desktop-cell="4" data-mobile-cell="4" >
+                            {{ include "contactcredentials" resourceType="/apps/kpmgpublic/components/content/contactcredentials" path="contactcredentials"}}
+                        </div>
+                       <div class="row tmpl-row" data-desktop-cell="6" data-mobile-cell="7" style="padding: 0 6px;">
+                            {{ include "contact-tabs" resourceType="/apps/kpmgpublic/components/listing/contacttabs"}}
+                        </div>
+                    </div> 
+    
+                    <div class="col-md-3 col-md-height col-full-height col-top col-transparent no-border-top  ">
+    
+                        <div class="row tmpl-row connectwithmewrap" data-desktop-cell="5" data-mobile-cell="6" >
+                            {{ include "connectwithme" resourceType="/apps/kpmgpublic/components/global/connectwithme"}}
+                        </div>
+                        <div class="row tmpl-row" data-desktop-cell="7" data-mobile-cell="5">
+                            {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell14"}}
+                                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell14"}}
+                            {{/render}}
+                        </div>
+                    </div>
+                </div>
+    
+    
+            </div>
+        </div>
+    
+    </section>

@@ -1,0 +1,58 @@
+@import "../../global/css/_variables.less";
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../interests/css/interests";
+@import "../../mykpmgpromob/css/mykpmgpromob";
+@import "../../librarysummary/css/librarysummary";
+@mobile: ~"only screen and (max-width: 640px)";
+@desktop: ~"only screen and (min-width: 641px)";
+.module-tmpl-myinterests {
+    .bread-crumb-full {
+        margin-top: 0px;
+    }
+
+    .parsys-row {
+        border-bottom: 0 none;
+    }
+
+    @media @desktop {
+        .mobile-only {
+            display: none !important;
+        }
+        .mykpmg-promo {
+            .col-md-12 {
+                height: 100%;
+            }
+            .module-mykpmgpromob {
+                height: 100%;
+            }
+        }
+        .library-summary {
+            height: 330px;
+            margin-top: 18px;
+        }
+    }
+    @media @mobile {
+        .desktop-only {
+            display: none !important;
+        }
+        .module-mykpmgpromob.component, .module-librarysummary.component {
+            margin: 0px 9px;
+        }
+        .library-summary {
+            height: auto;
+            img {
+                display: none;
+            }
+        }
+        .module-basicpagetitle {
+            padding-left: 18px;
+            .basic-title {
+                margin-top: 8px;
+            }
+            .basic-desc {
+                margin-top: 7px;
+            }
+        }
+    }
+}

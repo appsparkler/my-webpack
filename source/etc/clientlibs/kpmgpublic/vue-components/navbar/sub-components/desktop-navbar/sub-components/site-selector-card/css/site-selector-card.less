@@ -1,0 +1,41 @@
+@import "../../../../../../../global/css/_variables";
+//
+.site-selector-card-component {
+    background-color: @green1 !important;
+	cursor: pointer;
+    &:hover {
+        outline: 1px darken(@gray-96, 20%) solid;
+        text-decoration: none !important;
+    }
+
+    .card-title {
+        font-size: 30px;
+        line-height: 1.2;
+        font-family: @kpmgLight;
+        .lang(ja,{
+            font-size: 20px;
+        });
+        .lang(zh-CN,{
+            font-size: 20px;
+        });
+        .lang(zh-TW,{
+            font-size: 20px;
+        });
+        .lang(ko,{
+            font-size: 20px;
+        });
+        .lang(vi,{
+            font-size: 20px;
+        });
+    }
+
+    .card-text {
+        font-size: 12px;
+        padding: 25px 0 35px;
+        line-height: 1.4;
+    }
+
+    .card-img {
+        width: 75px !important;
+    }
+}

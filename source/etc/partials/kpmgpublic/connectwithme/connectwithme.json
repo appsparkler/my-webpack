@@ -1,0 +1,17 @@
+{
+    "hbs": {
+        "connectWithMe" : {
+            "cwmTitle"   : "cwmTitle",
+            "cwmRfpTitle"  : "cwmRfpTitle",
+            "cwmRfpButtonText" : "cwmRfpButtonText",
+            "cwmRfpShow":true,
+            "cwmRfpButtonLink": "https://www.kpmg.com/Global/en/Pages/Submit-request-for-proposal-rfp.aspx",
+            "contactFormLink": "/etc/partials/kpmgpublic/peoplecontactform/peoplecontactform.html",
+            "firstName":"Priyanka",
+            "city" :"toronto",
+            "country" :"bac",
+            "telephoneNumber":"1234567890123456789012345",
+            "cwmContactLabel":"contact" 
+        }
+    }
+}

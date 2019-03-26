@@ -1,0 +1,10 @@
+{{#if hbs.Publicationserieslist.publicationSeriesSolrUrl}}
+
+<section class="module-publicationserieslist component clearfix" data-i18nLabel="{{i18n hbs.Publicationserieslist.publicationIssueLabel}}" data-items="100000" data-path="{{hbs.Publicationserieslist.publicationSeriesSolrUrl}}" >
+    <div class="Publicationserieslist-listingGroup col-md-12">  
+        <h3 class="tertiary-head" id="{{hbs.Publicationserieslist.anchorId}}">{{hbs.Publicationserieslist.publicationSeriesTitle}}</h3>
+        <ul class="Publicationserieslist-listingGroupLinks"></ul>
+    </div>
+</section>
+
+{{/if}}

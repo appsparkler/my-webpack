@@ -1,0 +1,18 @@
+<div class="col-md-12 col-xs-12 relatedcomponent-innerContainer bg-white grid" data-article-type="{{articleType}}">
+    <a href="{{#if  this.translatedCTAURL}} {{this.translatedCTAURL}} {{else}} {{this.primaryCTAURL}} {{/if}}" title="{{this.imageAltText}}" aria-labelledby="Read more about {{this.shortTitle}}">
+        <div class="relatedcomponent-image">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-desktop="{{this.assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.158.jpg" data-mobile="{{this.assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.512.341.jpg" alt="{{this.imageAltText}}" class="lazy img-responsive"/>
+        </div>
+        <h3 class="tertiary-head">{{{this.shortTitle}}}</h3>
+        <p class="related-description">{{{this.shortDescription}}}</p>
+    </a>
+    {{#if this.articleDetail}}
+    <div class="library-desktop {{#if this.isBlog}} hidden{{/if}} ">
+        <div class="module-addtolibrary component self-contained clearfix" aria-label="add to Library" data-description="{{{this.shortDescription}}}" data-shortDescription="{{{this.shortDescription}}}" data-href="{{#if this.translatedCTAURL}}{{this.translatedCTAURL}}{{else}}{{this.primaryCTAURL}}{{/if}}" data-image="{{this.imageFileReference}}" data-title="{{{this.shortTitle}}}" data-shortTitle="{{{this.shortTitle}}}" style="display:none;">
+            <a href="javascript:;" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0" title="Add to library" aria-haspopup="true">
+                <span class="icon-star"></span>
+            </a>
+        </div>
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,151 @@
+<section class="module-tmpl-industry">
+
+  <div class="row visible-sm-block visible-md-block visible-lg-block">
+      <div class="col-md-12 bread-crumb-full"  data-desktop-cell="1" data-mobile-cell="1">
+         <div class="inner-container">
+            {{ include "breadcrumb" resourceType="/apps/kpmgpublic/components/hidden/breadcrumb" }}
+         </div>
+      </div>
+  </div>
+
+  <div class="row tmpl-row">
+      <div class="col-md-12 full-page-title" data-desktop-cell="2" data-mobile-cell="2">
+          <div class="inner-container">
+              {{ include "basicpagetitle" resourceType="/apps/kpmgpublic/components/global/basicpagetitle"}}
+          </div>
+        </div>
+  </div>
+
+  <div class="inner-container">
+
+    <div class="row">
+      <div class="col-md-12" data-desktop-cell="3" data-mobile-cell="3">
+        {{ include "shortcarousel" resourceType="/apps/kpmgpublic/components/content/shortcarousel" }}
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-3">
+
+          <div class="row tmpl-row" data-desktop-cell="4" data-mobile-cell="16">
+            {{ include "subnavigation" resourceType="/apps/kpmgpublic/components/content/subnavigation" }}
+          </div>
+
+          <div class="row tmpl-row kpmg-promo-block" data-desktop-cell="5" data-mobile-cell="17">
+            {{ include "promotionala" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell8"}}
+          </div>
+
+        </div>
+
+        <div class="col-md-9 col-full-width">
+
+          <div class="row">
+
+              <div class="row-same-height row-full-height">
+                  
+                  <div class="col-md-8 col-md-height col-full-height col-top col-nested">
+
+                    <div class="row" data-desktop-cell="6" data-mobile-cell="4">
+                      <div class="row-same-height row-full-height">
+                        <div class="col-md-12 col-md-height">
+                          {{ include "bodytext" resourceType="/apps/kpmgpublic/components/content/bodytext"}}
+                        </div>
+                      </div>  
+                    </div>
+
+                    <div class="row">
+                        <div class="row-same-height row-full-height">
+
+                            <div class="col-md-6 col-md-height col-full-height col-top" data-desktop-cell="7" data-mobile-cell="7">
+                                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell7"}}
+                            </div>
+                            <div class="col-md-6 col-md-height col-full-height col-top" data-desktop-cell="8" data-mobile-cell="5">
+                                {{ include "promotionalb" resourceType="/apps/kpmgpublic/components/global/promotionalcomponent" path="cell9"}}
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                  </div>
+
+                  <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="9" data-mobile-cell="9">
+                      {{ include "socialwidget" resourceType="/apps/kpmgpublic/components/social/socialwidget"}}
+                  </div>
+              </div>
+          </div>
+              <div class="row">
+                <div class="row-same-height row-full-height">
+                
+                            <div class="col-md-8 col-md-height col-full-height col-top" data-desktop-cell="10" data-mobile-cell="6">
+                              <!--commented below line for KPMGS-222:Moved contact carousel inside cell10 parsys-->
+                              <!--include "contactcarousel" resourceType="/apps/kpmgpublic/components/content/contactcarousel"-->
+                              {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell10"}}
+                                {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell10"}}
+							  {{/render}}
+                            </div>
+
+                            <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="11" data-mobile-cell="8">
+                                {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell11"}}
+                                  {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell11"}}
+                                {{/render}}
+                            </div>
+
+                  </div>
+
+                  {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder,/apps/kpmgpublic/components/hidden/placeholder,/apps/kpmgpublic/components/hidden/placeholder" path="cell12,cell13,cell14"}}
+
+            <div class="row-same-height row-full-height">
+                
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="12" data-mobile-cell="10">
+                  {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell12"}}
+                    
+                </div>
+
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="13" data-mobile-cell="11">
+                  {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell13"}}
+                    
+                </div>
+
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="14" data-mobile-cell="12">
+                  {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell14"}}
+                    
+                </div>
+                
+            </div>
+
+            {{/render}}
+
+            <div class="row-same-height row-full-height">
+                
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="15" data-mobile-cell="13">
+                  {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell15"}}
+                    {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell15"}}
+                  {{/render}}
+                    
+                </div>
+
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="16" data-mobile-cell="14">
+                  {{#render resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell16"}}
+                    {{ include "emptyplaceholder" resourceType="/apps/kpmgpublic/components/hidden/placeholder" path="cell16"}}
+                  {{/render}}
+                    
+                </div>
+
+                <div class="col-md-4 col-md-height col-full-height  col-top" data-desktop-cell="17" data-mobile-cell="15">
+                  {{ include "connectandrfp" resourceType="/apps/kpmgpublic/components/global/connectandrfp" path="cell17"}}
+                </div>
+                
+            </div>
+              </div>
+
+          
+
+        </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,192 @@
+<div id="navigation-v2-preloader" class="bs4">
+
+<!-- Preloader : Start -->
+
+<div class="navbar-component vue-component navbar-wrapper" style="position:absolute;width:100%;">
+      <div class="px-0 ">
+         <nav class="desktop-navbar-component vue-component navbar navbar-expand bg-white position-static rounded-0 d-none d-xl-flex pb-2">
+            <a class="logo-image-component vue-component navbar-brand p-0 " href="{{hbs.navigation.homePageUrl}}">
+				<img src="{{hbs.navigation.kpmgLogoImage}}" alt="{{hbs.navigation.kpmgLogoAltText}}">
+            </a>
+            <ul class="navbar-nav-component vue-component navbar-nav mx-auto ">
+               <li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                  <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3" 
+                  {{#if hbs.navigation.insightsLandingUrl}}
+                  href="{{hbs.navigation.insightsLandingUrl}}"
+                  {{else}}
+                  href="#"
+                  {{/if}}
+                  >
+                  {{i18n hbs.navigation.insightsLabel}}
+                  </a>
+
+               </li>
+               <li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                  <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3"
+                  {{#if hbs.navigation.industriesLandingUrl}}
+                  href="{{hbs.navigation.industriesLandingUrl}}"
+                  {{else}}
+                  href="#"
+                  {{/if}}
+                 >
+                  {{i18n hbs.navigation.industriesLabel}}
+                  </a>
+
+               </li>
+               <li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                  <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3"
+                  {{#if hbs.navigation.servicesLandingUrl}}
+                  href="{{hbs.navigation.servicesLandingUrl}}"
+                  {{else}}
+                  href="#"
+                  {{/if}}
+                  >
+                  {{i18n hbs.navigation.servicesLabel}}
+                  </a>
+
+               </li>
+               {{#if hbs.navigation.eventsLandingUrl}}
+               <li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                   <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3" 
+                   {{#if hbs.navigation.eventsLandingUrl}}
+                  href="{{hbs.navigation.eventsLandingUrl}}"
+                  {{else}}
+                  href="#"
+                  {{/if}}
+                   >
+                   {{i18n hbs.navigation.eventsLabel}}
+                   </a>
+               </li>
+               {{/if}}
+
+			   {{#if hbs.navigation.optionalLabelUrl}}
+               {{#if hbs.navigation.optionalLabelText}}
+               <li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                   <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3" 
+                   {{#if hbs.navigation.optionalLabelUrl}}
+                   href="{{hbs.navigation.optionalLabelUrl}}"
+                   {{else}}
+                   href="#"
+                   {{/if}}
+                   {{#unless hbs.navigation.isOptionalUrl1Internal}}
+                    target="_blank" 
+                    x-cq-linkchecker="skip"
+                    {{/unless}}
+                   >
+                   {{hbs.navigation.optionalLabelText}}
+                   {{#unless hbs.navigation.isOptionalUrl1Internal}} 
+                   <span class="sr-only">{{i18n hbs.navigation.newTabAllowLabel }}</span>
+                   {{/unless}}
+                   </a>
+               </li>
+               {{/if}}
+               {{/if}}
+
+				{{#if hbs.navigation.optionalLabelUrl2}}
+                {{#if hbs.navigation.optionalLabelText2}}
+				<li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                   <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3" 
+                   {{#if hbs.navigation.optionalLabelUrl2}}
+                   href="{{hbs.navigation.optionalLabelUrl2}}"
+                   {{else}}
+                   href="#"
+                   {{/if}}
+                   {{#unless hbs.navigation.isOptionalUrl2Internal}}
+                    target="_blank" 
+                    x-cq-linkchecker="skip"
+                    {{/unless}}
+                   >
+                   {{hbs.navigation.optionalLabelText2}}
+                   {{#unless hbs.navigation.isOptionalUrl2Internal}} 
+                   <span class="sr-only">{{i18n hbs.navigation.newTabAllowLabel }}</span>
+                   {{/unless}}
+                   </a>
+                </li>
+                {{/if}}
+                {{/if}}
+
+                {{#if hbs.navigation.optionalLabelUrl3}}
+                {{#if hbs.navigation.optionalLabelText3}}
+				<li tabindex="0" class="navbar-nav-list-item-component vue-component nav-item d-inline-block ">
+                   <a class="nav-link text-kpmg-blue pl-4 pr-4 pt-3"
+                   {{#if hbs.navigation.optionalLabelUrl3}}
+                   href="{{hbs.navigation.optionalLabelUrl3}}"
+                   {{else}}
+                   href="#"
+                   {{/if}}
+                   {{#unless hbs.navigation.isOptionalUrl3Internal}}
+                    target="_blank" 
+                    x-cq-linkchecker="skip"
+                    {{/unless}}
+                   >
+                   {{hbs.navigation.optionalLabelText3}}
+                   {{#unless hbs.navigation.isOptionalUrl3Internal}} 
+                   <span class="sr-only">{{i18n hbs.navigation.newTabAllowLabel }}</span>
+                   {{/unless}}
+                   </a>
+                </li>
+                {{/if}}
+                {{/if}}
+
+            </ul>
+            <div class="navbar-ikon-menu-component vue-component mt-2 ">
+               <div class="ikon-trigger-with-navflyout-dropdown-component vue-component dropdown d-inline-block position-static ">
+                  <span data-toggle="dropdown" class="px-0 py-3 text-kpmg-blue icon icon-fw"></span>
+
+               </div>
+               <div class="ikon-trigger-with-animated-search-bar-component vue-component d-inline-block position-relative">
+
+                  <span class="icon icon-search icon-fw px-2 py-1 text-kpmg-blue cursor-pointer" title="Search"></span>
+               </div>
+               <div class="ikon-trigger-with-navflyout-dropdown-component vue-component dropdown d-inline-block position-static chrome">
+                  <span data-toggle="dropdown" class="px-0 py-3 text-kpmg-blue icon icon-fw cursor-pointer dropdown-trigger icon-site-selector chrome" title="Site Selector"></span>
+
+               </div>
+            </div>
+         </nav>
+         {{#if hbs.personalizationValues.blog}}
+            <div class="blogs-navbar-component vue-component">
+                <ul class="blog-header-list">
+                    <li>
+                        <a x-cq-linkchecker="skip" href="{{hbs.touchBlueBanner.homeURL}}" class="list-item"> {{hbs.touchBlueBanner.homeLabel}} </a>
+                        <span class="separator">|</span>
+                    </li>
+                    <li>
+                        <a x-cq-linkchecker="skip" href="{{hbs.touchBlueBanner.topicsURL}}" class="list-item"> {{hbs.touchBlueBanner.topicsLabel}} </a>
+                        <span class="separator">|</span>
+                    </li>
+                    <li>
+                        <a x-cq-linkchecker="skip" href="{{hbs.touchBlueBanner.authorURL}}" class="list-item"> {{hbs.touchBlueBanner.authorsLabel}} </a>
+                    </li>
+                </ul>
+            </div>
+         {{/if}}
+      </div>
+      <header class="mobile-navbar-component vue-component d-xl-none">
+         <nav class="navbar fixed-top bg-white py-1 px-1">
+            <div class="navBackdrop bg-white"></div>             
+            <div class="mobile-menu-toggle-and-menu-component vue-component mt-3">
+               <span class="mobile-slide-menu-toggle-trigger-component vue-component ml-4 mt-1 icon-list-view text-kpmg-blue">
+                    <span class='mobile_menu_icon'>
+                            <svg class="hamburger js-navicon closed"
+                            xmlns="http://www.w3.org/2000/svg" 
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" 
+                            style="enable-background:new 0 0 40 40;" xml:space="preserve">
+                            <line x1="3" y1="0" x2="37" y2="0" class="hamburger__line animation__top"></line>
+                            <line x1="3" y1="15" x2="37" y2="15" class="hamburger__line animation__middle"></line>
+                            <line x1="3" y1="30" x2="37" y2="30" class="hamburger__line animation__bottom"></line>
+                            </svg>
+                    </span>
+                </span> 
+                
+            </div>
+            <a class="logo-image-component vue-component navbar-brand p-0 mt-1" href="{{hbs.navigation.homePageUrl}}">
+                <img src="{{hbs.navigation.kpmgLogoImage}}" alt="{{hbs.navigation.kpmgLogoAltText}}">
+            </a>
+         </nav>
+      </header>
+
+
+   </div>
+<!-- Preloader : End -->
+</div>

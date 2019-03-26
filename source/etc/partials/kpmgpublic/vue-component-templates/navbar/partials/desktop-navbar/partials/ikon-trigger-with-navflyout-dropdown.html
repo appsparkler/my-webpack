@@ -1,0 +1,29 @@
+<template id="ikon-trigger-with-navflyout-dropdown-component-template">
+    <div
+        class="ikon-trigger-with-navflyout-dropdown-component vue-component dropdown"
+        v-dev="{isDev: $root.isDev, variant: 'primary' }"
+        v-if="vm && vm.isVisible"
+    >
+        <!-- DROPDOWN TOGGLE -->
+        <span 
+          class="
+              px-0 py-3
+                text-kpmg-blue 
+                icon icon-fw
+                cursor-pointer dropdown-trigger
+           "
+            data-toggle="dropdown"
+            v-if="vm && vm.iconStyle"
+            :class="vm.iconStyle"
+            :title="vm.title"
+          tabindex="0"
+        >
+            <span class="notVerified icon-notVerified"
+                v-if="vm.iconStyle === 'icon-person1'">
+            </span>
+        </span>
+
+        <!-- CUSTOM FULL BLEED DROPDOWN MENU -->
+        <nav-flyout-fullbleed v-if="vm.flyout" :vm="vm.flyout" class="dropdown-menu"></nav-flyout-fullbleed>
+    </div>
+</template>

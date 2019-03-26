@@ -1,0 +1,78 @@
+<!-- Begin Component: Partnerlocator -->
+<section class="module-partnerlocator component">
+    <div class="col-md-12 findPartnerContainer">
+        <div class="col-md-6 queryContainer" data-countryurl="{{hbs.partnerlocator.countryJsonPath}}" data-industryserurl="{{hbs.partnerlocator.tagsJsonPath}}" data-solrurl="{{hbs.partnerlocator.solrURL}}" data-templatepath="{{hbs.partnerlocator.templateName}}" data-contactformlink="{{hbs.partnerlocator.contactFormLink}}" data-allpartnersquery="{{hbs.partnerlocator.searchQuery}}">
+            <div class="titleContainer">
+                <h3 class="secondary-head title">{{i18n hbs.partnerlocator.title}}</h3>
+            </div>
+
+            <div class="compDescription">{{i18n hbs.partnerlocator.description1}}</div>
+            <div class="dropdownContainer">
+                <div class="col-md-12 custom-select custom-class-name">
+                    <label for="partnercountryselect">{{ i18n hbs.partnerlocator.selectCountryText }}</label>
+                    <select name="country" class="countrydd" id="partnercountryselect">
+						<option title="{{ i18n hbs.partnerlocator.selectCountryText }}" value="">	
+							{{ i18n hbs.partnerlocator.selectCountryText }}
+						</option>
+					</select>
+                    <span class="icon-dropdown-chevron select-ikon"></span>
+                </div>
+                <div class="partnerLocatordefaultDescription">
+                    {{i18n hbs.partnerlocator.description2}}
+                </div>                
+                <div class="col-md-12 custom-select custom-class-name">
+                    <label for="partnerserviceselect">{{ i18n hbs.partnerlocator.selectServicesText }}</label>
+                    <select name="service" class="servicedd" id="partnerserviceselect">
+                        <option title="{{ i18n hbs.partnerlocator.selectServicesText }}" value="">  
+                            {{ i18n hbs.partnerlocator.selectServicesText }}
+                        </option>
+                    </select>
+                    <span class="icon-dropdown-chevron select-ikon"></span>
+                </div>
+                <div class="col-md-12 custom-select custom-class-name">
+                    <label for="partnerindustryselect">{{ i18n hbs.partnerlocator.selectIndustriesText }}</label>
+                    <select name="industry" class="industrydd" id="partnerindustryselect">
+						<option title="{{ i18n hbs.partnerlocator.selectIndustriesText }}" value="">	
+							{{ i18n hbs.partnerlocator.selectIndustriesText }} 
+						</option>
+					</select>
+                    <span class="icon-dropdown-chevron select-ikon"></span>
+                </div>
+                
+            </div>
+
+            <div class="searchBtnContainer">
+                <a role="button" class="btn-cta searchBtn listpartners ctaDisabled" href="javascript:void(0);" title="{{i18n hbs.partnerlocator.ctaLabel}}">
+					<span class="btn-copy searchLabel">{{i18n hbs.partnerlocator.ctaLabel}}</span>
+				</a>
+            </div>
+        </div>
+        <div class="col-md-6 partnerResultContainer">
+
+            <div class="col-md-12 no-results no-padding">
+                {{i18n hbs.partnerlocator.noResultsText}}
+            </div>
+            <div class="col-md-12 defaultResultContainer imageContainer no-padding hidden-xs">
+                <div class="defaultImageContainer">
+                    <img src="/etc/designs/kpmgpublic/images/partnerlocator_defaultimg_blue.png" alt="People search icon"/>
+                </div>
+            </div>
+            <div class="resultsContainer">
+
+            </div>
+
+            <div class="row load-more">
+                <div class="col-md-12 alignCenter">
+                    <button class="btn-primary-blue load-more-link"><span class="icon-add"></span>{{i18n hbs.partnerlocator.loadMoreText}}</button>
+                </div>
+            </div>
+        </div>
+        <div class="searchBtnContainer searchallcontact">
+            <a role="button" class="btn-cta searchBtn allcontactlist ctaEnabled" href="javascript:void(0);" title="{{i18n hbs.partnerlocator.seeAllContacts}}">
+            	<span class="btn-copy searchLabel allcontact">{{i18n hbs.partnerlocator.seeAllContacts}}</span>
+                <span class="sr-only">{{i18n hbs.navigation.newTabAllowLabel }}</span>
+            </a>
+        </div>          
+    </div>
+</section>
+<!-- End Component: Partnerlocator -->

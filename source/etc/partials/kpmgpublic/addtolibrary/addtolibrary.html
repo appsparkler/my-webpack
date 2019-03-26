@@ -1,0 +1,18 @@
+<span class="libraryLimit-value">{{hbs.addToLibrary.userLibraryLimit}}</span>
+{{#if hbs.addtolibrarypromo}}
+<div class="module-addtolibrary component self-contained clearfix" aria-label="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}" data-description="{{{hbs.addtolibrarypromo.shortDescription}}}" data-shortDescription="{{{hbs.addtolibrarypromo.shareDescription}}}" data-href="{{hbs.addtolibrarypromo.primaryUrl}}" data-image="{{hbs.addtolibrarypromo.imageFileReference}}" data-title="{{{hbs.addtolibrarypromo.title}}}" data-shortTitle="{{hbs.addtolibrarypromo.shortTitle}}" style="display:none;" data-article-type="{{ hbs.addtolibrarypromo.articleType }}">
+   <a href="#" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0" aria-haspopup="true" aria-label="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}">
+      <span class="icon-star trackable"></span>
+      <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.save"}}</span>
+   </a>
+</div>
+{{/if}}
+
+{{#unless hbs.addtolibrarypromo}}
+<div class="module-addtolibrary component self-contained clearfix" aria-label="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}" data-description="{{{hbs.addToLibrary.shareDescription}}}" data-shortDescription="{{{hbs.addToLibrary.shareDescription}}}" data-href="{{hbs.addToLibrary.shareUrl}}" data-image="{{hbs.addToLibrary.shareImage}}" data-title="{{{hbs.addToLibrary.shareTitle}}}" data-shortTitle="{{hbs.addtolibrary.shortTitle}}" data-article-type="{{ hbs.addToLibrary.articleType }}" style="display:none;">
+   <a href="#" class="addtolibrary-cta" data-backdrop="static" data-keyboard="false" data-modal-url="" data-remote="" id="addToLibrary" tabindex="0" aria-haspopup="true" aria-label="{{i18n 'kpmg.personalization.library.sharedlist.addtolibrary'}}">
+      <span class="icon-star trackable"></span>
+      <span class="btn-copy">{{i18n "kpmg.personalization.library.addtolibraryoverlay.save"}}</span>
+   </a>
+</div>
+{{/unless}}

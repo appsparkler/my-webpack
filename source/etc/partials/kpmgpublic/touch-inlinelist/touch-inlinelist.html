@@ -1,0 +1,25 @@
+<!-- Begin Component: TouchInlinelist -->
+<section class="module-touch-inlinelist component">
+    <div class="inlinelist-listingGroup col-md-12">
+        {{#if hbs.inlineList.title}}
+            <h3 class="tertiary-head"
+                {{#if hbs.inlineList.anchorid}}
+                    id="{{hbs.inlineList.anchorid}}"
+                {{/if}}>{{hbs.inlineList.title}}</h3>
+        {{/if}}
+        <ul class="inlinelist-listingGroupLinks">
+            {{#each hbs.inlineList.links}}
+                {{#if this.linkUrl}}
+                <li class="inlinelist-listingGroupLink">
+                    <a href = "{{this.linkUrl}}" x-cq-linkchecker="skip" title = "{{this.altText}}"><span class="listing-text">{{this.linkText}}</span></a>
+                </li>
+                {{else}}
+                <li class="inlinelist-listingGroupLink">
+                    <span class="noLink">{{this.linkText}}</span>
+                </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</section>
+<!-- End Component: TouchInlinelist -->

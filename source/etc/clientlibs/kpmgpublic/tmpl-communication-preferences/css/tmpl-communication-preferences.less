@@ -1,0 +1,48 @@
+@import "../../global/css/_variables.less";
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../librarysummary/css/librarysummary";
+@import "../../interestssummary/css/interestssummary";
+@import "../../subscription-preferences/css/subscription-preferences";
+
+.module-tmpl-communication-preferences {
+    background: @gray-94;
+    padding: 0px 0px 10px 0px;
+
+    .bread-crumb-full {
+        margin-top: 0px;
+    }
+
+    .module-basicpagetitle {
+        padding: 10px;
+    }
+
+    .col-nested {
+        padding-left: 9px;
+    }
+
+    .subscription-preferences-container {
+        padding-left: 10px;
+    }
+
+    .interests-summary,.library-summary {
+        height: 368px;
+    }
+
+    .librarysummary-design {
+        top: -9px;
+    }
+
+    .basic-title-row {
+        padding-bottom: 9px;
+    }
+}
+
+@media (max-width: @desktop-min-fixed) {
+    .subscription-preferences-container {
+        padding-left: 0px !important;
+    }
+    .col-nested {
+        padding-left: 0px !important;
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "hbs": {
+        "authors" : {
+            "title" : "The Contributors",
+            "profileView" : false, 
+            "contributors" : "contributors",
+            "contact" : "contact",
+            "contactReference": "http://www.kpmg.com/global/en/Pages/contact-us.aspx",
+            "authorsList": [{
+                "urlReference" : "/kpmg-contactdetail.html",       
+                "contactProfile": "/assets/fpo-images/authors_banner.png",
+                "firstName" : "Martyn",
+                "middleInitial" : "Van",
+                "lastName" : "Wensveen",  
+                "jobTitle": "Global Financial",   
+                "memberFirm": "",
+                "companyName": "KPMG Member Firm 1"
+            },{
+                "urlReference" : "/kpmg-contactdetail.html",       
+                "contactProfile": "/assets/fpo-images/authors_banner.png",
+                "firstName" : "Martyn",
+                "middleInitial" : "Van",
+                "lastName" : "Wensveen",  
+                "jobTitle": "Global Financial",   
+                "memberFirm": "",
+                "companyName": "KPMG Member Firm 1"
+            },{
+                "urlReference" : "/kpmg-contactdetail.html",       
+                "contactProfile": "/assets/fpo-images/authors_banner.png",
+                "firstName" : "Martyn",
+                "middleInitial" : "Van",
+                "lastName" : "Wensveen",  
+                "jobTitle": "Global Financial",   
+                "memberFirm": "",
+                "companyName": "KPMG Member Firm 1"
+            }]
+        }
+    }
+}

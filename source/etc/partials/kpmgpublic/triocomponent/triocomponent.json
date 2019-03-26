@@ -1,0 +1,24 @@
+{
+    "hbs": {
+        "trio-feature": {
+            "imageReference1": "",
+            "altText1": "Our Capabilities",
+            "title1": "Our Capabilities",
+            "desciption1": "At KPMG professionals use data-driven technologies to guide us. From data & analytics to artificial intelligence to intelligent automation, here’s how we apply those tried and tested methods to help businesses execute on their vision.",
+            "ctaUrl1": "#",
+            "ctaLabel1":"Learn More",
+            "imageReference2": "",
+            "altText2": "Our Difference",
+            "title2": "Our Difference",
+            "desciption2": "Through our proprietary solutions and services, we can bring your business into the data-driven future. Whether you’re looking for data, analytics, artificial intelligence or intelligent automation, KPMG is the clear choice.",
+            "ctaUrl2": "#",
+            "ctaLabel2":"Learn More",
+            "imageReference3": "#",
+            "altText3": "Our Platforms",
+            "title3": "Our Platforms",
+            "desciption3": "While no two organizations have the same challenges, we know that there are often similarities. For these cases, KPMG has developed robust platforms so you don’t have to start from scratch to solve your unique business problems.",
+            "ctaUrl3": "#",
+            "ctaLabel3":"Learn More"
+        }
+    }
+}

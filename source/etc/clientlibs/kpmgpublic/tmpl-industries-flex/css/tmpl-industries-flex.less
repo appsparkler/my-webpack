@@ -1,0 +1,189 @@
+/* IMPORT ALL THE COMPONENT LESS FILES */
+@import "../../breadcrumb/css/breadcrumb";
+@import "../../basicpagetitle/css/basicpagetitle";
+@import "../../downloadbutton/css/downloadbutton";
+@import "../../audiovideo/css/audiovideo";
+@import "../../connectandrfp/css/connectandrfp";
+@import "../../relatedcontent/css/relatedcontent";
+@import "../../bodytext/css/bodytext";
+@import "../../promotionala/css/promotionala";
+@import "../../promotionalb/css/promotionalb";
+@import "../../promotionalc/css/promotionalc";
+@import "../../promotionald/css/promotionald";
+@import "../../promotionale/css/promotionale";
+@import "../../mykpmgpromob/css/mykpmgpromob";
+@import "../../mykpmgpromo/css/mykpmgpromo";
+@import "../../enhanceddownload/css/enhanceddownload";
+@import "../../printbutton/css/printbutton";
+@import "../../fullbleedbanner/css/fullbleedbanner";
+@import "../../quote/css/quote";
+@import "../../sidebartextandimage/css/sidebartextandimage";
+@import "../../share/css/share";
+@import "../../inlinelist/css/inlinelist";
+@import "../../subnavigation/css/subnavigation";
+@import "../../manualsubnav/css/manualsubnav";
+@import "../../contactbutton/css/contactbutton";
+@import "../../contactpromo/css/contactpromo";
+@import "../../registration-promo/css/registration-promo";
+
+.module-tmpl-industries-flex {
+    background-color: @white;
+    .bread-crumb-full {
+        margin: 0 auto;
+    }
+    .full-page-title{
+        padding: 0;
+    }
+    .registrationpromo-row {
+        display: none;
+    }
+    .module-basicpagetitle {
+        .pagetitle-wrapper {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 9px;
+        }
+    }
+    .module-share {
+        padding-left: 10px;
+        background-color: @white;
+        margin: 0px;
+    }
+
+    .module-downloadbutton {
+        background: @white;
+        margin-top: 0;
+        padding: 0px 10px;
+        min-height: auto;
+    }
+
+    .module-printbutton {
+        padding: 0px 10px;
+        .pull-left {
+        float: none !important;
+    }
+    }
+
+    .people-connect{
+        position: static;
+        float: right;
+    }
+    .rfp-container:before{
+        background: none;
+        content: none !important;
+    }
+
+    .connectandrfp-rfp .rfp-container{
+        position: static;
+    }
+    .connectandrfp-rfp .rfp-space{
+        height: 0;
+    }
+    .rfp-container .btn-cta {
+        position: static;
+    }
+    .rfp-cta-space {
+        display: none;
+    }
+
+    .tmpl-row {
+        border-top:9px solid @white;
+        border-bottom: 9px solid @white;
+    }
+
+     .col-md-height {
+             border: 9px solid @white;
+     }
+     .promotional-cell-hover {
+        position: relative;
+    }
+     .libraryLimit-value{
+        display: none;
+    }
+    .module-addtolibrary{
+        margin: 0 10px 0 0;
+        .addtolibrary-cta{
+            .btn-copy {
+                display: inline;
+            }
+        }
+    }
+
+    .contactpromo.parbase .col-md-12{
+        min-width: auto;
+    }
+
+    .download-and-library-components .parsys-row.clearfix:nth-child(even){
+        border-top: 18px solid @white;
+    }
+
+    .contact-component .flex-cell-hover:hover{
+        outline : none !important;
+    }
+
+    .module-bodytext {
+        .bodytext-data {
+            p, a, table tr td {
+                line-height: 1.4;
+            }
+            p {
+                margin: 0 0 15px 0;
+            }
+        }
+    }
+
+    .module-audiovideo {
+        .video-js.responsive {
+            height: 32em;
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .module-tmpl-industries-flex{
+        .download-and-library-components {
+            border-top:1px solid @white !important;
+            .parsys-row.clearfix:nth-child(even){
+                border-top: 10px solid @white;
+            }
+        }
+    }
+}
+
+@media (min-width: @desktop-min-fixed) {
+    .module-tmpl-industries-flex {
+        .col-md-9.col6 {
+            width: 50%;
+            min-width: 50%;
+        }
+        .module-connectandrfp {
+            box-shadow: inset 0px 0px 0px 1px @gray-10;
+        }
+        .module-contactpromo {
+            outline: 1px solid @gray-10 !important;
+        }
+        .module-promotionale {
+            img.three-col {
+                max-width: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 1140px) {
+    .module-tmpl-industries-flex {
+        .module-basicpagetitle {
+            .pagetitle-wrapper {
+                width: 1100px;
+            }
+        }
+    }
+
+}
+
+.template {
+    .global-footer {
+        margin-top: 0px;
+    }
+}

@@ -1,0 +1,42 @@
+<section class="module-socialtab component col-transparent">
+
+    <div class="socialtab row">
+        <div class="tabs-container {{#if hbs.socialTabs.showBlog}} two-tabs {{/if}}">
+            {{#if hbs.socialTabs.showBlog}}
+             <a class="tablink first" href="javascript:void(0)" data-tab-link="#blogs" title="{{i18n hbs.socialTabs.blogs}}"> <span class="text-link">{{i18n hbs.socialTabs.blogs}} </span>
+                <span class="icon-chevron-down resp-arrow"></span></a>
+            <div id="blogs" class="custom-tab-content">
+
+                <div class="row-same-height row-full-height">
+
+                    <div class="col-md-9 col-md-height col-full-height col-top socialtab-blog col-nested">
+                        {{ include "resultlisting" resourceType="/apps/kpmgpublic/components/content/resultlistingnotabs"}}
+                    </div>
+
+                    <div class="col-md-3 col-md-height col-full-height no-border-top no-border-bottom col-top">
+                        {{ include "socialwidget" resourceType="/apps/kpmgpublic/components/social/socialwidget" }}
+                    </div>
+                </div>
+                <a class="no-highlight end-fisrt-tab" href="javascript:void(0)"></a>
+            </div>
+            {{/if}}
+            {{#if hbs.socialTabs.showBlog}}
+            <a class="tablink second" title="{{i18n hbs.socialTabs.dashboard}}" data-tab-link="#dashboard" href="javascript:void(0)">
+            <span class="text-link">{{i18n hbs.socialTabs.dashboard}} </span>
+            <span class="icon-chevron-down resp-arrow"></span></a>
+            {{/if}}
+            <div id="dashboard" class="custom-tab-content">
+                {{{ hbs.socialTabs.socialDashboard }}}
+                <a class="no-highlight end-second-tab" href="javascript:void(0)"></a>
+            </div>
+            <!--<a class="tablink {{#if hbs.socialTabs.showBlog}} third {{else}} second {{/if}}" title="{{i18n hbs.socialTabs.widgetBuilder}}" data-tab-link="#widgetbuilder" href="javascript:void(0)">
+            <span class="text-link">{{i18n hbs.socialTabs.widgetBuilder}} </span>
+            <span class="icon-chevron-down resp-arrow"></span></a>
+            <div id="widgetbuilder" class="custom-tab-content">
+                 {{{ hbs.socialTabs.socialWidget }}}
+            </div> -->
+
+        </div>
+    </div>
+
+</section>

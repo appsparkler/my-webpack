@@ -1,0 +1,90 @@
+<div class="overlay-header" role="header">
+    <h4 class="heading" id="myModalLabel">
+        {{#if hbs.editlist}}
+            {{hbs.editlist.editYourListName}}
+        {{else}}
+            {{i18n "kpmg.personalization.library.listmanagement.editYourListName"}}
+        {{/if}}
+        </h4>
+    <hr class="divider"/>
+</div>
+<div class="overlay-content" role="main">
+    <div class="overlay-content-inner">
+        <div class="edit-list-controls is-editing">
+            <form action="" aria-hidden="true" class="form-editlist" role="form">
+                <div class="form-group">
+                    <span class="error mobile-only inputerror" aria-hidden="true">
+                        <span class="listnameexists">
+                            {{#if hbs.createlistoverlay}}
+                                {{hbs.createlistoverlay.thatNameIsTaken}}
+                            {{else}}
+                                {{i18n "kpmg.personalization.library.listmanagement.thatNameIsTaken"}}
+                            {{/if}} 
+                        </span>
+                        <span class="empty">
+                            {{#if hbs.createlistoverlay}}
+                                {{hbs.createlistoverlay.empty}}
+                            {{else}}
+                                {{i18n "kpmg.personalization.library.addtolibraryoverlay.empty"}}
+                            {{/if}}
+                        </span>
+                    </span>
+                    <label class="sr-only" for="editlistoverlayinput">
+                        {{#if hbs.createlistoverlay}}
+                            {{hbs.createlistoverlay.createAList}}
+                        {{else}}
+                            {{i18n "kpmg.personalization.library.listmanagement.createAList"}}
+                        {{/if}}                         
+                    </label>
+                    <input id="editlistoverlayinput" maxlength="35"  placeholder="Rename list" type="text" aria-labelledby="">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="alert alert-success" role="alert">
+        <span class="icon-checkmark"></span>
+        {{#if hbs.editlist}}
+            {{hbs.editlist.editsuccessdescriptionmobile}}
+        {{else}}
+            {{i18n "kpmg.personalization.library.listmanagement.editsuccessdescriptionmobile"}}
+        {{/if}}
+        
+    </div>
+</div>
+<div class="overlay-footer" role="footer">
+    <div class="row">
+        <div class="col-md-6 last-column col-md-push-6">
+            <div class="savearticle-controls">
+                <button class="btn btn-cta btn-default" id="editlistoverlaybtn" type="button">
+                    <span class="icon-chevron-right"></span>
+                    {{#if hbs.createlistoverlay}}
+                        {{hbs.createlistoverlay.save}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.library.listmanagement.save"}}
+                    {{/if}} 
+                </button>
+            </div>
+        </div>
+        <div class="col-md-6 col-md-pull-6">
+            <div class="savearticle-controls">
+                <a class="btn-cta btn-cancel cancel" href="#" id="cancelaction" data-dismiss="modal">
+                    <span class="icon-close"></span>
+                    {{#if hbs.createlistoverlay}}
+                        {{hbs.createlistoverlay.cancel}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.library.listmanagement.cancel"}}
+                    {{/if}} 
+                </a>
+                <button class="btn-cta btn-default close" href="#"  data-dismiss="modal">
+                    <span class="icon-close"></span>
+                    {{#if hbs.createlistoverlay}}
+                        {{hbs.createlistoverlay.close}}
+                    {{else}}
+                        {{i18n "kpmg.personalization.library.listmanagement.close"}}
+                    {{/if}} 
+                    
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

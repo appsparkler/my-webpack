@@ -1,0 +1,29 @@
+<div class="module-contentrefreshctas content-refresh-slider slide-down" tabindex="0">
+    <button class="refresh-article cta-row">
+        <span class="icon-refresh"></span>
+        {{#if hbs.dashboardarticle.personalized}}
+            {{hbs.dashboardarticle.showanotherarticle}}
+        {{else}}
+            {{i18n 'kpmg.personalization.dashboard.dashboardarticle.showanotherarticle'}}
+        {{/if}}
+    </button>
+    <button class="hide-article  cta-row">
+        <span class="icon-views"></span>
+        {{#if hbs.dashboardarticle.personalized}}
+            {{hbs.dashboardarticle.dontshowarticleagain}}
+        {{else}}
+            {{i18n 'kpmg.personalization.dashboard.dashboardarticle.dontshowarticleagain'}}
+        {{/if}}
+    </button>
+    <a href="" class="interests-link  cta-row">
+        <span class="icon-sliders"></span>
+        {{#if hbs.dashboardarticle.personalized}}
+            {{hbs.dashboardarticle.updatemypreferences}}
+        {{else}}
+            {{i18n 'kpmg.personalization.dashboard.dashboardarticle.updatemypreferences'}}
+        {{/if}}
+    </a>
+    <div class="ellipsis-cta">
+        <span class="icon-dots"></span>
+    </div>
+</div>

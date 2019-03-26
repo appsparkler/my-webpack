@@ -1,0 +1,8 @@
+{
+    "hbs": {
+        "googleMap": {
+            "googleMapTitle": "locationTitle",
+            "googleMapUrl": "https://www.google.com/maps/embed/v1/place?key=AIzaSyC8o89To8rlFXw2_lSMWCg8vMCKcrpqz1s&q=18,83&language=en"
+       }
+    }
+}

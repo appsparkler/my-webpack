@@ -1,0 +1,25 @@
+<!-- Begin Component: SocialWidget -->
+<section class="module-socialwidget component" data-social-url="{{hbs.socialWidget.widgetBaseUrl}}/widget.html?autoresize=false{{#if hbs.socialWidget.parameters.showheader}}&showheader={{hbs.socialWidget.parameters.showheader}}{{/if}}{{#if hbs.socialWidget.parameters.title}}&title={{hbs.socialWidget.parameters.title}}{{/if}}{{#if hbs.socialWidget.parameters.showimages}}&showimages={{hbs.socialWidget.parameters.showimages}}{{/if}}{{#if hbs.socialWidget.parameters.categories}}&type:categories={{hbs.socialWidget.parameters.categories}}{{/if}}{{#if hbs.socialWidget.parameters.common}}&type:common={{hbs.socialWidget.parameters.common}}{{/if}}{{#if hbs.socialWidget.parameters.limit}}&limit={{hbs.socialWidget.parameters.limit}}{{/if}}{{#if hbs.socialWidget.showType}}&linklabel={{hbs.socialWidget.linkLabel}}&linkurl={{hbs.socialWidget.linkUrl}}{{/if}}">
+    <h3 class="component-head">
+{{i18n hbs.socialWidget.header.label}}
+</h3>			
+    <div class="socialwidget-link-container">
+        {{#if hbs.socialWidget.isContactPage}}
+            {{else}}
+               {{include "socialchannels" resourceType="/apps/kpmgpublic/components/social/socialwidgetsocialchannels"}}
+        {{/if}}   
+    </div>
+
+
+    <div class="socialwidget-feeds-container">  
+   		{{#if hbs.socialWidget.htmlCode}}
+			{{{hbs.socialWidget.htmlCode}}}
+		{{else}}
+			{{#if hbs.socialWidget.widgetBaseUrl}}
+				<iframe marginheight="0" marginwidth="0" vspace="0" hspace="0" frameborder="0" scrolling="no" width="100%" height="100%" id="socialiframe" title="{{i18n hbs.socialWidget.header.label }}"></iframe> 
+			{{/if}}
+		{{/if}}
+	</div>
+
+</section>
+<!-- End Component: SocialWidget -->

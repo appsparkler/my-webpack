@@ -1,0 +1,221 @@
+@import "../../global/css/_variables.less";
+
+.module-campaignpagetitle {
+    position: relative !important;
+
+    .campaign-content {
+        position: absolute;;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 20px;
+        width: auto;
+        height: 100%;
+        z-index: 1;
+        padding: 10px 30px 10px 10px;
+        background: -webkit-linear-gradient(left,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+        background: -o-linear-gradient(right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -moz-linear-gradient(right,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -ms-linear-gradient(left,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF00008B', endColorstr='#FFFFFFFF',GradientType=1 );
+    }
+
+    .campaign-title {
+        .component-title(@white);
+        .hyphen;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    .campaign-description {
+        .promo-description(@white);
+        .hyphen;
+        margin: 7px 0;
+    }
+
+    .campaign-copy {
+        .promo-details(@white);
+        .hyphen;
+        margin: 7px 0 0 0;
+
+        &:empty {
+            margin: 0;
+        }
+    }
+
+    .campaign-details {
+        float: left;
+    }
+
+    .campaign-ctas {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        .cta {
+            display: inline-block;
+            margin: 0;
+            clear: both;
+            float: left;
+
+            &:first-child {
+                margin-bottom: 12px;
+            }
+        }
+
+        .icon-chevron-right {
+            color: #fff;
+            .font-size(1.6);
+        }
+
+        .btn-copy {
+            .page-description(@white);
+            .hyphen;
+            vertical-align: bottom;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+
+    .module-share {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+
+        .share-component {
+            padding: 10px;
+        }
+
+        .icon-share {
+            .font-size(1.6) !important;
+            top: 0 !important;
+            margin: 0 !important;
+            color: @white !important;
+        }
+        .component-link {
+            .page-description(@white) !important;
+            .hyphen;
+            text-transform: none !important;
+            margin-top: 0 !important;
+            margin-left: 0 !important;
+            display: none;
+        }
+
+    }
+
+    .mobile-silver {
+        background-color: @kpmg-blue;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 20px;
+        height: 100%;
+    }
+
+    @media (min-width:@desktop-min-fixed) {
+        .module-share {
+            top: 10px;
+            right: 10px;
+            padding: 0;
+
+            .icon-share {
+                margin: 0 5px 0 0;
+            }
+
+        }
+
+        .campaign-content {
+            width: 433px;
+            height: 100%;
+            padding: 10px 20px;
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            left: 9px;
+            z-index: 1;
+            background-color: @kpmg-blue;
+            background-image: none;
+            .module-share{
+                .component-link{
+                    display: none;
+                }
+            }
+        }
+
+        .campaign-title {
+            .page-title(@white);
+            .hyphen;
+            margin: 0 0 14px 0;
+            font-weight: normal;
+            float: left;
+            width: 80%;
+        }
+
+        .campaign-description {
+            .page-description(@white);
+            .hyphen;
+            margin: 0;
+            float: left;
+            width: 100%;
+            clear: both;
+        }
+
+        .campaign-copy {
+            .promo-details(@white);
+            .hyphen;
+            margin: 7px 0 0 0;
+            float: left;
+            width: 100%;
+        }
+
+        .campaign-ctas {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+
+            .cta {
+                display: inline-block;
+                margin-bottom: 12px;
+            }
+
+            .icon-chevron-right {
+                color: #fff;
+                .font-size(1.6);
+            }
+
+            .btn-copy {
+                .page-description(@white);
+                .hyphen;
+            }
+        }
+
+        .module-share {
+            .share-component{
+                padding: 0;
+            }
+
+            .icon-share {
+                margin: 0 5px 0 0 !important;
+            }
+            .component-link {
+                display: block;
+            }
+
+        }
+
+        hr {
+            border: none;
+            height: 0px;
+            overflow: hidden;
+            margin: 0;
+        }
+    }
+
+}

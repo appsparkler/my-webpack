@@ -1,0 +1,40 @@
+@import "../../global/css/_variables.less";
+
+.module-caasdocumentbreadcrumb {
+    background: @gray-94;
+
+    padding: 10px 9px 0px;
+    ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        li {
+            display:inline-block;
+            a {
+                font-family: @arial;
+                font-style: italic;
+                color: @gray-20;
+                font-size: 20px;
+                padding: 2px;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .currentPage {
+            font-family: @arial;
+            font-style: italic;
+            color: @gray-20;
+            font-size: 20px;
+        }
+        span {
+            text-decoration:none;
+            .file-size(@gray-20);
+            margin: 0px 8px;
+            display:inline-block
+        }
+    }
+    @media(max-width: @desktop-min-fixed) {
+        display:none;
+    }
+}

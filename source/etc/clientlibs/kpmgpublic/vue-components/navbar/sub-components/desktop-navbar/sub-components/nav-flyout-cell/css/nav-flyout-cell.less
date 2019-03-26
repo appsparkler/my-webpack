@@ -1,0 +1,20 @@
+@import "../../../../../../../global/css/_variables.less";
+
+.nav-flyout-cell-component {
+    &.static-position {
+        position: static;
+    }
+    &.psd-padding {
+        padding: .25rem 1.25rem 1rem .25rem !important;
+    }
+    a:focus {
+        text-decoration: underline;
+        box-shadow: 0 0 3px @gray-40;
+        outline: 1px solid @grey-text-transparent;
+    }
+    .card-body {
+        .line-clamp:after {
+            background: none;
+        }
+    }
+}

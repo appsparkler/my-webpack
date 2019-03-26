@@ -1,0 +1,44 @@
+<div class="modalBodyLeft">
+    <div class="imgContainer">
+        <a href="{{#if  this.translatedCTAURL}} {{this.translatedCTAURL}} {{else}} {{this.detailURL}} {{/if}}" title="{{this.imageAltText}}" tabindex="-1">
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 237 158'%2F%3E" data-src="" alt="{{this.imageAltText}}" data-mobile="{{this.assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.512.341.jpg" data-desktop="{{this.assetDomainName}}{{this.imageFileReference}}/jcr:content/renditions/cq5dam.web.237.158.jpg" class="img-responsive lazy"></a>
+    </div>
+    {{#if this.pdfURL}}
+             <div class="downloadContainer">
+                <div class="download">
+                   <a class="component-link" href="{{this.pdfURL}}" target="_blank" title="Download PDF">
+                   <span class="icon-pdf"></span>
+                   download PDF ({{this.pdfSize}})
+                   </a>
+                </div>
+             </div>
+    {{/if}}
+    <div class="shareContainer">
+      <div class="share">
+         <a class="share-component" id="contact-tab-quickview" href="javascript:void(0);" title="Share" onclick='javascript:showShareUI({
+            "shareTitle": "{{this.title}}",
+            "shareUrl": "{{this.assetDomainName}}{{this.detailURL}}",
+            "shareSiteName": "{{this.shareSiteName}}",
+            "shareLanguage": "{{this.contactCountry}}",
+            "shareImage": "{{this.assetDomainName}}{{this.imageFileReference}}",
+            "shareDescription": "{{this.shortDescription}}",
+            "shareOperationMode": "simpleShare",
+            "shareTarget" : "contact-tab-quickview",
+            "twitterDefaultText" : "{{this.twitterDefaultText}}",
+            "shareEnabledProviders" : "{{this.shareEnabledProviders}}"
+            })'>
+         <span class="icon-share"></span>
+         <span class="component-link">Share</span>
+         </a>
+      </div>
+   </div>
+</div>
+<div class="modalBodyRight">
+    <div class="insightsContent">
+        <span class="icon-{{this.contentIcon}} quickViewIcon"></span>
+        <h3 class="secondary-head"><a href="{{#if  this.translatedCTAURL}} {{this.translatedCTAURL}} {{else}} {{this.detailURL}} {{/if}}">{{this.title}}</a></h3>
+        <p class="quickview-article-date">{{this.articleDate}}</p>
+        <p class="description">{{this.description}}</p>
+    </div>
+
+</div>

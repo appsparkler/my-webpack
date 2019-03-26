@@ -1,0 +1,47 @@
+<section class="module-facets component">
+   <div class="facetsTitle">
+   <a href="javascript:void(0)" class="cancelFilter pull-left">{{hbs.facets.cancelText}}</a>
+   <h3 class="secondary-head">{{i18n hbs.facets.facetsTitle}}</h3>
+   <a href="javascript:void(0)" class="applyFilter pull-right">{{hbs.facets.applyText}}</a>
+</div>
+   <div class="clearAll">
+      <span class="icon-chevron-right"></span>
+      <a class="component-link clear-all-filters" href="#" title="{{i18n hbs.facets.clearAll}}">{{i18n hbs.facets.clearAll}}</a>
+   </div>
+   <div class="facetsGroup">
+      <ul class="resp-tabs-list">
+         {{#each hbs.facets.facetFilters}}
+         <li class="facetFilters {{this.title}}">
+            <h4 class="component-head"><span class="facetTitle">{{this.title}}</span> <span class="icon-chevron-up"></span></h4>
+            <div class="facetsContainer">
+               <ul class="facetsOptions">
+                  {{#each this.items}}
+                  <li><label>
+                     <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}"  {{checkboxValidation this.flag}}><span class="facetName">{{this.itemName}}({{this.count}})</span></label>
+                     {{#if this.flag}}
+                     <span class="icon-checkmark mblCheckmark"></span>
+                     {{/if}}
+                     {{#if this.nestedItems}}
+                     <span class="icon-chevron-up pull-right nestedFacetsToogleBtn"></span>
+                     <ul class="nestedFacets">
+                        {{#each this.nestedItems}}
+                        <li><label>
+                           <input type="checkbox" class="facetsCheckbox"  data-link="{{this.link}}" {{checkboxValidation this.flag}}><span class="facetName">{{this.itemName}}({{this.count}})</span></label>
+                        </li>
+                        {{/each}}
+                     </ul>
+                     {{/if}}
+                  </li>
+                  {{/each}}
+               </ul>
+               <div class="dottedLine"></div>
+            </div>
+            <div class="moreFacets">
+               <span class="facetsLoadMore icon-chevron-down"></span>
+               <a class="component-link" data-more="more-topics" href="#" title="{{../hbs.facets.moreFacets}}">{{i18n ../hbs.facets.moreFacets}}</a>
+            </div>
+         </li>
+         {{/each}}
+      </ul>
+   </div>
+</section>

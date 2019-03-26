@@ -1,0 +1,70 @@
+<div class="module-googlemap component">
+    <h3 class="secondary-head">{{i18n hbs.googleMap.googleMapTitle}}</h3>
+    <div class="googlemap-container col-md-12" id="googleMaps">
+        <script>
+            var coords;
+            var map;
+
+            function initialize() {
+                coords = new google.maps.LatLng("{{hbs.googleMap.latitude}}", "{{hbs.googleMap.longitude}}");
+                map = new google.maps.Map(document.getElementById('googleMaps'), {
+                    center: coords,
+                    zoom: 15
+                });
+                var request = {
+                    location: map.getCenter(),
+                    radius: '900',
+                    query: '{{hbs.googleMap.locationName}}'
+                };
+                var service = new google.maps.places.PlacesService(map);
+                service.textSearch(request, callback);
+                // set listener to make sure the map is pointed to center all all times
+                google.maps.event.addDomListener(window, "resize", function() {
+                    map.setCenter(coords);
+                });
+            }
+
+            function callback(results, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        place: {
+                            placeId: results[0].place_id,
+                            location: results[0].geometry.location
+                        }
+                    });
+                    var infowindow = new google.maps.InfoWindow();
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.setContent('<div><strong>' + results[0].name + '</strong><br>' + results[0].formatted_address);
+                        infowindow.open(map, this);
+                    });
+                    // change the center from the original lat/lon to new pointer location.
+                    coords = marker.place.location;
+                } else {
+                    var marker = new google.maps.Marker({
+                        position: coords,
+                        map: map,
+                    });
+                }
+                // recenter the map based on the marker location
+                map.setCenter(coords);
+            }
+
+            function loadScript() {
+                var script = document.createElement('script');
+                var region = document.querySelector('meta[name=KPMG_URL]').getAttribute('content').split('/')[1];
+                if (region !== 'in') region = document.documentElement.lang.split('-')[1];
+
+                var sourcePath = '{{hbs.googleMap.googleMapUrl}}?client={{hbs.googleMap.googleMapClientId}}&v={{hbs.googleMap.googleMapApiVersion}}&signed_in=true&callback=initialize&language={{hbs.googleMap.locale}}&libraries=places&region=' + region;
+                script.type = 'text/javascript';
+                script.src = sourcePath;
+                document.body.appendChild(script);
+            }
+            if(document.readyState === 'complete') {
+                loadScript();
+            } else {
+                window.onload = loadScript();
+            }
+        </script>
+    </div>
+</div>

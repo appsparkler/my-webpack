@@ -1,0 +1,542 @@
+@import "../../global/css/_variables.less";
+
+.module-contact-tabs {
+
+    .contact-btn:focus {
+        box-shadow: 0 0 3px @gray-40;
+        outline: 1px solid @grey-text-transparent;
+    }
+
+    // accessibility support
+    .contact-cta-wrapper {
+        display: block;
+    }
+
+    .tablink {
+        width: 100% !important;
+        background-color: @gray-87;
+        padding: 0 0 0 10px;
+        display: table;
+        margin: 3px 0 0 0;
+        border-bottom: 0;
+
+        .text-link {
+            .promo-title(@gray-40);
+            .hyphen;
+            margin: 8px 0;
+            display: block;
+        }
+
+        &.current {
+            background-color: @white;
+            .text-link {
+                .promo-title(@kpmg-blue);
+                .hyphen;
+            }
+        }
+
+        span {
+            width: 100%;
+
+            &.icon-chevron-down {
+                padding: 10px;
+                .font-size(1.6);
+                position: static;
+                color: @kpmg-blue;
+                vertical-align: middle;
+                width: 36px;
+                display: table-cell;
+            }
+
+            &.icon-chevron-up {
+                padding: 10px;
+                .font-size(1.6);
+                position: static;
+                color: @light-blue;
+                vertical-align: middle;
+                width: 36px;
+                display: table-cell;
+            }
+        }
+    }
+
+    .custom-tab-content {
+        margin: 0;
+    }
+
+    .publication-type-icon {
+        .font-size(1.6);
+        color: @medium-blue !important;
+        top: 10px;
+        right: 0 !important;
+        float:left;
+        margin: 10px 1px 10px 10px;
+        position: absolute;
+        width: 13px;
+        height: 16px;
+    }
+
+    .contact-tabs-nav{
+        z-index: 1;
+        top: -22px;
+    }
+
+    .contact-tabs-tab label {
+        padding: 0;
+
+        .tab-title {
+            display: block;
+            background-color: @gray-87;
+            padding: 5px;
+            .font-size(2.0);
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 2;
+            color: @kpmg-blue;
+            font-weight: normal;
+        }
+
+        .icon-chevron-right {
+            color: @light-blue;
+            float: right;
+            display: block;
+            line-height: 1.8;
+        }
+    }
+
+    .btn-wrapper-publications, .btn-wrapper-connections, .btn-wrapper-affiliatedTo  {
+        margin: 4px 0 6px 0;
+        text-align:center;
+        padding: 1px 0;
+        clear: both;
+        .load-more {
+            visibility: hidden;
+            height: 0px;
+        }
+    }
+    .load-more {
+        margin: 1px;
+        &:hover {
+            cursor: pointer;
+
+            .icon-add {
+                color: @light-green !important;
+            }
+        }
+    }
+    .load-more:focus {
+        .cta-focus(@gray-40);
+        padding: 2px 4px 0px 0;
+        .component-link {
+            text-decoration: underline;
+        }
+    }
+
+    .icon-add {
+        color: @light-green !important;
+        .font-size(1.6);
+        margin: 0 5px 0 0;
+        position: relative;
+        top: 2px;
+
+        &:hover {
+            color: @light-green !important;
+        }
+    }
+
+    .btn-more {
+        .cta-right(@gray-40);
+    }
+
+    .access-container {
+        position: relative !important;
+        visibility: hidden;
+    }
+
+    .contact-tabs-tab [type=radio] {
+        display: none;
+    }
+
+    .contact-tabs-content {
+        background: @white;
+        display: none;
+
+        .message {
+            display: none;
+        }
+
+        .col-md-6{
+            width:200px;
+        }
+    }
+
+    .contact-tabs-item:first-child {
+        margin: 18px 0 9px 0;
+    }
+
+    .contact-tabs-item {
+        margin: 9px 0;
+        padding: 10px;
+        background-color: @white;
+        float: left;
+        width: 100%;
+
+        .btn-quick-view {
+            text-transform: uppercase;
+            text-align: right;
+            display: block;
+            color: @gray-40;
+        }
+
+        .secondary-head {
+            .promo-title(@medium-blue);
+            .hyphen;
+            margin: 8px 0;
+            width: 97%;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+
+            a {
+                .promo-title(@kpmg-blue);
+                .hyphen;
+
+                &:hover {
+                    text-decoration:underline;
+                }
+            }
+        }
+
+        p {
+            .promo-description(@gray-20);
+            margin: 7px 0;
+            width: 100%;
+            float: left;
+        }
+        .cta-space {
+            .cta-right(@gray-40);
+        }
+        .btn-cta {
+            margin: 1px;
+        }
+        .add20paddingbottom {
+            padding-bottom:  0;
+            .btn-cta.contact-btn {
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+
+    [class^="icon-"], [class*=" icon-"] {
+        color: @light-green;
+    }
+
+    #publications, #affiliatedTo {
+        .row {
+            float: left;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .quickView {
+            .cta-right(@gray-40);
+            float: right;
+
+            .btn-copy {
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .quickview:focus {
+            box-shadow: 0 0 3px @gray-40;
+            outline: 1px solid @grey-text-transparent;
+        }
+    }
+
+    #connections {
+        .row {
+            float: left;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            right: 0;
+        }
+
+        .icon-chevron-right  {
+            .font-size(1.6);
+        }
+
+        .contactFmLink, .quickView {
+            float: left;
+            width: 100%;
+            .cta-right(@gray-40);
+
+            .pull-right {
+                margin-right: 2px;
+                margin-bottom: 1px;
+            }
+        }
+
+        .contactFmLink  {
+            margin-bottom: 0;
+        }
+
+        .pcfLink, .btn-copy {
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        .contact-btn:focus {
+            box-shadow: 0 0 3px @gray-40;
+            outline: 1px solid @grey-text-transparent;
+        }
+
+        .quickview-btn:focus {
+            box-shadow: 0 0 3px @gray-40;
+            outline: 1px solid @grey-text-transparent;
+        }
+    }
+
+    @media (min-width: @desktop-min-fixed) {
+
+        .tablink {
+            padding: 10px;
+            margin: 0;
+
+            .text-link {
+                display: block;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                color: @gray-20;
+            }
+
+            &.current {
+                margin: 0;
+                display: inline-table;
+
+                &:hover {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                &:after {
+                    z-index: -1;
+                }
+            }
+        }
+
+        .contact-tabs-item {
+            .btn-cta {
+                bottom: 0;
+                right: 0;
+            }
+            .add20paddingbottom {
+                .btn-cta.contact-btn {
+                    right: 0;
+                }
+            }
+        }
+        #connections {
+            .row {
+                float: left;
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            .icon-chevron-right  {
+                .font-size(1.6);
+            }
+
+            .contactFmLink, .quickView {
+                float: left;
+                width: 100%;
+                .cta-right(@gray-40);
+            }
+
+            .contactFmLink  {
+                margin-bottom: 12px;
+            }
+
+            .pcfLink, .btn-copy {
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            .contact-tabs-item:last-of-type {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        #publications {
+            .contact-tabs-item:last-of-type {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .custom-tab-content {
+            margin: 20px 0 0 0;
+            display: block;
+        }
+
+        .tabs-container {
+            width: 99.8%;
+            padding-top: 60px;
+            margin: 1px;
+        }
+        .two-tabs .tablink.second {
+            left: 49.8% !important;
+        }
+        .three-tabs .tablink.second {
+            left: 33.3% !important;
+        }
+        .three-tabs .tablink.third {
+            left:  67% !important;
+        }
+        .tabs-container.one-tab{
+            .tablink{
+                left:0;
+                width:100%;
+            }
+
+        }
+        .secondary-head {
+            width: 100%;
+        }
+        .icon-chevron-down {
+            display: none !important;
+        }
+        .icon-chevron-up {
+            display: none !important;
+        }
+        .publication-type-icon {
+            top: 0;
+        }
+
+        .contact-tabs-item {
+            display: table;
+            padding: 10px;
+
+            .col-md-4 {
+                display: table-cell;
+                width: 237px;
+                padding: 0;
+                float: none;
+            }
+
+            .col-md-8 {
+                display: table-cell;
+                width: 70%;
+                float: none;
+                vertical-align: top;
+                padding: 0 0 0 10px;
+            }
+
+            img {
+                padding-bottom: 0;
+                max-width: 237px;
+            }
+
+            &:first-child {
+                margin: 0 0 9px 0;
+            }
+        }
+
+        .component-link.btn-more {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .two-tabs .tablink {
+            width: 49.3% !important;
+
+            &.first {
+                margin-right: 5px;
+            }
+
+            &.second {
+                margin-left: 5px;
+                color: @gray-20;
+            }
+
+        }
+        .three-tabs .tablink {
+            width: 32.5% !important;
+
+            &.first {
+                margin-right: 5px;
+            }
+
+            &.second {
+                left: 33%;
+                margin-left: 5px;
+                color: @gray-20;
+            }
+            &.third {
+                margin-left: 5px;
+                color: @gray-20;
+            }
+        }
+
+        .contact-tabs-nav {
+            position: relative;
+            min-height: 1000px; /* This part sucks */
+            clear: both;
+        }
+
+        .imgContainer{
+            width:237px !important;
+        }
+
+        .contact-tabs-content {
+            position: absolute;
+            top: 70px;
+            left: 0;
+        }
+        .contact-tabs-tab label {
+            position: relative;
+            padding-bottom: 40px;
+            z-index: 1;
+
+            .icon-chevron-right {
+                display: none;
+            }
+
+            .tab-title {
+                text-align: center;
+                 margin-top: 13px;
+                 font-weight: normal;
+            }
+        }
+        .publication-date {
+            float: left;
+            right: 10px;
+            bottom: -2px;
+        }
+
+        .col-md-4{
+            a {
+                display:inline-block;
+                margin: 1px;
+                width: 237px;
+            }
+        }
+    }
+}
