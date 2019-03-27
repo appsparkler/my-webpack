@@ -14,13 +14,14 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, '../dist'),
-        filename: 'index_bundle.js',
+        filename: 'index_bundle.js'
+        // filename: 'etc/clientlibs/kpmgpublic/formbuilder/js/formbuilder.js',
     },
 
     resolve: {
         modules: [
             path.resolve(__dirname, '../node_modules'),
-            path.resolve(__dirname, '../source')
+            // path.resolve(__dirname, '../../kpmg/ui/fe-framework')
         ]
     },
 
@@ -28,7 +29,13 @@ module.exports = {
         new HTMLPlugin({
             template: path.join(__dirname, '../src/index.pug'),
             // inject:false
-        })
+        }),
+        new CopyPlugin([
+          {
+            from: path.join(__dirname, '../../../../kpmg/ui/fe-framework/source/etc/clientlibs/kpmgpublic/formbuilder/js/formbuilder.js'),
+            to: path.join(__dirname, '../dist/etc/clientlibs/kpmgpublic/formbuilder/js/formbuilder.js')
+          }
+        ])
     ],
 
     module: {
@@ -79,7 +86,7 @@ module.exports = {
         bonjour: true,
         overlay: true,
         watchOptions: {
-            ignored: /.*\/node_modules\/.*/
+            ignored: /.*\/node_modules\/.*/,
         },
         writeToDisk: true, // (maybe) this option can be removed for performance
         stats: {
@@ -107,14 +114,12 @@ module.exports = {
     }
 }
 
-
 function setup_project() {
 
     clean_distFolder();
     copy_etcFolder();
     copy_designsFolder();
     copy_contentFolder();
-    // copy_syncFolder();
     copy_customFolders()
     copy_fonts();
     compile_globalLess();

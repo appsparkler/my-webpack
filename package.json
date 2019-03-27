@@ -4,7 +4,7 @@
   "description": "Web App for AEM Framework",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config webpack/dev.js"
+    "dev": "rm -rf dist && webpack-dev-server --open --config webpack/dev.js"
   },
   "author": "akash",
   "license": "UNLICENSED",
