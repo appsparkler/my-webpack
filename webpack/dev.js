@@ -2,22 +2,57 @@ const HTMLPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const fs = require('fs-extra')
+const fs = require('fs-extra');
+const less = require('less');
 
+// CLEAN DIST
+fs.removeSync('dist');
 
-// COPY ETC
+// COPY SOURCE/ETC to DIST/ETC
 fs.copySync(
     path.join(__dirname, '../../../../kpmg/ui/fe-framework/source/etc'),
     path.join(__dirname, '../dist/etc')
 );
 
-
-// COPY SOURCE
+// COPY DESIGNS TO DIST/ETC/DESIGNS
 fs.copySync(
-    path.join(__dirname, '../../../../kpmg/ui/fe-framework/source'),
-    path.join(__dirname, '../source')
+  path.join(__dirname, '../../../../kpmg/cms/content/kpmg-core-design/src/main/content/jcr_root/etc/designs'),
+  path.join(__dirname, '../dist/etc/designs')
 );
 
+// COPY src/content to dist/content
+fs.copySync(
+  path.join(__dirname, '../src/content'),
+  path.join(__dirname, '../dist/content')
+);
+
+// D:\Projects\github\archive\my-webpack\dist\etc\clientlibs\kpmgpublic\global\css\global.less
+// BUILD LESS
+const lessOptions = {
+    rootpath: path.resolve('dist/etc/clientlibs/kpmgpublic/global/css/'),
+    paths: [
+        path.resolve('dist/etc/clientlibs/kpmgpublic/global/css/')
+    ]
+};
+fs.readFile('dist/etc/clientlibs/kpmgpublic/global/css/global.less')
+    .then(buffer => less
+        .render(buffer.toString(), lessOptions)
+        .then(output => output.css)
+        .then(css => fs.writeFile('dist/global.css', css, err => {
+            if(!err) console.log('less is successfully compiled to css');
+        }))
+    )
+    .catch(err => console.log('err : ', err));
+
+// D:\Projects\github\archive\my-webpack\source01\etc\clientlibs\kpmgpublic\global\css\global.less
+
+// COPY SOURCE
+// fs.copySync(
+//     path.join(__dirname, '../../../../kpmg/ui/fe-framework/source'),
+//     path.join(__dirname, '../source')
+// );
+
+//
 // D:\Projects\kpmg\ui\fe-framework
 // TODO copy source folder to dist before executing the following exports
 // module.exports = {
@@ -43,10 +78,12 @@ fs.copySync(
 //             // inject:false
 //         }),
 //         new CopyPlugin([
-//             // etc
+//
+//             etc
 //             // {
 //             //     from: 'source'
 //             // },
+//
 //             // missing png image
 //             {
 //                 from: 'src/designs/kpmgpublic/images/blockquotes_inverse.png',
@@ -58,20 +95,18 @@ fs.copySync(
 //                 from: 'src/xx',
 //                 to: 'xx'
 //             },
+//
 //             // other files
 //             {
 //                 from: 'src/content',
 //                 to: 'content'
-//             },
-//             {
-//                 from: 'src/designs',
-//                 to: 'etc/designs'
 //             }
 //         ])
 //     ],
 //
 //     module: {
 //         rules: [
+//
 //             // FONT LOADER
 //             {
 //                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
@@ -79,6 +114,7 @@ fs.copySync(
 //                     loader: 'file-loader'
 //                 }]
 //             },
+//
 //             // IMAGES
 //             {
 //                 test: /\.(png|svg|jpg|gif)$/,

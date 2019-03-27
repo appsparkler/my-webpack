@@ -1,9 +1,0 @@
-{
-    "hbs": {
-        "searchInput": {
-        	"searchResultPath":"/content/kpmgpublic/us/en/home/misc/search20.html",
-        	"SESClientHostIp":"10.209.5.107",
-        	"SESLanguage":"en_us"
-        }
-    }
-}
