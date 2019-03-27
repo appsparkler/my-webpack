@@ -6,3 +6,6 @@
 
 ### To start the development server:
 `npm run dev`
+
+### SETUP
+## Setup the template less in the `webpack/dev.js` file 
