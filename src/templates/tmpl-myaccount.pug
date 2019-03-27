@@ -1,0 +1,662 @@
+#page-content.container(tabindex='-1')
+  section.module-tmpl-myaccount.bs4
+    .row.full-width-row
+      .col-md-9.col-xs-12.tablet-full-width(data-desktop-cell='1', data-mobile-cell='1')
+        // New accordian tab structure using bootstrap 4 accordian structure
+        // profile tab
+        #profile-information.accordion
+          .card
+            #general-information.card-header
+              h5.mb-0.accordion-header
+                button.btn.btn-link.accordian-btn(type='button', data-toggle='collapse', data-target='#general-information-container', aria-expanded='false', aria-controls='general-information-container')
+                  | General information
+                span.icon-chevron-down.pull-right
+            #general-information-container.collapse(aria-labelledby='general-information', data-parent='#profile-information')
+              .card-body
+                // Begin Component: Profile
+                section.module-profile.component
+                  // loader
+                  .loading-container(style='width: 96%;position: absolute;z-index: 999;top: 1%; height:68%; ')
+                    img(style='margin:200px auto;', src='/etc/designs/kpmgpublic/images/loading.gif')
+                  // Profile read mode
+                  form.edit-myprofile-mode.form-horizontal(role='form')
+                    .profile-header
+                      p.col-md-12.col-xs-12.title My Information
+                      p.col-md-12.col-xs-12.registeredDate
+                        | Registered&nbsp;
+                        span
+                    .account-information
+                      .header-wrapper
+                        p.header.account-info-header
+                          | Account information
+                          span.info-colon :
+                        p.help-block.header1.account-info-header.email-resend-info Email Not Verified
+                        p.social-login Logged in using
+                      .form-group.social-login-form
+                        .col-md-3.form-label.hidden-xs
+                          span.picon
+                          label.control-label.pname
+                        .col-md-9.vertical-align.hidden-xs
+                          label.control-label-txt.pcountry
+                        .col-xs-12.vertical-align.visible-xs.mobile-social-login
+                          span.picon
+                          label.control-label.pname
+                          label.control-label-txt.pcountry
+                      .form-group.first-element
+                        label.col-md-3.col-xs-6.form-label(for='email')
+                          span.icon-profile-email-new.new-icon-size
+                          |                           Email Address:
+                        .col-md-9.col-xs-6.social-email-value.vertical-align
+                          label.control-label-txt.pemail
+                      .form-group.pwd-block
+                        label.col-md-3.col-xs-6.form-label(for='password')
+                          span.icon-password.new-icon-size
+                          |                           Password:
+                        .col-md-9.col-xs-6.passwordblock.vertical-align
+                          label.control-label-txt.ppassword **********
+                      .resend-info
+                        button#verfyEmail.btn.btn-info(type='button', title='resend confirmation email')
+                          | Resend verification email
+                    .basic-information
+                      .header-wrapper
+                        p.header Basic information
+                      .form-group.salutation-block
+                        label.col-md-3.col-xs-6.form-label(for='Salutation', aria-label='Salutation')
+                          span.icon-salutation.new-icon-size
+                          |                           Salutation:
+                        .col-md-9.col-xs-6.salutation-value.vertical-align
+                          label.control-label-txt.selected-salutation
+                      .form-group.first-element
+                        label.form-label.col-md-3.col-xs-6(for='Firstname')
+                          span.icon-name.new-icon-size
+                          |                           First Name:
+                        .col-md-9.col-xs-6.first-name-value.vertical-align
+                          label.control-label-txt.pfirstname
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label(for='Lastname')
+                          span.icon-name.new-icon-size
+                          |                           Last Name:
+                        .col-md-9.col-xs-6.last-name-value.vertical-align
+                          label.control-label-txt.plastname
+                    .professional-information
+                      .header-wrapper
+                        p.header Professional information
+                      .form-group.first-element
+                        label.col-md-3.col-xs-6.form-label(for='Company')
+                          span.icon-company.new-icon-size
+                          |                           Company:
+                        .col-md-9.col-xs-6.company-value.vertical-align
+                          label.control-label-txt.pcompany
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label(for='Title')
+                          span.icon-role.new-icon-size
+                          |                           Role:
+                        .col-md-9.col-xs-6.title-value.vertical-align
+                          label.control-label-txt.ptitle
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label(for='country', aria-label='country')
+                          span.icon-country.new-icon-size
+                          |                           Country:
+                        .col-md-9.col-xs-6.country-value.vertical-align
+                          label.control-label-txt.pcountry
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label
+                          span.icon-client.new-icon-size
+                          |                           KPMG Client?:
+                        .col-md-9.col-xs-6.client-value.vertical-align
+                          label.control-label-txt.pkpmgclient
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label
+                          span.icon-employee-version-4.new-icon-size
+                          |                           KPMG Employee?:
+                        .col-md-9.col-xs-6.employee-value.vertical-align
+                          label.control-label-txt.pkpmgemployee
+                      .form-group
+                        label.col-md-3.col-xs-6.form-label
+                          span.icon-feedback.new-icon-size
+                          |                           Provide feedback:
+                        .col-md-9.col-xs-6.feedback-value.vertical-align
+                          label.control-label-txt.providefeedback
+                    .board-participation
+                      .header-wrapper
+                        p.header.hidden-xs Board Participation:
+                        p.header.visible-xs Board Participation
+                        p.help-block.header1.hidden-xs Organizations where you serve as a board member
+                      .form-group.site-email.first-element
+                        .col-md-3.col-xs-6
+                          label.form-label(for='org')
+                            span.icon-joomla.new-icon-size
+                            |                             Organization:
+                        #board-group.col-md-9.col-xs-6
+                    .profile-footer
+                      button.btn.btn-info.pull-right.updateAccount(type='button', title='Update profile information')
+                        | Update profile information
+                  // Profile edit mode
+                  form.edit-myprofile.form-horizontal(role='form')
+                    .profile-header
+                      p.col-md-12.title My Information
+                      p.col-md-12.registeredDate
+                        | Registered&nbsp;
+                        span
+                      p.required Required
+                    .account-information
+                      .header-wrapper
+                        p.header Account information
+                      .form-group.first-element
+                        label.col-md-3.col-xs-12.form-label(for='email')
+                          span.icon-profile-email-new.new-icon-size
+                          |                           Email Address
+                        .col-md-9.col-xs-12.email-value.vertical-align
+                          label#email.control-label-txt.pemailinput
+                        .col-md-9.col-xs-12.email-read-value
+                          label#email-read-label.form-label.pemailinput(type='email', required='')
+                      .form-group.passwordblock
+                        label.col-md-3.col-xs-12.old-password.form-label(for='password')
+                          span.icon-password.new-icon-size
+                          |                           Password
+                        .col-md-6.col-xs-12.old-password-input-block
+                          input#password.form-control.ppasswordinput(type='password', placeholder='Password', autocomplete='off')
+                      .form-group.passwordblock
+                        label.col-md-3.col-xs-12.edit-profile-mode.newpassword.form-label
+                          span.icon-password.new-icon-size
+                          |                           New Password
+                        .col-md-6.col-xs-12.new-password-input-block
+                          input#newpassword.form-control(type='password', placeholder='Password', autocomplete='off')
+                      .form-group.passwordblock
+                        label.edit-profile-mode.col-md-3.col-xs-12.confirm-password.form-label
+                          span.icon-password.new-icon-size
+                          |                           Confirm Password
+                        .col-md-6.col-xs-12.confirm-password-input-block
+                          input#confirmpassword.form-control(type='password', placeholder='Confirm Password', autocomplete='off')
+                      // password help block
+                      .password-info.password-help-block
+                        ul
+                          li.help-header Password must contain at least:
+                          li.help-element - 8 characters
+                          li.help-element - 1 number
+                          li.help-element - 1 upper-case letter
+                          li.help-element - 1 lower-case letter
+                    .basic-information
+                      .header-wrapper
+                        p.header Basic information
+                      .form-group.fn-wrap.first-element
+                        label.col-md-3.col-xs-12.form-label(for='Firstname')
+                          span.icon-name.new-icon-size
+                          |                           First Name
+                        .col-md-9.col-xs-12.first-name-value
+                          input#Firstname.form-control.pfninput(type='Firstname', placeholder='First Name', required='')
+                      .form-group
+                        label.col-md-3.col-xs-12.form-label(for='Lastname')
+                          span.icon-name.new-icon-size
+                          |                           Last Name
+                        .col-md-9.col-xs-12.last-name-value
+                          input#Lastname.form-control.plninput(type='Lastname', placeholder='Last Name', required='')
+                    .professional-information
+                      .header-wrapper
+                        p.header Professional information
+                      .form-group.first-element
+                        label.col-md-3.col-xs-12.form-label(for='Company')
+                          span.icon-company.new-icon-size
+                          |                           Company
+                        .col-md-9.col-xs-12.company-value
+                          input#Company.form-control.pcompanyinput(type='Company', placeholder='Company')
+                      .form-group
+                        label.col-md-3.col-xs-12.form-label(for='Title')
+                          span.icon-role.new-icon-size
+                          |                           Role
+                        .col-md-9.col-xs-12.title-value
+                          input#Title.form-control.ptitleinput(type='Title', placeholder='Role')
+                      .form-group
+                        label.col-md-3.col-xs-12.form-label(for='country')
+                          span.icon-country.new-icon-size
+                          |                           Country
+                        .col-md-9.col-xs-12.country-value
+                          .custom-select.custom-class-name
+                            select#Locations.form-control.pcountryinput(name='Locations', data-errormessage-value-missing='Please specify the location of your company headquarters.')
+                              option(title='Select Country / Location', value='') Select&nbsp;Country / Location 
+                              option.country-option(title='Afghanistan', value='Afghanistan', data-countrycode='AF', data-isocode='AF') Afghanistan
+                              option.country-option(title='Aland Islands !Åland Islands', value='Aland Islands !Åland Islands', data-countrycode='AX', data-isocode='AX') Aland Islands !&angst;land Islands
+                              option.country-option(title='Albania', value='Albania', data-countrycode='AL', data-isocode='AL') Albania
+                              option.country-option(title='Algeria', value='Algeria', data-countrycode='DZ', data-isocode='DZ') Algeria
+                              option.country-option(title='American Samoa', value='American Samoa', data-countrycode='AS', data-isocode='AS') American Samoa
+                              option.country-option(title='Andorra', value='Andorra', data-countrycode='AD', data-isocode='AD') Andorra
+                              option.country-option(title='Angola', value='Angola', data-countrycode='AO', data-isocode='AO') Angola
+                              option.country-option(title='Anguilla', value='Anguilla', data-countrycode='AL', data-isocode='AI') Anguilla
+                              option.country-option(title='Antarctica', value='Antarctica', data-countrycode='AQ', data-isocode='AQ') Antarctica
+                              option.country-option(title='Antigua and Barbuda', value='Antigua and Barbuda', data-countrycode='AG', data-isocode='AG') Antigua and Barbuda
+                              option.country-option(title='Argentina', value='Argentina', data-countrycode='AR', data-isocode='AR') Argentina
+                              option.country-option(title='Armenia', value='Armenia', data-countrycode='AM', data-isocode='AM') Armenia
+                              option.country-option(title='Aruba', value='Aruba', data-countrycode='AW', data-isocode='AW') Aruba
+                              option.country-option(title='Australia', value='Australia', data-countrycode='AU', data-isocode='AU') Australia
+                              option.country-option(title='Austria', value='Austria', data-countrycode='AT', data-isocode='AT') Austria
+                              option.country-option(title='Azerbaijan', value='Azerbaijan', data-countrycode='AZ', data-isocode='AZ') Azerbaijan
+                              option.country-option(title='Bahamas', value='Bahamas', data-countrycode='BS', data-isocode='BS') Bahamas
+                              option.country-option(title='Bahrain', value='Bahrain', data-countrycode='BH', data-isocode='BH') Bahrain
+                              option.country-option(title='Bangladesh', value='Bangladesh', data-countrycode='BD', data-isocode='BD') Bangladesh
+                              option.country-option(title='Barbados', value='Barbados', data-countrycode='BB', data-isocode='BB') Barbados
+                              option.country-option(title='Belarus', value='Belarus', data-countrycode='BY', data-isocode='BY') Belarus
+                              option.country-option(title='Belgium', value='Belgium', data-countrycode='BE', data-isocode='BE') Belgium
+                              option.country-option(title='Belize', value='Belize', data-countrycode='BZ', data-isocode='BZ') Belize
+                              option.country-option(title='Benin', value='Benin', data-countrycode='BJ', data-isocode='BJ') Benin
+                              option.country-option(title='Bermuda', value='Bermuda', data-countrycode='BM', data-isocode='BM') Bermuda
+                              option.country-option(title='Bhutan', value='Bhutan', data-countrycode='BT', data-isocode='BT') Bhutan
+                              option.country-option(title='Bolivia, Plurinational State of', value='Bolivia, Plurinational State of', data-countrycode='BO', data-isocode='BO') Bolivia, Plurinational State of
+                              option.country-option(title='Bonaire, Sint Eustatius and Saba', value='Bonaire, Sint Eustatius and Saba', data-countrycode='BQ', data-isocode='BQ') Bonaire, Sint Eustatius and Saba
+                              option.country-option(title='Bosnia and Herzegovina', value='Bosnia and Herzegovina', data-countrycode='BA', data-isocode='BA') Bosnia and Herzegovina
+                              option.country-option(title='Botswana', value='Botswana', data-countrycode='BW', data-isocode='BW') Botswana
+                              option.country-option(title='Bouvet Island', value='Bouvet Island', data-countrycode='BV', data-isocode='BV') Bouvet Island
+                              option.country-option(title='Brazil', value='Brazil', data-countrycode='BR', data-isocode='BR') Brazil
+                              option.country-option(title='British Indian Ocean Territory', value='British Indian Ocean Territory', data-countrycode='IO', data-isocode='IO') British Indian Ocean Territory
+                              option.country-option(title='Brunei Darussalam', value='Brunei Darussalam', data-countrycode='BN', data-isocode='BN') Brunei Darussalam
+                              option.country-option(title='Bulgaria', value='Bulgaria', data-countrycode='BG', data-isocode='BG') Bulgaria
+                              option.country-option(title='Burkina Faso', value='Burkina Faso', data-countrycode='BF', data-isocode='BF') Burkina Faso
+                              option.country-option(title='Burundi', value='Burundi', data-countrycode='BI', data-isocode='BI') Burundi
+                              option.country-option(title='Cabo Verde', value='Cabo Verde', data-countrycode='CV', data-isocode='CV') Cabo Verde
+                              option.country-option(title='Cambodia', value='Cambodia', data-countrycode='KH', data-isocode='KH') Cambodia
+                              option.country-option(title='Cameroon', value='Cameroon', data-countrycode='CM', data-isocode='CM') Cameroon
+                              option.country-option(title='Canada', value='Canada', data-countrycode='CA', data-isocode='CA') Canada
+                              option.country-option(title='Cayman Islands', value='Cayman Islands', data-countrycode='KY', data-isocode='KY') Cayman Islands
+                              option.country-option(title='Central African Republic', value='Central African Republic', data-countrycode='CF', data-isocode='CF') Central African Republic
+                              option.country-option(title='Chad', value='Chad', data-countrycode='TD', data-isocode='TD') Chad
+                              option.country-option(title='Chile', value='Chile', data-countrycode='CL', data-isocode='CL') Chile
+                              option.country-option(title='China', value='China', data-countrycode='CN', data-isocode='CN') China
+                              option.country-option(title='Christmas Island', value='Christmas Island', data-countrycode='CX', data-isocode='CX') Christmas Island
+                              option.country-option(title='Cocos (Keeling) Islands', value='Cocos (Keeling) Islands', data-countrycode='CC', data-isocode='CC') Cocos (Keeling) Islands
+                              option.country-option(title='Colombia', value='Colombia', data-countrycode='CO', data-isocode='CO') Colombia
+                              option.country-option(title='Comoros', value='Comoros', data-countrycode='KM', data-isocode='KM') Comoros
+                              option.country-option(title='Congo', value='Congo', data-countrycode='CG', data-isocode='CG') Congo
+                              option.country-option(title='Congo, the Democratic Republic of the', value='Congo, the Democratic Republic of the', data-countrycode='CD', data-isocode='CD') Congo, the Democratic Republic of the
+                              option.country-option(title='Cook Islands', value='Cook Islands', data-countrycode='CK', data-isocode='CK') Cook Islands
+                              option.country-option(title='Costa Rica', value='Costa Rica', data-countrycode='CR', data-isocode='CR') Costa Rica
+                              option.country-option(title="Cote d'Ivoire !Côte d'Ivoire", value="Cote d'Ivoire !Côte d'Ivoire", data-countrycode='CI', data-isocode='CI') Cote d&apos;Ivoire !C&ocirc;te d&apos;Ivoire
+                              option.country-option(title='Croatia', value='Croatia', data-countrycode='HR', data-isocode='HR') Croatia
+                              option.country-option(title='Cuba', value='Cuba', data-countrycode='CU', data-isocode='CU') Cuba
+                              option.country-option(title='Curaçao', value='Curaçao', data-countrycode='CW', data-isocode='CW') Cura&ccedil;ao
+                              option.country-option(title='Cyprus', value='Cyprus', data-countrycode='CY', data-isocode='CY') Cyprus
+                              option.country-option(title='Czech Republic', value='Czech Republic', data-countrycode='CZ', data-isocode='CZ') Czech Republic
+                              option.country-option(title='Denmark', value='Denmark', data-countrycode='DK', data-isocode='DK') Denmark
+                              option.country-option(title='Djibouti', value='Djibouti', data-countrycode='DJ', data-isocode='DJ') Djibouti
+                              option.country-option(title='Dominica', value='Dominica', data-countrycode='DM', data-isocode='DM') Dominica
+                              option.country-option(title='Dominican Republic', value='Dominican Republic', data-countrycode='DO', data-isocode='DO') Dominican Republic
+                              option.country-option(title='Ecuador', value='Ecuador', data-countrycode='EC', data-isocode='EC') Ecuador
+                              option.country-option(title='Egypt', value='Egypt', data-countrycode='EG', data-isocode='EG') Egypt
+                              option.country-option(title='El Salvador', value='El Salvador', data-countrycode='SV', data-isocode='SV') El Salvador
+                              option.country-option(title='Equatorial Guinea', value='Equatorial Guinea', data-countrycode='GQ', data-isocode='GQ') Equatorial Guinea
+                              option.country-option(title='Eritrea', value='Eritrea', data-countrycode='ER', data-isocode='ER') Eritrea
+                              option.country-option(title='Estonia', value='Estonia', data-countrycode='EE', data-isocode='EE') Estonia
+                              option.country-option(title='Ethiopia', value='Ethiopia', data-countrycode='ET', data-isocode='ET') Ethiopia
+                              option.country-option(title='Falkland Islands (Malvinas)', value='Falkland Islands (Malvinas)', data-countrycode='FK', data-isocode='FK') Falkland Islands (Malvinas)
+                              option.country-option(title='Faroe Islands', value='Faroe Islands', data-countrycode='FO', data-isocode='FO') Faroe Islands
+                              option.country-option(title='Fiji', value='Fiji', data-countrycode='FJ', data-isocode='FJ') Fiji
+                              option.country-option(title='Finland', value='Finland', data-countrycode='FI', data-isocode='FI') Finland
+                              option.country-option(title='France', value='France', data-countrycode='FR', data-isocode='FR') France
+                              option.country-option(title='French Guiana', value='French Guiana', data-countrycode='GF', data-isocode='GF') French Guiana
+                              option.country-option(title='French Polynesia', value='French Polynesia', data-countrycode='PF', data-isocode='PF') French Polynesia
+                              option.country-option(title='French Southern Territories', value='French Southern Territories', data-countrycode='TF', data-isocode='TF') French Southern Territories
+                              option.country-option(title='Gabon', value='Gabon', data-countrycode='GA', data-isocode='GA') Gabon
+                              option.country-option(title='Gambia', value='Gambia', data-countrycode='GM', data-isocode='GM') Gambia
+                              option.country-option(title='Georgia', value='Georgia', data-countrycode='GE', data-isocode='GE') Georgia
+                              option.country-option(title='Germany', value='Germany', data-countrycode='DE', data-isocode='DE') Germany
+                              option.country-option(title='Ghana', value='Ghana', data-countrycode='GH', data-isocode='GH') Ghana
+                              option.country-option(title='Gibraltar', value='Gibraltar', data-countrycode='GI', data-isocode='GI') Gibraltar
+                              option.country-option(title='Greece', value='Greece', data-countrycode='GR', data-isocode='GR') Greece
+                              option.country-option(title='Greenland', value='Greenland', data-countrycode='GL', data-isocode='GL') Greenland
+                              option.country-option(title='Grenada', value='Grenada', data-countrycode='GD', data-isocode='GD') Grenada
+                              option.country-option(title='Guadeloupe', value='Guadeloupe', data-countrycode='GP', data-isocode='GP') Guadeloupe
+                              option.country-option(title='Guam', value='Guam', data-countrycode='GU', data-isocode='GU') Guam
+                              option.country-option(title='Guatemala', value='Guatemala', data-countrycode='GT', data-isocode='GT') Guatemala
+                              option.country-option(title='Guernsey', value='Guernsey', data-countrycode='GG', data-isocode='GG') Guernsey
+                              option.country-option(title='Guinea', value='Guinea', data-countrycode='GN', data-isocode='GN') Guinea
+                              option.country-option(title='Guinea-Bissau', value='Guinea-Bissau', data-countrycode='GW', data-isocode='GW') Guinea-Bissau
+                              option.country-option(title='Guyana', value='Guyana', data-countrycode='GY', data-isocode='GY') Guyana
+                              option.country-option(title='Haiti', value='Haiti', data-countrycode='HT', data-isocode='HT') Haiti
+                              option.country-option(title='Heard Island and McDonald Islands', value='Heard Island and McDonald Islands', data-countrycode='HM', data-isocode='HM') Heard Island and McDonald Islands
+                              option.country-option(title='Holy See (Vatican City State)', value='Holy See (Vatican City State)', data-countrycode='VA', data-isocode='VA') Holy See (Vatican City State)
+                              option.country-option(title='Honduras', value='Honduras', data-countrycode='HN', data-isocode='HN') Honduras
+                              option.country-option(title='Hong Kong', value='Hong Kong', data-countrycode='HK', data-isocode='HK') Hong Kong
+                              option.country-option(title='Hungary', value='Hungary', data-countrycode='HU', data-isocode='HU') Hungary
+                              option.country-option(title='Iceland', value='Iceland', data-countrycode='IS', data-isocode='IS') Iceland
+                              option.country-option(title='India', value='India', data-countrycode='IN', data-isocode='IN') India
+                              option.country-option(title='Indonesia', value='Indonesia', data-countrycode='ID', data-isocode='ID') Indonesia
+                              option.country-option(title='Iran, Islamic Republic of', value='Iran, Islamic Republic of', data-countrycode='IR', data-isocode='IR') Iran, Islamic Republic of
+                              option.country-option(title='Iraq', value='Iraq', data-countrycode='IQ', data-isocode='IQ') Iraq
+                              option.country-option(title='Ireland', value='Ireland', data-countrycode='IE', data-isocode='IE') Ireland
+                              option.country-option(title='Isle of Man', value='Isle of Man', data-countrycode='IM', data-isocode='IM') Isle of Man
+                              option.country-option(title='Israel', value='Israel', data-countrycode='IL', data-isocode='IL') Israel
+                              option.country-option(title='Italy', value='Italy', data-countrycode='IT', data-isocode='IT') Italy
+                              option.country-option(title='Jamaica', value='Jamaica', data-countrycode='JM', data-isocode='JM') Jamaica
+                              option.country-option(title='Japan', value='Japan', data-countrycode='JP', data-isocode='JP') Japan
+                              option.country-option(title='Jersey', value='Jersey', data-countrycode='JE', data-isocode='JE') Jersey
+                              option.country-option(title='Jordan', value='Jordan', data-countrycode='JO', data-isocode='JO') Jordan
+                              option.country-option(title='Kazakhstan', value='Kazakhstan', data-countrycode='KZ', data-isocode='KZ') Kazakhstan
+                              option.country-option(title='Kenya', value='Kenya', data-countrycode='KE', data-isocode='KE') Kenya
+                              option.country-option(title='Kiribati', value='Kiribati', data-countrycode='KI', data-isocode='KI') Kiribati
+                              option.country-option(title="Korea, Democratic People's Republic of", value="Korea, Democratic People's Republic of", data-countrycode='KP', data-isocode='KP') Korea, Democratic People&apos;s Republic of
+                              option.country-option(title='Korea, Republic of', value='Korea, Republic of', data-countrycode='KR', data-isocode='KR') Korea, Republic of
+                              option.country-option(title='Kuwait', value='Kuwait', data-countrycode='KW', data-isocode='KW') Kuwait
+                              option.country-option(title='Kyrgyzstan', value='Kyrgyzstan', data-countrycode='KG', data-isocode='KG') Kyrgyzstan
+                              option.country-option(title="Lao People's Democratic Republic", value="Lao People's Democratic Republic", data-countrycode='LA', data-isocode='LA') Lao People&apos;s Democratic Republic
+                              option.country-option(title='Latvia', value='Latvia', data-countrycode='LV', data-isocode='LV') Latvia
+                              option.country-option(title='Lebanon', value='Lebanon', data-countrycode='LB', data-isocode='LB') Lebanon
+                              option.country-option(title='Lesotho', value='Lesotho', data-countrycode='LS', data-isocode='LS') Lesotho
+                              option.country-option(title='Liberia', value='Liberia', data-countrycode='LR', data-isocode='LR') Liberia
+                              option.country-option(title='Libya', value='Libya', data-countrycode='LY', data-isocode='LY') Libya
+                              option.country-option(title='Liechtenstein', value='Liechtenstein', data-countrycode='LI', data-isocode='LI') Liechtenstein
+                              option.country-option(title='Lithuania', value='Lithuania', data-countrycode='LT', data-isocode='LT') Lithuania
+                              option.country-option(title='Luxembourg', value='Luxembourg', data-countrycode='LU', data-isocode='LU') Luxembourg
+                              option.country-option(title='Macao', value='Macao', data-countrycode='MO', data-isocode='MO') Macao
+                              option.country-option(title='Macedonia', value='Macedonia', data-countrycode='MK', data-isocode='MK') Macedonia
+                              option.country-option(title='Madagascar', value='Madagascar', data-countrycode='MG', data-isocode='MG') Madagascar
+                              option.country-option(title='Malawi', value='Malawi', data-countrycode='MW', data-isocode='MW') Malawi
+                              option.country-option(title='Malaysia', value='Malaysia', data-countrycode='MY', data-isocode='MY') Malaysia
+                              option.country-option(title='Maldives', value='Maldives', data-countrycode='MV', data-isocode='MV') Maldives
+                              option.country-option(title='Mali', value='Mali', data-countrycode='ML', data-isocode='ML') Mali
+                              option.country-option(title='Malta', value='Malta', data-countrycode='MT', data-isocode='MT') Malta
+                              option.country-option(title='Marshall Islands', value='Marshall Islands', data-countrycode='MH', data-isocode='MH') Marshall Islands
+                              option.country-option(title='Martinique', value='Martinique', data-countrycode='MQ', data-isocode='MQ') Martinique
+                              option.country-option(title='Mauritania', value='Mauritania', data-countrycode='MR', data-isocode='MR') Mauritania
+                              option.country-option(title='Mauritius', value='Mauritius', data-countrycode='MU', data-isocode='MU') Mauritius
+                              option.country-option(title='Mayotte', value='Mayotte', data-countrycode='YT', data-isocode='YT') Mayotte
+                              option.country-option(title='Mexico', value='Mexico', data-countrycode='MX', data-isocode='MX') Mexico
+                              option.country-option(title='Micronesia, Federated States of', value='Micronesia, Federated States of', data-countrycode='FM', data-isocode='FM') Micronesia, Federated States of
+                              option.country-option(title='Monaco', value='Monaco', data-countrycode='MC', data-isocode='MC') Monaco
+                              option.country-option(title='Mongolia', value='Mongolia', data-countrycode='MN', data-isocode='MN') Mongolia
+                              option.country-option(title='Montenegro', value='Montenegro', data-countrycode='ME', data-isocode='ME') Montenegro
+                              option.country-option(title='Montserrat', value='Montserrat', data-countrycode='MS', data-isocode='MS') Montserrat
+                              option.country-option(title='Morocco', value='Morocco', data-countrycode='MA', data-isocode='MA') Morocco
+                              option.country-option(title='Mozambique', value='Mozambique', data-countrycode='MZ', data-isocode='MZ') Mozambique
+                              option.country-option(title='Myanmar', value='Myanmar', data-countrycode='MM', data-isocode='MM') Myanmar
+                              option.country-option(title='Namibia', value='Namibia', data-countrycode='NA', data-isocode='NA') Namibia
+                              option.country-option(title='Nauru', value='Nauru', data-countrycode='NR', data-isocode='NR') Nauru
+                              option.country-option(title='Nepal', value='Nepal', data-countrycode='NP', data-isocode='NP') Nepal
+                              option.country-option(title='Netherlands', value='Netherlands', data-countrycode='NL', data-isocode='NL') Netherlands
+                              option.country-option(title='New Caledonia', value='New Caledonia', data-countrycode='NC', data-isocode='NC') New Caledonia
+                              option.country-option(title='New Zealand', value='New Zealand', data-countrycode='NZ', data-isocode='NZ') New Zealand
+                              option.country-option(title='Nicaragua', value='Nicaragua', data-countrycode='NI', data-isocode='NI') Nicaragua
+                              option.country-option(title='Niger', value='Niger', data-countrycode='NE', data-isocode='NE') Niger
+                              option.country-option(title='Nigeria', value='Nigeria', data-countrycode='NG', data-isocode='NG') Nigeria
+                              option.country-option(title='Niue', value='Niue', data-countrycode='NU', data-isocode='NU') Niue
+                              option.country-option(title='Norfolk Island', value='Norfolk Island', data-countrycode='NF', data-isocode='NF') Norfolk Island
+                              option.country-option(title='Northern Mariana Islands', value='Northern Mariana Islands', data-countrycode='MP', data-isocode='MP') Northern Mariana Islands
+                              option.country-option(title='Norway', value='Norway', data-countrycode='NO', data-isocode='NO') Norway
+                              option.country-option(title='Oman', value='Oman', data-countrycode='OM', data-isocode='OM') Oman
+                              option.country-option(title='Pakistan', value='Pakistan', data-countrycode='PK', data-isocode='PK') Pakistan
+                              option.country-option(title='Palau', value='Palau', data-countrycode='PW', data-isocode='PW') Palau
+                              option.country-option(title='Palestine, State of', value='Palestine, State of', data-countrycode='PS', data-isocode='PS') Palestine, State of
+                              option.country-option(title='Panama', value='Panama', data-countrycode='PA', data-isocode='PA') Panama
+                              option.country-option(title='Papua New Guinea', value='Papua New Guinea', data-countrycode='PG', data-isocode='PG') Papua New Guinea
+                              option.country-option(title='Paraguay', value='Paraguay', data-countrycode='PY', data-isocode='PY') Paraguay
+                              option.country-option(title='Peru', value='Peru', data-countrycode='PE', data-isocode='PE') Peru
+                              option.country-option(title='Philippines', value='Philippines', data-countrycode='PH', data-isocode='PH') Philippines
+                              option.country-option(title='Pitcairn', value='Pitcairn', data-countrycode='PN', data-isocode='PN') Pitcairn
+                              option.country-option(title='Poland', value='Poland', data-countrycode='PL', data-isocode='PL') Poland
+                              option.country-option(title='Portugal', value='Portugal', data-countrycode='PT', data-isocode='PT') Portugal
+                              option.country-option(title='Puerto Rico', value='Puerto Rico', data-countrycode='PR', data-isocode='PR') Puerto Rico
+                              option.country-option(title='Qatar', value='Qatar', data-countrycode='QA', data-isocode='QA') Qatar
+                              option.country-option(title='Republic of Moldova', value='Republic of Moldova', data-countrycode='MD', data-isocode='MD') Republic of Moldova
+                              option.country-option(title='Reunion !Réunion', value='Reunion !Réunion', data-countrycode='RE', data-isocode='RE') Reunion !R&eacute;union
+                              option.country-option(title='Romania', value='Romania', data-countrycode='RO', data-isocode='RO') Romania
+                              option.country-option(title='Russian Federation', value='Russian Federation', data-countrycode='RU', data-isocode='RU') Russian Federation
+                              option.country-option(title='Rwanda', value='Rwanda', data-countrycode='RW', data-isocode='RW') Rwanda
+                              option.country-option(title='Saint Barthelemy !Saint Barthélemy', value='Saint Barthelemy !Saint Barthélemy', data-countrycode='BL', data-isocode='BL') Saint Barthelemy !Saint Barth&eacute;lemy
+                              option.country-option(title='Saint Helena, Ascension and Tristan da Cunha', value='Saint Helena, Ascension and Tristan da Cunha', data-countrycode='SH', data-isocode='SH') Saint Helena, Ascension and Tristan da Cunha
+                              option.country-option(title='Saint Kitts and Nevis', value='Saint Kitts and Nevis', data-countrycode='KN', data-isocode='KN') Saint Kitts and Nevis
+                              option.country-option(title='Saint Lucia', value='Saint Lucia', data-countrycode='LC', data-isocode='LC') Saint Lucia
+                              option.country-option(title='Saint Martin (French part)', value='Saint Martin (French part)', data-countrycode='MF', data-isocode='MF') Saint Martin (French part)
+                              option.country-option(title='Saint Pierre and Miquelon', value='Saint Pierre and Miquelon', data-countrycode='PM', data-isocode='PM') Saint Pierre and Miquelon
+                              option.country-option(title='Saint Vincent and the Grenadines', value='Saint Vincent and the Grenadines', data-countrycode='VC', data-isocode='VC') Saint Vincent and the Grenadines
+                              option.country-option(title='Samoa', value='Samoa', data-countrycode='WS', data-isocode='WS') Samoa
+                              option.country-option(title='San Marino', value='San Marino', data-countrycode='SM', data-isocode='SM') San Marino
+                              option.country-option(title='Sao Tome and Principe', value='Sao Tome and Principe', data-countrycode='ST', data-isocode='ST') Sao Tome and Principe
+                              option.country-option(title='Saudi Arabia', value='Saudi Arabia', data-countrycode='SA', data-isocode='SA') Saudi Arabia
+                              option.country-option(title='Senegal', value='Senegal', data-countrycode='SN', data-isocode='SN') Senegal
+                              option.country-option(title='Serbia', value='Serbia', data-countrycode='RS', data-isocode='RS') Serbia
+                              option.country-option(title='Seychelles', value='Seychelles', data-countrycode='SC', data-isocode='SC') Seychelles
+                              option.country-option(title='Sierra Leone', value='Sierra Leone', data-countrycode='SL', data-isocode='SL') Sierra Leone
+                              option.country-option(title='Singapore', value='Singapore', data-countrycode='SG', data-isocode='SG') Singapore
+                              option.country-option(title='Sint Maarten (Dutch part)', value='Sint Maarten (Dutch part)', data-countrycode='SX', data-isocode='SX') Sint Maarten (Dutch part)
+                              option.country-option(title='Slovakia', value='Slovakia', data-countrycode='SK', data-isocode='SK') Slovakia
+                              option.country-option(title='Slovenia', value='Slovenia', data-countrycode='SL', data-isocode='SI') Slovenia
+                              option.country-option(title='Solomon Islands', value='Solomon Islands', data-countrycode='SB', data-isocode='SB') Solomon Islands
+                              option.country-option(title='Somalia', value='Somalia', data-countrycode='SO', data-isocode='SO') Somalia
+                              option.country-option(title='South Africa', value='South Africa', data-countrycode='ZA', data-isocode='ZA') South Africa
+                              option.country-option(title='South Georgia and the South Sandwich Islands', value='South Georgia and the South Sandwich Islands', data-countrycode='GS', data-isocode='GS') South Georgia and the South Sandwich Islands
+                              option.country-option(title='South Sudan', value='South Sudan', data-countrycode='SS', data-isocode='SS') South Sudan
+                              option.country-option(title='Spain', value='Spain', data-countrycode='ES', data-isocode='ES') Spain
+                              option.country-option(title='Sri Lanka', value='Sri Lanka', data-countrycode='LK', data-isocode='LK') Sri Lanka
+                              option.country-option(title='Sudan', value='Sudan', data-countrycode='SD', data-isocode='SD') Sudan
+                              option.country-option(title='Suriname', value='Suriname', data-countrycode='SR', data-isocode='SR') Suriname
+                              option.country-option(title='Svalbard and Jan Mayen', value='Svalbard and Jan Mayen', data-countrycode='SJ', data-isocode='SJ') Svalbard and Jan Mayen
+                              option.country-option(title='Swaziland', value='Swaziland', data-countrycode='SZ', data-isocode='SZ') Swaziland
+                              option.country-option(title='Sweden', value='Sweden', data-countrycode='SE', data-isocode='SE') Sweden
+                              option.country-option(title='Switzerland', value='Switzerland', data-countrycode='CH', data-isocode='CH') Switzerland
+                              option.country-option(title='Syrian Arab Republic', value='Syrian Arab Republic', data-countrycode='SY', data-isocode='SY') Syrian Arab Republic
+                              option.country-option(title='Taiwan', value='Taiwan', data-countrycode='TW', data-isocode='TW') Taiwan
+                              option.country-option(title='Tajikistan', value='Tajikistan', data-countrycode='TJ', data-isocode='TJ') Tajikistan
+                              option.country-option(title='Tanzania, United Republic of', value='Tanzania, United Republic of', data-countrycode='TZ', data-isocode='TZ') Tanzania, United Republic of
+                              option.country-option(title='Thailand', value='Thailand', data-countrycode='TH', data-isocode='TH') Thailand
+                              option.country-option(title='Timor-Leste', value='Timor-Leste', data-countrycode='TL', data-isocode='TL') Timor-Leste
+                              option.country-option(title='Togo', value='Togo', data-countrycode='TG', data-isocode='TG') Togo
+                              option.country-option(title='Tokelau', value='Tokelau', data-countrycode='TK', data-isocode='TK') Tokelau
+                              option.country-option(title='Tonga', value='Tonga', data-countrycode='TO', data-isocode='TO') Tonga
+                              option.country-option(title='Trinidad and Tobago', value='Trinidad and Tobago', data-countrycode='TT', data-isocode='TT') Trinidad and Tobago
+                              option.country-option(title='Tunisia', value='Tunisia', data-countrycode='TN', data-isocode='TN') Tunisia
+                              option.country-option(title='Turkey', value='Turkey', data-countrycode='TR', data-isocode='TR') Turkey
+                              option.country-option(title='Turkmenistan', value='Turkmenistan', data-countrycode='TM', data-isocode='TM') Turkmenistan
+                              option.country-option(title='Turks and Caicos Islands', value='Turks and Caicos Islands', data-countrycode='TC', data-isocode='TC') Turks and Caicos Islands
+                              option.country-option(title='Tuvalu', value='Tuvalu', data-countrycode='TV', data-isocode='TV') Tuvalu
+                              option.country-option(title='Uganda', value='Uganda', data-countrycode='UG', data-isocode='UG') Uganda
+                              option.country-option(title='Ukraine', value='Ukraine', data-countrycode='UA', data-isocode='UA') Ukraine
+                              option.country-option(title='United Arab Emirates', value='United Arab Emirates', data-countrycode='AE', data-isocode='AE') United Arab Emirates
+                              option.country-option(title='United Kingdom', value='United Kingdom', data-countrycode='UK', data-isocode='GB') United Kingdom
+                              option.country-option(title='United States', value='United States', data-countrycode='US', data-isocode='US') United States
+                              option.country-option(title='United States Minor Outlying Islands', value='United States Minor Outlying Islands', data-countrycode='UM', data-isocode='UM') United States Minor Outlying Islands
+                              option.country-option(title='Uruguay', value='Uruguay', data-countrycode='UY', data-isocode='UY') Uruguay
+                              option.country-option(title='Uzbekistan', value='Uzbekistan', data-countrycode='UZ', data-isocode='UZ') Uzbekistan
+                              option.country-option(title='Vanuatu', value='Vanuatu', data-countrycode='VU', data-isocode='VU') Vanuatu
+                              option.country-option(title='Venezuela, Bolivarian Republic of', value='Venezuela, Bolivarian Republic of', data-countrycode='VE', data-isocode='VE') Venezuela, Bolivarian Republic of
+                              option.country-option(title='Viet Nam', value='Viet Nam', data-countrycode='VN', data-isocode='VN') Viet Nam
+                              option.country-option(title='Virgin Islands, British', value='Virgin Islands, British', data-countrycode='VG', data-isocode='VG') Virgin Islands, British
+                              option.country-option(title='Virgin Islands, U.S.', value='Virgin Islands, U.S.', data-countrycode='VI', data-isocode='VI') Virgin Islands, U.S.
+                              option.country-option(title='Wallis and Futuna', value='Wallis and Futuna', data-countrycode='WF', data-isocode='WF') Wallis and Futuna
+                              option.country-option(title='Western Sahara', value='Western Sahara', data-countrycode='EH', data-isocode='EH') Western Sahara
+                              option.country-option(title='Yemen', value='Yemen', data-countrycode='YE', data-isocode='YE') Yemen
+                              option.country-option(title='Zambia', value='Zambia', data-countrycode='ZM', data-isocode='ZM') Zambia
+                              option.country-option(title='Zimbabwe', value='Zimbabwe', data-countrycode='ZW', data-isocode='ZW') Zimbabwe
+                      .form-group.kpmgclient(tabindex='0')
+                        label.col-md-3.col-xs-8.form-label
+                          span.icon-client.new-icon-size
+                          |                           KPMG Client?
+                        .col-md-9.col-xs-4.clientCheckbox
+                          input#kpmgclient.pkpmgclientinput(type='checkbox', name='KPMGClient', value='Yes', aria-describedby='kpmg-client')
+                          label.pkpmgclientinput(for='kpmgclient')
+                      .form-group.kpmgemployee(tabindex='0')
+                        label.col-md-3.col-xs-8.pkpmgemployeeinput.form-label
+                          span.icon-employee-version-4.new-icon-size
+                          |                           KPMG Employee?
+                        .col-md-9.col-xs-4.employeeCheckbox
+                          input#kpmgemployee.pkpmgemployeeinput(type='checkbox', name='KPMGEmployee', value='Yes', aria-describedby='kpmg-emp')
+                          label.pkpmgemployeeinput(for='kpmgemployee')
+                      .form-group.kpmgfeedback(tabindex='0')
+                        label.col-md-3.col-xs-8.feedback-input.form-label
+                          span.icon-feedback.new-icon-size
+                          |                           Provide feedback
+                        .col-md-9.col-xs-4.feedbackCheckbox
+                          input#kpmgfeedback.feedback-input(type='checkbox', name='KPMGFeedback', value='Yes', aria-describedby='provide-feedback')
+                          label.feedback-input(for='kpmgfeedback')
+                    .board-participation
+                      .header-wrapper
+                        p.header.hidden-xs Board Participation:
+                        p.header.visible-xs Board Participation
+                        p.help-block.header1.hidden-xs Organizations where you serve as a board member
+                      .form-group.first-element
+                        .col-md-3.col-xs-12
+                          .edit-org
+                            label.org-list.form-label(for='org')
+                              span.icon-joomla.new-icon-size
+                              |                               Organization:
+                        .col-md-9.col-xs-12
+                          #board-group
+                            // content appended dynamically
+                        .board-wrap
+                          .col-md-3.col-xs-12
+                          .col-md-9.col-xs-12
+                            a.linkcta.add-board(href='javascript:void(0)')
+                              span.icon-add.new-icon-size
+                              span.board-text Add board
+                    .profile-footer
+                      button.btn.btn-info.linkcta.cancel-save.hidden-xs(type='button', title='Cancel')
+                        | Cancel
+                      button.btn.btn-info.linkcta.save-changes.pull-right.hidden-xs(type='button', title='Save changes')
+                        | Save changes
+                      button.btn.btn-info.linkcta.save-changes.col-xs-12.visible-xs(type='button', title='Save changes')
+                        | Save changes
+                      button.btn.btn-info.linkcta.cancel-save.col-xs-12.visible-xs(type='button', title='Cancel')
+                        | Cancel
+                .modal.fade.changes-saved.verfyEmailModal(role='dialog')
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        span.icon-close.btn-close.close(data-dismiss='modal')
+                          span.sr-only Close
+                        h4.verfyEmailModal-title Change saved
+                      .modal-body
+                        p.success-msg.alert-success
+                          span.icon-checkmark
+                          | Your changes have been successfully saved.
+                      .modal-footer
+                        button.btn-default.col-md-6.pull-left.btn(type='button', data-dismiss='modal')
+                          span.icon-close
+                          | Close
+                // End Component: Profile
+          .card
+            #communication-preferences.card-header
+              h5.mb-0.accordion-header
+                button.btn.btn-link.collapsed.accordian-btn(type='button', data-toggle='collapse', data-target='#communication-preferences-container', aria-expanded='false', aria-controls='communication-preferences-container')
+                  | Communication preferences
+                span.icon-chevron-down.pull-right
+            #communication-preferences-container.collapse(aria-labelledby='communication-preferences', data-parent='#profile-information')
+              .card-body.p-0
+                // Begin Component: CommunicationPreferences
+                section.module-communication-preferences.component.p-0
+                  .subscriptions-overlay &nbsp;
+                  #communication-preferences-tabs.preferences-wrapper
+                // End Component: SubscriptionPreferences
+                // unsaved changes modal
+                .modal.fade.save-changes-modal(role='dialog')
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        span.icon-close.btn-close.close(data-dismiss='modal')
+                          span.sr-only Close
+                        h4.heading You have unsaved changes
+                      .modal-body
+                        p.changes-msg
+                          | You are about to navigate away from this page with out saving your changes. You can continue away from this page or you can return to the page to save your changes.
+                      .modal-footer
+                        .col-md-6.col-xs-12.pull-right
+                          button.btn.btn-default.return-to-page(type='button', data-dismiss='modal')
+                            span.icon-chevron-right
+                            |                             Return to the page
+                        .col-md-6.col-xs-12.pull-left
+                          button.no-btn.btn.continue(type='button')
+                            span.icon-close
+                            |                             Continue
+                // successfull save changes modal
+                .modal.fade.changes-saved.verfyEmailModal(role='dialog')
+                  .modal-dialog
+                    .modal-content
+                      .modal-header
+                        span.icon-close.btn-close.close(data-dismiss='modal')
+                          span.sr-only Close
+                        h4.verfyEmailModal-title Change saved
+                      .modal-body
+                        p.success-msg.alert-success
+                          span.icon-checkmark
+                          | Your changes have been successfully saved.
+                      .modal-footer
+                        button.btn-default.col-md-6.pull-left.btn(type='button', data-dismiss='modal')
+                          span.icon-close
+                          | Close
+                // End Component: CommunicationPreferences
+          .card.last-accordian
+            #privacy-preferences.card-header
+              h5.mb-0.accordion-header
+                button.btn.btn-link.collapsed.accordian-btn(type='button', data-toggle='collapse', data-target='#privacy-preferences-container', aria-expanded='false', aria-controls='privacy-preferences-container')
+                  | Privacy preferences
+                span.icon-chevron-down.pull-right
+            #privacy-preferences-container.collapse(aria-labelledby='privacy-preferences', data-parent='#profile-information')
+              .card-body
+                // Begin Component: PrivacyPreferences
+                .module-privacy-preferences.component(data-expiry='24', data-version2='false')
+                  .privacy-container-row.version1
+                    .col-md-12.privacy-header
+                      p.descriptions
+                        | Using the links below, you can download your full data set or delete it permanently.
+                    .col-md-12.download-data
+                      a#download-data-link.active(href='javascript:void(0);', tabindex='0', aria-label='Download all data associated with your account')
+                        span.icon-profile-download
+                        span.download-label  Download all data associated with your account 
+                    .col-md-12.delete-account
+                      a#delete-account-link.active(href='javascript:void(0);', tabindex='0', aria-label='Delete your account permanently')
+                        span.icon-profile-delete
+                        span.delete-label  Delete your account permanently 
+                    .col-md-12.delete-account-notes
+                      .delete-account-note-header  Deleting your account will permanently remove the following: 
+                      .delete-account-list  - User profile data 
+                      .delete-account-list  - User blog Likes data 
+                      .delete-account-list  - User blog comments data 
+                      .delete-account-list  - User content preference data 
+                      .delete-account-list  - User subscription data 
+                      .delete-account-list  - User library data 
+                // overlay to show full data
+                #viewDataModal.modal.fade.deleteModal(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        span.icon-close.btn-close.close(data-dismiss='modal')
+                          span.sr-only Close
+                      .modal-body
+                        pre#json_data.
+
+                      .modal-footer
+                // Delete confirmation modal
+                #deleteModal.modal.fade.deleteModal(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        span.icon-close.close.btn-close(data-dismiss='modal')
+                          span.sr-only Close
+                        h4.deleteModal-title Delete my account
+                      .modal-body
+                        p.delete-msg Are you sure you want to delete your account? This action is not reversible.
+                      .modal-footer.col-md-12
+                        .col-md-6
+                          button.no-btn.btn(type='button', data-dismiss='modal')
+                            span.icon-chevron-left
+                            | No, take me back
+                        .col-md-6
+                          button.btn.deleteSuccess(type='button', data-toggle='modal', data-dismiss='modal')
+                            span.icon-chevron-right
+                            | Yes, delete account
+                // successful delete modal
+                #deleteSuccessModal.modal.fade.deleteModal(role='dialog')
+                  .modal-dialog
+                    // Modal content
+                    .modal-content
+                      .modal-header
+                        span.icon-close.btn-close.close(data-dismiss='modal')
+                          span.sr-only Close
+                        h4.deleteModal-title Delete my account
+                      .modal-body
+                        p.success-msg.alert-success
+                          span.icon-checkmark
+                          | Your account was successfully deleted.
+                      .modal-footer
+                        button.btn-default.col-md-6.pull-left.btn.delete-close(type='button', data-dismiss='modal')
+                          span.icon-close
+                          | Close
+                // End Component: PrivacyPreferences
+                // Accordion Bootstrap 4 ends

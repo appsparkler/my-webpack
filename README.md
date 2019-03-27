@@ -8,4 +8,8 @@
 `npm run dev`
 
 ### SETUP
-## Setup the template less in the `webpack/dev.js` file 
+- SETUP the template less in the `webpack/dev.js` file inside the `compile_templateLess()` method.
+- ENSURE the `template.css` file is referenced in the `src/index.pug` file.
+- REFERENCE the `template.js` on the `template` variable in `index.pug`
+- SELECT the `HTML` from the rendered template-page from any `SERVER`
+- SETUP any `temp` adjustments under `temp` folder

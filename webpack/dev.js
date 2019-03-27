@@ -115,12 +115,12 @@ module.exports = {
 }
 
 function setup_project() {
-
     clean_distFolder();
     copy_etcFolder();
     copy_designsFolder();
     copy_contentFolder();
-    copy_customFolders()
+    copy_customFolders();
+    copy_tempFolders();
     copy_fonts();
     compile_globalLess();
     compile_templateLess();
@@ -163,6 +163,14 @@ function copy_customFolders() {
     );
 }
 
+function copy_tempFolders() {
+    // COPY fonts
+    fs.copySync(
+        path.join(__dirname, '../src/temp'),
+        path.join(__dirname, '../dist')
+    );
+}
+
 function copy_fonts() {
     // COPY fonts
     fs.copySync(
@@ -199,11 +207,11 @@ function compile_templateLess() {
             path.resolve('dist/etc/clientlibs/kpmgpublic')
         ]
     };
-    fs.readFile('dist/etc/clientlibs/kpmgpublic/tmpl-flex/css/tmpl-flex.less')
+    fs.readFile('dist/etc/clientlibs/kpmgpublic/tmpl-myaccount/css/tmpl-myaccount.less')
         .then(buffer => less
             .render(buffer.toString(), lessOptions)
             .then(output => output.css)
-            .then(css => fs.writeFile('dist/tmpl-flex.css', css, err => {
+            .then(css => fs.writeFile('dist/template.css', css, err => {
                 if(!err) console.log('template less is successfully compiled to css');
             }))
         )
