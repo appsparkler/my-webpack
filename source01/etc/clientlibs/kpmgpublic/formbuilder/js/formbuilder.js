@@ -129,7 +129,7 @@ define(['jquery', 'tracking', 'personalizationUtils'],
             );
 
             // Keep the following lines at the bottom of the Formbuilder function
-            this.execute_defaultCode();
+            // this.execute_defaultCode();
         };
 
         FormBuilder.prototype.handle_displayForm = function(evt) {
@@ -603,11 +603,6 @@ define(['jquery', 'tracking', 'personalizationUtils'],
             } catch (e) {
                 console.log(e);
             }
-        }
-
-        function init(elem) {
-            var formbuilder = new FormBuilder(elem);
-            formbuilder.init(elem);
         }
 
         return FormBuilder;
