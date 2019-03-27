@@ -30,12 +30,10 @@ module.exports = {
             template: path.join(__dirname, '../src/index.pug'),
             // inject:false
         }),
-        new CopyPlugin([
-          {
+        new CopyPlugin([{
             from: path.join(__dirname, '../../../../kpmg/ui/fe-framework/source/etc/clientlibs/kpmgpublic/formbuilder/js/formbuilder.js'),
             to: path.join(__dirname, '../dist/etc/clientlibs/kpmgpublic/formbuilder/js/formbuilder.js')
-          }
-        ])
+        }])
     ],
 
     module: {
@@ -116,14 +114,16 @@ module.exports = {
 
 function setup_project() {
     clean_distFolder();
+    //
     copy_etcFolder();
     copy_designsFolder();
     copy_contentFolder();
-    copy_customFolders();
     copy_tempFolders();
     copy_fonts();
+    //
     compile_globalLess();
     compile_templateLess();
+    // copy_customFolders();
 }
 
 function clean_distFolder() {

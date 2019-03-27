@@ -12,4 +12,4 @@
 - ENSURE the `template.css` file is referenced in the `src/index.pug` file.
 - REFERENCE the `template.js` on the `template` variable in `index.pug`
 - SELECT the `HTML` from the rendered template-page from any `SERVER`
-- SETUP any `temp` adjustments under `temp` folder
+- SETUP any `temp` adjustments under `temp` folder - for ex. `tmpl-myaccount.js` was automatically re-directing to `/login.html`.  This was overridden in the temp folder.  Also, `/xx/en/home.kpmgnav.json` call needs to be made from `localhost` so this is settup by copying the response and `adding folders` under `temp folder`.  This will be copied to `dist folder`.
