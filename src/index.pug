@@ -2,33 +2,33 @@ doctype html
 html(lang="en-US")
   head
     title Hello World 
-    include kpmg/meta-tags
-    include kpmg/globals
-    include kpmg/window-hydration
-    include kpmg/i18n-labels-and-cleanup
-    //- include kpmg/meta-tags-2
-    //- include kpmg/privacy-fix-css
-    //- include kpmg/partial-header-preloader
+    include pug-partials/meta-tags
+    include pug-partials/globals
+    include pug-partials/window-hydration
+    include pug-partials/i18n-labels-and-cleanup
+    //- include pug-partials/meta-tags-2
+    //- include pug-partials/privacy-fix-css
+    //- include pug-partials/partial-header-preloader
     link(rel="stylesheet" href="global.css")
     link(rel="stylesheet" href="template.css")
   body
-    include templates/tmpl-myaccount
+    include pug-templates/tmpl-myaccount
     //- NOTES
       - ENSURE that home.mykpmgnav.json is set correctly
       - MATCH the HTML structure of a published-page
     //- include body.pug
     //- KPMG add-ons
     //- BEFORE FOOTER
-    include kpmg/digitalData
+    include pug-partials/digitalData
     //- FOOTER SCRIPTS
-    include kpmg/privacyJSON
-    include kpmg/footer-subscription-callout-val
+    include pug-partials/privacyJSON
+    include pug-partials/footer-subscription-callout-val
     //- BETWEEN FOOTER AND </BODY>
-    include kpmg/recaptcha
-    include kpmg/userAgentInfo
-    include kpmg/share-properties-and-demandbase
-    include kpmg/typekit
-    include kpmg/scripts
+    include pug-partials/recaptcha
+    include pug-partials/userAgentInfo
+    include pug-partials/share-properties-and-demandbase
+    include pug-partials/typekit
+    include pug-partials/scripts
     script(data-main="/etc/clientlibs/kpmgpublic/global/js/main" src="/etc/clientlibs/kpmgpublic/global/js/vendor/require.js")
     //- scrtip(src="/etc/clientlibs/kpmgpublic/tmpl-home/js/tmpl-home.js")
     script(type="text/javascript").
